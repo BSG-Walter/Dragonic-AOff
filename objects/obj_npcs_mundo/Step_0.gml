@@ -4,7 +4,7 @@ var datosNPCInmo;
 
 for (var j = primerRoomDeMapa; j <= totalRooms; j++) { // Room
     if (j != room) {
-        for (var k = 0; k < array_length_2d(NPCsXRM, j); k++) { // NPC
+        for (var k = 0; k < array_length(NPCsXRM[j]); k++) { // NPC
             datosNPCInmo = NPCsXRM[j, k];
             if (datosNPCInmo[0] != -1) {
                 if (datosNPCInmo[7] != -1) {
