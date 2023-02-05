@@ -1191,6 +1191,7 @@
     {"id":{"name":"obj_arbol_20","path":"objects/obj_arbol_20/obj_arbol_20.yy",},"order":20,},
     {"id":{"name":"obj_arbol_21","path":"objects/obj_arbol_21/obj_arbol_21.yy",},"order":21,},
     {"id":{"name":"hacerBackUpPartidas","path":"scripts/hacerBackUpPartidas/hacerBackUpPartidas.yy",},"order":121,},
+    {"id":{"name":"obj_npc_basic_acuatico","path":"objects/obj_npc_basic_acuatico/obj_npc_basic_acuatico.yy",},"order":0,},
     {"id":{"name":"obj_cartel_Ringville","path":"objects/obj_cartel_Ringville/obj_cartel_Ringville.yy",},"order":0,},
     {"id":{"name":"obj_cartel_Duhmundorth","path":"objects/obj_cartel_Duhmundorth/obj_cartel_Duhmundorth.yy",},"order":1,},
     {"id":{"name":"obj_cartel_Greage","path":"objects/obj_cartel_Greage/obj_cartel_Greage.yy",},"order":2,},

@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited();
 corregirPosNPCEnTelep(); 
 nombre = "Dragonic";
 roomInicial = room;
@@ -16,6 +16,10 @@ envenena = false;
 target = -1;
 objHechizo = obj_apocalipsis;
 sndHechizo = snd_apocalipsis;
+
+dropeaItem = true;
+indItem = 163;
+cantItem = 1;
 
 // Persona
 

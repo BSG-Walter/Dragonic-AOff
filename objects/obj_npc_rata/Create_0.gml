@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited();
 corregirPosNPCEnTelep(); 
 nombre = "Rata";
 roomInicial = room;

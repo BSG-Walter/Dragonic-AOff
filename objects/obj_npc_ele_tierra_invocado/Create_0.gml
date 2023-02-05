@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited();
 corregirPosNPCEnTelep(); 
 nombre = "Elemental de Tierra";
 roomInicial = room;

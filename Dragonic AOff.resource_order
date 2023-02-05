@@ -1062,6 +1062,7 @@
     {"name":"obj_arbol_20","order":20,"path":"objects/obj_arbol_20/obj_arbol_20.yy",},
     {"name":"obj_arbol_21","order":21,"path":"objects/obj_arbol_21/obj_arbol_21.yy",},
     {"name":"hacerBackUpPartidas","order":116,"path":"scripts/hacerBackUpPartidas/hacerBackUpPartidas.yy",},
+    {"name":"obj_npc_basic_acuatico","order":10,"path":"objects/obj_npc_basic_acuatico/obj_npc_basic_acuatico.yy",},
     {"name":"obj_cartel_Duhmundorth","order":1,"path":"objects/obj_cartel_Duhmundorth/obj_cartel_Duhmundorth.yy",},
     {"name":"obj_cartel_Greage","order":2,"path":"objects/obj_cartel_Greage/obj_cartel_Greage.yy",},
     {"name":"obj_cartel_Lotch","order":3,"path":"objects/obj_cartel_Lotch/obj_cartel_Lotch.yy",},

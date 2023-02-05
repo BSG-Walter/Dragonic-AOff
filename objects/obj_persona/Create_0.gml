@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited();
 visible = false;
 
 gradoIA = 0.65; // Media

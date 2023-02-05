@@ -4,6 +4,7 @@
   "name": "obj_npc_basic_elementales",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":2,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -12,8 +13,8 @@
     "path": "folders/Objects/NPCs.yy",
   },
   "parentObjectId": {
-    "name": "obj_npc_basic",
-    "path": "objects/obj_npc_basic/obj_npc_basic.yy",
+    "name": "obj_npc_basic_invocado",
+    "path": "objects/obj_npc_basic_invocado/obj_npc_basic_invocado.yy",
   },
   "persistent": true,
   "physicsAngularDamping": 0.1,

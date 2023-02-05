@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited();
 corregirPosNPCEnTelep(); 
 nombre = "Oso Pardo";
 roomInicial = room;
@@ -15,6 +15,10 @@ spd = 2;
 envenena = false;
 target = -1;
 targetNPC = -1;
+
+dropeaItem = true;
+indItem = 160;
+cantItem = 1;
 
 // Persona
 
