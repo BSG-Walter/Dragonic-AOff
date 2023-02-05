@@ -174,19 +174,8 @@ if (obj_pj.invisible) {
         
 	    var dano = round(random_range(danoMeleeMin, danoMeleeMax));
 	    var danoTotal = calcularDanoFisicoNPC(dano);
-            
-	    idDano = instance_create(obj_pj.x, obj_pj.y - 41, obj_efecto_dano);
-	    idDano.dano = danoTotal;
-	    idDano.padre = obj_pj.id;
-            
-	    reproducirSonido(snd_golpeRecibido, false, false);
-	    vibrarPantalla();
-            
-	    if (obj_pj.salud - danoTotal >= 1) {
-	        obj_pj.salud -= danoTotal;                
-	    } else {
-	        muertePJ();
-	    }
+
+		daniarPj(danoTotal, envenena);
 			
 	}
 
@@ -254,9 +243,6 @@ if (target == -1 || target == obj_pj) {
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
                     var danoTotal = calcularDanoMagicoNPC(dano);
-                    idDano = instance_create(obj_pj.x, obj_pj.y - 41, obj_efecto_dano);
-                    idDano.dano = danoTotal;
-                    idDano.padre = obj_pj.id;
                         
                     if (random(10) > 6.5) {
                         if (obj_pj.skills[17] < 100) {
@@ -269,14 +255,7 @@ if (target == -1 || target == obj_pj) {
                         }
                     }
                         
-                    reproducirSonido(sndHechizo, false, false);
-                    vibrarPantalla();
-                    
-                    if (obj_pj.salud - danoTotal >= 1) {                    
-                        obj_pj.salud -= danoTotal;                        
-                    } else {                        
-                        muertePJ();                        
-                    }
+						daniarPj(danoTotal, envenena);
                     
                 }
                 

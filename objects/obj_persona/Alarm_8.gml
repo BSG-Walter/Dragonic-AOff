@@ -577,20 +577,13 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                 
                                 danoTotal = floor(danoTotal * modBaculo);
                                                         
-                                var idDano = instance_create(obj_pj.x, obj_pj.y, obj_efecto_dano);
-                                idDano.dano = danoTotal;
-                                idDano.padre = obj_pj.id;
-                                
-                                vibrarPantalla();
-                                
-                                if (obj_pj.salud - danoTotal > 0) {
-                                    obj_pj.salud -= danoTotal
-                                } else {
-                                    muertePJ();
-                                    yaHablo = false;
-                                    gano = true;
-                                    alarm[5] = 1;
-                                }
+								daniarPj(danoTotal, false);
+        
+							        if (obj_pj.muerto) {
+							            yaHablo = false;            
+							            gano = true;
+							            alarm[5] = 1;
+							        }
                                 
                                 // Palabras mágicas
                                 

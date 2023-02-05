@@ -174,19 +174,8 @@ if (!domado) {
         
             var dano = round(random_range(danoMeleeMin, danoMeleeMax));
             var danoTotal = calcularDanoFisicoNPC(dano);
-            
-            idDano = instance_create(obj_pj.x, obj_pj.y - 41, obj_efecto_dano);
-            idDano.dano = danoTotal;
-            idDano.padre = obj_pj.id;
-            
-            reproducirSonido(snd_golpeRecibido, false, false);
-            vibrarPantalla();   
-            
-            if (obj_pj.salud - danoTotal >= 1) {
-                obj_pj.salud -= danoTotal;
-            } else {
-                muertePJ();
-            }
+           
+			daniarPj(danoTotal, envenena);
             
         }
     

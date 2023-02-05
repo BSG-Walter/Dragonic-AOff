@@ -317,16 +317,9 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         var dano = round(random_range(danoMeleeMin, danoMeleeMax));
         var danoTotal = calcularDanoFisicoNPC(floor(dano * obj_pj.modDanoLvl));
         
-        idDano = instance_create(obj_pj.x, obj_pj.y - 41, obj_efecto_dano);
-        idDano.dano = danoTotal;
-        idDano.padre = obj_pj.id;
+		daniarPj(danoTotal, false);
         
-        reproducirSonido(snd_golpeRecibido, false, false);
-        
-        if (obj_pj.salud - danoTotal >= 1) {
-            obj_pj.salud -= danoTotal;
-        } else {
-            muertePJ();
+        if (obj_pj.muerto) {
             yaHablo = false;            
             gano = true;
             alarm[5] = 1;

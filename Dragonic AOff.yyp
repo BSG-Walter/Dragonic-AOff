@@ -931,6 +931,7 @@
     {"id":{"name":"input_accessibility_global_cooldown_set","path":"scripts/input_accessibility_global_cooldown_set/input_accessibility_global_cooldown_set.yy",},"order":0,},
     {"id":{"name":"input_profile_reset_bindings","path":"scripts/input_profile_reset_bindings/input_profile_reset_bindings.yy",},"order":0,},
     {"id":{"name":"snd_bosque8","path":"sounds/snd_bosque8/snd_bosque8.yy",},"order":9,},
+    {"id":{"name":"daniarPj","path":"scripts/daniarPj/daniarPj.yy",},"order":0,},
     {"id":{"name":"snd_bosque9","path":"sounds/snd_bosque9/snd_bosque9.yy",},"order":10,},
     {"id":{"name":"snd_bosque10","path":"sounds/snd_bosque10/snd_bosque10.yy",},"order":11,},
     {"id":{"name":"snd_ciudad1","path":"sounds/snd_ciudad1/snd_ciudad1.yy",},"order":12,},
