@@ -8,8 +8,7 @@ function daniarPj(danoTotal, envenena){
 	reproducirSonido(snd_golpeRecibido, false, false);
 	vibrarPantalla();
         
-	input_vibrate_pulse(danoTotal / obj_pj.saludMax,0.5,1,30)
-	input_vibrate_pulse(danoTotal / obj_pj.saludMax,0.5,1,30)
+	vibrarJoystick(danoTotal / obj_pj.saludMax, 30);
 			
 	if (obj_pj.salud - danoTotal >= 1) {
         

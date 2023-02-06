@@ -1,35 +1,33 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-obj_pj.upKey = input_check("up") || obj_flecha_arriba.apretada
-obj_pj.downKey = input_check("down") || obj_flecha_abajo.apretada
-obj_pj.leftKey = input_check("left") || obj_flecha_izq.apretada
-obj_pj.rightKey = input_check("right") || obj_flecha_der.apretada
+obj_pj.upKey = keyboard_check(keyUp) || obj_flecha_arriba.apretada || (gamepad_axis_value(0,gp_axislv) < -0.4)
+obj_pj.downKey = keyboard_check(keyDown) || obj_flecha_abajo.apretada || (gamepad_axis_value(0,gp_axislv) > 0.4)
+obj_pj.leftKey = keyboard_check(keyLeft) || obj_flecha_izq.apretada || (gamepad_axis_value(0,gp_axislh) < -0.4)
+obj_pj.rightKey = keyboard_check(keyRight) || obj_flecha_der.apretada || (gamepad_axis_value(0,gp_axislh) > 0.4)
 
 if (obj_pj.muerto) exit;
 
-if (input_check_pressed("tirar")){
+if (keyboard_check_pressed(keyAgarrar)){
 	tirarItem()
 }
 
-if (input_check_pressed("atacar")){
+if (keyboard_check_pressed(keyAtacar) || gamepad_button_check_pressed(0, joyAtacar)){
 	pjAtacar();
 }
 
-if (input_check_pressed("usar")){
+if (keyboard_check_pressed(keyUsar) || gamepad_button_check_pressed(0, joyUsar)){
 	usarItem();
 }
 
-if (input_check_pressed("meditar")){
+if (keyboard_check_pressed(keyMeditar) || gamepad_button_check_pressed(0, joyMeditar)){
 	meditar();
 }
 
-if (input_check_pressed("agarrar")){
-	//input_vibrate_pulse(1.0,0.5,1,30)
-	//input_vibrate_pulse(1.0,0.5,1,30)
+if (keyboard_check_pressed(keyAgarrar) || gamepad_button_check_pressed(0, joyAgarrar)){
 	agarrar();
 }
 
-if (input_check_pressed("lanzar")){
-	lanzar();
-}
+//if (keyboard_check_pressed(keyLanzar)){
+//	lanzar();
+//}
