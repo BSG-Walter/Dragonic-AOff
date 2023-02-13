@@ -1,7 +1,6 @@
 /// @description  Estado inicial
 
 image_speed = 0;
-panelActivo = false;
 
 itemTiradoVisible = false;
 ultimaCantItemTirado = 0;
@@ -17,3 +16,4 @@ colorSed = make_color_rgb(69, 69, 201);
 
 nombreMapa = "";
 
+event_inherited();

@@ -7,6 +7,8 @@ maximoInv = 20;
 
 var i = 0;
 
+event_inherited()
+
 repeat(maximoInv) {
     indiceInv[i] = -1;
     tipoInv[i] = "";

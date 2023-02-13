@@ -7,7 +7,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":4,"eventType":7,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -15,7 +15,10 @@
     "name": "Interfaz",
     "path": "folders/Objects/Interfaz.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_gui_boton_parent",
+    "path": "objects/obj_gui_boton_parent/obj_gui_boton_parent.yy",
+  },
   "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -31,7 +34,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "tl_interfaz",
+    "path": "sprites/tl_interfaz/tl_interfaz.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

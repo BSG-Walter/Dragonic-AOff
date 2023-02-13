@@ -32,7 +32,10 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": null,
+  "spriteId": {
+    "name": "spr_fondo_hechizos",
+    "path": "sprites/spr_fondo_hechizos/spr_fondo_hechizos.yy",
+  },
   "spriteMaskId": null,
   "visible": true,
 }

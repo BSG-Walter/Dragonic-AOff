@@ -338,8 +338,8 @@ function __global_object_depths() {
 	global.__objectDepths[330] = 0; // obj_particula
 	global.__objectDepths[331] = 0; // obj_nubes
 	global.__objectDepths[332] = 100000000; // obj_pez
-	global.__objectDepths[333] = 0; // obj_inventario
-	global.__objectDepths[334] = 0; // obj_hechizos
+	global.__objectDepths[333] = -60000; // obj_inventario
+	global.__objectDepths[334] = -60000; // obj_hechizos
 	global.__objectDepths[335] = 0; // obj_cambiar_vista_hechizos
 	global.__objectDepths[336] = 0; // obj_item_basic
 	global.__objectDepths[337] = 10000; // obj_oro

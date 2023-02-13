@@ -4,7 +4,8 @@
   "name": "obj_skills_libres",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -12,7 +13,10 @@
     "name": "Interfaz",
     "path": "folders/Objects/Interfaz.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_gui_boton_parent",
+    "path": "objects/obj_gui_boton_parent/obj_gui_boton_parent.yy",
+  },
   "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,

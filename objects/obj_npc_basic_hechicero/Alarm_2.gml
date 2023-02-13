@@ -255,7 +255,7 @@ if (target == -1 || target == obj_pj) {
                         }
                     }
                         
-						daniarPj(danoTotal, envenena);
+						daniarPj(danoTotal, envenena, sndHechizo);
                     
                 }
                 

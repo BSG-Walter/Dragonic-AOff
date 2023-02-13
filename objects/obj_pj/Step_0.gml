@@ -253,41 +253,6 @@ if (!obj_opciones.opcionTechos) {
     
 }
 
-// Meditación
-
-if (!meditando) {
-    if (obj_tecla_f6.teclaApretada) {
-    
-        instance_create(x, y, obj_meditacion);
-        meditando = true;
-        
-        if (instance_exists(obj_persona) && !obj_persona.muerto) {
-            if (
-            (obj_persona.x >= __view_get( e__VW.XView, 0 )&& (obj_persona.x <= __view_get( e__VW.XView, 0 )+ __view_get( e__VW.WView, 0 ))) &&
-            (obj_persona.y >= __view_get( e__VW.YView, 0 ) && (obj_persona.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
-            ) {
-                xMeditando = x;
-                yMeditando = y;
-            } else {
-                xMeditando = 0;
-                yMeditando = 0;
-            }
-        } else {
-            xMeditando = 0;
-            yMeditando = 0;
-        }        
-        
-        if (invisible) {
-            with (obj_persona) {
-                if (agitando) {
-                    alarm[5] = 1;        
-                }
-            }
-        }
-        
-    }
-}
-
 // Deja de trabajar
 
 if (trabajando) { 
@@ -372,10 +337,10 @@ device_mouse_check_button(4, mb_left)
             (device_mouse_y(device) >= __view_get( e__VW.YView, 0 ) && device_mouse_y(device) <= __view_get( e__VW.YView, 0 ) + 32)
             ) {
             
-                if (obj_gui.panelActivo) {
-                    obj_gui.panelActivo = false;
+                if (obj_gui_datosPJ.panelActivo) {
+                    obj_gui_datosPJ.panelActivo = false;
                 } else {
-                    obj_gui.panelActivo = true;
+                    obj_gui_datosPJ.panelActivo = true;
                 }
                 
             } else {

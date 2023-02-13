@@ -1,5 +1,5 @@
 /// @description  Estado inicial
-
+event_inherited()
 mostrado = false;
 idPadre = -1;
 indiceItem = -1;
@@ -10,4 +10,5 @@ modo = 0; // 0 = carpintería, 1 = herrería, 2 = sastrería
 posicionItem = -1;
 deviceMantenido = -1;
 clicMantenido = false;
-
+x = renderWMiddle;
+y = renderHMiddle;   
