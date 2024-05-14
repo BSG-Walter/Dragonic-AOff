@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "agarrar",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Dragonic AOff",
-    "path": "Dragonic AOff.yyp",
+  "$GMScript":"",
+  "%Name":"agarrar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"agarrar",
+  "parent":{
+    "name":"Dragonic AOff",
+    "path":"Dragonic AOff.yyp",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
