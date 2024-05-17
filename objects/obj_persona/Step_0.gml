@@ -23,8 +23,8 @@ if (obj_pj.pk) {
 }
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+(x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+(y >= get_render_y() && (y <= get_render_y() + __view_get( e__VW.HView, 0 )))
 ) {
 
     // Tiempo dentro de la view
@@ -382,8 +382,8 @@ if (condicionBValida) {
 // Tiempo lejos del PJ
 
 if (
-(x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+(x < get_render_x() || (x > get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+(y < get_render_y() || (y > get_render_y() + __view_get( e__VW.HView, 0 )))
 ) {
     tiempoLejosPJ++;
     if (!enemigo) {
@@ -958,8 +958,8 @@ if (pasos > 0) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) / 2 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) / 2))
+(x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+(y >= get_render_y() - __view_get( e__VW.WView, 0 ) / 2 && (y <= get_render_y() + __view_get( e__VW.WView, 0 ) / 2))
 ) {
 
     if (y < obj_pj.y) {

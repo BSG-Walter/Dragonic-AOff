@@ -5,8 +5,8 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
     if (
     personaRoom.enemigo &&
     !personaRoom.muerto &&
-    (personaRoom.x >= __view_get( e__VW.XView, 0 ) && (personaRoom.x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (personaRoom.y >= __view_get( e__VW.YView, 0 ) && (personaRoom.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (personaRoom.x >= get_render_x() && (personaRoom.x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+    (personaRoom.y >= get_render_y() && (personaRoom.y <= get_render_y() + __view_get( e__VW.HView, 0 )))
     ) {
     
         // Si la IA está viva y está dentro de la view
@@ -27,8 +27,8 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
         }
         
         if (
-        distanciaX <= (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 )) * 0.5 &&
-        distanciaY <= (__view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )) * 0.5
+        distanciaX <= (get_render_x() + __view_get( e__VW.WView, 0 )) * 0.5 &&
+        distanciaY <= (get_render_y() + __view_get( e__VW.HView, 0 )) * 0.5
         ) {
         
             if (!paralizado) {

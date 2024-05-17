@@ -2,8 +2,8 @@
 
 cantidadS = "0";
 
-posX = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5 - 24;
-posY = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5 - 45;
+posX = get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5 - 24;
+posY = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 45;
 
 numPadInv[0, 0] = 1;   numPadInv[0, 1] = 2;   numPadInv[0, 2] = 3;
 numPadInv[1, 0] = 4;   numPadInv[1, 1] = 5;   numPadInv[1, 2] = 6;

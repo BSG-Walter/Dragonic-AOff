@@ -15,15 +15,15 @@ image_angle = direction;
 var anchoV = __view_get( e__VW.WView, 0 );
 var altoV = __view_get( e__VW.HView, 0 );
 
-if (x >= __view_get( e__VW.XView, 0 ) + anchoV) {
+if (x >= get_render_x() + anchoV) {
     x -= anchoV;
-} else if (x <= __view_get( e__VW.XView, 0 )) {
+} else if (x <= get_render_x()) {
     x += anchoV;
 }
 
-if (y >= __view_get( e__VW.YView, 0 ) + altoV) {
+if (y >= get_render_y() + altoV) {
     y -= altoV;
-} else if (y <= __view_get( e__VW.YView, 0 )) {
+} else if (y <= get_render_y()) {
     y += altoV;
 }
 

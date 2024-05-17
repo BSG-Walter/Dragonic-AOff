@@ -1,10 +1,10 @@
 /// @description  Control general / Control mouse
 
-x = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5;
-y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5;
+x = get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5;
+y = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5;
 
-posX = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5 - 24;
-posY = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5 - 45;
+posX = get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5 - 24;
+posY = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 45;
 
 var device = -1;
     

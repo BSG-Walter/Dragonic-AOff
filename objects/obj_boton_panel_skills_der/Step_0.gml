@@ -2,8 +2,8 @@
 
 if (obj_skills_libres.mostrado) {
 
-    var hor = (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5) - 64 + 121;
-    var ver = (__view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5) - 107;
+    var hor = (get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5) - 64 + 121;
+    var ver = (get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5) - 107;
     
     x = hor;
     

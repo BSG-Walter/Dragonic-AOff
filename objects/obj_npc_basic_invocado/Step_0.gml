@@ -160,8 +160,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5))
+(x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+(y >= get_render_y() - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= get_render_y() + __view_get( e__VW.WView, 0 ) * 0.5))
 ) {
 
     if (y < obj_pj.y) {

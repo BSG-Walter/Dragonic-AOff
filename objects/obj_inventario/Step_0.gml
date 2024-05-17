@@ -34,10 +34,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= get_inventario_x() + 121 &&
+                        device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
+                        device_mouse_y(device) >= get_inventario_y() + 8 &&
+                        device_mouse_y(device) <= get_inventario_y() + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -54,7 +54,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
+                            posX = posX - get_inventario_x() - 120;
                             posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
                             
                             var posItem = 0;
@@ -541,10 +541,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= get_inventario_x() + 121 &&
+                        device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
+                        device_mouse_y(device) >= get_inventario_y() + 8 &&
+                        device_mouse_y(device) <= get_inventario_y() + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -554,7 +554,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
+                            posX = posX - get_inventario_x() - 120;
                             posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
                             
                             var posItem = 0;
@@ -640,10 +640,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= get_inventario_x() + 121 &&
+                        device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
+                        device_mouse_y(device) >= get_inventario_y() + 8 &&
+                        device_mouse_y(device) <= get_inventario_y() + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -653,7 +653,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
+                            posX = posX - get_inventario_x() - 120;
                             posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
                             
                             var posItem = 0;

@@ -10,8 +10,8 @@ if (!domado && personaRoom != -1 && instance_exists(personaRoom) && !personaRoom
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < get_render_x() || (x > get_render_x() + __view_get( e__VW.WView, 0 ))) ||
+    (y < get_render_y() || (y > get_render_y() + __view_get( e__VW.HView, 0 )))
     ) {
         if (distance_to_object(personaRoom) <= 250) {
             target = personaRoom;
@@ -27,8 +27,8 @@ if (!domado && target == obj_pj) {
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < get_render_x() || (x > get_render_x() + __view_get( e__VW.WView, 0 ))) ||
+    (y < get_render_y() || (y > get_render_y() + __view_get( e__VW.HView, 0 )))
     ) {
         target = -1;
     }
@@ -194,8 +194,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5))
+(x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+(y >= get_render_y() - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= get_render_y() + __view_get( e__VW.WView, 0 ) * 0.5))
 ) {
 
     if (y < obj_pj.y) {

@@ -1,8 +1,8 @@
 /// @description  Opciones
 
 if (
-(mouse_x >= __view_get( e__VW.XView, 0 ) + 229 && mouse_x <= __view_get( e__VW.XView, 0 ) + 357) &&
-(mouse_y >= __view_get( e__VW.YView, 0 ) + 315 && mouse_y <= __view_get( e__VW.YView, 0 ) + 346)
+(mouse_x >= get_render_x() + 229 && mouse_x <= get_render_x() + 357) &&
+(mouse_y >= get_render_y() + 315 && mouse_y <= get_render_y() + 346)
 ) {
 
     // Guardar partida
@@ -25,8 +25,8 @@ if (
     }
     
 } else if (
-(mouse_x >= __view_get( e__VW.XView, 0 ) + 409 && mouse_x <= __view_get( e__VW.XView, 0 ) + 537) &&
-(mouse_y >= __view_get( e__VW.YView, 0 ) + 315 && mouse_y <= __view_get( e__VW.YView, 0 ) + 346)
+(mouse_x >= get_render_x() + 409 && mouse_x <= get_render_x() + 537) &&
+(mouse_y >= get_render_y() + 315 && mouse_y <= get_render_y() + 346)
 ) {
 
     // Menú principal
@@ -64,16 +64,16 @@ if (
     room_goto(rm_menuPrincipal);
     
 } else if (
-(mouse_x >= __view_get( e__VW.XView, 0 ) + 326 && mouse_x <= __view_get( e__VW.XView, 0 ) + 503) &&
-(mouse_y >= __view_get( e__VW.YView, 0 ) + 95 && mouse_y <= __view_get( e__VW.YView, 0 ) + 302)
+(mouse_x >= get_render_x() + 326 && mouse_x <= get_render_x() + 503) &&
+(mouse_y >= get_render_y() + 95 && mouse_y <= get_render_y() + 302)
 ) {
 
     // Mapa
     
     if (!roomDesconocida) {
         
-        var xInicioMapa = __view_get( e__VW.XView, 0 ) + 326;
-        var yInicioMapa = __view_get( e__VW.YView, 0 ) + 95;
+        var xInicioMapa = get_render_x() + 326;
+        var yInicioMapa = get_render_y() + 95;
         
         var coordX;
         var coordY;
@@ -134,15 +134,15 @@ if (
             instance_destroy();
         }
         
-        instance_create(__view_get( e__VW.XView, 0 ) + 326 + coordX * 14.75, __view_get( e__VW.YView, 0 ) + 95 + coordY * 17.25, obj_borde_mapa);
+        instance_create(get_render_x() + 326 + coordX * 14.75, get_render_y() + 95 + coordY * 17.25, obj_borde_mapa);
         
         nombreMapaPausa = obtenerNombreMapa(matRooms[coordY, coordX], coordY, coordX);
     
     }
     
 } else if (
-(mouse_x >= __view_get( e__VW.XView, 0 ) + 16 && mouse_x <= __view_get( e__VW.XView, 0 ) + 69) &&
-(mouse_y >= __view_get( e__VW.YView, 0 ) + 6 && mouse_y <= __view_get( e__VW.YView, 0 ) + 29)
+(mouse_x >= get_render_x() + 16 && mouse_x <= get_render_x() + 69) &&
+(mouse_y >= get_render_y() + 6 && mouse_y <= get_render_y() + 29)
 ) {
 
     // Continúa

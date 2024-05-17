@@ -2,8 +2,8 @@
 
 if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
     if (
-    (x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+    (y >= get_render_y() && (y <= get_render_y() + __view_get( e__VW.HView, 0 )))
     ) {
     
         var dano = floor(random_range(87, 98));
@@ -55,8 +55,8 @@ if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
 if (instance_number(obj_persona) > 0 && !obj_persona.muerto && obj_persona.pk) {
     
     if (
-    (obj_persona.x >= __view_get( e__VW.XView, 0 ) && (obj_persona.x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (obj_persona.y >= __view_get( e__VW.YView, 0 ) && (obj_persona.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (obj_persona.x >= get_render_x() && (obj_persona.x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
+    (obj_persona.y >= get_render_y() && (obj_persona.y <= get_render_y() + __view_get( e__VW.HView, 0 )))
     ) {
     
         // Si la IA está viva y está dentro de la view (Para que no muera constantemente OOV y queden los ítems tirados)

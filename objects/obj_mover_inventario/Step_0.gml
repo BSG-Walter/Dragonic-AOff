@@ -3,7 +3,7 @@
 var device = -1;
 visible = obj_inventario.visible;
 			
-x = __view_get( e__VW.XView, 1 ) + 87;
+x = get_inventario_x() + 87;
 
 if (
 device_mouse_check_button(0, mb_left) ||

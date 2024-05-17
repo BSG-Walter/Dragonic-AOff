@@ -4,8 +4,8 @@
 /// @param  flechaSinUso3
 function controlFlechaMovimiento() {
 
-	x = __view_get( e__VW.XView, 0 )+ 70; 
-	y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 70;
+	x = get_render_x()+ 70; 
+	y = get_render_y() + __view_get( e__VW.HView, 0 ) - 70;
 
 	var device = obj_area_flechas.deviceEnAreaFlechas
 

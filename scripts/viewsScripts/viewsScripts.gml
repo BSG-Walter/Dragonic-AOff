@@ -18,5 +18,5 @@ function get_render_x(){
 }
 
 function get_render_y(){
-	return __view_get(e__VW.WView, 0)
+	return __view_get(e__VW.YView, 0)
 }
