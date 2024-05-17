@@ -820,6 +820,7 @@
     {"id":{"name":"IAAtacaConArco","path":"scripts/IAAtacaConArco/IAAtacaConArco.yy",},},
     {"id":{"name":"IAsSiguenAlOtroMapa","path":"scripts/IAsSiguenAlOtroMapa/IAsSiguenAlOtroMapa.yy",},},
     {"id":{"name":"instance_create","path":"scripts/instance_create/instance_create.yy",},},
+    {"id":{"name":"interfazUtils","path":"scripts/interfazUtils/interfazUtils.yy",},},
     {"id":{"name":"invocarCriatura","path":"scripts/invocarCriatura/invocarCriatura.yy",},},
     {"id":{"name":"invocarGuardarMascotas","path":"scripts/invocarGuardarMascotas/invocarGuardarMascotas.yy",},},
     {"id":{"name":"itemVendible","path":"scripts/itemVendible/itemVendible.yy",},},

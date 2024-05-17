@@ -28,27 +28,35 @@ if (keyboard_check_pressed(keyAgarrar) || gamepad_button_check_pressed(0, joyAga
 	agarrar();
 }
 
+var _inventario_visible = obj_tecla_hechizos.visible
+
+//swap inventario/hechizos
+if (gamepad_button_check_pressed(0, joySwap)){
+	if (_inventario_visible) mostrar_hechizos() else mostrar_inventario()
+}
+
 //Inventario
-var posSeleccionado = obj_inventario.posSeleccionado
+var _pos_seleccionado = obj_inventario.posSeleccionado
 if (gamepad_button_check_pressed(0, joyDerecha)){
-	posSeleccionado+= 1
+	_pos_seleccionado+= 1
 }
 	
 if (gamepad_button_check_pressed(0, joyIzquierda)){
-	posSeleccionado-= 1
+	_pos_seleccionado-= 1
 }
 	
 if (gamepad_button_check_pressed(0, joyArriba) || gamepad_button_check_pressed(0, joyAbajo)){
 	if (obj_inventario.posSeleccionado < 9){
-		posSeleccionado+= 10
+		_pos_seleccionado+= 10
 	}else{
-		posSeleccionado-= 10
+		_pos_seleccionado-= 10
 	}
 }
 	
-posSeleccionado = clamp(posSeleccionado,0,19)
-obj_inventario.posSeleccionado = posSeleccionado
-obj_inventario.seleccionado = obj_inventario.indiceInv[posSeleccionado];
+if (_pos_seleccionado < 0) _pos_seleccionado = 19
+if (_pos_seleccionado > 19) _pos_seleccionado = 0
+obj_inventario.posSeleccionado = _pos_seleccionado
+obj_inventario.seleccionado = obj_inventario.indiceInv[_pos_seleccionado];
 
 
 //if (keyboard_check_pressed(keyLanzar)){

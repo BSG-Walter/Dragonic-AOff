@@ -24,15 +24,8 @@ device_mouse_check_button(4, mb_left)
         if (device_mouse_check_button_pressed(device, mb_left) && position_meeting(device_mouse_x(device), device_mouse_y(device), self)) {
         
             obj_control_devices.devicesL[device] = true;
-            
-            if (visible && !obj_tecla_hechizos.visible) {
-                obj_inventario.visible = true;
-                obj_hechizos.visible = false;
-                obj_tecla_T.visible = true;
-                obj_tecla_lanzar.visible = false;
-                obj_tecla_U.image_index = 0;
-                alarm[0] = 1;
-            }
+			
+			mostrar_inventario()
 
             obj_control_devices.devicesL[device] = false;
             

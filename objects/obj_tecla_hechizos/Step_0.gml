@@ -25,14 +25,7 @@ device_mouse_check_button(4, mb_left)
         
             obj_control_devices.devicesL[device] = true;
             
-            if (visible && !obj_tecla_inventario.visible) {
-                obj_inventario.visible = false;
-                obj_hechizos.visible = true;
-                obj_tecla_T.visible = false;
-                obj_tecla_lanzar.visible = true;
-                obj_tecla_U.image_index = 2;
-                alarm[0] = 1;
-            }
+			mostrar_hechizos()
 
             obj_control_devices.devicesL[device] = false;
             

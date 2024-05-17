@@ -713,6 +713,7 @@
     {"name":"IAAtacaAPJ","order":67,"path":"scripts/IAAtacaAPJ/IAAtacaAPJ.yy",},
     {"name":"IAAtacaConArco","order":69,"path":"scripts/IAAtacaConArco/IAAtacaConArco.yy",},
     {"name":"IAsSiguenAlOtroMapa","order":73,"path":"scripts/IAsSiguenAlOtroMapa/IAsSiguenAlOtroMapa.yy",},
+    {"name":"interfazUtils","order":20,"path":"scripts/interfazUtils/interfazUtils.yy",},
     {"name":"invocarCriatura","order":21,"path":"scripts/invocarCriatura/invocarCriatura.yy",},
     {"name":"invocarGuardarMascotas","order":20,"path":"scripts/invocarGuardarMascotas/invocarGuardarMascotas.yy",},
     {"name":"itemVendible","order":84,"path":"scripts/itemVendible/itemVendible.yy",},

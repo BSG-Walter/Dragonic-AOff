@@ -22,3 +22,5 @@ joyArriba = gp_padu //para navegar en inventarios
 joyAbajo = gp_padd
 joyIzquierda = gp_padl
 joyDerecha = gp_padr
+
+joySwap = gp_shoulderl
