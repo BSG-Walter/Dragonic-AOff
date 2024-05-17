@@ -391,7 +391,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
     
     i++;
     
-    if (i * 32 > __view_get( e__VW.WView, 0 ) * 0.75) {
+    if (i * 32 > get_render_width() * 0.75) {
         instance_destroy();
     }
 

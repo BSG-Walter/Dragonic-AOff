@@ -189,8 +189,8 @@ if (target == -1 || target == obj_pj) {
     
         if (
         !obj_pj.muerto &&
-        (x >= get_render_x() && (x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
-        (y >= get_render_y() && (y <= get_render_y() + __view_get( e__VW.HView, 0 )))
+        (x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
+        (y >= get_render_y() && (y <= get_render_y() + get_render_height()))
         ) {
     
             if (!paralizado) {
@@ -302,8 +302,8 @@ if (target != -1 && target != obj_pj && personaRoom != -1 && instance_exists(per
 
     if (
     !personaRoom.muerto &&
-    (personaRoom.x >= get_render_x() && (personaRoom.x <= get_render_x() + __view_get( e__VW.WView, 0 ))) &&
-    (personaRoom.y >= get_render_y() && (personaRoom.y <= get_render_y() + __view_get( e__VW.HView, 0 )))
+    (personaRoom.x >= get_render_x() && (personaRoom.x <= get_render_x() + get_render_width())) &&
+    (personaRoom.y >= get_render_y() && (personaRoom.y <= get_render_y() + get_render_height()))
     ) {
     
         // Si la IA está viva y está dentro de la view (Para que no muera constantemente OOV y queden los ítems tirados)
@@ -324,8 +324,8 @@ if (target != -1 && target != obj_pj && personaRoom != -1 && instance_exists(per
         }
         
         if (
-        distanciaX <= __view_get( e__VW.WView, 0 ) * 0.5 &&
-        distanciaY <= __view_get( e__VW.HView, 0 ) * 0.5
+        distanciaX <= get_render_width() * 0.5 &&
+        distanciaY <= get_render_height() * 0.5
         ) {
         
             if (!paralizado) {

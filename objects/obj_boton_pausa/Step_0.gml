@@ -1,6 +1,6 @@
 /// @description  Posición / Control mouse
 
-x = get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5;
+x = get_render_x() + get_render_width() * 0.5;
 y = get_render_y();
 
 var device = -1;

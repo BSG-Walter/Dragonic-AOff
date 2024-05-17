@@ -12,54 +12,54 @@ draw_text(get_render_x()+ 27, get_render_y() + 18, "XP: " + string(floor(obj_pj.
 draw_set_halign(fa_left);
 // Pausa
 
-draw_sprite(spr_pausa, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5, get_render_y());
+draw_sprite(spr_pausa, 0, get_render_x()+ get_render_width() * 0.5, get_render_y());
 
 // Ayuda
 
-draw_sprite(spr_ayuda, obj_ayuda.image_index, get_render_x()+ __view_get( e__VW.WView, 0 ) - 2, get_render_y() + 2);
+draw_sprite(spr_ayuda, obj_ayuda.image_index, get_render_x()+ get_render_width() - 2, get_render_y() + 2);
 
 // Opciones
 
-draw_sprite(spr_opciones, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 2, get_render_y() + 26);
+draw_sprite(spr_opciones, 0, get_render_x()+ get_render_width() - 2, get_render_y() + 26);
 
 if (obj_configuracion.mostrado) {
 
-    draw_sprite(spr_panel_opciones, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 26, get_render_y() + 36);
+    draw_sprite(spr_panel_opciones, 0, get_render_x()+ get_render_width() - 26, get_render_y() + 36);
     
     if (obj_opciones.opcionTechos) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 11);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 11);
     }
     
     if (obj_opciones.opcionArboles) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 27);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 27);
     }
     
     if (obj_opciones.opcionVibracion) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 43);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 43);
     }
     
     if (obj_opciones.opcionAnimacionAgua) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 59);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 59);
     }
     
     if (obj_opciones.opcionParticulas) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 75);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 75);
     }
     
     if (obj_opciones.opcionNubes) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 91);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 91);
     }
     
     if (obj_opciones.opcionPeces) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 107);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 107);
     }
     
     if (obj_opciones.opcionOptimizarCiudades) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 123);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 123);
     }
     
     if (obj_opciones.opcionInsigniaPionero) {
-        draw_sprite(spr_tick, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) - 119, get_render_y() + 139);
+        draw_sprite(spr_tick, 0, get_render_x()+ get_render_width() - 119, get_render_y() + 139);
     }
     
 }
@@ -70,20 +70,20 @@ draw_sprite(spr_boton_oro, 0, 11, 2456);
 
 // Seguro
 
-draw_sprite(spr_seguro, obj_seguro.activo, get_render_x()+ __view_get( e__VW.WView, 0 ), get_render_y() + __view_get( e__VW.HView, 0 ));
+draw_sprite(spr_seguro, obj_seguro.activo, get_render_x()+ get_render_width(), get_render_y() + get_render_height());
 
 // Panel items
 
 if (obj_panel_items.mostrado) {
     
     draw_set_alpha(0.85);
-    draw_sprite(spr_panel_items, obj_panel_items.image_index, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5);
+    draw_sprite(spr_panel_items, obj_panel_items.image_index, get_render_x()+ get_render_width() * 0.5, get_render_y() + get_render_height() * 0.5);
     
     draw_set_color(c_white);
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_font(fnt_Vedrana_5_bold);
-    draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - 144 + 143, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 113 + 217, obj_panel_items.campoCantidadS);
+    draw_text(get_render_x()+ get_render_width() * 0.5 - 144 + 143, get_render_y() + get_render_height() * 0.5 - 113 + 217, obj_panel_items.campoCantidadS);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     
@@ -104,13 +104,13 @@ if (obj_panel_items.mostrado) {
                 draw_set_alpha(1);
                 draw_set_color(c_white);
                 if (!obj_panel_items.modoBanco) {
-                    draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
+                    draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
                 } else {
-                    draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_inventario.cantInv[indicePanel])); 
+                    draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_inventario.cantInv[indicePanel])); 
                 }
-                draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
-                draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
-                draw_sprite(spr_items, indiceInv, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 9 + 32);
+                draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
+                draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
+                draw_sprite(spr_items, indiceInv, get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 9 + 32);
                 draw_set_alpha(0.85);
             }
         
@@ -121,20 +121,20 @@ if (obj_panel_items.mostrado) {
                 draw_set_alpha(1);
                 draw_set_color(c_white);
                 if (!obj_panel_items.modoBanco) {
-                    draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
+                    draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
                 } else {
-                    draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_panel_items.idPadre.cantNpc[indicePanel]));
+                    draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_panel_items.idPadre.cantNpc[indicePanel]));
                 }
-                draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
-                draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
-                draw_sprite(spr_items, indiceInv, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 9 + 32);
+                draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
+                draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
+                draw_sprite(spr_items, indiceInv, get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 9 + 32);
                 draw_set_alpha(0.85);
             }
             
         }
         
-        var posX = get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - 144;
-        var posY = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 113;
+        var posX = get_render_x()+ get_render_width() * 0.5 - 144;
+        var posY = get_render_y() + get_render_height() * 0.5 - 113;
         
         var modY = 47 + posY;
         
@@ -159,9 +159,9 @@ if (obj_panel_items.mostrado) {
 	
 	for (var index = 0; index < 20; index++){
 		//inventario user
-		draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 152, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.nombreInv[index]));
+		draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 152, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.nombreInv[index]));
 		//inventario npc
-		draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 8, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.nombreNpc[index]));
+		draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 8, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.nombreNpc[index]));
 	}
     
     
@@ -174,7 +174,7 @@ if (obj_panel_items.mostrado) {
 if (obj_panel_trabajos.mostrado) {
     
     draw_set_alpha(0.85);
-    draw_sprite(spr_panel_trabajos, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5);
+    draw_sprite(spr_panel_trabajos, 0, get_render_x()+ get_render_width() * 0.5, get_render_y() + get_render_height() * 0.5);
     
     var modPanelItemsX = 144;
     var modPanelItemsY = 113;
@@ -191,15 +191,15 @@ if (obj_panel_trabajos.mostrado) {
         if (indiceInv != -1) {
             draw_set_alpha(1);
             draw_set_color(c_white);
-            draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, string(obj_panel_trabajos.validoItem));
-            draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 20, obj_panel_trabajos.descItem);
-            draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 28, obj_panel_trabajos.elementosItem);
-            draw_sprite(spr_items, indiceInv, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 9 + 32);
+            draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, string(obj_panel_trabajos.validoItem));
+            draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 20, obj_panel_trabajos.descItem);
+            draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 28, obj_panel_trabajos.elementosItem);
+            draw_sprite(spr_items, indiceInv, get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 8 + 16, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 9 + 32);
             draw_set_alpha(0.85);
         }        
         
-        var posX = get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - 144;
-        var posY = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 113;
+        var posX = get_render_x()+ get_render_width() * 0.5 - 144;
+        var posY = get_render_y() + get_render_height() * 0.5 - 113;
         
         var modY = 47 + posY;
         
@@ -212,7 +212,7 @@ if (obj_panel_trabajos.mostrado) {
     if (obj_panel_trabajos.listaItems[0] == -1) {
         draw_set_alpha(1);
         draw_set_color(c_white);
-        draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 47, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 12, "No tenés skills suficientes para fabricar ningún ítem");
+        draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 47, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 12, "No tenés skills suficientes para fabricar ningún ítem");
     }
     
     draw_set_alpha(1);
@@ -224,7 +224,7 @@ if (obj_panel_trabajos.mostrado) {
     
 	for (var index = 0; index < 20; index++){
 		//inventario
-		draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - modPanelItemsX + 8, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_trabajos.nombreItems[index]));
+		draw_text(get_render_x()+ get_render_width() * 0.5 - modPanelItemsX + 8, get_render_y() + get_render_height() * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_trabajos.nombreItems[index]));
 	}
     
     draw_set_font(fnt_Vedrana_7_bold);
@@ -268,17 +268,17 @@ draw_sprite(spr_skills_libres, 0, get_render_x()+ 65, get_render_y() + 9);
 
 if (obj_skills_libres.mostrado) {
 
-    draw_sprite(spr_panel_skills, 0, get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5);
+    draw_sprite(spr_panel_skills, 0, get_render_x()+ get_render_width() * 0.5, get_render_y() + get_render_height() * 0.5);
     
     draw_set_font(fnt_Vedrana_6_bold);
     draw_set_color(c_white);
     draw_set_valign(fa_middle);
     draw_set_halign(fa_right);
     
-    var hor = (get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5) - 64 + 109;
-    var ver = (get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5) - 108;
+    var hor = (get_render_x()+ get_render_width() * 0.5) - 64 + 109;
+    var ver = (get_render_y() + get_render_height() * 0.5) - 108;
     
-    draw_text((get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5) - 64 + 95, ver + 33, string(obj_pj.skillsLibres));
+    draw_text((get_render_x()+ get_render_width() * 0.5) - 64 + 95, ver + 33, string(obj_pj.skillsLibres));
     
     draw_set_halign(fa_center);
     draw_set_font(fnt_Vedrana_5_bold);
@@ -378,9 +378,9 @@ if (obj_limpieza_mundo.contando) {
     draw_set_halign(fa_right);
     draw_set_color(c_white);
     if (obj_limpieza_mundo.segundos > 0) {
-        draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) - 23, get_render_y() + __view_get( e__VW.HView, 0 ) - 16, "Limpieza de mundo en: " + string(obj_limpieza_mundo.segundos) + "s");
+        draw_text(get_render_x()+ get_render_width() - 23, get_render_y() + get_render_height() - 16, "Limpieza de mundo en: " + string(obj_limpieza_mundo.segundos) + "s");
     } else {
-        draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) - 23, get_render_y() + __view_get( e__VW.HView, 0 ) - 16, "Limpiando mundo...");
+        draw_text(get_render_x()+ get_render_width() - 23, get_render_y() + get_render_height() - 16, "Limpiando mundo...");
     }
     draw_set_halign(fa_left);
 } 
@@ -388,7 +388,7 @@ if (obj_limpieza_mundo.contando) {
 /// Dibujo flechas
 
 draw_set_alpha(0.15);
-draw_sprite(spr_flechas, 0, get_render_x()+ 70, get_render_y() + __view_get( e__VW.HView, 0 ) - 70); 
+draw_sprite(spr_flechas, 0, get_render_x()+ 70, get_render_y() + get_render_height() - 70); 
 draw_set_alpha(1);
 // Salud
 dibujarBarra(get_inventario_x() + 12, get_inventario_y() + 14, obj_pj.salud, obj_pj.saludMax, colorVida);
@@ -423,7 +423,7 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_bottom);
 
 draw_set_color(c_black);
-draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + __view_get( e__VW.HView, 0 ) - 2, nombreMapa + " - " + string(floor((obj_pj.x - 608) / 32) + 9) + " - " + string(floor((obj_pj.y - 400) / 32) + 7));
+draw_text(get_render_x()+ get_render_width() * 0.5, get_render_y() + get_render_height() - 2, nombreMapa + " - " + string(floor((obj_pj.x - 608) / 32) + 9) + " - " + string(floor((obj_pj.y - 400) / 32) + 7));
 
 if (obj_mapas_mundo.mapas[room]) {
     draw_set_color(c_green);
@@ -431,7 +431,7 @@ if (obj_mapas_mundo.mapas[room]) {
     draw_set_color(c_silver);
 }
 
-draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) * 0.5 - 1, get_render_y() + __view_get( e__VW.HView, 0 ) - 3, nombreMapa + " - " + string(floor((obj_pj.x - 608) / 32) + 9) + " - " + string(floor((obj_pj.y - 400) / 32) + 7));
+draw_text(get_render_x()+ get_render_width() * 0.5 - 1, get_render_y() + get_render_height() - 3, nombreMapa + " - " + string(floor((obj_pj.x - 608) / 32) + 9) + " - " + string(floor((obj_pj.y - 400) / 32) + 7));
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -459,17 +459,17 @@ obj_inventario.tiraDeA1
             }
             
             draw_set_color(c_black);
-            draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) / 2, get_render_y() + __view_get( e__VW.HView, 0 ) - 30, string(obj_inventario.cantInv[i])); 
+            draw_text(get_render_x()+ get_render_width() / 2, get_render_y() + get_render_height() - 30, string(obj_inventario.cantInv[i])); 
             draw_set_color(c_white);
-            draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) / 2 - 1, get_render_y() + __view_get( e__VW.HView, 0 ) - 31, string(obj_inventario.cantInv[i])); 
+            draw_text(get_render_x()+ get_render_width() / 2 - 1, get_render_y() + get_render_height() - 31, string(obj_inventario.cantInv[i])); 
             ultimaCantItemTirado = obj_inventario.cantInv[i];    
             
         }
     } else if (!itemTiradoVisible && obj_tecla_T.teclaApretada) {
         draw_set_color(c_black);
-        draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) / 2, get_render_y() + __view_get( e__VW.HView, 0 ) - 30, string(ultimaCantItemTirado));
+        draw_text(get_render_x()+ get_render_width() / 2, get_render_y() + get_render_height() - 30, string(ultimaCantItemTirado));
         draw_set_color(c_white);
-        draw_text(get_render_x()+ __view_get( e__VW.WView, 0 ) / 2 - 1, get_render_y() + __view_get( e__VW.HView, 0 ) - 31, string(ultimaCantItemTirado));
+        draw_text(get_render_x()+ get_render_width() / 2 - 1, get_render_y() + get_render_height() - 31, string(ultimaCantItemTirado));
     }
     
     

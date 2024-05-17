@@ -1,6 +1,6 @@
 /// @description  Control general / Control mouse
 
-x = get_render_x() + __view_get( e__VW.WView, 0 ) - 2;
+x = get_render_x() + get_render_width() - 2;
 y = get_render_y() + 26;
 
 var device = -1;

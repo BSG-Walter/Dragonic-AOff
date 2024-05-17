@@ -5,7 +5,7 @@
 function controlFlechaMovimiento() {
 
 	x = get_render_x()+ 70; 
-	y = get_render_y() + __view_get( e__VW.HView, 0 ) - 70;
+	y = get_render_y() + get_render_height() - 70;
 
 	var device = obj_area_flechas.deviceEnAreaFlechas
 

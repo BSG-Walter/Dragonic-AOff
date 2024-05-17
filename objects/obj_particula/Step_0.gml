@@ -14,8 +14,8 @@ if (image_alpha >= 0.45 || image_alpha <= 0) {
 
 // Control posición
 
-var anchoV = __view_get( e__VW.WView, 0 );
-var altoV = __view_get( e__VW.HView, 0 );
+var anchoV = get_render_width();
+var altoV = get_render_height();
 
 if (x >= get_render_x() + anchoV) {
     x -= anchoV;

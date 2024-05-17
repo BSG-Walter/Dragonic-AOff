@@ -47,7 +47,7 @@ device_mouse_check_button(4, mb_left)
                         var posY = device_mouse_y(device);
                         
                         posX = posX - get_inventario_x() - 120;
-                        posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                        posY = posY - room_height + get_inventario_height() - 7;
                         
                         var posItem = 0;
                         
@@ -134,7 +134,7 @@ device_mouse_check_button(4, mb_left)
                         var posY = device_mouse_y(device);
                         
                         posX = posX - get_inventario_x() - 120;
-                        posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                        posY = posY - room_height + get_inventario_height() - 7;
                         
                         var posItem = 0;
                         
@@ -243,7 +243,7 @@ device_mouse_check_button(4, mb_left)
                             var posY = device_mouse_y(device);
                             
                             posX = posX - get_inventario_x() - 120;
-                            posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                            posY = posY - room_height + get_inventario_height() - 7;
                             
                             var posItem = 0;
                             

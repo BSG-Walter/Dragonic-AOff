@@ -2,8 +2,8 @@
 
 audio_pause_all();
 
-wViewInicio = __view_get( e__VW.WView, 0 );
-hViewInicio = __view_get( e__VW.HView, 0 );
+wViewInicio = get_render_width();
+hViewInicio = get_render_height();
 
 IACerca = false;
 

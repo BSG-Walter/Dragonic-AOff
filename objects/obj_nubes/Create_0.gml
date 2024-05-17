@@ -23,7 +23,7 @@ part_type_speed(tipoNubes, 1, 2, 0, 0);
 
 // Creo el emisor
 emisorNubes = part_emitter_create(sistemaNubes);
-part_emitter_region(sistemaNubes, emisorNubes, get_render_x() - __view_get( e__VW.WView, 0 ) * 0.5, get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5, get_render_y(), get_render_y() + __view_get( e__VW.HView, 0 ), ps_shape_rectangle, ps_distr_linear);
+part_emitter_region(sistemaNubes, emisorNubes, get_render_x() - get_render_width() * 0.5, get_render_x() + get_render_width() * 0.5, get_render_y(), get_render_y() + get_render_height(), ps_shape_rectangle, ps_distr_linear);
 part_emitter_burst(sistemaNubes, emisorNubes, tipoNubes, nroNubes);
 
 // Alarma

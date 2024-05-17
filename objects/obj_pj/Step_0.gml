@@ -263,8 +263,8 @@ if (!meditando) {
         
         if (instance_exists(obj_persona) && !obj_persona.muerto) {
             if (
-            (obj_persona.x >= get_render_x()&& (obj_persona.x <= get_render_x()+ __view_get( e__VW.WView, 0 ))) &&
-            (obj_persona.y >= get_render_y() && (obj_persona.y <= get_render_y() + __view_get( e__VW.HView, 0 )))
+            (obj_persona.x >= get_render_x()&& (obj_persona.x <= get_render_x()+ get_render_width())) &&
+            (obj_persona.y >= get_render_y() && (obj_persona.y <= get_render_y() + get_render_height()))
             ) {
                 xMeditando = x;
                 yMeditando = y;
@@ -359,8 +359,8 @@ device_mouse_check_button(4, mb_left)
             // Ataque con arco / hechizo
 
             if (
-            (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ __view_get( e__VW.WView, 0 )) &&
-            (device_mouse_y(device) >= get_render_y() && device_mouse_y(device) <= get_render_y() + __view_get( e__VW.HView, 0 ))
+            (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ get_render_width()) &&
+            (device_mouse_y(device) >= get_render_y() && device_mouse_y(device) <= get_render_y() + get_render_height())
             ) {
                 obj_hechizos.moviendoHechizo = false;
             }
@@ -385,8 +385,8 @@ device_mouse_check_button(4, mb_left)
                     if (
                     atacaConArco && 
                     !meditando &&
-                    (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ __view_get( e__VW.WView, 0 )) &&
-                    (device_mouse_y(device) >= get_render_y() && device_mouse_y(device) <= get_render_y() + __view_get( e__VW.HView, 0 ))
+                    (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ get_render_width()) &&
+                    (device_mouse_y(device) >= get_render_y() && device_mouse_y(device) <= get_render_y() + get_render_height())
                     ) {
             
                         var idNPCAux = instance_position(device_mouse_x(device), device_mouse_y(device), obj_npc_basic);
@@ -748,8 +748,8 @@ device_mouse_check_button(4, mb_left)
                     puedeAtacar &&
                     atacaConHechizo && 
                     !meditando &&
-                    (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ __view_get( e__VW.WView, 0 )) &&
-                    (device_mouse_y(device)  >= get_render_y() && device_mouse_y(device)  <= get_render_y() + __view_get( e__VW.HView, 0 ))
+                    (device_mouse_x(device) >= get_render_x()&& device_mouse_x(device) <= get_render_x()+ get_render_width()) &&
+                    (device_mouse_y(device)  >= get_render_y() && device_mouse_y(device)  <= get_render_y() + get_render_height())
                     ) {
                     
                         // Hechizos

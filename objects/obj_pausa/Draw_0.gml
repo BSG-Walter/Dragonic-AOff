@@ -106,13 +106,13 @@ if (dibuja) {
     
     if (pudoGuardar) {
         draw_set_colour(c_lime);
-        draw_text(get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + 2, string_hash_to_newline("Partida guardada"));
+        draw_text(get_render_x() + get_render_width() * 0.5, get_render_y() + 2, string_hash_to_newline("Partida guardada"));
     } else {
         draw_set_colour(c_red);
         if (IACerca) {
-            draw_text(get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + 2, string_hash_to_newline("No podés guardar la partida habiendo enemigos cerca tuyo"));
+            draw_text(get_render_x() + get_render_width() * 0.5, get_render_y() + 2, string_hash_to_newline("No podés guardar la partida habiendo enemigos cerca tuyo"));
         } else {
-            draw_text(get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5, get_render_y() + 2, string_hash_to_newline("No se pudo guardar la partida"));
+            draw_text(get_render_x() + get_render_width() * 0.5, get_render_y() + 2, string_hash_to_newline("No se pudo guardar la partida"));
         }
     }
     

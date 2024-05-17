@@ -9,7 +9,7 @@ if (instance_number(obj_pausa) == 0 && room != rm_inicio && room != rm_EBGames &
     
         if (opcionPeces) {
             repeat(5) {
-                instance_create(get_render_x() + random(__view_get( e__VW.WView, 0 )), get_render_y() + random(__view_get( e__VW.HView, 0 )), obj_pez);
+                instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_pez);
             }
         }
         
@@ -17,7 +17,7 @@ if (instance_number(obj_pausa) == 0 && room != rm_inicio && room != rm_EBGames &
     
     if (opcionParticulas) {
         repeat(25) {
-            instance_create(get_render_x() + random(__view_get( e__VW.WView, 0 )), get_render_y() + random(__view_get( e__VW.HView, 0 )), obj_particula);
+            instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_particula);
         }
 		if (obj_pj.direccion == 1)
 			crearLluvia(cantidadGotasDeLluvia, 0, 140);

@@ -10,5 +10,5 @@ alarm[0] = 1;
 
 visible = esMapaDescubierto();
 
-anchoV = __view_get( e__VW.WView, 0 );
-altoV = __view_get( e__VW.HView, 0 );
+anchoV = get_render_width();
+altoV = get_render_height();

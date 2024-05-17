@@ -5,8 +5,8 @@ if (clicMantenido) {
     
         var device = deviceMantenido;
     
-        var posX = get_render_x() + __view_get( e__VW.WView, 0 ) * 0.5 - 144;
-        var posY = get_render_y() + __view_get( e__VW.HView, 0 ) * 0.5 - 113;
+        var posX = get_render_x() + get_render_width() * 0.5 - 144;
+        var posY = get_render_y() + get_render_height() * 0.5 - 113;
         
         if (!modoBanco) {
         

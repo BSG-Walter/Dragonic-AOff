@@ -12,7 +12,7 @@ if (visible) {
 
 	if (y >= get_render_y() + altoV) {
 	    y -= altoV;
-		instance_create(get_render_x() + random(__view_get( e__VW.WView, 0 )), get_render_y() + random(__view_get( e__VW.HView, 0 )), obj_salpicadura);
+		instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_salpicadura);
 	} else if (y <= get_render_y()) {
 	    // y += altoV;
 	}
