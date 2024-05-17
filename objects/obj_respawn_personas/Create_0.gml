@@ -1,12 +1,10 @@
 /// @description  Estado inicial
 
-intervaloMin = 9000;
+intervaloMin = 8000;
 
 if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
     intervaloMin = intervaloMin / setearIntervaloCreacionIA(room);
 }
-
-intervaloMax = intervaloMin + intervaloMin / 2.5;
 
 if (obj_control_opciones.simularHorarios) {
 
@@ -34,9 +32,9 @@ if (obj_control_opciones.simularHorarios) {
         intervaloMin = 10800;
     }
     
-    intervaloMax = intervaloMin + intervaloMin / 2.5;
-    
 }
+intervaloMin-= (intervaloMin*(obj_pj.nivel/obj_pj.nivelMax))*0.5
+intervaloMax = intervaloMin + intervaloMin / 2.5;
 
 valido = true;
 alarm[0] = floor(random_range(intervaloMin, intervaloMax) * 0.5);

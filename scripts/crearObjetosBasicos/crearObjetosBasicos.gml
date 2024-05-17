@@ -6,8 +6,8 @@ function crearObjetosBasicos(argument0) {
 
 	    instance_create(0, 0, obj_panel_items);
 	    instance_create(0, 0, obj_npcs_mundo);
-	    instance_create(0, 0, obj_respawn_personas);
 	    instance_create(1296, 1808, obj_pj);
+		instance_create(0, 0, obj_respawn_personas);
 	    instance_create(0, 0, obj_flecha_arriba);
 	    instance_create(0, 0, obj_flecha_abajo);
 	    instance_create(0, 0, obj_flecha_izq);
@@ -188,7 +188,6 @@ function crearObjetosBasicos(argument0) {
 
 	    instance_create(0, 0, obj_panel_items);
 	    instance_create(0, 0, obj_npcs_mundo);
-	    instance_create(0, 0, obj_respawn_personas);
     
 	    // obj_pj
     
@@ -332,6 +331,8 @@ function crearObjetosBasicos(argument0) {
 	    idPJ.estaEnPolo = read("obj_pj", "estaEnPolo", 0); 
     
 	    // FIN obj_pj
+		
+		instance_create(0, 0, obj_respawn_personas);
     
 	    // Flechas
     

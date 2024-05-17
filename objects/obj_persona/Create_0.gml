@@ -7,6 +7,8 @@ gradoIA = 0.65; // Media
 if (obj_control_opciones.dificultad == 1) {
     gradoIA = 0.75; // Alta
 }
+//aumentamos dificultad gradualmente
+gradoIA+= (obj_pj.nivel/obj_pj.nivelMax)*0.05
 
 hostil = true;
 image_speed = 0;
@@ -41,6 +43,8 @@ tiempoEnView = 0;
 yaHabloEnojado1 = false;
 yaHabloEnojado2 = false;
 yaHabloEnojado3 = false;
+
+pj_avance = ((obj_pj.nivel/obj_pj.nivelMax)); //indica que tan cerca esta el pj del nivel max. (de 0 a 1)
 
 // Navega?
 
@@ -156,7 +160,7 @@ switch (clase) {
         break;
 }
 
-saludMax = floor(saludMax);
+saludMax = floor(saludMax + saludMax * (pj_avance*0.15)); //hasta +15% de stats segun el nivel de nuestro pj
 salud = saludMax;
 
 // Maná
@@ -192,8 +196,8 @@ switch (clase) {
         }
         break;
 }
-
-manaMax = floor(manaMax * 0.75);
+manaMax= manaMax * 0.75
+manaMax = floor( manaMax + manaMax * (pj_avance*0.15)); //hasta +15% de stats segun el nivel de nuestro pj
 
 if (manaMax < 0) {
     manaMax = 0;
@@ -268,8 +272,8 @@ alarm[2] = intervaloAtaque;
 
 // Fuerza
 
-danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85);
-danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85);
+danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85 + pj_avance * 0.15); //a niveles maximos los bots pueden igualar nuestro daño
+danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85 + pj_avance * 0.15);
 
 // Evasión
 
