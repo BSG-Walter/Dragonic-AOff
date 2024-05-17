@@ -1,51 +1,51 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-obj_pj.upKey = keyboard_check(keyUp) || obj_flecha_arriba.apretada || (gamepad_axis_value(0,gp_axislv) < -0.4)
-obj_pj.downKey = keyboard_check(keyDown) || obj_flecha_abajo.apretada || (gamepad_axis_value(0,gp_axislv) > 0.4)
-obj_pj.leftKey = keyboard_check(keyLeft) || obj_flecha_izq.apretada || (gamepad_axis_value(0,gp_axislh) < -0.4)
-obj_pj.rightKey = keyboard_check(keyRight) || obj_flecha_der.apretada || (gamepad_axis_value(0,gp_axislh) > 0.4)
+obj_pj.upKey = keyboard_check(key_up) || obj_flecha_arriba.apretada || (gamepad_axis_value(0,gp_axislv) < -0.4)
+obj_pj.downKey = keyboard_check(key_down) || obj_flecha_abajo.apretada || (gamepad_axis_value(0,gp_axislv) > 0.4)
+obj_pj.leftKey = keyboard_check(key_left) || obj_flecha_izq.apretada || (gamepad_axis_value(0,gp_axislh) < -0.4)
+obj_pj.rightKey = keyboard_check(key_right) || obj_flecha_der.apretada || (gamepad_axis_value(0,gp_axislh) > 0.4)
 
 if (obj_pj.muerto) exit;
 
-if (keyboard_check_pressed(keyAgarrar)){
+if (keyboard_check_pressed(key_agarrar)){
 	tirarItem()
 }
 
-if (keyboard_check_pressed(keyAtacar) || gamepad_button_check_pressed(0, joyAtacar)){
+if (keyboard_check_pressed(key_atacar) || gamepad_button_check_pressed(0, joy_atacar)){
 	pjAtacar();
 }
 
-if (keyboard_check_pressed(keyUsar) || gamepad_button_check_pressed(0, joyUsar)){
+if (keyboard_check_pressed(key_usar) || gamepad_button_check_pressed(0, joy_usar)){
 	usarItem();
 }
 
-if (keyboard_check_pressed(keyMeditar) || gamepad_button_check_pressed(0, joyMeditar)){
+if (keyboard_check_pressed(key_meditar) || gamepad_button_check_pressed(0, joy_meditar)){
 	meditar();
 }
 
-if (keyboard_check_pressed(keyAgarrar) || gamepad_button_check_pressed(0, joyAgarrar)){
+if (keyboard_check_pressed(key_agarrar) || gamepad_button_check_pressed(0, joy_agarrar)){
 	agarrar();
 }
 
 var _inventario_visible = obj_tecla_hechizos.visible
 
 //swap inventario/hechizos
-if (gamepad_button_check_pressed(0, joySwap)){
+if (gamepad_button_check_pressed(0, joy_swap)){
 	if (_inventario_visible) mostrar_hechizos() else mostrar_inventario()
 }
 
 //Inventario
 var _pos_seleccionado = obj_inventario.posSeleccionado
-if (gamepad_button_check_pressed(0, joyDerecha)){
+if (gamepad_button_check_pressed(0, joy_derecha)){
 	_pos_seleccionado+= 1
 }
 	
-if (gamepad_button_check_pressed(0, joyIzquierda)){
+if (gamepad_button_check_pressed(0, joy_izquierda)){
 	_pos_seleccionado-= 1
 }
 	
-if (gamepad_button_check_pressed(0, joyArriba) || gamepad_button_check_pressed(0, joyAbajo)){
+if (gamepad_button_check_pressed(0, joy_arriba) || gamepad_button_check_pressed(0, joy_abajo)){
 	if (obj_inventario.posSeleccionado < 9){
 		_pos_seleccionado+= 10
 	}else{
