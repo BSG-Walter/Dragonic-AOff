@@ -13,10 +13,26 @@ function get_inventario_y(){
 	return __view_get(e__VW.YView, 1)
 }
 
+function get_inventario_width(){
+	return __view_get(e__VW.WView, 1)
+}
+
+function get_inventario_height(){
+	return __view_get(e__VW.HView, 1)
+}
+
 function get_render_x(){
 	return __view_get(e__VW.XView, 0)
 }
 
 function get_render_y(){
 	return __view_get(e__VW.YView, 0)
+}
+
+function get_render_width(){
+	return __view_get(e__VW.WView, 0)
+}
+
+function get_render_height(){
+	return __view_get(e__VW.HView, 0)
 }
