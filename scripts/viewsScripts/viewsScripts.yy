@@ -1,12 +1,12 @@
 {
   "$GMScript":"",
-  "%Name":"interfazUtils",
+  "%Name":"viewsScripts",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"interfazUtils",
+  "name":"viewsScripts",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Dibujado",
+    "path":"folders/Scripts/Dibujado.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
