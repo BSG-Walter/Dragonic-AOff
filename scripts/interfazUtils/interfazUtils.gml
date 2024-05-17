@@ -25,3 +25,13 @@ function mostrar_inventario(){
         obj_tecla_inventario.alarm[0] = 1;
     }
 }
+
+function indicar_panel_hechizos(primer_panel_estado){
+    if (!obj_inventario.visible) {
+		obj_hechizos.primerPanel = primer_panel_estado;
+    }
+}
+
+function alternar_panel_hechizos(){
+	indicar_panel_hechizos(!obj_hechizos.primerPanel);
+}

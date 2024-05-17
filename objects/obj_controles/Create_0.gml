@@ -23,4 +23,4 @@ joy_abajo = gp_padd
 joy_izquierda = gp_padl
 joy_derecha = gp_padr
 
-joySwap = gp_shoulderl
+joy_swap = gp_shoulderl

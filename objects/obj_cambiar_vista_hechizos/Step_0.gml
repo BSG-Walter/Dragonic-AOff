@@ -21,12 +21,7 @@ device_mouse_check_button(4, mb_left)
         
             obj_control_devices.devicesL[device] = true;
             
-            if (!obj_inventario.visible) {
-                if (obj_hechizos.primerPanel)
-					obj_hechizos.primerPanel = false;
-	            else
-					obj_hechizos.primerPanel = true;
-            }
+			alternar_panel_hechizos()
             
             obj_control_devices.devicesL[device] = false;
             
