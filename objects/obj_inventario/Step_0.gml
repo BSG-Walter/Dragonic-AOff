@@ -188,7 +188,10 @@ device_mouse_check_button(4, mb_left)
 									equipadoInv[posSeleccionado] = equipadoInvAux;
 									
 								}
-							
+								//actualizamos el valor de la flecha actual seleccionada
+								if (tipoInv[posSeleccionado] == "flecha") obj_pj.flechaEnInv = posSeleccionado
+								if (tipoInv[posItem] == "flecha") obj_pj.flechaEnInv = posItem
+								
                                 seleccionado = indiceInv[posItem];
                                 posSeleccionado = posItem;
                                 posDobleClic = posItem;
