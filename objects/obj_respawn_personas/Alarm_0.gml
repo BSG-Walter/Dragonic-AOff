@@ -31,6 +31,10 @@ if (random(10) > rand) {
                 var xNuevo = 0;
                 var yNuevo = 0;
                 
+				//aca se genera un loop infinito si estas dentro del lugar para enlistarte a la armada, probablemente por el tema de que cambia los tiles a negros.
+				//asi que le puse un limite a ese lop
+				
+				var limite_intentos = 1000
                 do {
                 
                     xNuevo = multX * floor(random_range(2, room_width / multX - 32));
@@ -41,6 +45,9 @@ if (random(10) > rand) {
                     if (obj_pj.nivel >= 25) {
                         tile = 1;
                     }
+					
+					limite_intentos--
+					if (limite_intentos < 0) exit;
                 
                 } until (
                 xNuevo % 16 == 0 &&
