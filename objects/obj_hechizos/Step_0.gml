@@ -60,6 +60,7 @@ device_mouse_check_button(4, mb_left)
                             repeat (5) {
                                 if (posX >= 64 * (i) && posX < (i + 1) * 64) {
                                     posItem = i;
+									posSeleccionado = i;
                                     break;
                                 }
                                 
@@ -75,6 +76,7 @@ device_mouse_check_button(4, mb_left)
                             repeat (5) {
                                 if (posX >= 64 * (i) && posX < (i + 1) * 64) {
                                     posItem = i + 5;
+									posSeleccionado = posItem;
                                     break;
                                 }
                                 

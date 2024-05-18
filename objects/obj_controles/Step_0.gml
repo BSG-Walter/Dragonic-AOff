@@ -48,23 +48,23 @@ if (_inventario_visible){
 		_pos_seleccionado-= 1
 	}
 	
-	if (gamepad_button_check_pressed(0, joy_arriba) && obj_inventario.posSeleccionado > 9){
+	if (gamepad_button_check_pressed(0, joy_arriba) && _pos_seleccionado > 9){
 		_pos_seleccionado-= 10
 	}
 
-	if (gamepad_button_check_pressed(0, joy_abajo) && obj_inventario.posSeleccionado <= 9){
+	if (gamepad_button_check_pressed(0, joy_abajo) && _pos_seleccionado <= 9){
 		_pos_seleccionado+= 10
 	}
 	
-	if (_pos_seleccionado < 0) _pos_seleccionado = 19
-	if (_pos_seleccionado > 19) _pos_seleccionado = 0
-
-	obj_inventario.posSeleccionado = _pos_seleccionado
-	obj_inventario.seleccionado = obj_inventario.indiceInv[_pos_seleccionado];
-	
+	if (obj_inventario.posSeleccionado != _pos_seleccionado){
+		if (_pos_seleccionado < 0) _pos_seleccionado = 19
+		if (_pos_seleccionado > 19) _pos_seleccionado = 0
+		obj_inventario.posSeleccionado = _pos_seleccionado
+		obj_inventario.seleccionado = obj_inventario.indiceInv[_pos_seleccionado];
+	}
 //Hechizos
 }else{
-	var _seleccionado = obj_hechizos.seleccionado
+	var _seleccionado = obj_hechizos.posSeleccionado
 	if (gamepad_button_check_pressed(0, joy_derecha)){
 		_seleccionado+= 1
 	}
@@ -73,19 +73,21 @@ if (_inventario_visible){
 		_seleccionado-= 1
 	}
 	
-	if (gamepad_button_check_pressed(0, joy_arriba) && obj_inventario.posSeleccionado - 5 >= 0){
+	if (gamepad_button_check_pressed(0, joy_arriba) && _seleccionado - 5 >= 0){
 		_seleccionado-= 5
 	}
 
-	if (gamepad_button_check_pressed(0, joy_abajo) && obj_inventario.posSeleccionado + 5 <= 19){
+	if (gamepad_button_check_pressed(0, joy_abajo) && _seleccionado + 5 <= 19){
 		_seleccionado+= 5
 	}
 	
-	if (_seleccionado < 0) _seleccionado = 19
-	if (_seleccionado > 19) _seleccionado = 0
-	indicar_panel_hechizos(_seleccionado < 10)
-	
-	obj_hechizos.seleccionado = _seleccionado
+	if (_seleccionado != obj_hechizos.posSeleccionado){
+		if (_seleccionado < 0) _seleccionado = 19
+		if (_seleccionado > 19) _seleccionado = 0
+		indicar_panel_hechizos(_seleccionado < 10)
+		obj_hechizos.posSeleccionado = _seleccionado
+		obj_hechizos.seleccionado = obj_hechizos.indiceHechizos[_seleccionado]
+	}
 }
 
 //if (keyboard_check_pressed(keyLanzar)){

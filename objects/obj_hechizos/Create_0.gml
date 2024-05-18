@@ -35,6 +35,7 @@ seleccionado = -1;
 
 moviendoHechizo = false;
 posHechizoAMover = 0;
+posSeleccionado = 0;
 
 var i = 0;
 
