@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"vibrarJoystick",
   "parent":{
-    "name":"Dragonic AOff",
-    "path":"Dragonic AOff.yyp",
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

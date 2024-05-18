@@ -9,8 +9,8 @@
   "name":"obj_vibrar_joystick",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dragonic AOff",
-    "path":"Dragonic AOff.yyp",
+    "name":"Controles",
+    "path":"folders/Objects/Controles.yy",
   },
   "parentObjectId":null,
   "persistent":true,

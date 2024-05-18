@@ -154,8 +154,7 @@ if (
         instance_destroy();
     }
     
-    __view_set( e__VW.WView, 0, wViewInicio );
-    __view_set( e__VW.HView, 0, hViewInicio );
+	set_render_resolution(wViewInicio, hViewInicio)
     __view_set( e__VW.Visible, 1, true );
     
     instance_activate_all();

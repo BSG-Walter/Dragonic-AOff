@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"esMapaDescubierto",
+  "%Name":"declaraciones",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"esMapaDescubierto",
+  "name":"declaraciones",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

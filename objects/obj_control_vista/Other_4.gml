@@ -1,8 +1,16 @@
 /// @description  Tamaño pantalla
 
-var relAspecto = 600 / 360;
+var relAspecto = RESOLUTION_WIDTH / RESOLUTION_HEIGHT;
 var ancho = display_get_width();
 var alto = display_get_height();
+
+if (is_ingame_room()){
+	set_render_resolution(get_render_width(), get_render_height())
+}else{
+	set_render_resolution(RESOLUTION_WIDTH, RESOLUTION_HEIGHT)
+}
+
+camera_set_view_border(view_camera[0], get_render_width()/2, get_render_height()/2);
 
 /*
 

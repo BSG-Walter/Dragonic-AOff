@@ -7,7 +7,7 @@ if (lloviendo) {
 	alarm[3] = 1;
 	alarm[2] = floor(60 * 60 * random_range(frecuenciaLluviaMin, frecuenciaLluviaMax))
 } else if (probabilidadLluvia > random(10)) {
-	if (noEstaEnPausa() && esMapaJugable() && esMapaDescubierto()) {
+	if (noEstaEnPausa() && is_ingame_room() && esMapaDescubierto()) {
 		lloviendo = true;
 		crearLluvia(75, 0, 0); 
 		with (obj_pj) {

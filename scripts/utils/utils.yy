@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"esMapaJugable",
+  "%Name":"utils",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"esMapaJugable",
+  "name":"utils",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

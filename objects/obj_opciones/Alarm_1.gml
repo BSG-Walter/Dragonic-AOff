@@ -1,6 +1,6 @@
 /// @description  Si el PJ pesca crea peces cerca
 
-if (noEstaEnPausa() && esMapaJugable()) {
+if (noEstaEnPausa() && is_ingame_room()) {
 
     if (obj_pj.trabajaPesca && opcionPeces && opcionAnimacionAgua && instance_number(obj_pez) < 20) {
         repeat(3) {

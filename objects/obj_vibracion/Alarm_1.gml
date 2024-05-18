@@ -2,16 +2,16 @@
 
 switch (caso) {
     case 0:
-        __view_set( e__VW.XView, 0, get_render_x() - (pixHor) );
-        __view_set( e__VW.WView, 0, get_render_width() - (pixHor) );
-        __view_set( e__VW.YView, 0, get_render_y() - (pixVer) );
-        __view_set( e__VW.HView, 0, get_render_height() - (pixVer) );
+        set_render_x(get_render_x() - (pixHor));
+        set_render_width(get_render_width() - (pixHor));
+        set_render_y(get_render_y() - (pixVer));
+        set_render_height( get_render_height() - (pixVer));
         break;
     case 1:
-        __view_set( e__VW.XView, 0, get_render_x() + (pixHor) );
-        __view_set( e__VW.WView, 0, get_render_width() + (pixHor) );
-        __view_set( e__VW.YView, 0, get_render_y() + (pixVer) );
-        __view_set( e__VW.HView, 0, get_render_height() + (pixVer) );
+        set_render_x(get_render_x() + (pixHor));
+        set_render_width(get_render_width() + (pixHor));
+        set_render_y(get_render_y() + (pixVer));
+        set_render_height(get_render_height() + (pixVer));
         break;      
 }
 

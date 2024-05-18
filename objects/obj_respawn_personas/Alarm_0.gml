@@ -4,7 +4,7 @@ var rand = 2.5;
 
 if (random(10) > rand) {
     
-    if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+    if (is_ingame_room()) {
     
         var repetir = irandom_range(2, 4);
         
@@ -110,7 +110,7 @@ if (obj_control_opciones.simularHorarios) {
     intervaloMin = 8000;
 }
     
-if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+if (is_ingame_room()) {
     intervaloMin = intervaloMin / setearIntervaloCreacionIA(room);
 }
 

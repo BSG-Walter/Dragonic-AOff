@@ -2,9 +2,9 @@
 
 draw_sprite(bck_pausa, 0, get_render_x(), get_render_y());
 
-__view_set( e__VW.Visible, 1, false );
-__view_set( e__VW.WView, 0, 600 );
-__view_set( e__VW.HView, 0, 360 );
+//__view_set( e__VW.Visible, 1, false );
+//set_render_width(get_render_width());
+//set_render_height(get_render_height());
 
 draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
