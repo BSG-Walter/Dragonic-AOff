@@ -3,21 +3,25 @@
 
 function elegirIAObjetivoIA(argument0) {
 	
-	//chequeamos los bots cercanos Y le damos prioridad si estan inmo
+	//chequeamos los bots enemigos cercanos Y le damos prioridad si estan inmo
 	distancia_minima = room_width * room_height;
 	IDIAdistanciaMinima = -1
+	cantIAEnView = 0
 	with (obj_persona) {
-		if (pk != other.pk) continue;
+		if (pk == other.pk) continue;
 		
 		var _nueva_distancia = distance_to_object(other);
 		
-		if (_nueva_distancia <= 250 && (_nueva_distancia < other.distancia_minima) || (inmovilizado && !other.IDIAdistanciaMinima.inmovilizado)) {
-		    other.IDIAdistanciaMinima = id;
-		    other.distanciaMinima = _nueva_distancia;
+		if (_nueva_distancia <= 250){
+			cantIAEnView++;
+			if ((_nueva_distancia < other.distancia_minima) || (inmovilizado && !other.IDIAdistanciaMinima.inmovilizado)) {
+			    other.IDIAdistanciaMinima = id;
+			    other.distanciaMinima = _nueva_distancia;
+			}
 		}
 	}
 	
-	if (IDIAdistanciaMinima == -1) return -1; //si no hay otras ias cerca nos vamos.
+	if (IDIAdistanciaMinima == -1 && (pk != obj_pj.pk || pk)) return -1; //si no hay otras ias cerca y es enemigo de nuestro pj, le decimos que ataque al pj directamente
 	
 	if (!obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {
 
@@ -49,23 +53,13 @@ function elegirIAObjetivoIA(argument0) {
 	    inmovilizados[9] = -1;
 
 	    with (obj_persona) {
-	        if (id != other.id && inmovilizado) {
-	            if (pk && !obj_pj.pk) {
-	                if (!other.pk) {
-	                    other.inmovilizados[other.cantInmovilizados] = id;
-	                    other.cantInmovilizados++;
-	                }
-	            } else if (!pk && obj_pj.pk) {
-	                if (other.pk) {
-	                    other.inmovilizados[other.cantInmovilizados] = id;
-	                    other.cantInmovilizados++;
-	                }
-	            } else if (pk && other.pk) {
-	                // Este caso solo se da cuando quedan solo PKs agitando. El PJ es uno de ellos
-	                other.inmovilizados[other.cantInmovilizados] = id;
-	                other.cantInmovilizados++;
-	            }
-	        }    
+			
+	        if (id == other.id || !inmovilizado) continue;
+			
+			if (other.pk || pk != other.pj){
+				other.inmovilizados[other.cantInmovilizados] = id;
+	            other.cantInmovilizados++;
+			}
 	    }
     
 	    if (cantInmovilizados > 0) {
@@ -76,8 +70,9 @@ function elegirIAObjetivoIA(argument0) {
             
 	            var idRet = -1;
         
+				//prioriza atacar a los que son enemigos
 	            for (var i = 0; i < cantInmovilizados; i++) {
-	                if ((inmovilizados[i].pk && !pk) || (!inmovilizados[i].pk && pk)) {
+	                if (inmovilizados[i].pk != pk) {
 	                    idRet = inmovilizados[i];
 	                    break;
 	                }
@@ -86,7 +81,7 @@ function elegirIAObjetivoIA(argument0) {
 	            if (idRet == -1) {
 	                var IARandInmo = floor(random(cantInmovilizados));
 	                if (IARandInmo >= 0) {
-	                    return inmovilizados[IARandInmo]; // Ataca a otra IA random
+	                    return inmovilizados[IARandInmo]; // Si es pk ataca a otra IA pk random
 	                } else {
 	                    return inmovilizados[0];
 	                }

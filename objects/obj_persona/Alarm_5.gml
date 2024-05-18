@@ -3,7 +3,7 @@
 if (!muerto && !inmovilizado) {
 
     yaEncontroItem = false;
-    var IAObj = elegirIAObjetivoIA(true);
+    IAObj = elegirIAObjetivoIA(true);
     
     if (IAObj != -1 && enemigo && !obj_pj.inmovilizado && (!IAObj.inmovilizado && IAAtacaAPJ()) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) {
         IAObj = -1;

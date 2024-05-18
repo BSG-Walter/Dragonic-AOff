@@ -1,7 +1,7 @@
 /// @description  Control general
 
 detectarBugGrilla();
-
+var idIAAux = IAObj
 // Salud
 
 if (salud <= 0 && !muerto) {
@@ -68,8 +68,6 @@ if (
             if (rand < 0 || rand > 4) {
                 rand = 0;
             }
-            
-            var idIAAux = elegirIAObjetivoIA(false);
             
             if ((enemigo && !obj_pj.muerto) || (idIAAux != -1 && (pk || idIAAux.pk))) {
                 if (obj_pj.invisible && idIAAux == -1 && !obj_mapas_mundo.mapas[room]) {
@@ -314,8 +312,6 @@ if (enemigo && !obj_pj.muerto && !obj_mapas_mundo.mapas[room]) {
         agitando = true;
     }
 } else {
-    
-    var idIAAux = elegirIAObjetivoIA(true);
 
     if (!obj_mapas_mundo.mapas[room] && idIAAux != -1 && !idIAAux.muerto) {
         with (idIAAux) {

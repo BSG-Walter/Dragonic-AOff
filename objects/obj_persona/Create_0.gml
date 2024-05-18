@@ -454,7 +454,8 @@ datosIAAux[0] = -1;
 sigue = true;
 
 // Dibuja
-
+cantIAEnView = 0
+IAObj = elegirIAObjetivoIA(true);
 dibujarIA();
 
 /* */

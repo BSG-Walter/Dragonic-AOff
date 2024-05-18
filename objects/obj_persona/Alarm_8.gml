@@ -78,7 +78,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
     
     if (!inmovilizado || (inmovilizado && obj_pj.nivel < 16)) {
         
-        var idIA = elegirIAObjetivoIA(true);
+        var idIA = IAObj
     
         if (idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
             if (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando)) {
