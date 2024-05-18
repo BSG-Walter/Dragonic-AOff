@@ -1,123 +1,26 @@
 /// @description  elegirIAObjetivoIA(recursivo)
 /// @param recursivo
+
 function elegirIAObjetivoIA(argument0) {
+	
+	//chequeamos los bots cercanos Y le damos prioridad si estan inmo
+	distancia_minima = room_width * room_height;
+	IDIAdistanciaMinima = -1
+	with (obj_persona) {
+		if (pk != other.pk) continue;
+		
+		var _nueva_distancia = distance_to_object(other);
+		
+		if (_nueva_distancia <= 250 && (_nueva_distancia < other.distancia_minima) || (inmovilizado && !other.IDIAdistanciaMinima.inmovilizado)) {
+		    other.IDIAdistanciaMinima = id;
+		    other.distanciaMinima = _nueva_distancia;
+		}
+	}
+	
+	if (IDIAdistanciaMinima == -1) return -1; //si no hay otras ias cerca nos vamos.
+	
+	if (!obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {
 
-	if (!obj_pj.muerto && !hayEnemigosCerca() && ((pk && !obj_pj.pk) || (!pk && obj_pj.pk)) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) { // Si no hay enemigos cerca y el PJ es de status contrario al de la IA
-	    return -1;
-	} else if (!obj_pj.inmovilizado || (hayEnemigosCerca() && (pk && obj_pj.pk)) || !enemigo) {
-
-	    distanciaMinima = room_width * room_height;
-	    IDIAdistanciaMinima = -1;
-    
-	    // Chequea si hay IAs inmovilizadas enemigas
-    
-	    if (pk) {
-	        with (obj_persona) {
-	            if (other.id != id) {
-	                if (!other.pk && distance_to_object(other) <= 250 && inmovilizado) {
-	                    other.IDIAdistanciaMinima = id;
-	                    break;
-	                }
-	            }
-	        }
-	    } else if (!pk) {
-	        with (obj_persona) {
-	            if (other.id != id) {
-	                if (other.pk && distance_to_object(other) <= 250 && inmovilizado) {
-	                    other.IDIAdistanciaMinima = id;
-	                    break;
-	                }
-	            }
-	        }
-	    }
-    
-	    // Si las IAs inmovilizadas son del mismo status...
-    
-	    if (IDIAdistanciaMinima == -1) {
-	        with (obj_persona) {
-	            if (other.id != id) {
-	                if ((pk || other.pk) && distance_to_object(other) <= 250 && inmovilizado) {
-	                    if (!hayEnemigosCerca()) { // No siempre PKs van a atacar a otros PKs
-	                        other.IDIAdistanciaMinima = id;
-	                        break;
-	                    }
-	                }
-	            }
-	        }
-	    }
-    
-	    // Busca IAs enemigas
-    
-	    if (IDIAdistanciaMinima == -1) {
-    
-	        if (pk) {
-        
-	            // Chequea si hay IAs ciudadanas en caso de ser PK (Elije de entre todos los ciudadanos al más cercano)
-        
-	            with (obj_persona) {
-	                if (other.id != id) {
-	                    var nuevaDistancia = distance_to_object(other);
-	                    if (!other.pk && distance_to_object(other) <= 250 && nuevaDistancia < other.distanciaMinima) {
-	                        other.IDIAdistanciaMinima = id;
-	                        other.distanciaMinima = nuevaDistancia;
-	                    }
-	                }
-	            }
-        
-	        } else if (!pk) {
-        
-	            // Chequea si hay IAs PKs en caso de ser ciudadano (Elije de entre todos los PKs al más cercano)
-        
-	            with (obj_persona) {
-	                if (other.id != id) {
-	                    var nuevaDistancia = distance_to_object(other);
-	                    if (other.pk && distance_to_object(other) <= 250 && nuevaDistancia < other.distanciaMinima) {
-	                        other.IDIAdistanciaMinima = id;
-	                        other.distanciaMinima = nuevaDistancia;
-	                    }
-	                }
-	            }
-        
-	        }
-    
-	    }
-    
-	    // Sino busca por cercanía a IAs del mismo status
-    
-	    if (IDIAdistanciaMinima == -1) {
-    
-	        with (obj_persona) {
-	            if (other.id != id) {
-	                var nuevaDistancia = distance_to_object(other);
-	                if ((pk || other.pk) && distance_to_object(other) <= 320 && nuevaDistancia < other.distanciaMinima) {
-	                    if ((pk && other.pk)) { 
-	                        if (!hayEnemigosCerca()) { // No siempre PKs van a atacar a otros PKs
-	                            other.IDIAdistanciaMinima = id;
-	                            other.distanciaMinima = nuevaDistancia;
-	                        }
-	                    } else {
-	                        other.IDIAdistanciaMinima = id;
-	                        other.distanciaMinima = nuevaDistancia;
-	                    }
-	                } else if (argument0 && (!other.pk && !pk) && distance_to_object(other) <= 250) {
-	                    var otraIA = elegirIAObjetivoIA(false);
-	                    if (otraIA != -1) {
-	                        if ((pk && otraIA.pk)) { 
-	                            if (!hayEnemigosCerca()) { // No siempre PKs van a atacar a otros PKs
-	                                other.IDIAdistanciaMinima = otraIA;
-	                                other.distanciaMinima = distance_to_object(otraIA);
-	                            }
-	                        } else {
-	                            other.IDIAdistanciaMinima = otraIA;
-	                            other.distanciaMinima = distance_to_object(otraIA);
-	                        }
-	                    }
-	                }
-	            }
-	        }
-    
-	    }
-    
 	    return IDIAdistanciaMinima;
 
 	} else {
