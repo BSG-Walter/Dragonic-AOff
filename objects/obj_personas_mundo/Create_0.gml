@@ -3,7 +3,7 @@
 
 i = 0;
 aux[0] = -1;
-totalMultiIA = 8; // El totalMultiIA indica que puede haber hasta 5 personas en total por todo el mundo
+totalMultiIA = MAX_BOTS; // El totalMultiIA indica que puede haber hasta 5 personas en total por todo el mundo
 
 // Lista de rooms
 

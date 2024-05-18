@@ -4,26 +4,55 @@
 function elegirIAObjetivoIA(argument0) {
 	
 	//chequeamos los bots enemigos cercanos Y le damos prioridad si estan inmo
-	distancia_minima = room_width * room_height;
+	distanciaMinima = room_width * room_height;
 	IDIAdistanciaMinima = -1
 	cantIAEnView = 0
+	cantInmovilizados = 0;
+	
+	for (var i = 0; i < MAX_BOTS; ++i) {
+	    inmovilizados[i] = -1
+	}
+	
 	with (obj_persona) {
-		if (pk == other.pk) continue;
+		//Buscamos a algun bot enemigo, si los 2 son ciudas pasamos a verificar el siguiente bot
+		if (id == other.id || (!other.pk && !pk)) continue;
+			
+		//var _nueva_distancia = distance_to_object(other);
+		var _nueva_distancia = point_distance(x,y,other.x,other.y)
 		
-		var _nueva_distancia = distance_to_object(other);
-		
-		if (_nueva_distancia <= 250){
-			cantIAEnView++;
-			if ((_nueva_distancia < other.distancia_minima) || (inmovilizado && !other.IDIAdistanciaMinima.inmovilizado)) {
-			    other.IDIAdistanciaMinima = id;
-			    other.distanciaMinima = _nueva_distancia;
+		if (_nueva_distancia <= 300){
+			other.cantIAEnView++;
+			
+			if (inmovilizado){
+				other.inmovilizados[other.cantInmovilizados] = id;
+	            other.cantInmovilizados++;
 			}
+			
+			//si es el primero en chequear lo dejamos por default
+			if (other.IDIAdistanciaMinima == -1){
+				other.IDIAdistanciaMinima = id;
+				other.distanciaMinima = _nueva_distancia;
+				continue;
+			}
+			
+			//priorizamos si son enemigos naturales, los pks haran alianza temporal hasta que se acaben los ciudas, luego se atacan entre si
+			if (other.IDIAdistanciaMinima.pk != other.pk && other.pk == pk) continue;
+			
+			//luego priorizamos si el bot esta inmo sobre la distancia
+			if (!inmovilizado && other.IDIAdistanciaMinima.inmovilizado) continue;
+			
+			//por ultimo, al mas cercano
+			if (_nueva_distancia > other.distanciaMinima) continue;
+			
+			other.IDIAdistanciaMinima = id;
+			other.distanciaMinima = _nueva_distancia;
 		}
+		
 	}
 	
 	if (IDIAdistanciaMinima == -1 && (pk != obj_pj.pk || pk)) return -1; //si no hay otras ias cerca y es enemigo de nuestro pj, le decimos que ataque al pj directamente
 	
-	if (!obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {
+	if (obj_pj.muerto || !obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {
 
 	    return IDIAdistanciaMinima;
 
@@ -38,29 +67,6 @@ function elegirIAObjetivoIA(argument0) {
 	    Ambos son PK
     
 	    */
-    
-	    cantInmovilizados = 0;
-    
-	    inmovilizados[0] = -1;
-	    inmovilizados[1] = -1;
-	    inmovilizados[2] = -1;
-	    inmovilizados[3] = -1;
-	    inmovilizados[4] = -1;
-	    inmovilizados[5] = -1;
-	    inmovilizados[6] = -1;
-	    inmovilizados[7] = -1;
-	    inmovilizados[8] = -1;
-	    inmovilizados[9] = -1;
-
-	    with (obj_persona) {
-			
-	        if (id == other.id || !inmovilizado) continue;
-			
-			if (other.pk || pk != other.pj){
-				other.inmovilizados[other.cantInmovilizados] = id;
-	            other.cantInmovilizados++;
-			}
-	    }
     
 	    if (cantInmovilizados > 0) {
 	        var rand = random(cantInmovilizados);
