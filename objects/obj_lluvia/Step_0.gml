@@ -1,19 +1,20 @@
 /// @description  Control general
 
 // Control posición
-
+var _render_x = obj_pj.x - mitadAnchoV;
+var _render_y = obj_pj.y - mitadAltoV;
 if (visible) {
 	
-	if (x >= get_render_x() + anchoV) {
+	if (x >= _render_x + anchoV) {
 		x -= anchoV;
-	} else if (x <= get_render_x()) {
+	} else if (x <= _render_x) {
 	    x += anchoV;
 	}
 
-	if (y >= get_render_y() + altoV) {
+	if (y >= _render_y + altoV) {
 	    y -= altoV;
-		instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_salpicadura);
-	} else if (y <= get_render_y()) {
+		instance_create(_render_x + random(anchoV), _render_y + random(altoV), obj_salpicadura);
+	} else if (y <= _render_y) {
 	    // y += altoV;
 	}
 

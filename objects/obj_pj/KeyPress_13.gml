@@ -15,3 +15,5 @@ with (idIA) {
 subirNivelMaxGM()
 
 */
+
+obj_opciones.alarm[2] = 1

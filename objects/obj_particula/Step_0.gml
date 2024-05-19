@@ -1,5 +1,8 @@
 /// @description  Control general
 
+var _render_x = obj_pj.x - mitadAnchoV;
+var _render_y = obj_pj.y - mitadAltoV;
+
 image_angle++;
 
 if (subiendo) {
@@ -14,18 +17,15 @@ if (image_alpha >= 0.45 || image_alpha <= 0) {
 
 // Control posición
 
-var anchoV = get_render_width();
-var altoV = get_render_height();
-
-if (x >= get_render_x() + anchoV) {
+if (x >= _render_x + anchoV) {
     x -= anchoV;
-} else if (x <= get_render_x()) {
+} else if (x <= _render_x) {
     x += anchoV;
 }
 
-if (y >= get_render_y() + altoV) {
+if (y >= _render_y + altoV) {
     y -= altoV;
-} else if (y <= get_render_y()) {
+} else if (y <= _render_y) {
     y += altoV;
 }
 
