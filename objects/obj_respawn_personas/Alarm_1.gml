@@ -4,7 +4,7 @@ var rand = 2.5;
 
 if (random(10) > rand) {
     
-    if (is_ingame_room()) {
+    if (is_ingame_room() && !is_special_room()) {
     
         var repetir = irandom_range(1, irandom_range(2, 3));
         
@@ -103,7 +103,7 @@ if (obj_control_opciones.simularHorarios) {
     intervaloMin = 8000;
 }
     
-if (is_ingame_room()) {
+if (is_ingame_room() && !is_special_room()) {
     intervaloMin = intervaloMin / setearIntervaloCreacionIA(room);
 }
 

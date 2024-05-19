@@ -116,7 +116,7 @@ function muertePJ() {
 
 	// Hago que los items se caigan
 
-	if (!obj_pj.navega) {
+	if (!obj_pj.navega && room =! is_special_room()) {
 	    obj_inventario.indiceTirarItems = 0;
 	    obj_inventario.alarm[4] = 1;
 	}

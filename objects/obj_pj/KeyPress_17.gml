@@ -306,7 +306,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         obj_pj.criaturasHijas[i, 2] = idNPC.salud;
                                     }
                                     
-                                    if (object_index == obj_persona) {
+                                    if (object_index == obj_persona && !is_special_room()) {
                                         if (salud <= 0) {
                                             if (pk) {
                                                 other.criminalesMatados++;
@@ -585,7 +585,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         obj_pj.criaturasHijas[i, 2] = idNPC.salud;
                                     }
                                     
-                                    if (object_index == obj_persona) {
+                                    if (object_index == obj_persona && !is_special_room()) {
                                         if (salud <= 0) {
                                             if (pk) {
                                                 other.criminalesMatados++;

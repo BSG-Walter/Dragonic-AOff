@@ -10,7 +10,7 @@ mana = 0;
 agitando = false;
 enemigo = false;
 
-if (!enBarca) {
+if (!enBarca && !is_special_room()) {
     alarm[11] = 1;
 }
 

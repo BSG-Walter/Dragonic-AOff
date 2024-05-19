@@ -597,7 +597,7 @@ device_mouse_check_button(4, mb_left)
 	                                                                obj_pj.criaturasHijas[i, 2] = salud;
 	                                                            }
                                                     
-	                                                            if (object_index == obj_persona) {
+	                                                            if (object_index == obj_persona && !is_special_room()) {
 	                                                                if (salud <= 0) {
 	                                                                    if (pk) {
 	                                                                        other.criminalesMatados++;
@@ -1006,7 +1006,7 @@ device_mouse_check_button(4, mb_left)
                                                                         }
                                                                     }
                                                                 }
-                                                                if (idNPC.salud <= 0) {
+                                                                if (idNPC.salud <= 0  && !is_special_room()) {
                                                                     if (idNPC.pk) {
                                                                         criminalesMatados++;
                                                                     } else {

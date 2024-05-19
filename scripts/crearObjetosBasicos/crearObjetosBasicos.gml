@@ -103,6 +103,7 @@ function crearObjetosBasicos(argument0) {
 	    var idSkillD18 = instance_create(0, 0, obj_boton_panel_skills_der);
 	    idSkillD18.indice = 17;
        
+	   	instance_create(0, 0, obj_agregar_bot);
 	    instance_create(0, 0, obj_banco);
 	    instance_create(0, 0, obj_personas_mundo);
 	    instance_create(0, 0, obj_items_mundo);
@@ -483,7 +484,8 @@ function crearObjetosBasicos(argument0) {
 	    instance_create(0, 0, obj_banco);
     
 	    cargarBanco();
-    
+		
+		instance_create(0, 0, obj_agregar_bot);
 	    instance_create(0, 0, obj_personas_mundo);
 	    instance_create(0, 0, obj_items_mundo);
 	    instance_create(0, 0, obj_flecha_der_manual);

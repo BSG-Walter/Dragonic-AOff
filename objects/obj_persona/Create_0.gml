@@ -237,6 +237,10 @@ if (random(10) > 8.5) {
 
 nombre = elegirNombreIA();
 
+//forzamos si es pk o no segun el boton apretado en la arena
+if (room == rm_arena) pk = obj_agregar_bot.spawnear_pk;
+
+
 // Gráfico
 
 index[0, 0] = 0;

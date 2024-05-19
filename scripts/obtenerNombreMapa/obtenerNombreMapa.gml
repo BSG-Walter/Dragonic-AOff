@@ -5,7 +5,9 @@
 function obtenerNombreMapa(argument0, argument1, argument2) {
 
 	var nombreMapaAux = "";
-
+	
+	if (argument0 = rm_arena) return "Arena";
+	
 	if (
 	argument0 == rm_4 || argument0 == rm_5 || argument0 == rm_6 || argument0 == rm_7 || 
 	argument0 == rm_8 || argument0 == rm_9 || argument0 == rm_10 || argument0 == rm_12 || 

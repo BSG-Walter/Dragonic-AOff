@@ -34,7 +34,7 @@ function refrescarCabezas() {
 			cabezas[6] = spr_cabeza_7;
 			cabezas[7] = spr_cabeza_8;
 			cabezas[8] = spr_cabeza_9;
-			cabezas[9] = spr_cabeza_10;
+			cabezas[9] = spr_agregar_bot;
 			cabezas[10] = spr_cabeza_11;
 			cabezas[11] = spr_cabeza_12;
 			cabezas[12] = spr_cabeza_13;

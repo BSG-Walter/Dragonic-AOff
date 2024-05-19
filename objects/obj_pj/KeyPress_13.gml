@@ -15,9 +15,3 @@ with (idIA) {
 subirNivelMaxGM()
 
 */
-
-var idIA = instance_create(x, y + 32, obj_persona);
-
-with (idIA) {
-    guardarDatosIAEnGlobalIA();
-}

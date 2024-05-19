@@ -94,7 +94,7 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                     reproducirSonido(snd_tormentaDeFuego, false, false);
                     personaRoom.salud -= danoTotal;
                     
-                    if (personaRoom.salud <= 0) {
+                    if (personaRoom.salud <= 0 && !is_special_room()) {
                         if (personaRoom.pk) {
                             obj_pj.criminalesMatados++;
                         } else {

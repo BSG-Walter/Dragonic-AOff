@@ -408,6 +408,8 @@ if (!teletransporta) {
     reproducirSonido(snd_logueo, false, false);
 }
 
+detectarBugGrilla()
+
 teletransporta = false;
 
 

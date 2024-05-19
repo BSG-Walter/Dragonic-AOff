@@ -391,7 +391,7 @@ if (!domado && target != -1 && personaRoom != -1 && instance_exists(personaRoom)
         
         if (domado) {
             
-            if (personaRoom.salud <= 0) {
+            if (personaRoom.salud <= 0  && !is_special_room()) {
                 if (personaRoom.pk) {
                     obj_pj.criminalesMatados++;
                 } else {

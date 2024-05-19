@@ -1,5 +1,4 @@
 /// @description  Baja el tiempo de inmovilidad / parálisis de todos los NPCs
-
 var datosNPCInmo;
 
 for (var j = primerRoomDeMapa; j <= totalRooms; j++) { // Room

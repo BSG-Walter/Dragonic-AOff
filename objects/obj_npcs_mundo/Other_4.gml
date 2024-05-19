@@ -1,5 +1,4 @@
 /// @description  Creo los NPCs
-
 crearNPCsRoom(room);
 
 /*
