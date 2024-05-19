@@ -67,7 +67,7 @@ function crearArchivoNombresIA() {
 	        nombresIA[8, 3] = false; // PK?
     
 	        nombresIA[9, 0] = "Carthrion Ascoy";
-	        nombresIA[9, 1] = spr_agregar_bot;
+	        nombresIA[9, 1] = spr_cabeza_10;
 	        nombresIA[9, 2] = 0; // Clase
 	        nombresIA[9, 3] = false; // PK?
     
@@ -220,7 +220,7 @@ function crearArchivoNombresIA() {
 	        nombresIA[37, 3] = true; // PK?
     
 	        nombresIA[38, 0] = "Lungt Nimon";
-	        nombresIA[38, 1] = spr_agregar_bot;
+	        nombresIA[38, 1] = spr_cabeza_10;
 	        nombresIA[38, 2] = 1; // Clase
 	        nombresIA[38, 3] = true; // PK?
     

@@ -44,7 +44,7 @@ function elegirCabezaRandom(argument0, argument1) {
 	                spriteCabeza = spr_cabeza_9;
 	                break;
 	            case 10:
-	                spriteCabeza = spr_agregar_bot;
+	                spriteCabeza = spr_cabeza_10;
 	                break;
 	            case 11:
 	                spriteCabeza = spr_cabeza_11;

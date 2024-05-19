@@ -408,7 +408,7 @@ if (!teletransporta) {
     reproducirSonido(snd_logueo, false, false);
 }
 
-detectarBugGrilla()
+alinearPJ()
 
 teletransporta = false;
 
