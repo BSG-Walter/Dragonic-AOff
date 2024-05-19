@@ -27,7 +27,7 @@ if (salud <= 0) {
 	
     if (oro > 0) {    
 	    var idOro = instance_create(xOro, yOro, obj_oro);
-	    idOro.valor = oro; 
+	    idOro.valor = oro * obj_opciones.multiOro;
 	}
 	
     if (dropeaItem) {

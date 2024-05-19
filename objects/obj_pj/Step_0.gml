@@ -573,6 +573,9 @@ device_mouse_check_button(4, mb_left)
 	                                                            if (idNPC.object_index != obj_persona && (idNPC.domado || idNPC.invocado)) {
 	                                                                expOtorgada = 0;
 	                                                            }
+
+                                                                //multiplicador de experiencia
+                                                                expOtorgada = expOtorgada * obj_opciones.multiExp
                                                     
 	                                                            idDano.padre = idNPC;
 	                                                            idDano.dano = dano;
@@ -607,7 +610,7 @@ device_mouse_check_button(4, mb_left)
 	                                                                    }
 	                                                                }
 	                                                            }
-                                                            
+
 	                                                            if (obj_pj.nivel < obj_pj.nivelMax) {
 	                                                                if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - expOtorgada) {
 	                                                                    obj_pj.experiencia += expOtorgada;
@@ -979,6 +982,9 @@ device_mouse_check_button(4, mb_left)
                                                             if (idNPC.object_index != obj_persona && (idNPC.domado || idNPC.invocado)) {
                                                                 expOtorgada = 0;
                                                             }
+
+                                                            //multiplicador de experiencia
+                                                            expOtorgada = expOtorgada * obj_opciones.multiExp
                                                 
                                                             idDano.padre = idNPC;
                                                             idDano.dano = dano;
@@ -1015,7 +1021,7 @@ device_mouse_check_button(4, mb_left)
                                                                     }
                                                                 }
                                                             }
-                                                            
+
                                                             if (obj_pj.nivel < obj_pj.nivelMax) {
                                                                 if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - expOtorgada) {
                                                                     obj_pj.experiencia += expOtorgada;

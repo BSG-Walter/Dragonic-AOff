@@ -366,6 +366,8 @@
     {"id":{"name":"obj_mover_inventario","path":"objects/obj_mover_inventario/obj_mover_inventario.yy",},},
     {"id":{"name":"obj_msg","path":"objects/obj_msg/obj_msg.yy",},},
     {"id":{"name":"obj_msj_basic","path":"objects/obj_msj_basic/obj_msj_basic.yy",},},
+    {"id":{"name":"obj_multiplicador_exp","path":"objects/obj_multiplicador_exp/obj_multiplicador_exp.yy",},},
+    {"id":{"name":"obj_multiplicador_oro","path":"objects/obj_multiplicador_oro/obj_multiplicador_oro.yy",},},
     {"id":{"name":"obj_nombrePJ","path":"objects/obj_nombrePJ/obj_nombrePJ.yy",},},
     {"id":{"name":"obj_npc_aguila","path":"objects/obj_npc_aguila/obj_npc_aguila.yy",},},
     {"id":{"name":"obj_npc_arania","path":"objects/obj_npc_arania/obj_npc_arania.yy",},},

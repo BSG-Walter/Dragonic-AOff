@@ -50,6 +50,9 @@ if (targetNPC != -1) {
             targetNPC.experiencia -= expOtorgada;
         }
 
+        //multiplicador de experiencia
+        expOtorgada = expOtorgada * obj_opciones.multiExp
+
         if (obj_pj.nivel < obj_pj.nivelMax) {
             if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - expOtorgada) {
                 obj_pj.experiencia += expOtorgada;

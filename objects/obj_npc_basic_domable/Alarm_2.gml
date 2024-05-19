@@ -232,6 +232,9 @@ if (!domado) {
                 targetNPC.experiencia -= expOtorgada;
             }
 
+            //multiplicador de experiencia
+            expOtorgada = expOtorgada * obj_opciones.multiExp
+
             if (obj_pj.nivel < obj_pj.nivelMax) {
                 if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - expOtorgada) {
                     obj_pj.experiencia += expOtorgada;
@@ -399,7 +402,6 @@ if (!domado && target != -1 && personaRoom != -1 && instance_exists(personaRoom)
                     obj_pj.ciudadanosMatados++;
                 }
             }
-            
             if (obj_pj.nivel < obj_pj.nivelMax) {
                 if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - personaRoom.experiencia) {
                     obj_pj.experiencia += personaRoom.experiencia;

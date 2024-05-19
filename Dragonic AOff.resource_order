@@ -297,6 +297,8 @@
     {"name":"obj_misil_magico","order":6,"path":"objects/obj_misil_magico/obj_misil_magico.yy",},
     {"name":"obj_mover_inventario","order":4,"path":"objects/obj_mover_inventario/obj_mover_inventario.yy",},
     {"name":"obj_msg","order":20,"path":"objects/obj_msg/obj_msg.yy",},
+    {"name":"obj_multiplicador_exp","order":35,"path":"objects/obj_multiplicador_exp/obj_multiplicador_exp.yy",},
+    {"name":"obj_multiplicador_oro","order":36,"path":"objects/obj_multiplicador_oro/obj_multiplicador_oro.yy",},
     {"name":"obj_nombrePJ","order":4,"path":"objects/obj_nombrePJ/obj_nombrePJ.yy",},
     {"name":"obj_npc_aguila","order":3,"path":"objects/obj_npc_aguila/obj_npc_aguila.yy",},
     {"name":"obj_npc_arania","order":1,"path":"objects/obj_npc_arania/obj_npc_arania.yy",},

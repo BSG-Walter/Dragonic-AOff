@@ -284,7 +284,10 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     if (idNPC.object_index != obj_persona && (idNPC.domado || idNPC.invocado)) {
                                         expOtorgada = 0;
                                     }
-                                    
+
+                                    //multiplicador de experiencia
+                                    expOtorgada = expOtorgada * obj_opciones.multiExp
+
                                     idDano.padre = idNPC;
                                     idDano.dano = dano;
                                     idNPC.salud -= dano;
@@ -316,7 +319,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                             }
                                         }
                                     }
-                                    
+
                                     if (obj_pj.nivel < obj_pj.nivelMax) {
                                         if (obj_pj.experiencia < obj_pj.expLvl[obj_pj.nivel] - expOtorgada) {
                                             obj_pj.experiencia += expOtorgada;
@@ -563,6 +566,9 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     if (idNPC.object_index != obj_persona && (idNPC.domado || idNPC.invocado)) {
                                         expOtorgada = 0;
                                     }
+
+                                    //multiplicador de experiencia
+                                    expOtorgada = expOtorgada * obj_opciones.multiExp
                                     
                                     idDano.padre = idNPC;
                                     idDano.dano = dano;
