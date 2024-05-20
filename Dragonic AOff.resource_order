@@ -467,7 +467,6 @@
     {"name":"obj_tp","order":22,"path":"objects/obj_tp/obj_tp.yy",},
     {"name":"obj_valla_hor","order":6,"path":"objects/obj_valla_hor/obj_valla_hor.yy",},
     {"name":"obj_valla_ver","order":7,"path":"objects/obj_valla_ver/obj_valla_ver.yy",},
-    {"name":"obj_vibracion","order":7,"path":"objects/obj_vibracion/obj_vibracion.yy",},
     {"name":"obj_vibrar_joystick","order":17,"path":"objects/obj_vibrar_joystick/obj_vibrar_joystick.yy",},
     {"name":"obj_volverAMenu","order":7,"path":"objects/obj_volverAMenu/obj_volverAMenu.yy",},
     {"name":"rm_10","order":7,"path":"rooms/rm_10/rm_10.yy",},

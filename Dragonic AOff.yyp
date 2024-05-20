@@ -556,7 +556,6 @@
     {"id":{"name":"obj_valla_hor","path":"objects/obj_valla_hor/obj_valla_hor.yy",},},
     {"id":{"name":"obj_valla_ver","path":"objects/obj_valla_ver/obj_valla_ver.yy",},},
     {"id":{"name":"obj_vela","path":"objects/obj_vela/obj_vela.yy",},},
-    {"id":{"name":"obj_vibracion","path":"objects/obj_vibracion/obj_vibracion.yy",},},
     {"id":{"name":"obj_vibrar_joystick","path":"objects/obj_vibrar_joystick/obj_vibrar_joystick.yy",},},
     {"id":{"name":"obj_volverAMenu","path":"objects/obj_volverAMenu/obj_volverAMenu.yy",},},
     {"id":{"name":"path_peces","path":"paths/path_peces/path_peces.yy",},},

@@ -2,7 +2,7 @@
 function vibrarPantalla() {
     
 	if (obj_opciones.opcionVibracion) {    
-	    instance_create(0, 0, obj_vibracion);
+		with(obj_control_vista) event_user(0)
 	}
 
 }
