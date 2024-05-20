@@ -5,8 +5,8 @@ var _offset_y = 0
 if (instance_exists(obj_pj)) {
 
 	if (vibrando){
-		_offset_x = floor(random_range(-5, 5))
-		_offset_y = floor(random_range(-5, 5))
+		_offset_x = floor(random_range(-3, 3))
+		_offset_y = floor(random_range(-3, 3))
 	}
     global.render_x = obj_pj.x - (get_render_width() / 2) + _offset_x;
     global.render_y = obj_pj.y - (get_render_height() / 2) + _offset_y;
