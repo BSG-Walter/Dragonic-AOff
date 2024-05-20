@@ -806,6 +806,7 @@
     {"id":{"name":"enviarNotificacionTorneo","path":"scripts/enviarNotificacionTorneo/enviarNotificacionTorneo.yy",},},
     {"id":{"name":"esPolo","path":"scripts/esPolo/esPolo.yy",},},
     {"id":{"name":"estaAbrigado","path":"scripts/estaAbrigado/estaAbrigado.yy",},},
+    {"id":{"name":"estaTocando","path":"scripts/estaTocando/estaTocando.yy",},},
     {"id":{"name":"exportarImportarPjs","path":"scripts/exportarImportarPjs/exportarImportarPjs.yy",},},
     {"id":{"name":"fechaDeTerminacionHerrero","path":"scripts/fechaDeTerminacionHerrero/fechaDeTerminacionHerrero.yy",},},
     {"id":{"name":"guardarBanco","path":"scripts/guardarBanco/guardarBanco.yy",},},

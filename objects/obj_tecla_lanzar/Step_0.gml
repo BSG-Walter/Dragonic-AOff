@@ -1,10 +1,10 @@
 /// @description  Control mouse
-event_inherited()
 if (!obj_inventario.visible) {
 
     var device = -1;
-
-if (
+    if (!esta_tocando(self)){
+        image_index = 0;
+    } else if (
     device_mouse_check_button(0, mb_left) ||
     device_mouse_check_button(1, mb_left) ||
     device_mouse_check_button(2, mb_left) ||

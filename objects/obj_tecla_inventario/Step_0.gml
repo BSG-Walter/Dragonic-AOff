@@ -1,7 +1,7 @@
 /// @description  Control mouse
 event_inherited()
 var device = -1;
-
+if (!esta_tocando(self)) exit;
 if (
 device_mouse_check_button(0, mb_left) ||
 device_mouse_check_button(1, mb_left) ||

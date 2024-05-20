@@ -701,6 +701,7 @@
     {"name":"enviarNotificacionTorneo","order":81,"path":"scripts/enviarNotificacionTorneo/enviarNotificacionTorneo.yy",},
     {"name":"esPolo","order":93,"path":"scripts/esPolo/esPolo.yy",},
     {"name":"estaAbrigado","order":94,"path":"scripts/estaAbrigado/estaAbrigado.yy",},
+    {"name":"estaTocando","order":133,"path":"scripts/estaTocando/estaTocando.yy",},
     {"name":"exportarImportarPjs","order":131,"path":"scripts/exportarImportarPjs/exportarImportarPjs.yy",},
     {"name":"fechaDeTerminacionHerrero","order":108,"path":"scripts/fechaDeTerminacionHerrero/fechaDeTerminacionHerrero.yy",},
     {"name":"guardarBanco","order":40,"path":"scripts/guardarBanco/guardarBanco.yy",},
