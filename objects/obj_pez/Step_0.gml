@@ -15,15 +15,15 @@ image_angle = direction;
 var anchoV = get_render_width();
 var altoV = get_render_height();
 
-if (x >= get_render_x() + anchoV) {
+if (x >= global.render_x + anchoV) {
     x -= anchoV;
-} else if (x <= get_render_x()) {
+} else if (x <= global.render_x) {
     x += anchoV;
 }
 
-if (y >= get_render_y() + altoV) {
+if (y >= global.render_y + altoV) {
     y -= altoV;
-} else if (y <= get_render_y()) {
+} else if (y <= global.render_y) {
     y += altoV;
 }
 

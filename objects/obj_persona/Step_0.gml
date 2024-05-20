@@ -23,8 +23,8 @@ if (obj_pj.pk) {
 }
 
 if (
-(x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-(y >= get_render_y() && (y <= get_render_y() + get_render_height()))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y && (y <= global.render_y + get_render_height()))
 ) {
 
     // Tiempo dentro de la view
@@ -378,8 +378,8 @@ if (condicionBValida) {
 // Tiempo lejos del PJ
 
 if (
-(x < get_render_x() || (x > get_render_x() + get_render_width())) &&
-(y < get_render_y() || (y > get_render_y() + get_render_height()))
+(x < global.render_x || (x > global.render_x + get_render_width())) &&
+(y < global.render_y || (y > global.render_y + get_render_height()))
 ) {
     tiempoLejosPJ++;
     if (!enemigo) {
@@ -954,8 +954,8 @@ if (pasos > 0) {
 // Depth
 
 if (
-(x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-(y >= get_render_y() - get_render_width() / 2 && (y <= get_render_y() + get_render_width() / 2))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() / 2 && (y <= global.render_y + get_render_width() / 2))
 ) {
 
     if (y < obj_pj.y) {

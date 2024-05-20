@@ -16,7 +16,7 @@ device_mouse_check_button(4, mb_left)
         if (device_mouse_check_button(deviceDC, mb_left)) {
             
             if (posSeleccionado != -1) {
-                instance_create(get_render_x() + get_render_width() * 0.5, get_render_y() + get_render_height() * 0.5, obj_numpad);
+                instance_create(global.render_x + get_render_width() * 0.5, global.render_y + get_render_height() * 0.5, obj_numpad);
                 
                 obj_tecla_T.teclaApretada = false;
                 timerAcelerador = 1;

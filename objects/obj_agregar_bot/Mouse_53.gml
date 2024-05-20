@@ -1,7 +1,7 @@
 /// @description  Control general / Control mouse
 
-x = get_render_x() + get_render_width() - 2;
-y = get_render_y() + 50;
+x = global.render_x + get_render_width() - 2;
+y = global.render_y + 50;
 
 pk_x_center = x - 12
 pk_y_center = y + 12

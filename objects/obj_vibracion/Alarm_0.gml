@@ -8,15 +8,15 @@ if (caso == 0) {
 
 switch (caso) {
     case 0:
-        set_render_x(get_render_x() + (pixHor));
+        set_render_x(global.render_x + (pixHor));
         set_render_width(get_render_width() + (pixHor));
-        set_render_y(get_render_y() + (pixVer));
+        set_render_y(global.render_y + (pixVer));
         set_render_height(get_render_height() + (pixVer));
         break;
     case 1:
-        set_render_x(get_render_x() - (pixHor));
+        set_render_x(global.render_x - (pixHor));
         set_render_width(get_render_width() - (pixHor));
-        set_render_y(get_render_y() - (pixVer));
+        set_render_y(global.render_y - (pixVer));
         set_render_height(get_render_height() - (pixVer));
         break;      
 }

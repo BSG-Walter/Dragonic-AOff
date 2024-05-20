@@ -65,8 +65,8 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
     }
     
     if (
-    (x < get_render_x() && (x > get_render_x() + get_render_width())) &&
-    (y < get_render_y() && (y > get_render_y() + get_render_height()))
+    (x < global.render_x && (x > global.render_x + get_render_width())) &&
+    (y < global.render_y && (y > global.render_y + get_render_height()))
     ) {
        atacaNPC = true; 
     }      
@@ -415,8 +415,8 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             var valido = false;
         
             if (
-            (x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-            (y >= get_render_y() && (y <= get_render_y() + get_render_height()))
+            (x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+            (y >= global.render_y && (y <= global.render_y + get_render_height()))
             ) {
                valido = true; 
             }

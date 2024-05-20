@@ -467,6 +467,7 @@
     {"id":{"name":"obj_pared_ver_media_1_Greage","path":"objects/obj_pared_ver_media_1_Greage/obj_pared_ver_media_1_Greage.yy",},},
     {"id":{"name":"obj_pared_ver_media_2_Greage","path":"objects/obj_pared_ver_media_2_Greage/obj_pared_ver_media_2_Greage.yy",},},
     {"id":{"name":"obj_pared_ver","path":"objects/obj_pared_ver/obj_pared_ver.yy",},},
+    {"id":{"name":"obj_parent_botones","path":"objects/obj_parent_botones/obj_parent_botones.yy",},},
     {"id":{"name":"obj_particula","path":"objects/obj_particula/obj_particula.yy",},},
     {"id":{"name":"obj_pausa","path":"objects/obj_pausa/obj_pausa.yy",},},
     {"id":{"name":"obj_persona","path":"objects/obj_persona/obj_persona.yy",},},

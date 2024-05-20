@@ -1,7 +1,7 @@
 /// @description  Control general / control mouse
 
-x = get_render_x() + get_render_width() - 26;
-y = get_render_y() + 36;
+x = global.render_x + get_render_width() - 26;
+y = global.render_y + 36;
 
 if (visible) {
 
@@ -66,7 +66,7 @@ if (visible) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_pez);
+                                instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_pez);
                             }
                         }
                     }
@@ -96,7 +96,7 @@ if (visible) {
                             instance_destroy();
                         }
                         repeat(25) {
-                            instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_particula);
+                            instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_particula);
                         }
                         if (obj_opciones.lloviendo) { 
 							crearLluvia(75, 0, 0);
@@ -135,7 +135,7 @@ if (visible) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(get_render_x() + random(get_render_width()), get_render_y() + random(get_render_height()), obj_pez);
+                                instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_pez);
                             }
                         }
                     }

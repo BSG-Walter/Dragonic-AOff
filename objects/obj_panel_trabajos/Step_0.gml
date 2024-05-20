@@ -9,8 +9,8 @@ if (mostrado) {
         }
     }
 
-    x = get_render_x() + get_render_width() * 0.5;
-    y = get_render_y() + get_render_height() * 0.5;   
+    x = global.render_x + get_render_width() * 0.5;
+    y = global.render_y + get_render_height() * 0.5;   
      
 } else {
     idPadre = -1;
@@ -46,8 +46,8 @@ device_mouse_check_button(4, mb_left)
             
                 obj_hechizos.moviendoHechizo = false;
                 
-                var posX = get_render_x() + get_render_width() * 0.5 - 144;
-                var posY = get_render_y() + get_render_height() * 0.5 - 113;
+                var posX = global.render_x + get_render_width() * 0.5 - 144;
+                var posY = global.render_y + get_render_height() * 0.5 - 113;
                 
                 if (
                 (device_mouse_x(device) >= posX + 8 && device_mouse_x(device) <= posX + 279) &&

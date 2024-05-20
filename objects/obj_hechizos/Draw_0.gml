@@ -4,7 +4,7 @@ if (visible) {
     
     draw_set_color(c_black);
     draw_set_alpha(0.5);
-    draw_sprite(spr_fondo_hechizos, 0, get_inventario_x() + 121, get_inventario_y() + 8);
+    draw_sprite(spr_fondo_hechizos, 0, global.inventario_x + 121, global.inventario_y + 8);
     draw_set_alpha(1);
     
     draw_set_font(fnt_Vedrana_7_bold);
@@ -24,7 +24,7 @@ if (visible) {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		
-		draw_text_ext(get_inventario_x() + _x_offset, get_inventario_y() + _y_offset, string_hash_to_newline(nombreHechizos[_hechizo_index]), 9, 64);
+		draw_text_ext(global.inventario_x + _x_offset, global.inventario_y + _y_offset, string_hash_to_newline(nombreHechizos[_hechizo_index]), 9, 64);
 		                    
         draw_set_valign(fa_top);
         draw_set_halign(fa_left);
@@ -32,15 +32,15 @@ if (visible) {
         if (!moviendoHechizo) {
                     
             if (obj_pj.skills[0] < skillHechizos[_hechizo_index]) {
-                    draw_sprite(spr_hechizo_invalido, 0, get_inventario_x() + _x_offset, get_inventario_y() + _y_offset);
+                    draw_sprite(spr_hechizo_invalido, 0, global.inventario_x + _x_offset, global.inventario_y + _y_offset);
             }
 			
 			if (posSeleccionado == _hechizo_index){
-				draw_sprite(spr_borde_hechizos, 0, get_inventario_x() + _x_offset, get_inventario_y() + _y_offset);
+				draw_sprite(spr_borde_hechizos, 0, global.inventario_x + _x_offset, global.inventario_y + _y_offset);
 			}
                     
         } else if (posHechizoAMover == _hechizo_index) {
-            draw_sprite(spr_moviendo_hechizo, 0, get_inventario_x() + _x_offset, get_inventario_y() + _y_offset);
+            draw_sprite(spr_moviendo_hechizo, 0, global.inventario_x + _x_offset, global.inventario_y + _y_offset);
         }
 	}
     

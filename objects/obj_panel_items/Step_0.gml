@@ -4,8 +4,8 @@ if (!modoBanco) {
     if (idPadre != -1) {
         if (instance_exists(idPadre)) {
             if (
-            (idPadre.x < get_render_x() || idPadre.x > get_render_x() + get_render_width()) ||
-            (idPadre.y < get_render_y() || idPadre.y > get_render_y() + get_render_height())
+            (idPadre.x < global.render_x || idPadre.x > global.render_x + get_render_width()) ||
+            (idPadre.y < global.render_y || idPadre.y > global.render_y + get_render_height())
             ) {
                mostrado = false; 
             }
@@ -17,8 +17,8 @@ if (!modoBanco) {
     if (idBanquero != -1) {
         if (instance_exists(idBanquero)) {
             if (
-            (idBanquero.x < get_render_x() || idBanquero.x > get_render_x() + get_render_width()) ||
-            (idBanquero.y < get_render_y() || idBanquero.y > get_render_y() + get_render_height())
+            (idBanquero.x < global.render_x || idBanquero.x > global.render_x + get_render_width()) ||
+            (idBanquero.y < global.render_y || idBanquero.y > global.render_y + get_render_height())
             ) {
                mostrado = false; 
             }
@@ -30,8 +30,8 @@ if (!modoBanco) {
 
 
 if (mostrado) {
-    x = get_render_x() + get_render_width() * 0.5;
-    y = get_render_y() + get_render_height() * 0.5;    
+    x = global.render_x + get_render_width() * 0.5;
+    y = global.render_y + get_render_height() * 0.5;    
 } else {
     idPadre = -1;
     idBanquero = -1;
@@ -76,8 +76,8 @@ device_mouse_check_button(4, mb_left)
             
                 obj_hechizos.moviendoHechizo = false;
                 
-                var posX = get_render_x() + get_render_width() * 0.5 - 144;
-                var posY = get_render_y() + get_render_height() * 0.5 - 113;
+                var posX = global.render_x + get_render_width() * 0.5 - 144;
+                var posY = global.render_y + get_render_height() * 0.5 - 113;
                 
                 if (
                 (device_mouse_x(device) >= posX + 150 && device_mouse_x(device) <= posX + 279) &&
@@ -876,8 +876,8 @@ device_mouse_check_button(4, mb_left)
             
                 obj_hechizos.moviendoHechizo = false;
                 
-                var posX = get_render_x() + get_render_width() * 0.5 - 144;
-                var posY = get_render_y() + get_render_height() * 0.5 - 113;
+                var posX = global.render_x + get_render_width() * 0.5 - 144;
+                var posY = global.render_y + get_render_height() * 0.5 - 113;
                 
                 if (
                 (device_mouse_x(device) >= posX + 150 && device_mouse_x(device) <= posX + 279) &&

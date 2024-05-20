@@ -10,8 +10,8 @@ if (!domado && personaRoom != -1 && instance_exists(personaRoom) && !personaRoom
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < get_render_x() || (x > get_render_x() + get_render_width())) ||
-    (y < get_render_y() || (y > get_render_y() + get_render_height()))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         if (distance_to_object(personaRoom) <= 250) {
             target = personaRoom;
@@ -27,8 +27,8 @@ if (!domado && target == obj_pj) {
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < get_render_x() || (x > get_render_x() + get_render_width())) ||
-    (y < get_render_y() || (y > get_render_y() + get_render_height()))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         target = -1;
     }
@@ -194,8 +194,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-(y >= get_render_y() - get_render_width() * 0.5 && (y <= get_render_y() + get_render_width() * 0.5))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() * 0.5 && (y <= global.render_y + get_render_width() * 0.5))
 ) {
 
     if (y < obj_pj.y) {

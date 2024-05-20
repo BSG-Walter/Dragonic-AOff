@@ -189,8 +189,8 @@ if (target == -1 || target == obj_pj) {
     
         if (
         !obj_pj.muerto &&
-        (x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-        (y >= get_render_y() && (y <= get_render_y() + get_render_height()))
+        (x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+        (y >= global.render_y && (y <= global.render_y + get_render_height()))
         ) {
     
             if (!paralizado) {
@@ -302,8 +302,8 @@ if (target != -1 && target != obj_pj && personaRoom != -1 && instance_exists(per
 
     if (
     !personaRoom.muerto &&
-    (personaRoom.x >= get_render_x() && (personaRoom.x <= get_render_x() + get_render_width())) &&
-    (personaRoom.y >= get_render_y() && (personaRoom.y <= get_render_y() + get_render_height()))
+    (personaRoom.x >= global.render_x && (personaRoom.x <= global.render_x + get_render_width())) &&
+    (personaRoom.y >= global.render_y && (personaRoom.y <= global.render_y + get_render_height()))
     ) {
     
         // Si la IA está viva y está dentro de la view (Para que no muera constantemente OOV y queden los ítems tirados)

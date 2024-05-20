@@ -9,8 +9,8 @@
   "name":"obj_tp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Dragonic AOff",
-    "path":"Dragonic AOff.yyp",
+    "name":"Mundo",
+    "path":"folders/Objects/Mundo.yy",
   },
   "parentObjectId":{
     "name":"obj_telep",

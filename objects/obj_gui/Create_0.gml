@@ -17,3 +17,4 @@ colorSed = make_color_rgb(69, 69, 201);
 
 nombreMapa = "";
 
+depth = -16000000

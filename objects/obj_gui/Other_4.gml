@@ -6,3 +6,5 @@ if (is_ingame_room()) {
     nombreMapa = obtenerNombreMapa(room, -1, -1);
 }
 
+render_width = get_render_width()
+render_height = get_render_height()

@@ -2,8 +2,8 @@
 
 if (obj_skills_libres.mostrado) {
 
-    var hor = (get_render_x() + get_render_width() * 0.5) - 64 + 121;
-    var ver = (get_render_y() + get_render_height() * 0.5) - 107;
+    var hor = (global.render_x + get_render_width() * 0.5) - 64 + 121;
+    var ver = (global.render_y + get_render_height() * 0.5) - 107;
     
     x = hor;
     

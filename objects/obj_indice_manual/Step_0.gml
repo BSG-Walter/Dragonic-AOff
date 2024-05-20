@@ -2,8 +2,8 @@
 
 if (obj_ayuda.mostrado) {
 
-    x = get_render_x() + get_render_width() * 0.5 - 192;
-    y = get_render_y() + get_render_height() * 0.5 + 108;
+    x = global.render_x + get_render_width() * 0.5 - 192;
+    y = global.render_y + get_render_height() * 0.5 + 108;
     visible = true;
     
     var device = -1;

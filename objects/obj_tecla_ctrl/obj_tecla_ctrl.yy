@@ -13,7 +13,10 @@
     "name":"Interfaz",
     "path":"folders/Objects/Interfaz.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parent_botones",
+    "path":"objects/obj_parent_botones/obj_parent_botones.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

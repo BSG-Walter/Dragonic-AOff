@@ -1,7 +1,7 @@
 /// @description  Posición / Control mouse
 
-x = get_render_x() + get_render_width() * 0.5;
-y = get_render_y();
+x = global.render_x + get_render_width() * 0.5;
+y = global.render_y;
 
 var device = -1;
 

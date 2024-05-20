@@ -5,8 +5,8 @@ if (clicMantenido) {
     
         var device = deviceMantenido;
     
-        var posX = get_render_x() + get_render_width() * 0.5 - 144;
-        var posY = get_render_y() + get_render_height() * 0.5 - 113;
+        var posX = global.render_x + get_render_width() * 0.5 - 144;
+        var posY = global.render_y + get_render_height() * 0.5 - 113;
         
         if (
         (device_mouse_x(device) >= posX + 122 && device_mouse_x(device) <= posX + 178) &&

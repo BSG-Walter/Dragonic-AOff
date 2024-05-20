@@ -1,7 +1,7 @@
 /// @description  Control general / control mouse
 
-x = get_render_x() + get_render_width() - 2;
-y = get_render_y() + 2;
+x = global.render_x + get_render_width() - 2;
+y = global.render_y + 2;
 
 var device = -1;
     

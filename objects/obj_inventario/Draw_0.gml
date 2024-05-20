@@ -2,7 +2,7 @@
 
 if (visible) {
     
-	draw_sprite(spr_inventario_back,0,get_inventario_x() + 120,get_inventario_y() + 8)
+	draw_sprite(spr_inventario_back,0,global.inventario_x + 120,global.inventario_y + 8)
     
     draw_set_font(fnt_Vedrana_7_bold);
     draw_set_color(c_white);

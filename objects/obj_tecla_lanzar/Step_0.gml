@@ -1,5 +1,5 @@
 /// @description  Control mouse
-
+event_inherited()
 if (!obj_inventario.visible) {
 
     var device = -1;

@@ -13,18 +13,18 @@ function crearObjetosBasicos(argument0) {
 	    instance_create(0, 0, obj_flecha_izq);
 	    instance_create(0, 0, obj_flecha_der);
 	    instance_create(0, 0, obj_control_inmo_pj);
-	    instance_create(498, 2408, obj_tecla_ctrl);
+	    instance_create(498, 8, obj_tecla_ctrl);
 	    instance_create(0, 0, obj_seguro);
 	    instance_create(0, 0, obj_manual);
-	    instance_create(450, 2408, obj_tecla_A);
+	    instance_create(450, 8, obj_tecla_A);
 	    instance_create(0, 0, obj_escudo);
 	    instance_create(0, 0, obj_arma);
-	    instance_create(474, 2440, obj_tecla_U);
-	    instance_create(546, 2440, obj_tecla_f6);
+	    instance_create(474, 40, obj_tecla_U);
+	    instance_create(546, 40, obj_tecla_f6);
 	    instance_create(0, 0, obj_hechizos);
-	    instance_create(474, 2440, obj_tecla_lanzar);
-	    instance_create(450, 2440, obj_tecla_inventario);
-	    instance_create(450, 2440, obj_tecla_hechizos);
+	    instance_create(474, 40, obj_tecla_lanzar);
+	    instance_create(450, 40, obj_tecla_inventario);
+	    instance_create(450, 40, obj_tecla_hechizos);
 	    instance_create(0, 0, obj_control_animacion_agua);
 	    instance_create(0, 0, obj_inventario);
 	    instance_create(0, 0, obj_skills_libres);
@@ -114,8 +114,8 @@ function crearObjetosBasicos(argument0) {
 	    instance_create(0, 0, obj_limpieza_mundo);
 	    instance_create(0, 0, obj_panel_trabajos);
 	    instance_create(0, 0, obj_gui);
-	    instance_create(85, 2455, obj_cambiar_vista_hechizos);
-	    instance_create(85, 2455, obj_mover_inventario);
+	    instance_create(85, 55, obj_cambiar_vista_hechizos);
+	    instance_create(85, 55, obj_mover_inventario);
 	    instance_create(0, 0, obj_controles);
     
 	    var idAyuda = instance_create(0, 0, obj_ayuda);
@@ -370,30 +370,30 @@ function crearObjetosBasicos(argument0) {
 	    var idControlInmoPJ = instance_create(0, 0, obj_control_inmo_pj);
 	    idControlInmoPJ.alarm[0] = read("obj_control_inmo_pj", "alarm[0]", 1);
     
-	    var idCtrl = instance_create(498, 2408, obj_tecla_ctrl);
+	    var idCtrl = instance_create(498, 08, obj_tecla_ctrl);
 	    idCtrl.teclaApretada = read("obj_tecla_ctrl", "teclaApretada", false);
     
 	    var idSeguro = instance_create(0, 0, obj_seguro);
 	    idSeguro.activo = read("obj_seguro", "activo", true);
     
 	    instance_create(0, 0, obj_manual);
-	    instance_create(450, 2408, obj_tecla_A);
+	    instance_create(450, 08, obj_tecla_A);
 		
 		instance_create(0, 0, obj_escudo);
 		instance_create(0, 0, obj_arma);
     
-	    instance_create(474, 2440, obj_tecla_U);
+	    instance_create(474, 40, obj_tecla_U);
     
-	    var idF6 = instance_create(546, 2440, obj_tecla_f6);
+	    var idF6 = instance_create(546, 40, obj_tecla_f6);
 	    idF6.teclaApretada = read("obj_tecla_f6", "teclaApretada", false);
     
 	    instance_create(0, 0, obj_hechizos);
     
 	    cargarHechizos(); 
     
-	    instance_create(474, 2440, obj_tecla_lanzar);
-	    instance_create(450, 2440, obj_tecla_inventario);
-	    instance_create(450, 2440, obj_tecla_hechizos);
+	    instance_create(474, 40, obj_tecla_lanzar);
+	    instance_create(450, 40, obj_tecla_inventario);
+	    instance_create(450, 40, obj_tecla_hechizos);
     
 	    var idControlAnimAgua = instance_create(0, 0, obj_control_animacion_agua);
 	    idControlAnimAgua.alarm[0] = read("obj_control_animacion_agua", "alarm[0]", 1);
@@ -498,8 +498,8 @@ function crearObjetosBasicos(argument0) {
 	    instance_create(0, 0, obj_limpieza_mundo);
 	    instance_create(0, 0, obj_panel_trabajos);
 	    instance_create(0, 0, obj_gui);
-	    instance_create(85, 2455, obj_cambiar_vista_hechizos);
-	    instance_create(85, 2455, obj_mover_inventario);
+	    instance_create(85, 55, obj_cambiar_vista_hechizos);
+	    instance_create(85, 55, obj_mover_inventario);
 	    instance_create(0, 0, obj_controles);
 	    instance_create(0, 0, obj_ayuda);
 	    instance_create(0, 0, obj_configuracion);

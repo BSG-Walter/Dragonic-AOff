@@ -26,10 +26,10 @@ device_mouse_check_button(4, mb_left)
                     var posY = 0;
                         
                     if (
-                    device_mouse_x(device) >= get_inventario_x() + 121 &&
-                    device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
-                    device_mouse_y(device) >= get_inventario_y() + 8 &&
-                    device_mouse_y(device) <= get_inventario_y() + 7 + 64
+                    device_mouse_x(device) >= global.inventario_x + 121 &&
+                    device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                    device_mouse_y(device) >= global.inventario_y + 8 &&
+                    device_mouse_y(device) <= global.inventario_y + 7 + 64
                     ) {
                     
                         obj_control_devices.devicesL[device] = true;
@@ -46,8 +46,8 @@ device_mouse_check_button(4, mb_left)
                         var posX = device_mouse_x(device);
                         var posY = device_mouse_y(device);
                         
-                        posX = posX - get_inventario_x() - 120;
-                        posY = posY - room_height + get_inventario_height() - 7;
+                        posX = posX - global.inventario_x - 120;
+                        posY = posY - global.inventario_y - 7;
                         
                         var posItem = 0;
                         
@@ -120,10 +120,10 @@ device_mouse_check_button(4, mb_left)
                     var posY = 0;
                         
                     if (
-                    device_mouse_x(device) >= get_inventario_x() + 121 &&
-                    device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
-                    device_mouse_y(device) >= get_inventario_y() + 8 &&
-                    device_mouse_y(device) <= get_inventario_y() + 7 + 64
+                    device_mouse_x(device) >= global.inventario_x + 121 &&
+                    device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                    device_mouse_y(device) >= global.inventario_y + 8 &&
+                    device_mouse_y(device) <= global.inventario_y + 7 + 64
                     ) {
                     
                         obj_control_devices.devicesL[device] = true;
@@ -135,8 +135,8 @@ device_mouse_check_button(4, mb_left)
                         var posX = device_mouse_x(device);
                         var posY = device_mouse_y(device);
                         
-                        posX = posX - get_inventario_x() - 120;
-                        posY = posY - room_height + get_inventario_height() - 7;
+                        posX = posX - global.inventario_x - 120;
+                        posY = posY - global.inventario_y - 7;
                         
                         var posItem = 0;
                         
@@ -233,10 +233,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= get_inventario_x() + 121 &&
-                        device_mouse_x(device) <= get_inventario_x() + 120 + 320 &&
-                        device_mouse_y(device) >= get_inventario_y() + 8 &&
-                        device_mouse_y(device) <= get_inventario_y() + 7 + 64
+                        device_mouse_x(device) >= global.inventario_x + 121 &&
+                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_y(device) >= global.inventario_y + 8 &&
+                        device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
                         
                             obj_skills_libres.mostrado = false;
@@ -244,8 +244,8 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - get_inventario_x() - 120;
-                            posY = posY - room_height + get_inventario_height() - 7;
+                            posX = posX - global.inventario_x - 120;
+                            posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
                             

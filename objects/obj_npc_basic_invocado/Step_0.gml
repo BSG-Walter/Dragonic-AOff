@@ -160,8 +160,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= get_render_x() && (x <= get_render_x() + get_render_width())) &&
-(y >= get_render_y() - get_render_width() * 0.5 && (y <= get_render_y() + get_render_width() * 0.5))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() * 0.5 && (y <= global.render_y + get_render_width() * 0.5))
 ) {
 
     if (y < obj_pj.y) {

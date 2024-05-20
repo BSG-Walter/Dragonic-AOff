@@ -3,11 +3,11 @@
 
 //Gets
 function get_inventario_x(){
-	return __view_get(e__VW.XView, 1);
+	return get_render_x() //la posicion x siempre tiene que ser la misma que el render
 }
 
 function get_inventario_y(){
-	return __view_get(e__VW.YView, 1);
+	return get_render_y() + get_render_height();
 }
 
 function get_inventario_width(){

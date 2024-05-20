@@ -260,7 +260,7 @@ if (!roomDesconocida) {
         }
     }
     
-    instance_create(get_render_x() + 326 + j * 14.75, get_render_y() + 95 + i * 17.25, obj_borde_mapa);
+    instance_create(global.render_x + 326 + j * 14.75, global.render_y + 95 + i * 17.25, obj_borde_mapa);
     nombreMapaPausa = obtenerNombreMapa(room, i, j);
 
 } else {

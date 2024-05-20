@@ -4,7 +4,7 @@ var device = -1;
 visible = !obj_inventario.visible;
 image_index = floor(real(!obj_hechizos.primerPanel));
 			
-x = get_inventario_x() + 87;
+x = global.inventario_x + 87;
 
 if (
 device_mouse_check_button(0, mb_left) ||
