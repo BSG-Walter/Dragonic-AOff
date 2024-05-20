@@ -5,6 +5,7 @@ if (i_d == msg)
 {
     if (ds_map_find_value(async_load, "status"))
     {
-        obj_opciones.multiOro = ds_map_find_value(async_load, "value");
+        value = ds_map_find_value(async_load, "value");
+		event_user(0)
     }
 }

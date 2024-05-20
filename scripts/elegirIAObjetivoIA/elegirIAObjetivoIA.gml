@@ -9,7 +9,7 @@ function elegirIAObjetivoIA(argument0) {
 	cantIAEnView = 0
 	cantInmovilizados = 0;
 	
-	for (var i = 0; i < MAX_BOTS; ++i) {
+	for (var i = 0; i < obj_opciones.maxBots; ++i) {
 	    inmovilizados[i] = -1
 	}
 	
