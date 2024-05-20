@@ -54,6 +54,8 @@ if (visible) {
                     if (obj_opciones.opcionAnimacionAgua) {
                         obj_opciones.opcionAnimacionAgua = false;
                         __background_set( e__BG.Index, 1, bck_agua_1 );
+                        __background_set( e__BG.VSpeed, 1, 0 );
+						__background_set( e__BG.HSpeed, 1, 0 );
                         with (obj_pez) {
                             instance_destroy();
                         }

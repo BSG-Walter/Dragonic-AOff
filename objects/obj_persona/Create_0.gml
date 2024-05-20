@@ -1,5 +1,10 @@
 /// @description  Estado inicial
-event_inherited();
+oro = 0;
+dropeaItem = false;
+indItem = 0;
+cantItem = 0;
+roomInicial = -1;
+
 visible = false;
 
 gradoIA = 0.65; // Media

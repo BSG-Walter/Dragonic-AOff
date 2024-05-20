@@ -1,5 +1,4 @@
 /// @description  Muerte
-
 reproducirSonido(snd_muerte, false, false);
 
 palabrasMagicas = "";

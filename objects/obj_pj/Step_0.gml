@@ -1221,6 +1221,7 @@ device_mouse_check_button(4, mb_left)
                                                             idEfectoHechizo.padre = idNPC;
                                                             
                                                             if (idNPC.object_index != obj_persona) {
+                                                                idNPC.inicioParalisis = current_time
                                                                 if (obj_hechizos.indiceHechizos[i] == 12) {
                                                                     idNPC.paralizado = true;
                                                                     idNPC.inmovilizado = false;
@@ -1230,10 +1231,12 @@ device_mouse_check_button(4, mb_left)
                                                                     idNPC.paralizado = false;
                                                                     idNPC.alarm[4] = 7200; // 2 Minutos
                                                                 }
+                                                                idNPC.duracionParalisis =  120
                                                             } else {
                                                                 idNPC.alarm[7] = 170;
                                                                 idNPC.inmovilizado = true;
                                                                 idNPC.alarm[4] = 1800; // 30 Segundos
+                                                                idNPC.duracionParalisis = 30
                                                             }                                    
                                                             
                                                             if (idNPC.object_index == obj_persona) {

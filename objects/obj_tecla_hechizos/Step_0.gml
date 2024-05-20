@@ -3,14 +3,6 @@ event_inherited()
 var device = -1;
 
 if (
-!position_meeting(device_mouse_x(0), device_mouse_y(0), self) && 
-!position_meeting(device_mouse_x(1), device_mouse_y(1), self) && 
-!position_meeting(device_mouse_x(2), device_mouse_y(2), self) && 
-!position_meeting(device_mouse_x(3), device_mouse_y(3), self) && 
-!position_meeting(device_mouse_x(4), device_mouse_y(4), self)
-) {
-    keyboard_key_release(vk_f2);
-} else if (
 device_mouse_check_button(0, mb_left) ||
 device_mouse_check_button(1, mb_left) ||
 device_mouse_check_button(2, mb_left) ||
