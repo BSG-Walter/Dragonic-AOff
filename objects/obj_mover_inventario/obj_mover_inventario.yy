@@ -12,7 +12,10 @@
     "name":"Inventario y Hechizos",
     "path":"folders/Objects/Inventario y Hechizos.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_parent_botones",
+    "path":"objects/obj_parent_botones/obj_parent_botones.yy",
+  },
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

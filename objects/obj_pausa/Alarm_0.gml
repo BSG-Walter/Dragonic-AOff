@@ -154,9 +154,6 @@ if (
         instance_destroy();
     }
     
-	set_render_resolution(wViewInicio, hViewInicio)
-    __view_set( e__VW.Visible, 1, true );
-    
     instance_activate_all();
     
 	if (obj_opciones.lloviendo) {

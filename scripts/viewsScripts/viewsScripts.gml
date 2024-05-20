@@ -19,11 +19,11 @@ function get_inventario_height(){
 }
 
 function get_render_x(){
-	return __view_get(e__VW.XView, 0);
+	return camera_get_view_x(view_camera[0])
 }
 
 function get_render_y(){
-	return __view_get(e__VW.YView, 0);
+	return camera_get_view_y(view_camera[0])
 }
 
 function get_render_width(){
@@ -35,44 +35,16 @@ function get_render_height(){
 }
 
 //Sets
-function set_inventario_x(value){
-	__view_set(e__VW.XView, 1, value);
+
+function set_render_x(_x){
+	camera_set_view_pos(view_camera[0], _x, global.render_y)
 }
 
-function set_inventario_y(value){
-	__view_set(e__VW.YView, 1, value);
+function set_render_y(_y){
+	camera_set_view_pos(view_camera[0], global.render_x, _y)
 }
 
-function set_inventario_width(value){
-	__view_set(e__VW.WView, 1, value);
-}
-
-function set_inventario_height(value){
-	__view_set(e__VW.HView, 1, value);
-}
-
-function set_inventario_resolution(width, height){
-	set_inventario_width(width)
-	set_inventario_height(height);
-}
-
-function set_render_x(value){
-	__view_set(e__VW.XView, 0, value);
-}
-
-function set_render_y(value){
-	__view_set(e__VW.YView, 0, value);
-}
-
-function set_render_width(value){
-	__view_set(e__VW.WView, 0, value);
-}
-
-function set_render_height(value){
-	__view_set(e__VW.HView, 0, value);
-}
-
-function set_render_resolution(width, height){
-	set_render_width(width)
-	set_render_height(height);
+//Esta funcion no tienen por que usarse, ya que por ahora seteamos la resolucion por constantes
+function set_render_resolution(_w, _h){
+	camera_set_view_size(view_camera[0], _w, _h)
 }

@@ -3,6 +3,9 @@
 //Fondo de la interfaz inferior
 draw_sprite(tl_interfaz,0,global.inventario_x, global.inventario_y)
 
+//Oro
+draw_sprite(spr_boton_oro, 0, global.inventario_x +11, global.inventario_y + 56);
+
 /// Dibujo datos PJ
 draw_set_font(fnt_Vedrana_7_bold);
 
@@ -70,10 +73,6 @@ if (obj_configuracion.mostrado) {
     }
     
 }
-
-// Oro
-
-draw_sprite(spr_boton_oro, 0, 11, 2456);
 
 // Seguro
 

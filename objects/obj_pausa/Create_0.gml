@@ -5,9 +5,6 @@ audio_pause_all();
 wViewInicio = get_render_width();
 hViewInicio = get_render_height();
 
-__view_set( e__VW.Visible, 1, false );
-set_render_resolution(RESOLUTION_WIDTH, RESOLUTION_HEIGHT)
-
 IACerca = false;
 
 with (obj_persona) {

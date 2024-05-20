@@ -2,7 +2,6 @@
 
 draw_sprite(bck_pausa, 0, global.render_x, global.render_y);
 
-//__view_set( e__VW.Visible, 1, false );
 //set_render_width(get_render_width());
 //set_render_height(get_render_height());
 

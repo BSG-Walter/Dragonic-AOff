@@ -74,6 +74,6 @@ posDobleClic = -1;
 // Paneles
 
 primerPanel = true;
-depth = -16000000
+depth = -16000001
 /* */
 /*  */
