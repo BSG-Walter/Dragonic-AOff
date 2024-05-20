@@ -4,4 +4,4 @@ msg = -1;
 before_value = "X"
 display = "Oro: "
 desc = "Ingresa el nuevo multiplicador de Oro (10 es normal):"
-value = obj_opciones.multiOro * 10
+value = obj_opciones.multiOro * 20

@@ -1,5 +1,4 @@
 /// @description  Estado inicial
-
 opcionTechos = true;
 opcionArboles = true;
 opcionVibracion = true;
