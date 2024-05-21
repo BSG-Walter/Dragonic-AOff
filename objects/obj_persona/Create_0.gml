@@ -7,13 +7,15 @@ roomInicial = -1;
 
 visible = false;
 
+pj_avance = (obj_pj.nivel/obj_pj.nivelMax); //indica que tan cerca esta el pj del nivel max. (de 0 a 1)
+
 gradoIA = 0.65; // Media
 
 if (obj_control_opciones.dificultad == 1) {
     gradoIA = 0.75; // Alta
 }
 //aumentamos dificultad gradualmente
-gradoIA+= (obj_pj.nivel/obj_pj.nivelMax)*0.05
+gradoIA+= pj_avance*0.01
 
 hostil = true;
 image_speed = 0;
@@ -48,8 +50,6 @@ tiempoEnView = 0;
 yaHabloEnojado1 = false;
 yaHabloEnojado2 = false;
 yaHabloEnojado3 = false;
-
-pj_avance = ((obj_pj.nivel/obj_pj.nivelMax)); //indica que tan cerca esta el pj del nivel max. (de 0 a 1)
 
 // Navega?
 
