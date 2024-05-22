@@ -755,6 +755,7 @@
     {"name":"tieneItemEnInv","order":103,"path":"scripts/tieneItemEnInv/tieneItemEnInv.yy",},
     {"name":"tile_layer_find","order":1,"path":"scripts/tile_layer_find/tile_layer_find.yy",},
     {"name":"tirarItem","order":121,"path":"scripts/tirarItem/tirarItem.yy",},
+    {"name":"touchscreenScripts","order":134,"path":"scripts/touchscreenScripts/touchscreenScripts.yy",},
     {"name":"usarItem","order":122,"path":"scripts/usarItem/usarItem.yy",},
     {"name":"usarRuna","order":25,"path":"scripts/usarRuna/usarRuna.yy",},
     {"name":"utils","order":130,"path":"scripts/utils/utils.yy",},

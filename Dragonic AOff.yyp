@@ -168,7 +168,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"Dragonic AOff",
   "resources":[
@@ -863,6 +863,7 @@
     {"id":{"name":"tile_add","path":"scripts/tile_add/tile_add.yy",},},
     {"id":{"name":"tile_layer_find","path":"scripts/tile_layer_find/tile_layer_find.yy",},},
     {"id":{"name":"tirarItem","path":"scripts/tirarItem/tirarItem.yy",},},
+    {"id":{"name":"touchscreenScripts","path":"scripts/touchscreenScripts/touchscreenScripts.yy",},},
     {"id":{"name":"usarItem","path":"scripts/usarItem/usarItem.yy",},},
     {"id":{"name":"usarRuna","path":"scripts/usarRuna/usarRuna.yy",},},
     {"id":{"name":"utils","path":"scripts/utils/utils.yy",},},
