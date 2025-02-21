@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dibujarPJ",
   "isCompatibility":false,
   "isDnD":false,

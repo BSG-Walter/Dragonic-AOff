@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"showMessageAsync",
   "isCompatibility":false,
   "isDnD":false,

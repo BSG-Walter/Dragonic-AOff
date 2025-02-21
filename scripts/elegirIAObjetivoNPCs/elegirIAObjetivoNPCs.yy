@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"elegirIAObjetivoNPCs",
   "isCompatibility":false,
   "isDnD":false,

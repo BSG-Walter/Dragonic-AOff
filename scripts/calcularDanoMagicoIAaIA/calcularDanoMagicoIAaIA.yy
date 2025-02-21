@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"calcularDanoMagicoIAaIA",
   "isCompatibility":false,
   "isDnD":false,

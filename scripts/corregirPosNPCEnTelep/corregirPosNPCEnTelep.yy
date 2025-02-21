@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"corregirPosNPCEnTelep",
   "isCompatibility":false,
   "isDnD":false,

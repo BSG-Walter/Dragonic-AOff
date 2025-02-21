@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cargarInventario",
   "isCompatibility":false,
   "isDnD":false,

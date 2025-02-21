@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"elegirEquipoIA",
   "isCompatibility":false,
   "isDnD":false,

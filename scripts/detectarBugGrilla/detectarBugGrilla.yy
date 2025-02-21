@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"detectarBugGrilla",
   "isCompatibility":false,
   "isDnD":false,

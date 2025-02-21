@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dibujarIA",
   "isCompatibility":false,
   "isDnD":false,

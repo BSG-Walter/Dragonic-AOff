@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"buscarPJsAptosTorneo",
   "isCompatibility":false,
   "isDnD":false,

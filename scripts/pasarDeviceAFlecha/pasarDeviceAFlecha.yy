@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"pasarDeviceAFlecha",
   "isCompatibility":false,
   "isDnD":false,

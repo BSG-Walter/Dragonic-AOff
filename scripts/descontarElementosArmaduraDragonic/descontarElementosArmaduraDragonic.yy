@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"descontarElementosArmaduraDragonic",
   "isCompatibility":false,
   "isDnD":false,

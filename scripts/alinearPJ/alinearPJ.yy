@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"alinearPJ",
   "isCompatibility":false,
   "isDnD":false,

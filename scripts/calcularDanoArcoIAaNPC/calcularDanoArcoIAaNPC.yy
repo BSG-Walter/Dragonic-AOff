@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"calcularDanoArcoIAaNPC",
   "isCompatibility":false,
   "isDnD":false,

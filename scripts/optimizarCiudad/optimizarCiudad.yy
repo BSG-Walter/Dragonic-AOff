@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"optimizarCiudad",
   "isCompatibility":false,
   "isDnD":false,

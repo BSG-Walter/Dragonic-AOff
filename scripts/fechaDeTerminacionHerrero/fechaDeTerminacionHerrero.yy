@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"fechaDeTerminacionHerrero",
   "isCompatibility":false,
   "isDnD":false,

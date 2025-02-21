@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"puedeInvocarMascotas",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"subirNivelMaxGM",
   "isCompatibility":false,
   "isDnD":false,

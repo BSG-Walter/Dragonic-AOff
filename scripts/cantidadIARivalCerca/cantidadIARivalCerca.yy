@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cantidadIARivalCerca",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"meditar",
   "isCompatibility":false,
   "isDnD":false,

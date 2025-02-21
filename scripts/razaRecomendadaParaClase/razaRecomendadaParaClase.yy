@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"razaRecomendadaParaClase",
   "isCompatibility":false,
   "isDnD":false,

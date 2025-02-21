@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"usarRuna",
   "isCompatibility":false,
   "isDnD":false,

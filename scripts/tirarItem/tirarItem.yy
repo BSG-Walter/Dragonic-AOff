@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"tirarItem",
   "isCompatibility":false,
   "isDnD":false,

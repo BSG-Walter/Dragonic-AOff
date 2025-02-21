@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"obtenerRoomIndex",
   "isCompatibility":false,
   "isDnD":false,

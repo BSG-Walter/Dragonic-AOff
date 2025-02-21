@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"actualizarCiudas",
   "isCompatibility":false,
   "isDnD":false,

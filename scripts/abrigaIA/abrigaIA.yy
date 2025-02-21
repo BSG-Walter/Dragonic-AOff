@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"abrigaIA",
   "isCompatibility":false,
   "isDnD":false,

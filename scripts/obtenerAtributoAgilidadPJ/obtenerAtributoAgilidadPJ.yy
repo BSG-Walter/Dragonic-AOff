@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"obtenerAtributoAgilidadPJ",
   "isCompatibility":false,
   "isDnD":false,

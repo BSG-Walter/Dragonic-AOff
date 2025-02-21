@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"hayEnemigosCerca",
   "isCompatibility":false,
   "isDnD":false,

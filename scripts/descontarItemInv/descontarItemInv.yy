@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"descontarItemInv",
   "isCompatibility":false,
   "isDnD":false,

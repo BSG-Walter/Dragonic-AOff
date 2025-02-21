@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"exportarImportarPjs",
   "isCompatibility":false,
   "isDnD":false,

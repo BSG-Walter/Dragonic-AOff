@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"cargarPartida",
   "isCompatibility":false,
   "isDnD":false,

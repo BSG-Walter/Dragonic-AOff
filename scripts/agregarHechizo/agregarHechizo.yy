@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"agregarHechizo",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"vibrarPantalla",
   "isCompatibility":false,
   "isDnD":false,

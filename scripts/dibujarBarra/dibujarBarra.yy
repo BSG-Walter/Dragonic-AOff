@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dibujarBarra",
   "isCompatibility":false,
   "isDnD":false,

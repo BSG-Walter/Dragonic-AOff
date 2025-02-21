@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"reproducirPaso",
   "isCompatibility":false,
   "isDnD":false,

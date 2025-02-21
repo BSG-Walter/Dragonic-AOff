@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"posicionLejosDePJ",
   "isCompatibility":false,
   "isDnD":false,

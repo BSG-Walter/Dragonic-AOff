@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"actualizarNPCsXRM",
   "isCompatibility":false,
   "isDnD":false,

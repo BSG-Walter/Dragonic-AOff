@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"crearLluvia",
   "isCompatibility":false,
   "isDnD":false,

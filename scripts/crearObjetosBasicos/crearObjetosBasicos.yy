@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"crearObjetosBasicos",
   "isCompatibility":false,
   "isDnD":false,

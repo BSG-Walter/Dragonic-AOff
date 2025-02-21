@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"vibrarJoystick",
   "isCompatibility":false,
   "isDnD":false,

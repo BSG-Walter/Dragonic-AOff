@@ -1,5 +1,5 @@
 {
-  "$GMTileSet":"",
+  "$GMTileSet":"v1",
   "%Name":"tl_tile_cian_tileset",
   "autoTileSets":[],
   "macroPageTiles":{
@@ -25,10 +25,6 @@
   "textureGroupId":{
     "name":"sinusar",
     "path":"texturegroups/sinusar",
-  },
-  "tileAnimation":{
-    "FrameData":[0,],
-    "SerialiseFrameCount":1,
   },
   "tileAnimationFrames":[],
   "tileAnimationSpeed":15.0,

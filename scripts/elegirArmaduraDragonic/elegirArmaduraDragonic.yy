@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"elegirArmaduraDragonic",
   "isCompatibility":false,
   "isDnD":false,

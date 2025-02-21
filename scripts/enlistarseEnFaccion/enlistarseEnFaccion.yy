@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"enlistarseEnFaccion",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"actualizarDevices",
   "isCompatibility":false,
   "isDnD":false,

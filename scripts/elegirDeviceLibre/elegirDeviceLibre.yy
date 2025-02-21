@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"elegirDeviceLibre",
   "isCompatibility":false,
   "isDnD":false,

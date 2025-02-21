@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"invocarCriatura",
   "isCompatibility":false,
   "isDnD":false,

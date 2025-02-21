@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"obtenerDevicesEnPos",
   "isCompatibility":false,
   "isDnD":false,
