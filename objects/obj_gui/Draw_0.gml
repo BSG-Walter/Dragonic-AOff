@@ -29,8 +29,15 @@ draw_sprite(spr_ayuda, obj_ayuda.image_index, global.render_x+ render_width - 2,
 draw_sprite(spr_opciones, 0, global.render_x+ render_width - 2, global.render_y + 26);
 
 // Añadir bot
-if (room == rm_arena) draw_sprite(spr_agregar_bot, 0, global.render_x+ render_width - 2, global.render_y + 50);
-if (room == rm_arena) draw_sprite(spr_agregar_bot, 1, global.render_x+ render_width - 2, global.render_y + 74);
+if (room == rm_arena) {
+    with (obj_agregar_bot) {
+        var draw_x = global.render_x + other.render_width - 2;
+        var draw_y = global.render_y + 50;
+        
+        draw_sprite_ext(spr_agregar_bot, 0, draw_x, draw_y, escala, escala, 0, c_white, 1);
+        draw_sprite_ext(spr_agregar_bot, 1, draw_x, draw_y + espacio_vertical, escala, escala, 0, c_white, 1);
+    }
+}
 
 if (obj_configuracion.mostrado) {
 

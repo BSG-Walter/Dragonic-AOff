@@ -1,12 +1,14 @@
 /// @description  Control general / Control mouse
 
+// La posición base se sigue definiendo en obj_gui, por ahora la dejamos así.
 x = global.render_x + get_render_width() - 2;
 y = global.render_y + 50;
 
-pk_x_center = x - 12
-pk_y_center = y + 12
-ciuda_x_center = pk_x_center
-ciuda_y_center = pk_y_center + 24
+// Calculo el centro de los botones usando las variables
+var pk_x_center = x - radio;
+var pk_y_center = y + radio;
+var ciuda_x_center = pk_x_center;
+var ciuda_y_center = pk_y_center + espacio_vertical;
 
 var device = -1;
     
@@ -22,7 +24,7 @@ device_mouse_check_button(4, mb_left)
 
     if (device != -1) {
     
-        if (device_mouse_check_button_pressed(device, mb_left) && point_distance(device_mouse_x(device), device_mouse_y(device),pk_x_center, pk_y_center) <= 12) {
+        if (device_mouse_check_button_pressed(device, mb_left) && point_distance(device_mouse_x(device), device_mouse_y(device), pk_x_center, pk_y_center) <= radio) {
         
             obj_control_devices.devicesL[device] = true;
 			
@@ -35,7 +37,7 @@ device_mouse_check_button(4, mb_left)
             
         }
 		
-		if (device_mouse_check_button_pressed(device, mb_left) && point_distance(device_mouse_x(device), device_mouse_y(device),ciuda_x_center, ciuda_y_center) <= 12) {
+		if (device_mouse_check_button_pressed(device, mb_left) && point_distance(device_mouse_x(device), device_mouse_y(device), ciuda_x_center, ciuda_y_center) <= radio) {
         
             obj_control_devices.devicesL[device] = true;
 			
