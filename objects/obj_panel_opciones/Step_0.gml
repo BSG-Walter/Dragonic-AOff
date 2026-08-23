@@ -1,4 +1,4 @@
-/// @description  Control general / control mouse
+﻿/// @description  Control general / control mouse
 
 x = global.render_x + get_render_width() - 26;
 y = global.render_y + 36;
@@ -76,7 +76,7 @@ if (visible) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_pez);
+                                instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_pez);
                             }
                         }
                     }
@@ -106,7 +106,7 @@ if (visible) {
                             instance_destroy();
                         }
                         repeat(25) {
-                            instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_particula);
+                            instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_particula);
                         }
                         if (obj_opciones.lloviendo) { 
 							crearLluvia(75, 0, 0);
@@ -130,7 +130,7 @@ if (visible) {
                         with (obj_nubes) {
                             instance_destroy();
                         }
-                        instance_create(0, 0, obj_nubes);
+                        instance_create_depth(0, 0, 0, obj_nubes);
                     }
                 } else if (device_mouse_y(device) <= y - 32 + 112) {
                     if (obj_opciones.opcionPeces) {
@@ -145,7 +145,7 @@ if (visible) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_pez);
+                                instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_pez);
                             }
                         }
                     }
@@ -157,7 +157,7 @@ if (visible) {
                     }
                     if (obj_mapas_mundo.mapas[room]) {
                         // Si es zona segura (ciudad)
-                        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                         idINFO.padre = obj_pj.id;
                         idINFO.texto = "Volvé a entrar al mapa para ver los cambios";                        
                     }

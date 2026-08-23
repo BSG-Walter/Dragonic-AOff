@@ -1,4 +1,4 @@
-/// @description  IAAtacaConArco(idIA)
+﻿/// @description  IAAtacaConArco(idIA)
 /// @param idIA
 function IAAtacaConArco(argument0) {
 
@@ -53,7 +53,7 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Defendido con escudo!";
 	                idINFO.color = c_red;
@@ -64,7 +64,7 @@ function IAAtacaConArco(argument0) {
 	                    if (random(10) > 5) {
 	                        obj_skills_libres.mostrado = false;
 	                        obj_pj.skills[6]++;
-	                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+	                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
 	                        idSubirSkills.indice = 6;
 	                    }
 	                }
@@ -114,7 +114,7 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(x, y + 9, obj_INFO);
+	                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
 	                idINFO.padre = id;
 	                idINFO.texto = "¡Falla!";
 	                idINFO.color = c_red;
@@ -123,7 +123,7 @@ function IAAtacaConArco(argument0) {
 	                    if (random(10) > 5) {
 	                        obj_skills_libres.mostrado = false;
 	                        obj_pj.skills[1]++;
-	                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+	                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
 	                        idSubirSkills.indice = 1;
 	                    }
 	                }
@@ -191,7 +191,7 @@ function IAAtacaConArco(argument0) {
                 
 	                    ataca = false;
                     
-	                    var idINFO = instance_create(idIA.x, idIA.y, obj_INFO);
+	                    var idINFO = instance_create_depth(idIA.x, idIA.y, 0, obj_INFO);
 	                    idINFO.padre = idIA;
 	                    idINFO.texto = "¡Defendido con escudo!";
 	                    idINFO.color = c_red;
@@ -237,7 +237,7 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(x, y + 9, obj_INFO);
+	                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
 	                idINFO.padre = id;
 	                idINFO.texto = "¡Falla!";
 	                idINFO.color = c_red;
@@ -251,7 +251,7 @@ function IAAtacaConArco(argument0) {
 	            var dano = round(random_range(danoMeleeMin, danoMeleeMax));
 	            var danoTotal = floor(0.85 * calcularDanoFisicoIAaIA(dano * obj_pj.modDanoLvl, idIA));
             
-	            idDano = instance_create(idIA.x, idIA.y - 41, obj_efecto_dano);
+	            idDano = instance_create_depth(idIA.x, idIA.y - 41, 0, obj_efecto_dano);
 	            idDano.dano = danoTotal;
 	            idDano.padre = idIA;
             

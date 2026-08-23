@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 detectarBugGrilla();
 var idIAAux = IAObj
@@ -256,7 +256,7 @@ if (
                 }
             }
             
-            var idINFO = instance_create(x, y, obj_INFO);
+            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
             idINFO.texto = mensaje;
             idINFO.padre = id;
             idINFO.tiempo = 60 * 5;
@@ -287,7 +287,7 @@ if (
                     break;
             }
             
-            var idINFO = instance_create(x, y, obj_INFO);
+            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
             idINFO.texto = mensaje;
             idINFO.padre = id;
             idINFO.tiempo = 60 * 5;

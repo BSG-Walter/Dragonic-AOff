@@ -1,4 +1,4 @@
-/// @description  invocarGuardarMascotas(device)
+﻿/// @description  invocarGuardarMascotas(device)
 /// @param device
 function invocarGuardarMascotas(argument0) {
 
@@ -18,14 +18,14 @@ function invocarGuardarMascotas(argument0) {
 	    var consumoMana = 1000;
     
 	    if (obj_pj.mana < consumoMana) {
-	        idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡Maná menor a " + string(consumoMana) + "!";
 	        return 0;
 	    }
     
 	    if (obj_mapas_mundo.mapas[room]) {
-	        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.texto = "¡No podés invocar criaturas en una zona segura!";
 	        return 0;
 	    }
@@ -48,7 +48,7 @@ function invocarGuardarMascotas(argument0) {
 	    if (tilePasto != -1 || tileCosta != -1 || tilePisosYPuentes != -1) { // Si hay algún tipo de suelo...
 	        obj_pj.mana -= consumoMana;        
 	    } else {
-	        idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡No podés invocar mascotas en el agua!";
 	        return 0;
@@ -69,7 +69,7 @@ function invocarGuardarMascotas(argument0) {
 	        if (obj_pj.criaturasHijas[i, 0] == -1) {
 	            if (obj_pj.criaturasHijas[i, 1] != -1) {                
             
-	                var idMascota = instance_create(posXMouse, posYMouse, obj_pj.criaturasHijas[i, 1]);       
+	                var idMascota = instance_create_depth(posXMouse, posYMouse, 0, obj_pj.criaturasHijas[i, 1]);       
 	                idMascota.domado = true;
 	                obj_pj.criaturasHijas[i, 0] = idMascota;    
 	                idMascota.salud = obj_pj.criaturasHijas[i, 2];            

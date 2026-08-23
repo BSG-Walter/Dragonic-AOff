@@ -1,4 +1,4 @@
-/// @description  Depth / Control mouse
+﻿/// @description  Depth / Control mouse
 
 if (y < obj_pj.y) {
     depth = obj_pj.depth + obj_pj.y - y;
@@ -34,7 +34,7 @@ device_mouse_check_button(4, mb_left)
             if (!dobleClic) {
             
                 obj_hechizos.moviendoHechizo = false;
-                var idMsg = instance_create(x, y, obj_msg);
+                var idMsg = instance_create_depth(x, y, 0, obj_msg);
 				if (!yaHizoElPedido) {
 					idMsg.desc = desc;
 				} else if (fechaDeTerminacion == -1 || date_compare_datetime(date_current_datetime(), fechaDeTerminacion) == -1) {
@@ -62,14 +62,14 @@ device_mouse_check_button(4, mb_left)
 							
 							agarrarItemForzado(indiceArmaduraDragonic);
 							
-							var idMsg = instance_create(x, y, obj_msg);
+							var idMsg = instance_create_depth(x, y, 0, obj_msg);
 							idMsg.desc = desc5;
 							
 							guardarPedidoHerrero(false, -1);
 							guardarPartida(obj_pj.nombre);
 						
 						} else {
-							var idMsg = instance_create(x, y, obj_msg);
+							var idMsg = instance_create_depth(x, y, 0, obj_msg);
 							idMsg.desc = desc2;
 						}
 						
@@ -82,18 +82,18 @@ device_mouse_check_button(4, mb_left)
 							guardarPedidoHerrero(true, date_inc_day(date_current_datetime(), 1));
 							guardarPartida(obj_pj.nombre);
 							
-							var idMsg = instance_create(x, y, obj_msg);
+							var idMsg = instance_create_depth(x, y, 0, obj_msg);
 							idMsg.desc = desc4;
 							
 						} else {
-							var idMsg = instance_create(x, y, obj_msg);
+							var idMsg = instance_create_depth(x, y, 0, obj_msg);
 							idMsg.desc = desc1;
 						}
 					
 					}
 					
 	            } else {
-	                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Estás muerto!";
 	            }

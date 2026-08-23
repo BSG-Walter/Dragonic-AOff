@@ -1,4 +1,4 @@
-/// @description  subirNivel()
+﻿/// @description  subirNivel()
 function subirNivel() {
 
 	obj_skills_libres.mostrado = false;
@@ -7,7 +7,7 @@ function subirNivel() {
 	obj_pj.modDanoLvl += 0.0053;
 	obj_pj.skillsLibres += 5;
 	obj_pj.energiaMax += 9;
-	instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_lvl);
+	instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_lvl);
 
 	// Vida
 

@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 if (mostrado) {
     
@@ -379,7 +379,7 @@ device_mouse_check_button(4, mb_left)
                                         if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[indiceSkill]++;
-                                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                             idSubirSkills.indice = indiceSkill;
                                             alarm[0] = 1;
                                         }
@@ -559,7 +559,7 @@ device_mouse_check_button(4, mb_left)
                                         if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[10]++;
-                                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                             idSubirSkills.indice = 10;
                                             alarm[0] = 1;
                                         }

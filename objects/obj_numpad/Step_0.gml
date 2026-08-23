@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 x = global.render_x + get_render_width() * 0.5;
 y = global.render_y + get_render_height() * 0.5;
@@ -88,7 +88,7 @@ device_mouse_check_button(4, mb_left)
                                 !position_meeting(obj_pj.x, obj_pj.y - 16, obj_item) &&
                                 !position_meeting(obj_pj.x, obj_pj.y - 16, obj_oro)
                                 ) {
-                                    var idItemTirado = instance_create(obj_pj.x, obj_pj.y, obj_item);
+                                    var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                     idItemTirado.superpone = true;
                                     idItemTirado.indice = obj_inventario.indiceInv[obj_inventario.posSeleccionado];
                                     idItemTirado.cantidad = cant;

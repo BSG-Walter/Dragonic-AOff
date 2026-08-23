@@ -1,4 +1,4 @@
-/// @description  Cambio el alpha del agua
+﻿/// @description  Cambio el alpha del agua
 
 if (instance_number(obj_pausa) == 0 && is_ingame_room()) {
 
@@ -15,7 +15,7 @@ if (instance_number(obj_pausa) == 0 && is_ingame_room()) {
     
         if (opcionPeces) {
             repeat(5) {
-                instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_pez);
+                instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_pez);
             }
         }
         
@@ -23,7 +23,7 @@ if (instance_number(obj_pausa) == 0 && is_ingame_room()) {
     
     if (opcionParticulas) {
         repeat(25) {
-            instance_create(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), obj_particula);
+            instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_particula);
         }
 		if (obj_pj.direccion == 1)
 			crearLluvia(cantidadGotasDeLluvia, 0, 140);
@@ -35,7 +35,7 @@ if (instance_number(obj_pausa) == 0 && is_ingame_room()) {
     }
     
     if (opcionNubes) {
-        instance_create(0, 0, obj_nubes);
+        instance_create_depth(0, 0, 0, obj_nubes);
     }
 
 }

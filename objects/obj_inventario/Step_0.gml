@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 if (!visible) {
     tirando = false;
@@ -320,19 +320,19 @@ device_mouse_check_button(4, mb_left)
                                 }
                                 
                                 if (!validoRaza) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu raza no puede usar este ítem!"; 
                                 } else if (!validoGenero) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu género no puede usar este ítem!"; 
                                 } else if (!validoClase) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
                                 } else if (!validoSkill) {
-                                    idFaltaSkill = instance_create(obj_pj.x, obj_pj.y, obj_efecto_falta_skill);
+                                    idFaltaSkill = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_falta_skill);
                                     idFaltaSkill.nroSkill = nroSkillInv[posItem];
                                     idFaltaSkill.skillRequerido = skillRequeridoInv[posItem];
                                 }                
@@ -717,7 +717,7 @@ device_mouse_check_button(4, mb_left)
                                             !position_meeting(obj_pj.x, obj_pj.y - 16, obj_item) &&
                                             !position_meeting(obj_pj.x, obj_pj.y - 16, obj_oro)
                                             ) {
-                                                var idItemTirado = instance_create(obj_pj.x, obj_pj.y, obj_item);
+                                                var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                                 idItemTirado.superpone = true;
                                                 idItemTirado.indice = indiceInv[posItem];
                                                 idItemTirado.cantidad = 1;

@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 // Control posición
 var _render_x = obj_pj.x - mitadAnchoV;
@@ -13,7 +13,7 @@ if (visible) {
 
 	if (y >= _render_y + altoV) {
 	    y -= altoV;
-		instance_create(_render_x + random(anchoV), _render_y + random(altoV), obj_salpicadura);
+		instance_create_depth(_render_x + random(anchoV), _render_y + random(altoV), 0, obj_salpicadura);
 	} else if (y <= _render_y) {
 	    // y += altoV;
 	}

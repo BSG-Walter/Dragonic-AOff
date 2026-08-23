@@ -1,4 +1,4 @@
-/// @description  Ataque a NPCs
+﻿/// @description  Ataque a NPCs
 
 if (targetNPC != -1) {
 
@@ -20,7 +20,7 @@ if (targetNPC != -1) {
         
             ataca = false;
             
-            var idINFO = instance_create(x, y + 9, obj_INFO);
+            var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
@@ -33,7 +33,7 @@ if (targetNPC != -1) {
     
         var dano = round(random_range(danoMeleeMin, danoMeleeMax) * 1.25);
         
-        idDano = instance_create(targetNPC.x, targetNPC.y - 41, obj_efecto_dano);
+        idDano = instance_create_depth(targetNPC.x, targetNPC.y - 41, 0, obj_efecto_dano);
         idDano.dano = dano;
         idDano.padre = targetNPC.id;
         

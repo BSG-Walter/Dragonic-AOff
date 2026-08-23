@@ -1,4 +1,4 @@
-/// @description  Muerte invocacion
+﻿/// @description  Muerte invocacion
 /// @param O drop
 
 // Si estaba invocado desaparece
@@ -18,12 +18,12 @@ if (invocado) {
         obj_pj.criaturasInvocadas[i] = -1;
     
 		if (!guardando) {    
-	        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.color = c_red;
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡Tu mascota murió!";
 		} else {
-	        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡Invocación guardada!";
 		}

@@ -1,4 +1,4 @@
-/// @description  Ataque a PJ
+﻿/// @description  Ataque a PJ
 
 if (obj_pj.invisible) {
     
@@ -91,7 +91,7 @@ if (obj_pj.invisible) {
                 
 	            ataca = false;
                     
-	            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡Defendido con escudo!";
 	            idINFO.color = c_red;
@@ -102,7 +102,7 @@ if (obj_pj.invisible) {
 	                if (random(10) > 5) {
 	                    obj_skills_libres.mostrado = false;
 	                    obj_pj.skills[6]++;
-	                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+	                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
 	                    idSubirSkills.indice = 6;
 	                }
 	            }
@@ -152,7 +152,7 @@ if (obj_pj.invisible) {
             
 	        ataca = false;
                 
-	        var idINFO = instance_create(x, y + 9, obj_INFO);
+	        var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
 	        idINFO.padre = id;
 	        idINFO.texto = "¡Falla!";
 	        idINFO.color = c_red;
@@ -161,7 +161,7 @@ if (obj_pj.invisible) {
 	            if (random(10) > 5) {
 	                obj_skills_libres.mostrado = false;
 	                obj_pj.skills[1]++;
-	                var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+	                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
 	                idSubirSkills.indice = 1;
 	            }
 	        }
@@ -238,7 +238,7 @@ if (target == -1 || target == obj_pj) {
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(obj_pj.x, obj_pj.y, objHechizo);
+                    var idHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, objHechizo);
                     idHechizo.padre = obj_pj.id;
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
@@ -249,7 +249,7 @@ if (target == -1 || target == obj_pj) {
                             if (obj_pj.skills[17] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                 obj_skills_libres.mostrado = false;
                                 obj_pj.skills[17]++;
-                                var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                 idSubirSkills.indice = 17;
                             }
                         }
@@ -344,12 +344,12 @@ if (target != -1 && target != obj_pj && personaRoom != -1 && instance_exists(per
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(personaRoom.x, personaRoom.y, objHechizo);
+                    var idHechizo = instance_create_depth(personaRoom.x, personaRoom.y, 0, objHechizo);
                     idHechizo.padre = personaRoom.id;
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
                     var danoTotal = calcularDanoMagicoNPCaIA(dano, personaRoom);
-                    idDano = instance_create(personaRoom.x, personaRoom.y - 41, obj_efecto_dano);
+                    idDano = instance_create_depth(personaRoom.x, personaRoom.y - 41, 0, obj_efecto_dano);
                     idDano.dano = danoTotal;
                     idDano.padre = personaRoom.id;
                     

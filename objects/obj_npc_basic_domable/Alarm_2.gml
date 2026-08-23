@@ -1,4 +1,4 @@
-/// @description  Ataque a PJ / NPCs (Si es mascota)
+﻿/// @description  Ataque a PJ / NPCs (Si es mascota)
 /// @param Si es mascota
 
 if (!domado) {
@@ -91,7 +91,7 @@ if (!domado) {
                 
                     ataca = false;
                     
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡Defendido con escudo!";
                     idINFO.color = c_red;
@@ -102,7 +102,7 @@ if (!domado) {
                         if (random(10) > 5) {
                             obj_skills_libres.mostrado = false;
                             obj_pj.skills[6]++;
-                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                             idSubirSkills.indice = 6;
                         }
                     }
@@ -152,7 +152,7 @@ if (!domado) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(x, y + 9, obj_INFO);
+                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
                 idINFO.padre = id;
                 idINFO.texto = "¡Falla!";
                 idINFO.color = c_red;
@@ -161,7 +161,7 @@ if (!domado) {
                     if (random(10) > 5) {
                         obj_skills_libres.mostrado = false;
                         obj_pj.skills[1]++;
-                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                         idSubirSkills.indice = 1;
                     }
                 }
@@ -202,7 +202,7 @@ if (!domado) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(x, y + 9, obj_INFO);
+                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
                 idINFO.padre = id;
                 idINFO.texto = "¡Falla!";
                 idINFO.color = c_red;
@@ -215,7 +215,7 @@ if (!domado) {
         
             var dano = round(random_range(danoMeleeMin, danoMeleeMax) * 1.25);
             
-            idDano = instance_create(targetNPC.x, targetNPC.y - 41, obj_efecto_dano);
+            idDano = instance_create_depth(targetNPC.x, targetNPC.y - 41, 0, obj_efecto_dano);
             idDano.dano = dano;
             idDano.padre = targetNPC.id;
             
@@ -324,7 +324,7 @@ if (!domado && target != -1 && personaRoom != -1 && instance_exists(personaRoom)
             
                 ataca = false;
                 
-                var idINFO = instance_create(personaRoom.x, personaRoom.y, obj_INFO);
+                var idINFO = instance_create_depth(personaRoom.x, personaRoom.y, 0, obj_INFO);
                 idINFO.padre = personaRoom;
                 idINFO.texto = "¡Defendido con escudo!";
                 idINFO.color = c_red;
@@ -371,7 +371,7 @@ if (!domado && target != -1 && personaRoom != -1 && instance_exists(personaRoom)
         
             ataca = false;
             
-            var idINFO = instance_create(personaRoom.x, personaRoom.y + 9, obj_INFO);
+            var idINFO = instance_create_depth(personaRoom.x, personaRoom.y + 9, 0, obj_INFO);
             idINFO.padre = personaRoom;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
@@ -385,7 +385,7 @@ if (!domado && target != -1 && personaRoom != -1 && instance_exists(personaRoom)
         var dano = round(random_range(danoMeleeMin, danoMeleeMax));
         var danoTotal = calcularDanoFisicoNPCaIA(dano, personaRoom);
         
-        idDano = instance_create(personaRoom.x, personaRoom.y - 41, obj_efecto_dano);
+        idDano = instance_create_depth(personaRoom.x, personaRoom.y - 41, 0, obj_efecto_dano);
         idDano.dano = danoTotal;
         idDano.padre = personaRoom.id;
         

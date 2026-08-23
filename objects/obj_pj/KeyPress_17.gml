@@ -1,4 +1,4 @@
-/// @description  Ataque
+﻿/// @description  Ataque
 
 if (obj_tecla_ctrl.teclaApretada) {
 
@@ -12,7 +12,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                 if (armaActual >= 0 && armaActual <= 17) {
                 
                     if (energia < 12) {
-                        var idINFO = instance_create(x, y, obj_INFO);
+                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                         idINFO.padre = id;
                         idINFO.texto = "¡Energía menor a 12!";
                     }
@@ -89,7 +89,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                 
                                 if (obj_mapas_mundo.mapas[room]) {
                                     valido = false;
-                                    var idINFO = instance_create(x, y, obj_INFO);
+                                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                     idINFO.texto = "¡No podés atacar en una zona segura!";
                                 }
                             
@@ -98,11 +98,11 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     if (!obj_pj.pk && !idNPC.pk) {
                                         if (obj_pj.esArmada) {
                                             valido = false;
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.texto = "No podés atacar ciudadanos siendo de la Armada Imperial";
                                         } else if (obj_seguro.activo) {
                                             valido = false;
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.texto = "Desactivá el seguro para atacar ciudadanos";
                                         } else {
                                             if (!obj_pj.pk) {
@@ -196,7 +196,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         dano = 1;
                                     }
                                     
-                                    idDano = instance_create(idNPC.x, idNPC.y, obj_efecto_dano);
+                                    idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
                                     idDano.apunala = false;
 									
 									if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7 && (obj_pj.clase == 1 || (obj_pj.clase == 2 && obj_pj.skills[4] >= 10))) {
@@ -252,7 +252,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                                 if (random(10) > 6.5) {
                                                     obj_skills_libres.mostrado = false;
                                                     obj_pj.skills[4]++;
-                                                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                                     idSubirSkills.indice = 4;
                                                 }
                                             }
@@ -263,7 +263,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         if (random(10) > 6.5) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[2]++;
-                                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                             idSubirSkills.indice = 2;
                                         }
                                     }
@@ -332,12 +332,12 @@ if (obj_tecla_ctrl.teclaApretada) {
                                 
                             } else if (idNPC != -1) {
                                 if (defendidoConEscudo) {
-                                    var idINFO = instance_create(idNPC.x, idNPC.y, obj_INFO);
+                                    var idINFO = instance_create_depth(idNPC.x, idNPC.y, 0, obj_INFO);
                                     idINFO.padre = idNPC;
                                     idINFO.texto = "¡Defendido con escudo!";
                                     reproducirSonido(snd_defensaEscudo, false, false);
                                 } else {
-                                    var idINFO = instance_create(x, y, obj_INFO);
+                                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                     idINFO.padre = id;
                                     idINFO.texto = "¡Fallás!";
                                     reproducirSonido(snd_fallo, false, false);
@@ -356,7 +356,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                 // Combate sin armas
                 
                     if (energia < 12) {
-                        var idINFO = instance_create(x, y, obj_INFO);
+                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                         idINFO.padre = id;
                         idINFO.texto = "¡Energía menor a 12!";
                     }
@@ -433,7 +433,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                 
                                 if (obj_mapas_mundo.mapas[room]) {
                                     valido = false;
-                                    var idINFO = instance_create(x, y, obj_INFO);
+                                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                     idINFO.texto = "¡No podés atacar en una zona segura!";
                                 }
                                 
@@ -442,11 +442,11 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     if (!obj_pj.pk && !idNPC.pk) {
                                         if (obj_pj.esArmada) {
                                             valido = false;
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.texto = "No podés atacar ciudadanos siendo de la Armada Imperial";                                        
                                         } else if (obj_seguro.activo) {
                                             valido = false;
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.texto = "Desactivá el seguro para atacar ciudadanos";
                                         } else {
                                             if (!obj_pj.pk) {
@@ -539,13 +539,13 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         dano = 1;
                                     }
                                     
-                                    idDano = instance_create(idNPC.x, idNPC.y, obj_efecto_dano);
+                                    idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
                                     
                                     if (obj_pj.skills[13] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                         if (random(10) > 6.5) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[13]++;
-                                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                                             idSubirSkills.indice = 13;
                                         }
                                     }
@@ -613,12 +613,12 @@ if (obj_tecla_ctrl.teclaApretada) {
                                 }
                             } else if (idNPC != -1) {
                                 if (defendidoConEscudo) {
-                                    var idINFO = instance_create(idNPC.x, idNPC.y, obj_INFO);
+                                    var idINFO = instance_create_depth(idNPC.x, idNPC.y, 0, obj_INFO);
                                     idINFO.padre = idNPC;
                                     idINFO.texto = "¡Defendido con escudo!";
                                     reproducirSonido(snd_defensaEscudo, false, false);
                                 } else {
-                                    var idINFO = instance_create(x, y, obj_INFO);
+                                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                     idINFO.padre = id;
                                     idINFO.texto = "¡Fallás!";
                                     reproducirSonido(snd_fallo, false, false);

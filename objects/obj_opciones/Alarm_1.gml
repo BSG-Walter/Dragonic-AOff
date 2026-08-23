@@ -1,10 +1,10 @@
-/// @description  Si el PJ pesca crea peces cerca
+﻿/// @description  Si el PJ pesca crea peces cerca
 
 if (noEstaEnPausa() && is_ingame_room()) {
 
     if (obj_pj.trabajaPesca && opcionPeces && opcionAnimacionAgua && instance_number(obj_pez) < 20) {
         repeat(3) {
-            var idPez = instance_create(obj_pj.x, obj_pj.y, obj_pez);
+            var idPez = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_pez);
             idPez.esPescado = true;
             idPez.alarm[7] = 1;
             with (idPez) {

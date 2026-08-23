@@ -1,4 +1,4 @@
-/// @description  Control mouse
+﻿/// @description  Control mouse
 event_inherited()
 if (obj_inventario.visible) exit;
 
@@ -10,7 +10,7 @@ if (touchId != nuevoTouch && nuevoTouch > -1) {  //detectamos un nuevo tap en el
         keyboard_key_press(ord("L"));
         image_index = 1;
     } else {
-        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
         idINFO.padre = obj_pj.id;
         idINFO.texto = "¡Estás muerto!";
     }

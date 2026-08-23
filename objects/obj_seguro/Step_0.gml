@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 x = global.render_x + get_render_width();
 y = global.render_y + get_render_height();
@@ -21,7 +21,7 @@ device_mouse_check_button(4, mb_left)
         
             obj_control_devices.devicesL[device] = true;
             
-            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
     
             if (activo) {
                 idINFO.texto = "Seguro desactivado";

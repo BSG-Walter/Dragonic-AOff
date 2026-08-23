@@ -1,4 +1,4 @@
-/// @description  Control general invocado
+﻿/// @description  Control general invocado
 
 //////////////////////////
 
@@ -214,7 +214,7 @@ device_mouse_check_button(4, mb_left)
                     guardando = true;
 					salud = 0;
                 } else {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡Estás muerto!";
                 }

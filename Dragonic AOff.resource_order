@@ -626,7 +626,6 @@
     {"name":"rm_nombrePJ","order":4,"path":"rooms/rm_nombrePJ/rm_nombrePJ.yy",},
     {"name":"rm_opciones","order":7,"path":"rooms/rm_opciones/rm_opciones.yy",},
     {"name":"rm_seleccionarPJ","order":5,"path":"rooms/rm_seleccionarPJ/rm_seleccionarPJ.yy",},
-    {"name":"__global_object_depths","order":6,"path":"scripts/__global_object_depths/__global_object_depths.yy",},
     {"name":"abrigaIA","order":96,"path":"scripts/abrigaIA/abrigaIA.yy",},
     {"name":"actualizarCiudas","order":75,"path":"scripts/actualizarCiudas/actualizarCiudas.yy",},
     {"name":"actualizarDevices","order":28,"path":"scripts/actualizarDevices/actualizarDevices.yy",},

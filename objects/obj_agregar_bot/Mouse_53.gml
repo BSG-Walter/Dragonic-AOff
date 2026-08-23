@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 // La posición base se sigue definiendo en obj_gui, por ahora la dejamos así.
 x = global.render_x + get_render_width() - 2;
@@ -30,7 +30,7 @@ device_mouse_check_button(4, mb_left)
 			
             spawnear_pk = false;
 			if (room == rm_arena){
-				instance_create(obj_pj.x, obj_pj.y + 32, obj_persona);
+				instance_create_depth(obj_pj.x, obj_pj.y + 32, 0, obj_persona);
 			}
             
             obj_control_devices.devicesL[device] = false;
@@ -43,7 +43,7 @@ device_mouse_check_button(4, mb_left)
 			
             spawnear_pk = true;
 			if (room == rm_arena){
-				instance_create(obj_pj.x, obj_pj.y + 32, obj_persona);
+				instance_create_depth(obj_pj.x, obj_pj.y + 32, 0, obj_persona);
 			}
             
             obj_control_devices.devicesL[device] = false;

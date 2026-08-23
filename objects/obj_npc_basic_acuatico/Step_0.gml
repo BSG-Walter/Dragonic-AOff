@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 //////////////////////////
 
@@ -231,11 +231,11 @@ device_mouse_check_button(4, mb_left)
                 // No puede domar
                 
                 if (!obj_pj.muerto) {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡No podés domar a esta criatura!";
                 } else {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡Estás muerto!";
                 }

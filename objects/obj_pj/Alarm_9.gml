@@ -1,8 +1,8 @@
-/// @description  Control de posición de teletransporte / logueo / encierro
+﻿/// @description  Control de posición de teletransporte / logueo / encierro
 
 var i = 1;
 
-var idBloqueo = instance_create(x - 16, y, obj_bloqueo);
+var idBloqueo = instance_create_depth(x - 16, y, 0, obj_bloqueo);
 
 tile = tile_layer_find(1000000, x, y);
 
@@ -404,7 +404,7 @@ if (instance_exists(idBloqueo)) {
 }
 
 if (!teletransporta) {
-    instance_create(x, y, obj_efecto_login);
+    instance_create_depth(x, y, 0, obj_efecto_login);
     reproducirSonido(snd_logueo, false, false);
 }
 

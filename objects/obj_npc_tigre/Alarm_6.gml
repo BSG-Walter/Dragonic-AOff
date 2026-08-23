@@ -1,4 +1,4 @@
-/// @description  Control posición
+﻿/// @description  Control posición
 
 var i = 1;
 
@@ -484,6 +484,6 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
 }
 
 visible = true;
-var idEfecto = instance_create(x, y, obj_efecto_login);
+var idEfecto = instance_create_depth(x, y, 0, obj_efecto_login);
 idEfecto.padre = id;
 

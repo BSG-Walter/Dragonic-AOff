@@ -1,4 +1,4 @@
-/// @description  Spawn
+﻿/// @description  Spawn
 
 var rand = 2.5;
 
@@ -63,9 +63,9 @@ if (random(10) > rand) {
                 instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
                 );
                 
-                var idPersona = instance_create(xNuevo, yNuevo, obj_persona);
+                var idPersona = instance_create_depth(xNuevo, yNuevo, 0, obj_persona);
                 
-                var idEfecto = instance_create(idPersona.x, idPersona.y, obj_efecto_login);
+                var idEfecto = instance_create_depth(idPersona.x, idPersona.y, 0, obj_efecto_login);
                 idEfecto.padre = idPersona;
                 with (idPersona) {
                     guardarDatosIAEnGlobalIA();

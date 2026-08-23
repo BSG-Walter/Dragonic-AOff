@@ -1,4 +1,4 @@
-/// @description  Creo los Items
+﻿/// @description  Creo los Items
 
 /*
 
@@ -24,12 +24,12 @@ if (datosItem[0] != -1) {
     for (var j = 0; j < tamano; j++) {
         if (datosItem[0] != -1) {
             if (datosItem[2] != -1) { // Es item
-                var idItem = instance_create(datosItem[0], datosItem[1], obj_item); 
+                var idItem = instance_create_depth(datosItem[0], datosItem[1], 0, obj_item); 
                 idItem.indice = datosItem[2]; 
                 idItem.tipo = datosItem[3]; 
                 idItem.cantidad = datosItem[4];
             } else { // Es oro
-                var idItem = instance_create(datosItem[0], datosItem[1], obj_oro); 
+                var idItem = instance_create_depth(datosItem[0], datosItem[1], 0, obj_oro); 
                 idItem.valor = datosItem[5];
             }
         }

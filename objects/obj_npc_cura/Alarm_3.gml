@@ -1,4 +1,4 @@
-/// @description  Tira hechizos si el PJ es PK
+﻿/// @description  Tira hechizos si el PJ es PK
 
 if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
     if (
@@ -8,16 +8,16 @@ if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
     
         var dano = floor(random_range(87, 98));
     
-        var idEfectoHechizo = instance_create(obj_pj.x, obj_pj.y, obj_apocalipsis);
+        var idEfectoHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_apocalipsis);
         idEfectoHechizo.padre = obj_pj.id;
         
         var danoTotal = calcularDanoMagicoNPC(dano);
                                 
-        var idDano = instance_create(obj_pj.x, obj_pj.y, obj_efecto_dano);
+        var idDano = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_dano);
         idDano.dano = danoTotal;
         idDano.padre = obj_pj.id;
         
-        var idMsg = instance_create(x, y, obj_msg);
+        var idMsg = instance_create_depth(x, y, 0, obj_msg);
         idMsg.desc = desc2;
         idMsg.tiempo = 150;
         
@@ -81,12 +81,12 @@ if (instance_number(obj_persona) > 0 && !obj_persona.muerto && obj_persona.pk) {
         distanciaY <= get_render_height() * 0.5
         ) {
             
-            var idHechizo = instance_create(obj_persona.x, obj_persona.y, obj_apocalipsis);
+            var idHechizo = instance_create_depth(obj_persona.x, obj_persona.y, 0, obj_apocalipsis);
             idHechizo.padre = obj_persona.id;
             
             var dano = floor(random_range(87, 98));
             var danoTotal = calcularDanoMagicoNPCaIA(dano, obj_persona.id);
-            idDano = instance_create(obj_persona.x, obj_persona.y - 41, obj_efecto_dano);
+            idDano = instance_create_depth(obj_persona.x, obj_persona.y - 41, 0, obj_efecto_dano);
             idDano.dano = danoTotal;
             idDano.padre = obj_persona.id;
             

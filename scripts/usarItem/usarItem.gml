@@ -1,4 +1,4 @@
-// Script assets have changed for v2.3.0 see
+﻿// Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function usarItem(){
 with(obj_inventario){
@@ -195,7 +195,7 @@ with(obj_inventario){
 						obj_pj.salud -= floor(obj_pj.salud / 3);                   
 		                reproducirSonido(snd_dardoMagico, false, false);   
 		                obj_pj.inmovilizado = false;
-						var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+						var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 					    idINFO.padre = obj_pj.id;
 					    idINFO.color = make_color_rgb(211, 90, 211);
 					    idINFO.texto = "¡Removido!"; 
@@ -217,12 +217,12 @@ with(obj_inventario){
 				        }
 					
 					} else {
-						var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+						var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 		                idINFO.padre = obj_pj.id;
 		                idINFO.texto = "¡No estás inmovilizado ni paralizado!"; 
 					}
 				} else {
-					var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+					var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
 				}
@@ -231,7 +231,7 @@ with(obj_inventario){
 				
 					obj_pj.salud -= floor(obj_pj.salud * 0.9);                   
 		            reproducirSonido(snd_dardoMagico, false, false);   
-					var idEfectoHechizo = instance_create(obj_pj.x, obj_pj.y, obj_invisibilidad);
+					var idEfectoHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_invisibilidad);
 					idEfectoHechizo.padre = obj_pj.id;
 		            obj_pj.invisible = true;
 	                obj_pj.alarm[5] = 1800;
@@ -258,7 +258,7 @@ with(obj_inventario){
 				    }
 					
 				} else {
-					var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+					var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
 				}
@@ -288,11 +288,11 @@ with(obj_inventario){
 	        var idINFO = 0;
     
 	        if (obj_pj.nivel < 25) {
-	            idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡Nivel menor a 25!";
 	        } else if (obj_pj.skills[14] < 70) {
-	            idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡Navegación menor a 70!";
 	        }
@@ -436,7 +436,7 @@ with(obj_inventario){
 	        if (obj_pj.puedeMoverse) {
         
 	            if (!obj_pj.muerto) {
-	                idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	                idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Tenés que estar muerto para usar este ítem!";
 	            } else {
@@ -447,7 +447,7 @@ with(obj_inventario){
 	                    obj_pj.y = obj_pj.yRuna;
 	                    obj_pj.alarm[9] = 1;   
 	                } else {
-	                    idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	                    idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                    idINFO.padre = obj_pj.id;
 	                    idINFO.texto = "¡No tenés asignado un hogar!";
 	                }
@@ -455,7 +455,7 @@ with(obj_inventario){
 	            }
             
 	        } else {
-	            idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡No podés usar la runa en movimiento!";
 	        }

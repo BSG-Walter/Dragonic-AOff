@@ -1,4 +1,4 @@
-/// @description  Ataque a Persona
+﻿/// @description  Ataque a Persona
 
 if (personaRoom != -1 && instance_exists(personaRoom)) {
 
@@ -76,7 +76,7 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(personaRoom.x, personaRoom.y, obj_inmovilizar);
+                    var idHechizo = instance_create_depth(personaRoom.x, personaRoom.y, 0, obj_inmovilizar);
                     idHechizo.padre = personaRoom.id;
                     personaRoom.inmovilizado = true;
 					personaRoom.alarm[7] = 170;

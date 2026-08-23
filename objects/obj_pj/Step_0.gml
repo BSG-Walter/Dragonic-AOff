@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 /*
 
@@ -258,7 +258,7 @@ if (!obj_opciones.opcionTechos) {
 if (!meditando) {
     if (obj_tecla_f6.teclaApretada) {
     
-        instance_create(x, y, obj_meditacion);
+        instance_create_depth(x, y, 0, obj_meditacion);
         meditando = true;
         
         if (instance_exists(obj_persona) && !obj_persona.muerto) {
@@ -320,7 +320,7 @@ if (trabajando) {
         trabajaPesca = false;
         trabajando = false;
         indiceMineral = -1;
-        var idINFO = instance_create(x, y, obj_INFO);
+        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
         idINFO.padre = id;
         idINFO.texto = "Dejaste de trabajar";
         alarm[11] = -1;
@@ -405,7 +405,7 @@ device_mouse_check_button(4, mb_left)
                                     var idINFO = 0;
                                         
                                     if (energia < 20) {
-                                        var idINFO = instance_create(x, y, obj_INFO);
+                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                         idINFO.padre = id;
                                         idINFO.texto = "¡Energía menor a 20!";
                                         alarm[3] = 1;
@@ -443,7 +443,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                                     if (obj_mapas_mundo.mapas[room]) {
                                                         valido = false;
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.texto = "¡No podés atacar en una zona segura!";
                                                     }
                                                     
@@ -452,11 +452,11 @@ device_mouse_check_button(4, mb_left)
                                                         if (!obj_pj.pk && !idNPC.pk) {
                                                             if (obj_pj.esArmada) {
                                                                 valido = false;
-                                                                var idINFO = instance_create(x, y, obj_INFO);
+                                                                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                 idINFO.texto = "No podés atacar ciudadanos siendo de la Armada Imperial";
                                                             } else if (obj_seguro.activo) {
                                                                 valido = false;
-                                                                var idINFO = instance_create(x, y, obj_INFO);
+                                                                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                 idINFO.texto = "Desactivá el seguro para atacar ciudadanos";
                                                             } else {
                                                                 if (!obj_pj.pk) {
@@ -532,7 +532,7 @@ device_mouse_check_button(4, mb_left)
 	                                                            if (random(10) > 6.5) {
 	                                                                obj_skills_libres.mostrado = false;
 	                                                                skills[12]++;
-	                                                                var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+	                                                                var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
 	                                                                idSubirSkills.indice = 12;
 	                                                            }
 	                                                        }
@@ -555,7 +555,7 @@ device_mouse_check_button(4, mb_left)
 	                                                                dano = 1;
 	                                                            }
                                                     
-	                                                            idDano = instance_create(idNPC.x, idNPC.y, obj_efecto_dano);
+	                                                            idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
                                                             
 	                                                            var expOtorgada = 0;
                                                                 
@@ -624,7 +624,7 @@ device_mouse_check_button(4, mb_left)
 																// Flechas Paralizantes
 																
 																if (object_index == obj_npc_dragonic) {
-		                                                            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+		                                                            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 		                                                            idINFO.padre = obj_pj.id;
 		                                                            idINFO.texto = "¡Esta criatura es inmune a la parálisis!";
 																	reproducirSonido(snd_fallo, false, false);
@@ -634,7 +634,7 @@ device_mouse_check_button(4, mb_left)
 			                                                            if (random(10) > 6.5) {
 			                                                                obj_skills_libres.mostrado = false;
 			                                                                obj_pj.skills[12]++;
-			                                                                var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+			                                                                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
 			                                                                idSubirSkills.indice = 12;
 			                                                            }
 			                                                        }
@@ -652,7 +652,7 @@ device_mouse_check_button(4, mb_left)
 		                                                                }
 		                                                            }
 																
-		                                                            var idEfectoHechizo = instance_create(x, y, obj_paralizar);
+		                                                            var idEfectoHechizo = instance_create_depth(x, y, 0, obj_paralizar);
 		                                                            idEfectoHechizo.padre = id;
 		                                                            reproducirSonido(snd_dardoMagico, false, false);
                                                             
@@ -692,12 +692,12 @@ device_mouse_check_button(4, mb_left)
                                                     } else {
                                                     
                                                         if (defendidoConEscudo) {
-                                                            var idINFO = instance_create(idNPC.x, idNPC.y, obj_INFO);
+                                                            var idINFO = instance_create_depth(idNPC.x, idNPC.y, 0, obj_INFO);
                                                             idINFO.padre = idNPC;
                                                             idINFO.texto = "¡Defendido con escudo!";
                                                             reproducirSonido(snd_defensaEscudo, false, false);
                                                         } else {
-                                                            var idINFO = instance_create(x, y, obj_INFO);
+                                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                             idINFO.padre = id;
                                                             idINFO.texto = "¡Fallás!";
                                                             reproducirSonido(snd_fallo, false, false);
@@ -711,7 +711,7 @@ device_mouse_check_button(4, mb_left)
                                             }
                                         
                                         } else {
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.padre = id;
                                             idINFO.color = make_color_rgb(211, 90, 211);
                                             idINFO.texto = "¡Target inválido!"; 
@@ -779,7 +779,7 @@ device_mouse_check_button(4, mb_left)
                                             ) {
                                                 if (armaActual != 18 && armaActual != 19 && armaActual != 20) {
                                                     valido = false;
-                                                    idINFO = instance_create(x, y, obj_INFO);
+                                                    idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
                                                     idINFO.texto = "¡Necesitás un báculo para lanzar este hechizo!";
                                                 }
@@ -790,13 +790,13 @@ device_mouse_check_button(4, mb_left)
                                             if (obj_hechizos.indiceHechizos[i] == 17 || obj_hechizos.indiceHechizos[i] == 18 || obj_hechizos.indiceHechizos[i] == 19) {
                                                 if (clase != 5) {
                                                     valido = false;
-                                                    idINFO = instance_create(x, y, obj_INFO);
+                                                    idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
                                                     idINFO.texto = "¡Este hechizo es solo para Druidas!";
                                                 } else if (obj_hechizos.indiceHechizos[i] == 17 || obj_hechizos.indiceHechizos[i] == 18) {
 													if (armaActual != 227) {
 	                                                    valido = false;
-	                                                    idINFO = instance_create(x, y, obj_INFO);
+	                                                    idINFO = instance_create_depth(x, y, 0, obj_INFO);
 	                                                    idINFO.padre = id;
 	                                                    idINFO.texto = "¡Necesitás un báculo para lanzar este hechizo!";
 	                                                }
@@ -816,7 +816,7 @@ device_mouse_check_button(4, mb_left)
                                                 ) {
                                                     if (armaActual != 18 && armaActual != 19 && armaActual != 20) {
                                                         valido = false;
-                                                        idINFO = instance_create(x, y, obj_INFO);
+                                                        idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.texto = "¡Necesitás un báculo para lanzar este hechizo!";
                                                     }
@@ -826,19 +826,19 @@ device_mouse_check_button(4, mb_left)
                                     
                                         if (valido) {
                                             if (skills[0] < obj_hechizos.skillHechizos[i]) {
-                                                idINFO = instance_create(x, y, obj_INFO);
+                                                idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                 idINFO.padre = id;
                                                 idINFO.texto = "¡Magia menor a " + string(obj_hechizos.skillHechizos[i]) + "!";
                                                 valido = false;
                                             } else if (mana < obj_hechizos.manaHechizos[i]) {
                                                 if (obj_hechizos.tipoHechizos[i] != "invocacion") {
-                                                    idINFO = instance_create(x, y, obj_INFO);
+                                                    idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
                                                     idINFO.texto = "¡Maná menor a " + string(obj_hechizos.manaHechizos[i]) + "!";
                                                     valido = false;
                                                 }
                                             } else if (energia < obj_hechizos.energiaHechizos[i]) {
-                                                idINFO = instance_create(x, y, obj_INFO);
+                                                idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                 idINFO.padre = id;
                                                 idINFO.texto = "¡Energía menor a " + string(obj_hechizos.energiaHechizos[i]) + "!";
                                                 valido = false;
@@ -867,7 +867,7 @@ device_mouse_check_button(4, mb_left)
                                                         
                                                             if (obj_mapas_mundo.mapas[room]) {
                                                                 valido = false;
-                                                                var idINFO = instance_create(x, y, obj_INFO);
+                                                                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                 idINFO.texto = "¡No podés atacar en una zona segura!";
                                                             }
                                                     
@@ -876,11 +876,11 @@ device_mouse_check_button(4, mb_left)
                                                                 if (!obj_pj.pk && !idNPC.pk) {
                                                                     if (obj_pj.esArmada) {
                                                                         valido = false;
-                                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                         idINFO.texto = "No podés atacar ciudadanos siendo de la Armada Imperial";
                                                                     } else if (obj_seguro.activo) {
                                                                         valido = false;
-                                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                         idINFO.texto = "Desactivá el seguro para atacar ciudadanos";
                                                                     }
                                                                 }
@@ -911,7 +911,7 @@ device_mouse_check_button(4, mb_left)
                                                                 if (random(10) > 6.5) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
-                                                                    var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                                    var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                                     idSubirSkills.indice = 0;
                                                                 }
                                                             }
@@ -928,31 +928,31 @@ device_mouse_check_button(4, mb_left)
                                                             switch (obj_hechizos.indiceHechizos[i]) {
                                                                 case 5:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_dardo_magico);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_dardo_magico);
                                                                     break;
                                                                 case 6:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_flecha_magica);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_flecha_magica);
                                                                     break;
                                                                 case 7:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_flecha_electrica);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_flecha_electrica);
                                                                     break;
                                                                 case 8:
                                                                     reproducirSonido(snd_misilMagico, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_misil_magico);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_misil_magico);
                                                                     break;
                                                                 case 9:
                                                                     reproducirSonido(snd_tormentaDeFuego, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_tormenta_de_fuego);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_tormenta_de_fuego);
                                                                     break;
                                                                 case 10:
                                                                     reproducirSonido(snd_descargaElectrica, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_descarga_electrica);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_descarga_electrica);
                                                                     break;
                                                                 case 11:
                                                                     reproducirSonido(snd_apocalipsis, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_apocalipsis);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_apocalipsis);
                                                                     break;
                                                             }
                                                             
@@ -964,7 +964,7 @@ device_mouse_check_button(4, mb_left)
                                                                 var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
                                                             }
                                                             
-                                                            idDano = instance_create(idNPC.x, idNPC.y, obj_efecto_dano);
+                                                            idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
                                                             
                                                             var expOtorgada = 0;
                                                             
@@ -1038,7 +1038,7 @@ device_mouse_check_button(4, mb_left)
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                         lanzo = false;
                                                     } else {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.color = make_color_rgb(211, 90, 211);
                                                         idINFO.texto = "¡Target inválido!"; 
@@ -1069,7 +1069,7 @@ device_mouse_check_button(4, mb_left)
                                                         if (random(10) > 6.5) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                             idSubirSkills.indice = 0;
                                                         }
                                                     }
@@ -1086,18 +1086,18 @@ device_mouse_check_button(4, mb_left)
                                                     switch (obj_hechizos.indiceHechizos[i]) {
                                                         case 1:
                                                             reproducirSonido(snd_curarHeridasLeves, false, false);
-                                                            idEfectoHechizo = instance_create(x, y, obj_curar_heridas_leves);
+                                                            idEfectoHechizo = instance_create_depth(x, y, 0, obj_curar_heridas_leves);
                                                             break;
                                                         case 2:
                                                             reproducirSonido(snd_curarHeridasGraves, false, false);
-                                                            idEfectoHechizo = instance_create(x, y, obj_curar_heridas_graves);
+                                                            idEfectoHechizo = instance_create_depth(x, y, 0, obj_curar_heridas_graves);
                                                             break;
                                                     }
                                                     
                                                     idEfectoHechizo.padre = id;
                                                     
                                                     var cura = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
-                                                    idCura = instance_create(x, y - 40, obj_efecto_dano);
+                                                    idCura = instance_create_depth(x, y - 40, 0, obj_efecto_dano);
                                         
                                                     idCura.padre = id;
                                                     idCura.dano = cura;
@@ -1114,7 +1114,7 @@ device_mouse_check_button(4, mb_left)
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                         lanzo = false;
                                                     } else {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.color = make_color_rgb(211, 90, 211);
                                                         idINFO.texto = "¡Target inválido!"; 
@@ -1142,7 +1142,7 @@ device_mouse_check_button(4, mb_left)
                                                         
                                                             if (obj_mapas_mundo.mapas[room]) {
                                                                 valido = false;
-                                                                var idINFO = instance_create(x, y, obj_INFO);
+                                                                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                 idINFO.texto = "¡No podés atacar en una zona segura!";
                                                             }
                                                             
@@ -1151,11 +1151,11 @@ device_mouse_check_button(4, mb_left)
                                                                 if (!obj_pj.pk && !idNPC.pk) {
                                                                     if (obj_pj.esArmada) {
                                                                         valido = false;
-                                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                         idINFO.texto = "No podés atacar ciudadanos siendo de la Armada Imperial";
                                                                     } else if (obj_seguro.activo) {
                                                                         valido = false;
-                                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                                         idINFO.texto = "Desactivá el seguro para atacar ciudadanos";
                                                                     }
                                                                 }
@@ -1165,7 +1165,7 @@ device_mouse_check_button(4, mb_left)
                                                         }
                                                         
                                                         if (idNPC.object_index == obj_npc_dragonic) {
-                                                            var idINFO = instance_create(x, y, obj_INFO);
+                                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                             idINFO.padre = id;
                                                             idINFO.texto = "¡Esta criatura es inmune a este hechizo!";
                                                             valido = false;
@@ -1193,7 +1193,7 @@ device_mouse_check_button(4, mb_left)
                                                                 if (random(10) > 6.5) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
-                                                                    var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                                    var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                                     idSubirSkills.indice = 0;
                                                                 }
                                                             }
@@ -1210,11 +1210,11 @@ device_mouse_check_button(4, mb_left)
                                                             switch (obj_hechizos.indiceHechizos[i]) {
                                                                 case 12:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_paralizar);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_paralizar);
                                                                     break;
                                                                 case 13:
                                                                     reproducirSonido(snd_inmovilizar, false, false);
-                                                                    idEfectoHechizo = instance_create(idNPC.x, idNPC.y, obj_inmovilizar);
+                                                                    idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_inmovilizar);
                                                                     break;
                                                             }
                                                             
@@ -1264,7 +1264,7 @@ device_mouse_check_button(4, mb_left)
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                         lanzo = false;
                                                     } else {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.color = make_color_rgb(211, 90, 211);
                                                         idINFO.texto = "¡Target inválido!"; 
@@ -1282,7 +1282,7 @@ device_mouse_check_button(4, mb_left)
                                                         if (random(10) > 6.5) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                             idSubirSkills.indice = 0;
                                                         }
                                                     }
@@ -1296,7 +1296,7 @@ device_mouse_check_button(4, mb_left)
                                                     
                                                     reproducirSonido(snd_dardoMagico, false, false);
 													
-													var idEfectoHechizo = instance_create(x, y, obj_invisibilidad);
+													var idEfectoHechizo = instance_create_depth(x, y, 0, obj_invisibilidad);
 													idEfectoHechizo.padre = id;
                                                     
                                                     obj_pj.invisible = true;
@@ -1312,7 +1312,7 @@ device_mouse_check_button(4, mb_left)
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                         lanzo = false;
                                                     } else {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.color = make_color_rgb(211, 90, 211);
                                                         idINFO.texto = "¡Target inválido!"; 
@@ -1343,7 +1343,7 @@ device_mouse_check_button(4, mb_left)
                                                         if (random(10) > 6.5) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                             idSubirSkills.indice = 0;
                                                         }
                                                     }
@@ -1355,7 +1355,7 @@ device_mouse_check_button(4, mb_left)
                                                     energia -= obj_hechizos.energiaHechizos[i];
                                                     mana -= obj_hechizos.manaHechizos[i];
                                                     
-                                                    var idEfectoHechizo = instance_create(x, y, obj_curar_veneno);
+                                                    var idEfectoHechizo = instance_create_depth(x, y, 0, obj_curar_veneno);
                                                     idEfectoHechizo.padre = id;
                                                     
                                                     reproducirSonido(snd_dardoMagico, false, false);
@@ -1367,7 +1367,7 @@ device_mouse_check_button(4, mb_left)
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                         lanzo = false;
                                                     } else {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.color = make_color_rgb(211, 90, 211);
                                                         idINFO.texto = "¡Target inválido!"; 
@@ -1399,7 +1399,7 @@ device_mouse_check_button(4, mb_left)
                                                             if (random(10) > 6.5) {
                                                                 obj_skills_libres.mostrado = false;
                                                                 skills[0]++;
-                                                                var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                                var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                                 idSubirSkills.indice = 0;
                                                             }
                                                         }
@@ -1419,7 +1419,7 @@ device_mouse_check_button(4, mb_left)
                                                         if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                             lanzo = false;
                                                         } else {
-                                                            var idINFO = instance_create(x, y, obj_INFO);
+                                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                             idINFO.padre = id;
                                                             idINFO.color = make_color_rgb(211, 90, 211);
                                                             idINFO.texto = "¡Target inválido!"; 
@@ -1427,7 +1427,7 @@ device_mouse_check_button(4, mb_left)
                                                     }
                                                 } else {
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , self)) {
-                                                        var idINFO = instance_create(x, y, obj_INFO);
+                                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                         idINFO.padre = id;
                                                         idINFO.texto = "¡No estás inmovilizado ni paralizado!"; 
                                                     }
@@ -1477,7 +1477,7 @@ device_mouse_check_button(4, mb_left)
                                                                         if (random(10) > 6.5) {
                                                                             obj_skills_libres.mostrado = false;
                                                                             skills[0]++;
-                                                                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                                             idSubirSkills.indice = 0;
                                                                         }
                                                                     }
@@ -1495,7 +1495,7 @@ device_mouse_check_button(4, mb_left)
                                                             }     
                                                             
                                                         } else {
-                                                            var idINFO = instance_create(x, y, obj_INFO);
+                                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                             idINFO.padre = id;
                                                             idINFO.texto = "¡No domaste ninguna criatura!";
                                                         }  
@@ -1543,7 +1543,7 @@ device_mouse_check_button(4, mb_left)
                                                                     if (random(10) > 6.5) {
                                                                         obj_skills_libres.mostrado = false;
                                                                         skills[0]++;
-                                                                        var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
+                                                                        var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
                                                                         idSubirSkills.indice = 0;
                                                                     }
                                                                 }
@@ -1563,7 +1563,7 @@ device_mouse_check_button(4, mb_left)
                                                     }
                                                     
                                                 } else {
-                                                    var idINFO = instance_create(x, y, obj_INFO);
+                                                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
                                                     idINFO.texto = "¡No podés invocar criaturas en movimiento!";
                                                 }
@@ -1602,7 +1602,7 @@ device_mouse_check_button(4, mb_left)
                             
                             if (idNPC.hostil && valido) {
                             
-                                var idINFO = instance_create(idNPC.x, idNPC.y, obj_INFO);
+                                var idINFO = instance_create_depth(idNPC.x, idNPC.y, 0, obj_INFO);
                                 idINFO.padre = idNPC;
                                 if (idNPC.domado) {
                                     idINFO.texto = "(Mascota) " + idNPC.nombre + " - " + string(idNPC.salud) + "/" + string(idNPC.saludMax);
@@ -1667,7 +1667,7 @@ device_mouse_check_button(4, mb_left)
                                             
 											obj_skills_libres.mostrado = false;
 											
-                                            var idINFO = instance_create(x, y, obj_INFO);
+                                            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                             idINFO.texto = "Trabajando";
                                             idINFO.padre = id;
                                             
@@ -1686,12 +1686,12 @@ device_mouse_check_button(4, mb_left)
                         } else {
                             if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_item)) {
                                 var idItem = instance_position(device_mouse_x(device), device_mouse_y(device) , obj_item);
-                                var idINFO = instance_create(idItem.x, idItem.y, obj_INFO);
+                                var idINFO = instance_create_depth(idItem.x, idItem.y, 0, obj_INFO);
                                 idINFO.texto = nombreItem(idItem.indice) + " (" + string(idItem.cantidad) + ")";
                                 idINFO.padre = idItem;
                             } else if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_oro)) {
                                 var idOro = instance_position(device_mouse_x(device), device_mouse_y(device) , obj_oro);
-                                var idINFO = instance_create(idOro.x, idOro.y, obj_INFO);
+                                var idINFO = instance_create_depth(idOro.x, idOro.y, 0, obj_INFO);
                                 idINFO.texto = "Monedas de oro (" + string(idOro.valor) + ")";
                                 idINFO.padre = idOro;
                             }

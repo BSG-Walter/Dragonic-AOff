@@ -1,4 +1,4 @@
-/// @description  Opciones
+﻿/// @description  Opciones
 
 if (
 (mouse_x >= get_render_x() + 229 && mouse_x <= get_render_x() + 357) &&
@@ -134,7 +134,7 @@ if (
             instance_destroy();
         }
         
-        instance_create(get_render_x() + 326 + coordX * 14.75, get_render_y() + 95 + coordY * 17.25, obj_borde_mapa);
+        instance_create_depth(get_render_x() + 326 + coordX * 14.75, get_render_y() + 95 + coordY * 17.25, 0, obj_borde_mapa);
         
         nombreMapaPausa = obtenerNombreMapa(matRooms[coordY, coordX], coordY, coordX);
     
@@ -174,7 +174,7 @@ if (
     }
     
     if (obj_opciones.opcionNubes) {
-        instance_create(0, 0, obj_nubes);    
+        instance_create_depth(0, 0, 0, obj_nubes);    
     }
     
     instance_destroy();

@@ -1,4 +1,4 @@
-/// @description  invocarCriatura(manaHechizo, criatura, nroCriaturas, device)
+﻿/// @description  invocarCriatura(manaHechizo, criatura, nroCriaturas, device)
 /// @param manaHechizo
 /// @param  criatura
 /// @param  nroCriaturas
@@ -10,14 +10,14 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	var consumoMana = argument0;
 
 	if (obj_pj.mana < consumoMana) {
-	    idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	    idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	    idINFO.padre = obj_pj.id;
 	    idINFO.texto = "¡Maná menor a " + string(consumoMana) + "!";
 	    return 0;
 	}
 
 	if (obj_mapas_mundo.mapas[room]) {
-	    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	    idINFO.texto = "¡No podés invocar criaturas en una zona segura!";
 	    return 0;
 	}
@@ -74,7 +74,7 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	    }
     
 	} else {
-	    idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	    idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	    idINFO.padre = obj_pj.id;
 	    idINFO.texto = "¡No podés invocar criaturas en el agua!";
 	    return 0;
@@ -84,7 +84,7 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	if (argument2 > 1) {
 	    obj_pj.mana -= consumoMana;
 	    repeat (argument2) {
-	        var idInvocacion = instance_create(posXMouse, posYMouse, argument1);   
+	        var idInvocacion = instance_create_depth(posXMouse, posYMouse, 0, argument1);   
 			if (argument1 == obj_npc_zombie_invocado && claseSemiGuerrera()) {
 				with (idInvocacion) {
 					sprite_index = spr_npc_lord_zombie
@@ -139,7 +139,7 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	        for (var i = 0; i < 3; i++) {
 	            if (obj_pj.criaturasInvocadas[i] == -1) {
 	                hayLugarParaEle = true;
-	                var idInvocacion = instance_create(posXMouse, posYMouse, argument1);          
+	                var idInvocacion = instance_create_depth(posXMouse, posYMouse, 0, argument1);          
 	                idInvocacion.invocado = true;
 	                idInvocacion.alarm[7] = 5400; // 1 minuto y medio
 	                obj_pj.criaturasInvocadas[i] = idInvocacion;              
@@ -152,7 +152,7 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	    }    
     
 	    if (!hayLugarParaEle) {
-	        idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡No podés invocar más elementales!";
 	        return 0;

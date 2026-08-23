@@ -1,4 +1,4 @@
-/// @description  Ataque a Persona
+﻿/// @description  Ataque a Persona
 
 if (personaRoom != -1 && instance_exists(personaRoom)) {
 
@@ -76,12 +76,12 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(personaRoom.x, personaRoom.y, obj_tormenta_de_fuego);
+                    var idHechizo = instance_create_depth(personaRoom.x, personaRoom.y, 0, obj_tormenta_de_fuego);
                     idHechizo.padre = personaRoom.id;
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
                     var danoTotal = calcularDanoMagicoNPCaIA(dano, personaRoom);
-                    idDano = instance_create(personaRoom.x, personaRoom.y - 41, obj_efecto_dano);
+                    idDano = instance_create_depth(personaRoom.x, personaRoom.y - 41, 0, obj_efecto_dano);
                     idDano.dano = danoTotal;
                     idDano.padre = personaRoom.id;
                     

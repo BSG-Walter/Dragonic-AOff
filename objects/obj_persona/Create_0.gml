@@ -1,4 +1,4 @@
-/// @description  Estado inicial
+﻿/// @description  Estado inicial
 oro = 0;
 dropeaItem = false;
 indItem = 0;
@@ -62,10 +62,10 @@ if (obj_pj.nivel >= 25) {
 
 // Gráfico arma y escudo 
 
-graficoArma = instance_create(x, y, obj_arma_persona);
+graficoArma = instance_create_depth(x, y, 0, obj_arma_persona);
 graficoArma.padre = id;
 
-graficoEscudo = instance_create(x, y, obj_escudo_persona);
+graficoEscudo = instance_create_depth(x, y, 0, obj_escudo_persona);
 graficoEscudo.padre = id;
 
 // Movimiento horizontal/vertical

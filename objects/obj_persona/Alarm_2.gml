@@ -1,4 +1,4 @@
-/// @description  Ataque
+﻿/// @description  Ataque
 
 if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
@@ -79,7 +79,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(idIA.x, idIA.y, obj_INFO);
+                var idINFO = instance_create_depth(idIA.x, idIA.y, 0, obj_INFO);
                 idINFO.padre = idIA;
                 idINFO.texto = "¡Defendido con escudo!";
                 idINFO.color = c_red;
@@ -126,7 +126,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         
             ataca = false;
             
-            var idINFO = instance_create(x, y + 9, obj_INFO);
+            var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
@@ -140,7 +140,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         var dano = round(random_range(danoMeleeMin, danoMeleeMax));
         var danoTotal = floor(0.85 * calcularDanoFisicoIAaIA(dano * obj_pj.modDanoLvl, idIA));
         
-        idDano = instance_create(idIA.x, idIA.y - 41, obj_efecto_dano);
+        idDano = instance_create_depth(idIA.x, idIA.y - 41, 0, obj_efecto_dano);
         idDano.dano = danoTotal;
         idDano.padre = idIA;
         
@@ -231,7 +231,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                 idINFO.padre = obj_pj.id;
                 idINFO.texto = "¡Defendido con escudo!";
                 idINFO.color = c_red;
@@ -242,7 +242,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
                     if (random(10) > 5) {
                         obj_skills_libres.mostrado = false;
                         obj_pj.skills[6]++;
-                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                         idSubirSkills.indice = 6;
                     }
                 }
@@ -294,7 +294,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         
             ataca = false;
             
-            var idINFO = instance_create(x, y + 9, obj_INFO);
+            var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
@@ -303,7 +303,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
                 if (random(10) > 5) {
                     obj_skills_libres.mostrado = false;
                     obj_pj.skills[1]++;
-                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
+                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
                     idSubirSkills.indice = 1;
                 }
             }

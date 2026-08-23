@@ -1,4 +1,4 @@
-/// @description  Teletransporte estilo GM (DEBUGGING)
+﻿/// @description  Teletransporte estilo GM (DEBUGGING)
 
 /*
 
@@ -13,12 +13,12 @@ if (os_type == os_windows) {
            x = mouse_x;
            y = mouse_y;
            alinearObjeto(); 
-           instance_create(x, y, obj_efecto_login);
+           instance_create_depth(x, y, 0, obj_efecto_login);
            reproducirSonido(snd_logueo, false, false);
         }
     } else if (keyboard_check_pressed(vk_rshift)) {
         room_goto(obtenerRoomIndex(get_string("Teletransportar a mapa:", "115")));
-        instance_create(x, y, obj_efecto_login);
+        instance_create_depth(x, y, 0, obj_efecto_login);
         reproducirSonido(snd_logueo, false, false);
     }
 

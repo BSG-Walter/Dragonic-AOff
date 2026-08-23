@@ -1,7 +1,7 @@
-/// @description  Estado inicial
+﻿/// @description  Estado inicial
 
 alinearObjeto();
 
 image_speed = 0;
-instance_create(x - 16, y - 32, obj_bloqueo_arboles);
+instance_create_depth(x - 16, y - 32, 0, obj_bloqueo_arboles);
 
