@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_juncos_agua",
   "bboxMode":2,
   "bbox_bottom":64,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"1259f1a4-6d41-4b5f-b9b2-37755fcde355","name":"1259f1a4-6d41-4b5f-b9b2-37755fcde355","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1259f1a4-6d41-4b5f-b9b2-37755fcde355","name":"1259f1a4-6d41-4b5f-b9b2-37755fcde355","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

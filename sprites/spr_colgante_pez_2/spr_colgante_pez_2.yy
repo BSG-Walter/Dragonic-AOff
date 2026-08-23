@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_colgante_pez_2",
   "bboxMode":0,
   "bbox_bottom":38,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6911337c-eb50-41c0-804c-c2cac696b080","name":"6911337c-eb50-41c0-804c-c2cac696b080","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6911337c-eb50-41c0-804c-c2cac696b080","name":"6911337c-eb50-41c0-804c-c2cac696b080","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_piso_casa",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d4e1b0b9-9479-401f-847a-d5cfc9f90572","name":"d4e1b0b9-9479-401f-847a-d5cfc9f90572","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d4e1b0b9-9479-401f-847a-d5cfc9f90572","name":"d4e1b0b9-9479-401f-847a-d5cfc9f90572","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

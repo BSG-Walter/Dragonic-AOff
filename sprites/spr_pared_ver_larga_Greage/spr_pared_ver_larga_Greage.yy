@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_pared_ver_larga_Greage",
   "bboxMode":2,
   "bbox_bottom":2020,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"705555e3-0ab7-410a-bb62-73f2563e4f27","name":"705555e3-0ab7-410a-bb62-73f2563e4f27","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"705555e3-0ab7-410a-bb62-73f2563e4f27","name":"705555e3-0ab7-410a-bb62-73f2563e4f27","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

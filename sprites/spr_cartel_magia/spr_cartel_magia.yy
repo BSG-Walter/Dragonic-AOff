@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_magia",
   "bboxMode":2,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b140f8a6-cab4-4960-9b02-92dd4fc0b934","name":"b140f8a6-cab4-4960-9b02-92dd4fc0b934","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b140f8a6-cab4-4960-9b02-92dd4fc0b934","name":"b140f8a6-cab4-4960-9b02-92dd4fc0b934","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

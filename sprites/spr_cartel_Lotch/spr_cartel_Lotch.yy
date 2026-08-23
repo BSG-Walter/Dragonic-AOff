@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_Lotch",
   "bboxMode":0,
   "bbox_bottom":123,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d16e1f5d-7cc3-4c4b-b965-731864140e81","name":"d16e1f5d-7cc3-4c4b-b965-731864140e81","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d16e1f5d-7cc3-4c4b-b965-731864140e81","name":"d16e1f5d-7cc3-4c4b-b965-731864140e81","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

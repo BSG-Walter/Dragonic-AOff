@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_Greage",
   "bboxMode":0,
   "bbox_bottom":123,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"80a0e1d7-0592-4d9d-9ad3-15334b573409","name":"80a0e1d7-0592-4d9d-9ad3-15334b573409","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"80a0e1d7-0592-4d9d-9ad3-15334b573409","name":"80a0e1d7-0592-4d9d-9ad3-15334b573409","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_barril_2",
   "bboxMode":1,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c7551433-9b82-4359-9d97-00c9f57ff63f","name":"c7551433-9b82-4359-9d97-00c9f57ff63f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c7551433-9b82-4359-9d97-00c9f57ff63f","name":"c7551433-9b82-4359-9d97-00c9f57ff63f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

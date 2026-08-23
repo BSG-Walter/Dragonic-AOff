@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_banco_iglesia",
   "bboxMode":1,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"49e2bcab-e3d6-4218-bd8b-bae2d29afafb","name":"49e2bcab-e3d6-4218-bd8b-bae2d29afafb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"49e2bcab-e3d6-4218-bd8b-bae2d29afafb","name":"49e2bcab-e3d6-4218-bd8b-bae2d29afafb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

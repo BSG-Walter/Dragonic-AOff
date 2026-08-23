@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_dungeonNW",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"f8b7f3b8-ae4f-4e4c-9f17-e112aa1027cb","name":"f8b7f3b8-ae4f-4e4c-9f17-e112aa1027cb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f8b7f3b8-ae4f-4e4c-9f17-e112aa1027cb","name":"f8b7f3b8-ae4f-4e4c-9f17-e112aa1027cb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

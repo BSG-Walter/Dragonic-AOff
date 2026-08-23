@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"tl_piso_casa_completo",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bf1c2e08-adec-4654-b08b-065e0d2a79bc","name":"bf1c2e08-adec-4654-b08b-065e0d2a79bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bf1c2e08-adec-4654-b08b-065e0d2a79bc","name":"bf1c2e08-adec-4654-b08b-065e0d2a79bc","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

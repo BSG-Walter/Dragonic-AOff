@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cruz_equipado",
   "bboxMode":0,
   "bbox_bottom":5,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"42872351-f9d5-47f1-a777-ad9236656ee0","name":"42872351-f9d5-47f1-a777-ad9236656ee0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"42872351-f9d5-47f1-a777-ad9236656ee0","name":"42872351-f9d5-47f1-a777-ad9236656ee0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

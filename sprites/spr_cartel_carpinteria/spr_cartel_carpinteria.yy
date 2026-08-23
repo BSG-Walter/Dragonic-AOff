@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_carpinteria",
   "bboxMode":2,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aa4cc628-c67c-46d0-b0b2-b4d37414ca39","name":"aa4cc628-c67c-46d0-b0b2-b4d37414ca39","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aa4cc628-c67c-46d0-b0b2-b4d37414ca39","name":"aa4cc628-c67c-46d0-b0b2-b4d37414ca39","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

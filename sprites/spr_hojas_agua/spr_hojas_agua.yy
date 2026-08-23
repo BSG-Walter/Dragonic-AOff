@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_hojas_agua",
   "bboxMode":1,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"448ee69e-008e-4085-b9ce-c245f86f29e3","name":"448ee69e-008e-4085-b9ce-c245f86f29e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"448ee69e-008e-4085-b9ce-c245f86f29e3","name":"448ee69e-008e-4085-b9ce-c245f86f29e3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_arco_catacumbas_hor",
   "bboxMode":1,
   "bbox_bottom":95,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"4ea09003-8f5d-4eb6-8104-07fed8371439","name":"4ea09003-8f5d-4eb6-8104-07fed8371439","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"4ea09003-8f5d-4eb6-8104-07fed8371439","name":"4ea09003-8f5d-4eb6-8104-07fed8371439","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_entrada_DSOP",
   "bboxMode":0,
   "bbox_bottom":197,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"91f7075f-4359-4a17-94a2-ce5ff032d853","name":"91f7075f-4359-4a17-94a2-ce5ff032d853","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"91f7075f-4359-4a17-94a2-ce5ff032d853","name":"91f7075f-4359-4a17-94a2-ce5ff032d853","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

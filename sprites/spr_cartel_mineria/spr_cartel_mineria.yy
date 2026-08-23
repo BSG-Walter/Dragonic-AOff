@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_mineria",
   "bboxMode":2,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0f90efc6-2e26-42f1-b817-3bae8ef3ae6c","name":"0f90efc6-2e26-42f1-b817-3bae8ef3ae6c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0f90efc6-2e26-42f1-b817-3bae8ef3ae6c","name":"0f90efc6-2e26-42f1-b817-3bae8ef3ae6c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

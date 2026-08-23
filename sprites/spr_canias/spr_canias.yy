@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_canias",
   "bboxMode":0,
   "bbox_bottom":49,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"79c50311-b542-4862-adac-c5f75a5875b9","name":"79c50311-b542-4862-adac-c5f75a5875b9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"79c50311-b542-4862-adac-c5f75a5875b9","name":"79c50311-b542-4862-adac-c5f75a5875b9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

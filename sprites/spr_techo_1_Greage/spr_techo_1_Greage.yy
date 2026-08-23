@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_1_Greage",
   "bboxMode":0,
   "bbox_bottom":191,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b477ed45-87d5-4ea6-8c40-3c5cc906859b","name":"b477ed45-87d5-4ea6-8c40-3c5cc906859b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b477ed45-87d5-4ea6-8c40-3c5cc906859b","name":"b477ed45-87d5-4ea6-8c40-3c5cc906859b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

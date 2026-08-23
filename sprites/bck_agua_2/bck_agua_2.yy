@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"bck_agua_2",
   "bboxMode":0,
   "bbox_bottom":263,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"2853f2a9-f8f5-4517-8950-3bfcac78bb80","name":"2853f2a9-f8f5-4517-8950-3bfcac78bb80","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2853f2a9-f8f5-4517-8950-3bfcac78bb80","name":"2853f2a9-f8f5-4517-8950-3bfcac78bb80","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

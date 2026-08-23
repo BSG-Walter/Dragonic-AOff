@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_dongeonOP",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b728263e-6e1b-4e95-9399-784f4f10cab3","name":"b728263e-6e1b-4e95-9399-784f4f10cab3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b728263e-6e1b-4e95-9399-784f4f10cab3","name":"b728263e-6e1b-4e95-9399-784f4f10cab3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

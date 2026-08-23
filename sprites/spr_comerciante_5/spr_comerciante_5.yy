@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_comerciante_5",
   "bboxMode":2,
   "bbox_bottom":45,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d575418a-3d7a-44f8-916b-25a17865ee63","name":"d575418a-3d7a-44f8-916b-25a17865ee63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d575418a-3d7a-44f8-916b-25a17865ee63","name":"d575418a-3d7a-44f8-916b-25a17865ee63","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

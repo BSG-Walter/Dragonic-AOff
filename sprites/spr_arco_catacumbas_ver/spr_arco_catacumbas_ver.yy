@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_arco_catacumbas_ver",
   "bboxMode":1,
   "bbox_bottom":383,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5cdf3a43-39f3-4594-8b0d-1c6a1ffe5c8e","name":"5cdf3a43-39f3-4594-8b0d-1c6a1ffe5c8e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5cdf3a43-39f3-4594-8b0d-1c6a1ffe5c8e","name":"5cdf3a43-39f3-4594-8b0d-1c6a1ffe5c8e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_catacumbas",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a34dee52-bf52-4a9f-8fef-6be8b82b4b8d","name":"a34dee52-bf52-4a9f-8fef-6be8b82b4b8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a34dee52-bf52-4a9f-8fef-6be8b82b4b8d","name":"a34dee52-bf52-4a9f-8fef-6be8b82b4b8d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

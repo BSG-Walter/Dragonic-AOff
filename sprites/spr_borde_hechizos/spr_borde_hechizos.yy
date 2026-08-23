@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_borde_hechizos",
   "bboxMode":0,
   "bbox_bottom":30,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"28f4a8f8-cde2-4322-9f57-925b828e1bcf","name":"28f4a8f8-cde2-4322-9f57-925b828e1bcf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"28f4a8f8-cde2-4322-9f57-925b828e1bcf","name":"28f4a8f8-cde2-4322-9f57-925b828e1bcf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

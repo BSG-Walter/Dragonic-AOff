@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_costa_polo",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0d90eab9-1958-4c0e-9fb5-c3efa7aaf518","name":"0d90eab9-1958-4c0e-9fb5-c3efa7aaf518","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0d90eab9-1958-4c0e-9fb5-c3efa7aaf518","name":"0d90eab9-1958-4c0e-9fb5-c3efa7aaf518","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

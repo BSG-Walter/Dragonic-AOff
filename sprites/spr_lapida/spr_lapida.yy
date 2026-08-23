@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_lapida",
   "bboxMode":1,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a05a12c7-9957-4f45-8fb1-9ab3f4d1563e","name":"a05a12c7-9957-4f45-8fb1-9ab3f4d1563e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a05a12c7-9957-4f45-8fb1-9ab3f4d1563e","name":"a05a12c7-9957-4f45-8fb1-9ab3f4d1563e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

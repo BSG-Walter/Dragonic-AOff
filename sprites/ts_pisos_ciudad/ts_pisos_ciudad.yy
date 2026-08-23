@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_ciudad",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"60425ab8-68b2-4f19-80d9-0ff27ba7d01a","name":"60425ab8-68b2-4f19-80d9-0ff27ba7d01a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"60425ab8-68b2-4f19-80d9-0ff27ba7d01a","name":"60425ab8-68b2-4f19-80d9-0ff27ba7d01a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

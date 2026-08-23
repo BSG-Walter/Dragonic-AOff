@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_tecla_inventario",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a22b6b40-3643-45b6-90aa-1ca1cc8d5ea8","name":"a22b6b40-3643-45b6-90aa-1ca1cc8d5ea8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a22b6b40-3643-45b6-90aa-1ca1cc8d5ea8","name":"a22b6b40-3643-45b6-90aa-1ca1cc8d5ea8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

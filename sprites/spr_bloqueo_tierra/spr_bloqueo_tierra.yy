@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_bloqueo_tierra",
   "bboxMode":0,
   "bbox_bottom":31,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"39b6d1ec-74d0-4bc8-a4f1-5e2227c8bd10","name":"39b6d1ec-74d0-4bc8-a4f1-5e2227c8bd10","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"39b6d1ec-74d0-4bc8-a4f1-5e2227c8bd10","name":"39b6d1ec-74d0-4bc8-a4f1-5e2227c8bd10","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

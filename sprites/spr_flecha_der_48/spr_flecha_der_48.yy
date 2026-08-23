@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_flecha_der_48",
   "bboxMode":0,
   "bbox_bottom":59,
@@ -12,8 +12,8 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b837fcd5-01e9-4d22-bbcb-e19c2e0e8796","name":"b837fcd5-01e9-4d22-bbcb-e19c2e0e8796","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d6733b24-3380-4d2c-9d2e-7b151312b53c","name":"d6733b24-3380-4d2c-9d2e-7b151312b53c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b837fcd5-01e9-4d22-bbcb-e19c2e0e8796","name":"b837fcd5-01e9-4d22-bbcb-e19c2e0e8796","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d6733b24-3380-4d2c-9d2e-7b151312b53c","name":"d6733b24-3380-4d2c-9d2e-7b151312b53c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

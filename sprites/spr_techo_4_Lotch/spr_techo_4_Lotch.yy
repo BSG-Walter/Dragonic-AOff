@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_4_Lotch",
   "bboxMode":0,
   "bbox_bottom":639,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"9e9a8530-537a-4d6f-814c-030349bc8224","name":"9e9a8530-537a-4d6f-814c-030349bc8224","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"9e9a8530-537a-4d6f-814c-030349bc8224","name":"9e9a8530-537a-4d6f-814c-030349bc8224","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

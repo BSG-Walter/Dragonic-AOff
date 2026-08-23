@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_pico_nevado_izq",
   "bboxMode":2,
   "bbox_bottom":255,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"03607e2a-7882-4f68-bfe4-f60110462ba8","name":"03607e2a-7882-4f68-bfe4-f60110462ba8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"03607e2a-7882-4f68-bfe4-f60110462ba8","name":"03607e2a-7882-4f68-bfe4-f60110462ba8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

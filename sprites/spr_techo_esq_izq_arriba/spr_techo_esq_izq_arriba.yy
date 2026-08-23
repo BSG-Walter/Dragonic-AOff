@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_esq_izq_arriba",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"152ed378-deee-4c9b-b3f2-ef296e2ffcd1","name":"152ed378-deee-4c9b-b3f2-ef296e2ffcd1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"152ed378-deee-4c9b-b3f2-ef296e2ffcd1","name":"152ed378-deee-4c9b-b3f2-ef296e2ffcd1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snd_bosque7",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":192,
+  "channelFormat":0,
   "compression":3,
+  "compressionQuality":6,
   "conversionMode":0,
   "duration":80.61888,
+  "exportDir":"",
   "name":"snd_bosque7",
   "parent":{
     "name":"Música",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_bosque7",
-  "type":0,
   "volume":1.0,
 }

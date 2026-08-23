@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_polo",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6cb6fcd0-799e-4223-ba2c-a1036d96c1bf","name":"6cb6fcd0-799e-4223-ba2c-a1036d96c1bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6cb6fcd0-799e-4223-ba2c-a1036d96c1bf","name":"6cb6fcd0-799e-4223-ba2c-a1036d96c1bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

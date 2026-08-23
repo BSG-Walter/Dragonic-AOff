@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_2_Ringville",
   "bboxMode":0,
   "bbox_bottom":575,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e983e3fc-0748-42d5-b6eb-1597a866147d","name":"e983e3fc-0748-42d5-b6eb-1597a866147d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e983e3fc-0748-42d5-b6eb-1597a866147d","name":"e983e3fc-0748-42d5-b6eb-1597a866147d","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

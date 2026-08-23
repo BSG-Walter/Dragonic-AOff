@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cabeza_58",
   "bboxMode":0,
   "bbox_bottom":14,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"e16f23f2-deed-4233-a1ce-772c23be91ad","name":"e16f23f2-deed-4233-a1ce-772c23be91ad","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"1ecbe8ca-e468-4f26-880b-b92bcf1c0595","name":"1ecbe8ca-e468-4f26-880b-b92bcf1c0595","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8aa572f4-6ac5-42b7-a320-7630ec4e74c6","name":"8aa572f4-6ac5-42b7-a320-7630ec4e74c6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f425a4a0-1c5e-4e94-9d39-32b9c787a8c8","name":"f425a4a0-1c5e-4e94-9d39-32b9c787a8c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"e16f23f2-deed-4233-a1ce-772c23be91ad","name":"e16f23f2-deed-4233-a1ce-772c23be91ad","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"1ecbe8ca-e468-4f26-880b-b92bcf1c0595","name":"1ecbe8ca-e468-4f26-880b-b92bcf1c0595","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8aa572f4-6ac5-42b7-a320-7630ec4e74c6","name":"8aa572f4-6ac5-42b7-a320-7630ec4e74c6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f425a4a0-1c5e-4e94-9d39-32b9c787a8c8","name":"f425a4a0-1c5e-4e94-9d39-32b9c787a8c8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_pisos_bosques",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"c71bbd9c-c9be-424e-a5c4-2e0e980562b0","name":"c71bbd9c-c9be-424e-a5c4-2e0e980562b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c71bbd9c-c9be-424e-a5c4-2e0e980562b0","name":"c71bbd9c-c9be-424e-a5c4-2e0e980562b0","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

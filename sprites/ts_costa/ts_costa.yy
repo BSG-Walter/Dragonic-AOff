@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"ts_costa",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"21b78224-e1fc-4dd4-89a1-4c8fa09332c6","name":"21b78224-e1fc-4dd4-89a1-4c8fa09332c6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"21b78224-e1fc-4dd4-89a1-4c8fa09332c6","name":"21b78224-e1fc-4dd4-89a1-4c8fa09332c6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

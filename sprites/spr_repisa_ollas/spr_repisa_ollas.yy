@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_repisa_ollas",
   "bboxMode":0,
   "bbox_bottom":51,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"17d1acf3-ed59-46e0-83eb-011b418d9bc8","name":"17d1acf3-ed59-46e0-83eb-011b418d9bc8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"17d1acf3-ed59-46e0-83eb-011b418d9bc8","name":"17d1acf3-ed59-46e0-83eb-011b418d9bc8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

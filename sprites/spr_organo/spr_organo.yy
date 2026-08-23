@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_organo",
   "bboxMode":2,
   "bbox_bottom":129,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"384dde84-8524-402e-86b5-345613dd1f2a","name":"384dde84-8524-402e-86b5-345613dd1f2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"384dde84-8524-402e-86b5-345613dd1f2a","name":"384dde84-8524-402e-86b5-345613dd1f2a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

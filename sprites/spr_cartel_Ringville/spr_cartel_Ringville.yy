@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_Ringville",
   "bboxMode":0,
   "bbox_bottom":123,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aea70b1b-0435-4fc0-af89-ddd4b8484875","name":"aea70b1b-0435-4fc0-af89-ddd4b8484875","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aea70b1b-0435-4fc0-af89-ddd4b8484875","name":"aea70b1b-0435-4fc0-af89-ddd4b8484875","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

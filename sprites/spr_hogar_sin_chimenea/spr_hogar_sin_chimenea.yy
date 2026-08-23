@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_hogar_sin_chimenea",
   "bboxMode":2,
   "bbox_bottom":80,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a7f1be75-ba9a-4052-bdb1-09b9b0273ad3","name":"a7f1be75-ba9a-4052-bdb1-09b9b0273ad3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"219e9f3d-9010-4d6b-a4f4-54950e2be872","name":"219e9f3d-9010-4d6b-a4f4-54950e2be872","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"f934682b-ab6f-4ce6-8e7b-2669f3f84e57","name":"f934682b-ab6f-4ce6-8e7b-2669f3f84e57","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"63d050b8-a392-4eb7-ad0a-3bce94e28bc8","name":"63d050b8-a392-4eb7-ad0a-3bce94e28bc8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a7f1be75-ba9a-4052-bdb1-09b9b0273ad3","name":"a7f1be75-ba9a-4052-bdb1-09b9b0273ad3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"219e9f3d-9010-4d6b-a4f4-54950e2be872","name":"219e9f3d-9010-4d6b-a4f4-54950e2be872","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"f934682b-ab6f-4ce6-8e7b-2669f3f84e57","name":"f934682b-ab6f-4ce6-8e7b-2669f3f84e57","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"63d050b8-a392-4eb7-ad0a-3bce94e28bc8","name":"63d050b8-a392-4eb7-ad0a-3bce94e28bc8","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

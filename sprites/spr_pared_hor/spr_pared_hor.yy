@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_pared_hor",
   "bboxMode":2,
   "bbox_bottom":126,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"456463e0-402a-4ab7-8ca3-3e27a627c3d1","name":"456463e0-402a-4ab7-8ca3-3e27a627c3d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"456463e0-402a-4ab7-8ca3-3e27a627c3d1","name":"456463e0-402a-4ab7-8ca3-3e27a627c3d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

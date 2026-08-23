@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_cartel_Duhmundorth",
   "bboxMode":0,
   "bbox_bottom":123,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7821feeb-7ed4-44c1-9ad4-a452b6073873","name":"7821feeb-7ed4-44c1-9ad4-a452b6073873","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7821feeb-7ed4-44c1-9ad4-a452b6073873","name":"7821feeb-7ed4-44c1-9ad4-a452b6073873","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

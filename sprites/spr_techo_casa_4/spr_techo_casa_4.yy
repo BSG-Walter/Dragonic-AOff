@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_casa_4",
   "bboxMode":0,
   "bbox_bottom":319,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ea7100d5-993f-426a-8862-c32bad124bf3","name":"ea7100d5-993f-426a-8862-c32bad124bf3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ea7100d5-993f-426a-8862-c32bad124bf3","name":"ea7100d5-993f-426a-8862-c32bad124bf3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

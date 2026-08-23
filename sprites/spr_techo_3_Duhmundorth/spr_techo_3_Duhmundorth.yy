@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_techo_3_Duhmundorth",
   "bboxMode":0,
   "bbox_bottom":191,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"b0585953-d809-4b1b-a0b6-762b4fc2a100","name":"b0585953-d809-4b1b-a0b6-762b4fc2a100","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b0585953-d809-4b1b-a0b6-762b4fc2a100","name":"b0585953-d809-4b1b-a0b6-762b4fc2a100","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

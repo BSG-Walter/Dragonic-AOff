@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"bck_creditos",
   "bboxMode":0,
   "bbox_bottom":359,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aedb2d1d-7de2-4c98-a2e7-c2eea713efba","name":"aedb2d1d-7de2-4c98-a2e7-c2eea713efba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aedb2d1d-7de2-4c98-a2e7-c2eea713efba","name":"aedb2d1d-7de2-4c98-a2e7-c2eea713efba","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

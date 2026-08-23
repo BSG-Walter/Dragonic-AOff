@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_arbol_1",
   "bboxMode":1,
   "bbox_bottom":255,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"087b8b1c-268c-48f7-a803-dd04e8f8e54b","name":"087b8b1c-268c-48f7-a803-dd04e8f8e54b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"087b8b1c-268c-48f7-a803-dd04e8f8e54b","name":"087b8b1c-268c-48f7-a803-dd04e8f8e54b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

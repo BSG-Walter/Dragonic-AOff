@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"tl_tile_cian",
   "bboxMode":0,
   "bbox_bottom":63,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5b852a1c-1701-468d-972b-5f1ea1da6b46","name":"5b852a1c-1701-468d-972b-5f1ea1da6b46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5b852a1c-1701-468d-972b-5f1ea1da6b46","name":"5b852a1c-1701-468d-972b-5f1ea1da6b46","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
