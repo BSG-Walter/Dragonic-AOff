@@ -43,11 +43,11 @@ if (obj_configuracion.mostrado) {
 
     draw_sprite(spr_panel_opciones, 0, global.render_x+ render_width - 26, global.render_y + 36);
     
-    if (obj_opciones.opcionTechos) {
+    if (obj_opciones.opcionArboles) {
         draw_sprite(spr_tick, 0, global.render_x+ render_width - 119, global.render_y + 11);
     }
     
-    if (obj_opciones.opcionArboles) {
+    if (obj_opciones.opcionTechos) {
         draw_sprite(spr_tick, 0, global.render_x+ render_width - 119, global.render_y + 27);
     }
     

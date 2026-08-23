@@ -50,7 +50,11 @@ function crearCasa(argument0, argument1) {
 
 	// Piso
 
-	tile_add(tl_piso_casa_completo, 4, 4, 224, 154, x - 160, y - 144, 100000);
+	var layPiso = layer_get_id("Tiles_Pisos");
+	if (layPiso == -1) {
+		layPiso = layer_create(100000, "Tiles_Pisos");
+	}
+	layer_sprite_create(layPiso, x - 160, y - 144, tl_piso_casa_completo);
 
 	// Decoración
 

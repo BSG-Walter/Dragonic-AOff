@@ -9,7 +9,7 @@ with (obj_item_basic) {
 var datosItemABorrar;
 
 for (var j = obj_npcs_mundo.primerRoomDeMapa; j <= obj_npcs_mundo.totalRooms; j++) { // Room
-    for (var k = 0; k < array_length_2d(obj_items_mundo.ItemsXRM, j); k++) { // Item
+    for (var k = 0; k < array_length(obj_items_mundo.ItemsXRM[j]); k++) { // Item
         datosItemABorrar = obj_items_mundo.ItemsXRM[j, k];
         if (datosItemABorrar[0] != -1) {
         

@@ -4,7 +4,13 @@ if (instance_number(obj_pausa) == 0 && is_ingame_room()) {
 
     if (opcionAnimacionAgua) {
     
-        __background_set( e__BG.Index, 1, bck_agua_2 );
+        var lay = layer_get_id("Background_Agua");
+        if (lay != -1) {
+            var bg = layer_background_get_id(lay);
+            if (bg != -1) {
+                layer_background_sprite(bg, bck_agua_2);
+            }
+        }
         obj_control_animacion_agua.alarm[0] = 300;
     
         if (opcionPeces) {

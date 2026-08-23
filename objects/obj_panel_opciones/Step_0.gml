@@ -24,6 +24,15 @@ if (visible) {
                 obj_control_devices.devicesL[device] = true;
                 
                 if (device_mouse_y(device) <= y - 32 + 16) {
+                    if (obj_opciones.opcionArboles) {
+                        obj_opciones.opcionArboles = false;
+                        with (obj_arbol_basic) {
+                            image_alpha = 1;
+                        }
+                    } else {
+                        obj_opciones.opcionArboles = true;
+                    }
+                } else if (device_mouse_y(device) <= y - 32 + 32) {
                     if (obj_opciones.opcionTechos) {
                         obj_opciones.opcionTechos = false;
                         with (obj_techo_basic) {
@@ -35,15 +44,6 @@ if (visible) {
                             visible = true;
                         }
                     }
-                } else if (device_mouse_y(device) <= y - 32 + 32) {
-                    if (obj_opciones.opcionArboles) {
-                        obj_opciones.opcionArboles = false;
-                        with (obj_arbol_basic) {
-                            image_alpha = 1;
-                        }
-                    } else {
-                        obj_opciones.opcionArboles = true;
-                    }
                 } else if (device_mouse_y(device) <= y - 32 + 48) {
                     if (obj_opciones.opcionVibracion) {
                         obj_opciones.opcionVibracion = false;
@@ -53,15 +53,23 @@ if (visible) {
                 } else if (device_mouse_y(device) <= y - 32 + 64) {
                     if (obj_opciones.opcionAnimacionAgua) {
                         obj_opciones.opcionAnimacionAgua = false;
-                        __background_set( e__BG.Index, 1, bck_agua_1 );
-                        __background_set( e__BG.VSpeed, 1, 0 );
-						__background_set( e__BG.HSpeed, 1, 0 );
+                        var lay = layer_get_id("Background_Agua");
+                        if (lay != -1) {
+                            var bg = layer_background_get_id(lay);
+                            if (bg != -1) layer_background_sprite(bg, bck_agua_1);
+                            layer_hspeed(lay, 0);
+                            layer_vspeed(lay, 0);
+                        }
                         with (obj_pez) {
                             instance_destroy();
                         }
                     } else {
                         obj_opciones.opcionAnimacionAgua = true;
-                        __background_set( e__BG.Index, 1, bck_agua_2 );
+                        var lay = layer_get_id("Background_Agua");
+                        if (lay != -1) {
+                            var bg = layer_background_get_id(lay);
+                            if (bg != -1) layer_background_sprite(bg, bck_agua_2);
+                        }
                         obj_control_animacion_agua.alarm[0] = 300;
                         if (obj_opciones.opcionPeces) {
                             with (obj_pez) {

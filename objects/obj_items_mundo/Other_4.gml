@@ -19,7 +19,7 @@ if (datosItem[0] != -1) {
         instance_destroy();
     }
     
-    var tamano = array_length_2d(ItemsXRM, room);
+    var tamano = array_length(ItemsXRM[room]);
 
     for (var j = 0; j < tamano; j++) {
         if (datosItem[0] != -1) {
