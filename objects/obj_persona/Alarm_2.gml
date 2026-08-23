@@ -13,9 +13,9 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             }
             break;
         case 1:
-            if (place_meeting(x, y + 32, obj_persona)) {
+            if (place_meeting(x, y - 32, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x, y + 32, obj_persona);
+                idIA = instance_place(x, y - 32, obj_persona);
             }
             break;
         case 2:
@@ -32,7 +32,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             break;
     }
     
-    var esEnemigo = pk || idIA.pk;
+    var esEnemigo = (room == rm_arena) ? (pk != idIA.pk) : (pk || idIA.pk);
     
     if (ataca) {
         ataca = esEnemigo;

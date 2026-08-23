@@ -80,7 +80,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
         
         var idIA = IAObj
     
-        if (idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
+        if (room != rm_arena && idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
             if (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando)) {
                 idIA = -1;
             }

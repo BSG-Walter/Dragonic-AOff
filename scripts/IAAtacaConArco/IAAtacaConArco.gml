@@ -6,7 +6,7 @@ function IAAtacaConArco(argument0) {
 
 		var idIA = argument0;
     
-	    if (idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
+	    if (room != rm_arena && idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
 	        idIA = -1;
 	    }
 

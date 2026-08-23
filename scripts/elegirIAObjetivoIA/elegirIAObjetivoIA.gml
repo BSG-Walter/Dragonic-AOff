@@ -3,80 +3,96 @@
 
 function elegirIAObjetivoIA(argument0) {
 	
-	//chequeamos los bots enemigos cercanos Y le damos prioridad si estan inmo
 	distanciaMinima = room_width * room_height;
-	IDIAdistanciaMinima = -1
-	cantIAEnView = 0
+	IDIAdistanciaMinima = -1;
+	cantIAEnView = 0;
 	cantInmovilizados = 0;
 	
 	for (var i = 0; i < obj_opciones.maxBots; ++i) {
-	    inmovilizados[i] = -1
+	    inmovilizados[i] = -1;
 	}
 	
 	with (obj_persona) {
-		//Buscamos a algun bot enemigo, si los 2 son ciudas pasamos a verificar el siguiente bot
-		if (id == other.id || (!other.pk && !pk)) continue;
+		// Ignorar al propio bot, bots muertos y aliados
+		if (id == other.id || muerto) continue;
+		if (room == rm_arena) {
+			if (other.pk == pk) continue;
+		} else {
+			if (!other.pk && !pk) continue;
+		}
 			
-		//var _nueva_distancia = distance_to_object(other);
-		var _nueva_distancia = point_distance(x,y,other.x,other.y)
+		var _nueva_distancia = point_distance(x, y, other.x, other.y);
 		
-		if (_nueva_distancia <= 300){
+		if (_nueva_distancia <= 350) {
 			other.cantIAEnView++;
 			
-			if (inmovilizado){
+			if (inmovilizado) {
 				other.inmovilizados[other.cantInmovilizados] = id;
 	            other.cantInmovilizados++;
 			}
 			
-			//si es el primero en chequear lo dejamos por default
-			if (other.IDIAdistanciaMinima == -1){
+			// Si es el primero en chequear lo dejamos por default
+			if (other.IDIAdistanciaMinima == -1) {
 				other.IDIAdistanciaMinima = id;
 				other.distanciaMinima = _nueva_distancia;
 				continue;
 			}
 			
-			//priorizamos si son enemigos naturales, los pks haran alianza temporal hasta que se acaben los ciudas, luego se atacan entre si
-			if (other.IDIAdistanciaMinima.pk != other.pk && other.pk == pk) continue;
-			
-			//luego priorizamos si el bot esta inmo sobre la distancia
+			// Priorizamos si el bot esta inmovilizado sobre la distancia
 			if (!inmovilizado && other.IDIAdistanciaMinima.inmovilizado) continue;
+			if (inmovilizado && !other.IDIAdistanciaMinima.inmovilizado) {
+				other.IDIAdistanciaMinima = id;
+				other.distanciaMinima = _nueva_distancia;
+				continue;
+			}
 			
-			//por ultimo, al mas cercano
-			if (_nueva_distancia > other.distanciaMinima) continue;
-			
-			other.IDIAdistanciaMinima = id;
-			other.distanciaMinima = _nueva_distancia;
+			// Por ultimo, al mas cercano
+			if (_nueva_distancia < other.distanciaMinima) {
+				other.IDIAdistanciaMinima = id;
+				other.distanciaMinima = _nueva_distancia;
+			}
 		}
-		
 	}
 	
-	if (IDIAdistanciaMinima == -1 && (pk != obj_pj.pk || pk)) return -1; //si no hay otras ias cerca y es enemigo de nuestro pj, le decimos que ataque al pj directamente
+	// En la arena:
+	if (room == rm_arena) {
+		var pjEsEnemigo = (pk != obj_pj.pk && !obj_pj.muerto);
+		
+		// Si no hay bots enemigos en rango
+		if (IDIAdistanciaMinima == -1) {
+			return pjEsEnemigo ? -1 : -1;
+		}
+		
+		// Si hay bots inmovilizados, priorizar rematar al inmovilizado
+		if (cantInmovilizados > 0) {
+			return inmovilizados[0];
+		}
+		
+		// Si el PJ es enemigo y está inmovilizado cerca, priorizar al PJ
+		if (pjEsEnemigo && obj_pj.inmovilizado && point_distance(x, y, obj_pj.x, obj_pj.y) <= 350) {
+			return -1;
+		}
+		
+		// Si el PJ es enemigo y está más cerca que el bot enemigo más cercano
+		if (pjEsEnemigo && point_distance(x, y, obj_pj.x, obj_pj.y) < distanciaMinima) {
+			return -1;
+		}
+		
+		return IDIAdistanciaMinima;
+	}
+	
+	// Comportamiento fuera de la arena (mapa normal):
+	if (IDIAdistanciaMinima == -1 && (pk != obj_pj.pk || pk)) return -1;
 	
 	if (obj_pj.muerto || !obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {
-
 	    return IDIAdistanciaMinima;
-
 	} else {
-
-	    // Pueden darse varios casos:
-    
-	    /*
-    
-	    La IA es PK y el PJ ciuda
-	    LA IA es ciuda y el PJ PK
-	    Ambos son PK
-    
-	    */
-    
 	    if (cantInmovilizados > 0) {
 	        var rand = random(cantInmovilizados);
-	        if (rand > (cantInmovilizados - (cantInmovilizados * 0.5))) { // Hay una probabilidad de que la IA ataque al PJ
-	            return -1; // Ataca al PJ
+	        if (rand > (cantInmovilizados - (cantInmovilizados * 0.5))) {
+	            return -1;
 	        } else {
-            
 	            var idRet = -1;
-        
-				//prioriza atacar a los que son enemigos
 	            for (var i = 0; i < cantInmovilizados; i++) {
 	                if (inmovilizados[i].pk != pk) {
 	                    idRet = inmovilizados[i];
@@ -87,30 +103,16 @@ function elegirIAObjetivoIA(argument0) {
 	            if (idRet == -1) {
 	                var IARandInmo = floor(random(cantInmovilizados));
 	                if (IARandInmo >= 0) {
-	                    return inmovilizados[IARandInmo]; // Si es pk ataca a otra IA pk random
+	                    return inmovilizados[IARandInmo];
 	                } else {
 	                    return inmovilizados[0];
 	                }
 	            } else {
-	                return idRet; // La IA tiene preferencia por IAs enemigas
+	                return idRet;
 	            }
-            
 	        }
 	    } else {
-	        return -1; // Ataca al PJ si es el unico inmovilizado
+	        return -1;
 	    }
-    
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 }

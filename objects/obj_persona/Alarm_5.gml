@@ -5,7 +5,7 @@ if (!muerto && !inmovilizado) {
     yaEncontroItem = false;
     IAObj = elegirIAObjetivoIA(true);
     
-    if (IAObj != -1 && enemigo && !obj_pj.inmovilizado && (!IAObj.inmovilizado && IAAtacaAPJ()) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) {
+    if (room != rm_arena && IAObj != -1 && enemigo && !obj_pj.inmovilizado && (!IAObj.inmovilizado && IAAtacaAPJ()) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) {
         IAObj = -1;
     }
     
@@ -260,7 +260,8 @@ if (!muerto && !inmovilizado) {
         
     } else if (IAObj != -1) {
     
-        if (clase == 0 && (pk || IAObj.pk) && (!enemigo || obj_pj.muerto) && cantidadIARivalCerca() == 1 && IAObj.inmovilizado) {
+        var esRivalIA = (room == rm_arena) ? (pk != IAObj.pk) : (pk || IAObj.pk);
+        if (clase == 0 && esRivalIA && (!enemigo || obj_pj.muerto) && cantidadIARivalCerca() == 1 && IAObj.inmovilizado) {
         
             if (
             !place_meeting(x + 32, y, IAObj) &&

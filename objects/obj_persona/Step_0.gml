@@ -14,11 +14,17 @@ if (salud <= 0 && !muerto) {
 
 enemigo = false;
 
-if (obj_pj.pk) {
-    enemigo = true;
-} else {
-    if (pk) {
+if (room == rm_arena) {
+    if (pk != obj_pj.pk) {
         enemigo = true;
+    }
+} else {
+    if (obj_pj.pk) {
+        enemigo = true;
+    } else {
+        if (pk) {
+            enemigo = true;
+        }
     }
 }
 
@@ -69,7 +75,10 @@ if (
                 rand = 0;
             }
             
-            if ((enemigo && !obj_pj.muerto) || (idIAAux != -1 && (pk || idIAAux.pk))) {
+            var esEnemigoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk != pk) : (idIAAux != -1 && (pk || idIAAux.pk));
+            var esAliadoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk == pk) : (idIAAux != -1 && (!pk && !idIAAux.pk));
+            
+            if ((enemigo && !obj_pj.muerto) || esEnemigoIAAux) {
                 if (obj_pj.invisible && idIAAux == -1 && !obj_mapas_mundo.mapas[room]) {
                     mensaje = "¡Muéstrate! Cobarde...";
                 } else {
@@ -111,7 +120,7 @@ if (
                         }   
                     }
                 } 
-            } else if ((!enemigo && !obj_pj.muerto) || (idIAAux != -1 && (!pk && !idIAAux.pk))) {
+            } else if ((!enemigo && !obj_pj.muerto) || esAliadoIAAux) {
                 if (obj_pj.invisible) {
                     if (idIAAux == -1) {
                         mensaje = "¿Hay alguien ahí?";
@@ -353,22 +362,26 @@ if (condicionBValida) {
     
     if (place_meeting(x + 32, y, obj_persona)) {
         idPersonaCercana = instance_place(x + 32, y, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 3;
         }
     } else if (place_meeting(x - 32, y, obj_persona)) {
         idPersonaCercana = instance_place(x - 32, y, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 2;
         }
     } else if (place_meeting(x, y + 32, obj_persona)) {
         idPersonaCercana = instance_place(x, y + 32, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 0;
         }
     } else if (place_meeting(x, y - 32, obj_persona)) {
         idPersonaCercana = instance_place(x, y - 32, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 1;
         }
     }
