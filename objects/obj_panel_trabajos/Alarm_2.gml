@@ -96,7 +96,7 @@ if (clicMantenido) {
                         
                         if (valido) {
                         
-                            if (modo == 2 || random(10) > 6.5) {
+                            if (modo == 2 || random(1) < 0.35 * SKILL_FACTOR) {
                                 if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                     obj_skills_libres.mostrado = false;
                                     obj_pj.skills[indiceSkill]++;
@@ -264,7 +264,7 @@ if (clicMantenido) {
                         
                         if (valido) {
                         
-                            if (random(10) > 4.5) {
+                            if (random(1) < 0.55 * SKILL_FACTOR) {
                                 if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                     obj_skills_libres.mostrado = false;
                                     obj_pj.skills[10]++;

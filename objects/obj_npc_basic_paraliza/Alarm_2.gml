@@ -99,7 +99,7 @@ if (obj_pj.invisible) {
                 reproducirSonido(snd_defensaEscudo, false, false);
                         
                 if (obj_pj.skills[6] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                    if (random(10) > 5) {
+                    if (random(1) < 0.5 * SKILL_FACTOR) {
                         obj_skills_libres.mostrado = false;
                         obj_pj.skills[6]++;
                         var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
@@ -158,7 +158,7 @@ if (obj_pj.invisible) {
             idINFO.color = c_red;
                 
             if (obj_pj.skills[1] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                if (random(10) > 5) {
+                if (random(1) < 0.5 * SKILL_FACTOR) {
                     obj_skills_libres.mostrado = false;
                     obj_pj.skills[1]++;
                     var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
@@ -263,7 +263,7 @@ if (target == -1 || target == obj_pj) {
                         idDano.dano = danoTotal;
                         idDano.padre = obj_pj.id;
                             
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             if (obj_pj.skills[17] < 100) {
                                 if (obj_pj.skills[17] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                     obj_skills_libres.mostrado = false;

@@ -44,7 +44,7 @@ if (trabajando) {
                     obj_inventario.cantInv[i] += cantidadMadera;
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -91,7 +91,7 @@ if (trabajando) {
                     obj_inventario.nombreInv[i] = datosItem[14];
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -160,7 +160,7 @@ if (trabajando) {
                     obj_inventario.cantInv[i] += cantidadMinerales;
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -207,7 +207,7 @@ if (trabajando) {
                     obj_inventario.nombreInv[i] = datosItem[14];
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -602,7 +602,7 @@ if (trabajando) {
                             reproducirSonido(snd_pescar, false, false);
                         
                             if (skills[7] < skillsNaturales[nivel]) {
-                                if (random(10) > 6.5) {
+                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                     obj_skills_libres.mostrado = false;
                                     skills[7]++;
                                     var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);

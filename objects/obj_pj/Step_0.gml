@@ -533,7 +533,7 @@ _mouseDown
 														
 														if (obj_pj.flechaActual != 217) {
 	                                                        if (skills[12] < skillsNaturales[nivel]) {
-	                                                            if (random(10) > 6.5) {
+	                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
 	                                                                obj_skills_libres.mostrado = false;
 	                                                                skills[12]++;
 	                                                                var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -635,7 +635,7 @@ _mouseDown
 		                                                        } else {
 																	
 																	if (obj_pj.skills[12] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-			                                                            if (random(10) > 6.5) {
+			                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
 			                                                                obj_skills_libres.mostrado = false;
 			                                                                obj_pj.skills[12]++;
 			                                                                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
@@ -912,7 +912,7 @@ _mouseDown
                                                             }
                                                         
                                                             if (skills[0] < skillsNaturales[nivel]) {
-                                                                if (random(10) > 6.5) {
+                                                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
                                                                     var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1070,7 +1070,7 @@ _mouseDown
                                                     }
                                             
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(10) > 6.5) {
+                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
                                                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1194,7 +1194,7 @@ _mouseDown
                                                             }
                                                         
                                                             if (skills[0] < skillsNaturales[nivel]) {
-                                                                if (random(10) > 6.5) {
+                                                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
                                                                     var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1283,7 +1283,7 @@ _mouseDown
                                                     palabrasMagicas = "";
                                                 
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(10) > 6.5) {
+                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
                                                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1344,7 +1344,7 @@ _mouseDown
                                                     }
                                             
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(10) > 6.5) {
+                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
                                                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1400,7 +1400,7 @@ _mouseDown
                                                         }
                                                 
                                                         if (skills[0] < skillsNaturales[nivel]) {
-                                                            if (random(10) > 6.5) {
+                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                 obj_skills_libres.mostrado = false;
                                                                 skills[0]++;
                                                                 var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1478,7 +1478,7 @@ _mouseDown
                                                                     }
                                                             
                                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                                        if (random(10) > 6.5) {
+                                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                             obj_skills_libres.mostrado = false;
                                                                             skills[0]++;
                                                                             var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
@@ -1544,7 +1544,7 @@ _mouseDown
                                                                 }
                                                         
                                                                 if (skills[0] < skillsNaturales[nivel]) {
-                                                                    if (random(10) > 6.5) {
+                                                                    if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                         obj_skills_libres.mostrado = false;
                                                                         skills[0]++;
                                                                         var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);

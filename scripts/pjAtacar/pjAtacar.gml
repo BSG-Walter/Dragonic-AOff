@@ -249,7 +249,7 @@ with(obj_pj){
 	                                if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7) {
 	                                    if (obj_pj.clase == 1 || obj_pj.skills[4] >= 10) {
 	                                        if (obj_pj.skills[4] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-	                                            if (random(10) > 6.5) {
+	                                            if (random(1) < 0.35 * SKILL_FACTOR) {
 	                                                obj_skills_libres.mostrado = false;
 	                                                obj_pj.skills[4]++;
 	                                                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
@@ -260,7 +260,7 @@ with(obj_pj){
 	                                }                                
                                     
 	                                if (obj_pj.skills[2] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-	                                    if (random(10) > 6.5) {
+	                                    if (random(1) < 0.35 * SKILL_FACTOR) {
 	                                        obj_skills_libres.mostrado = false;
 	                                        obj_pj.skills[2]++;
 	                                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
@@ -542,7 +542,7 @@ with(obj_pj){
 	                                idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
                                     
 	                                if (obj_pj.skills[13] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-	                                    if (random(10) > 6.5) {
+	                                    if (random(1) < 0.35 * SKILL_FACTOR) {
 	                                        obj_skills_libres.mostrado = false;
 	                                        obj_pj.skills[13]++;
 	                                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);

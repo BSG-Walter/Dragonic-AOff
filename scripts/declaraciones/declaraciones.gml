@@ -5,8 +5,6 @@ function init_engine_settings() {
     draw_set_colour(c_black);
 }
 
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 #macro RESOLUTION_WIDTH 600
 #macro RESOLUTION_HEIGHT 360
 #macro RENDER_WIDTH 600
@@ -14,3 +12,7 @@ function init_engine_settings() {
 #macro INVENTARIO_WIDTH 120
 #macro INVENTARIO_HEIGHT 80
 #macro MAX_MULTITOUCH 5
+// SKILL_FACTOR: escala la prob. base 35% de subir skills de forma natural.
+// Base x20 = 1.0. x10 = 0.5 (mitad, mínimo), x40 = 2.0 (doble), x200 = 10.0, sin tope superior.
+// Uso: if (random(1) < 0.35 * SKILL_FACTOR) { /* subir skill */ }
+#macro SKILL_FACTOR max(0.5, obj_opciones.multiExp/20)

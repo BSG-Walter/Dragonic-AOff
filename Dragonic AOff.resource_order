@@ -725,7 +725,6 @@
     {"name":"obtenerNombreMapa","order":52,"path":"scripts/obtenerNombreMapa/obtenerNombreMapa.yy",},
     {"name":"obtenerRoomIndex","order":114,"path":"scripts/obtenerRoomIndex/obtenerRoomIndex.yy",},
     {"name":"optimizarCiudad","order":53,"path":"scripts/optimizarCiudad/optimizarCiudad.yy",},
-    {"name":"pasarDeviceAFlecha","order":31,"path":"scripts/pasarDeviceAFlecha/pasarDeviceAFlecha.yy",},
     {"name":"pjAtacar","order":120,"path":"scripts/pjAtacar/pjAtacar.yy",},
     {"name":"posicionLejosDePJ","order":77,"path":"scripts/posicionLejosDePJ/posicionLejosDePJ.yy",},
     {"name":"puedeInvocarMascotas","order":88,"path":"scripts/puedeInvocarMascotas/puedeInvocarMascotas.yy",},

@@ -586,7 +586,7 @@ device_mouse_check_button(4, mb_left)
                                     
                                 }
                             
-                                if (random(10) > 6.5) {
+                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                     if (obj_pj.skills[16] < 100) {
                                         if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
@@ -634,7 +634,7 @@ device_mouse_check_button(4, mb_left)
 												
 												obj_skills_libres.mostrado = false;
                                                 
-                                                if (random(10) > 6.5) {
+                                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                                     if (obj_pj.skills[16] < 100) {
                                                         if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                                         
@@ -723,7 +723,7 @@ device_mouse_check_button(4, mb_left)
                                                 obj_inventario.clase8ValidaInv[i] = datosItem[13];
                                                 obj_inventario.nombreInv[i] = datosItem[14];
                                                 
-                                                if (random(10) > 6.5) {
+                                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                                     if (obj_pj.skills[16] < 100) {
                                                         if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                                         
