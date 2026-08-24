@@ -830,7 +830,6 @@
     {"id":{"name":"obtenerNombreMapa","path":"scripts/obtenerNombreMapa/obtenerNombreMapa.yy",},},
     {"id":{"name":"obtenerRoomIndex","path":"scripts/obtenerRoomIndex/obtenerRoomIndex.yy",},},
     {"id":{"name":"optimizarCiudad","path":"scripts/optimizarCiudad/optimizarCiudad.yy",},},
-    {"id":{"name":"pasarDeviceAFlecha","path":"scripts/pasarDeviceAFlecha/pasarDeviceAFlecha.yy",},},
     {"id":{"name":"pjAtacar","path":"scripts/pjAtacar/pjAtacar.yy",},},
     {"id":{"name":"posicionLejosDePJ","path":"scripts/posicionLejosDePJ/posicionLejosDePJ.yy",},},
     {"id":{"name":"puedeInvocarMascotas","path":"scripts/puedeInvocarMascotas/puedeInvocarMascotas.yy",},},

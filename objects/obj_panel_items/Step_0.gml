@@ -89,49 +89,8 @@ device_mouse_check_button(4, mb_left)
                     sectorNpc = false;
                     sectorPj = true;
                     
-                    indiceItem = -1;
-                    
-                    if (device_mouse_y(device) >= modY && device_mouse_y(device) < modY + 8 * 1) {
-                        indiceItem = 0;
-                    } else if (device_mouse_y(device) >= modY + 8 * 1 && device_mouse_y(device) < modY + 8 * 2) {
-                        indiceItem = 1;
-                    } else if (device_mouse_y(device) >= modY + 8 * 2 && device_mouse_y(device) < modY + 8 * 3) {
-                        indiceItem = 2;
-                    } else if (device_mouse_y(device) >= modY + 8 * 3 && device_mouse_y(device) < modY + 8 * 4) {
-                        indiceItem = 3;
-                    } else if (device_mouse_y(device) >= modY + 8 * 4 && device_mouse_y(device) < modY + 8 * 5) {
-                        indiceItem = 4;
-                    } else if (device_mouse_y(device) >= modY + 8 * 5 && device_mouse_y(device) < modY + 8 * 6) {
-                        indiceItem = 5;
-                    } else if (device_mouse_y(device) >= modY + 8 * 6 && device_mouse_y(device) < modY + 8 * 7) {
-                        indiceItem = 6;
-                    } else if (device_mouse_y(device) >= modY + 8 * 7 && device_mouse_y(device) < modY + 8 * 8) {
-                        indiceItem = 7;
-                    } else if (device_mouse_y(device) >= modY + 8 * 8 && device_mouse_y(device) < modY + 8 * 9) {
-                        indiceItem = 8;
-                    } else if (device_mouse_y(device) >= modY + 8 * 9 && device_mouse_y(device) < modY + 8 * 10) {
-                        indiceItem = 9;
-                    } else if (device_mouse_y(device) >= modY + 8 * 10 && device_mouse_y(device) < modY + 8 * 11) {
-                        indiceItem = 10;
-                    } else if (device_mouse_y(device) >= modY + 8 * 11 && device_mouse_y(device) < modY + 8 * 12) {
-                        indiceItem = 11;
-                    } else if (device_mouse_y(device) >= modY + 8 * 12 && device_mouse_y(device) < modY + 8 * 13) {
-                        indiceItem = 12;
-                    } else if (device_mouse_y(device) >= modY + 8 * 13 && device_mouse_y(device) < modY + 8 * 14) {
-                        indiceItem = 13;
-                    } else if (device_mouse_y(device) >= modY + 8 * 14 && device_mouse_y(device) < modY + 8 * 15) {
-                        indiceItem = 14;
-                    } else if (device_mouse_y(device) >= modY + 8 * 15 && device_mouse_y(device) < modY + 8 * 16) {
-                        indiceItem = 15;
-                    } else if (device_mouse_y(device) >= modY + 8 * 16 && device_mouse_y(device) < modY + 8 * 17) {
-                        indiceItem = 16;
-                    } else if (device_mouse_y(device) >= modY + 8 * 17 && device_mouse_y(device) < modY + 8 * 18) {
-                        indiceItem = 17;
-                    } else if (device_mouse_y(device) >= modY + 8 * 18 && device_mouse_y(device) < modY + 8 * 19) {
-                        indiceItem = 18;
-                    } else if (device_mouse_y(device) >= modY + 8 * 19 && device_mouse_y(device) < modY + 8 * 20) {
-                        indiceItem = 19;
-                    }
+                    var _my = device_mouse_y(device) - modY;
+                    if (_my >= 0 && _my < 160) indiceItem = floor(_my / 8); else indiceItem = -1;
                     
                     if (indiceItem != -1) {
                         if (obj_inventario.indiceInv[indiceItem] != -1) {
@@ -291,49 +250,8 @@ device_mouse_check_button(4, mb_left)
                     sectorNpc = true;
                     sectorPj = false;
                     
-                    indiceItem = -1;
-                    
-                    if (device_mouse_y(device) >= modY && device_mouse_y(device) < modY + 8 * 1) {
-                        indiceItem = 0;
-                    } else if (device_mouse_y(device) >= modY + 8 * 1 && device_mouse_y(device) < modY + 8 * 2) {
-                        indiceItem = 1;
-                    } else if (device_mouse_y(device) >= modY + 8 * 2 && device_mouse_y(device) < modY + 8 * 3) {
-                        indiceItem = 2;
-                    } else if (device_mouse_y(device) >= modY + 8 * 3 && device_mouse_y(device) < modY + 8 * 4) {
-                        indiceItem = 3;
-                    } else if (device_mouse_y(device) >= modY + 8 * 4 && device_mouse_y(device) < modY + 8 * 5) {
-                        indiceItem = 4;
-                    } else if (device_mouse_y(device) >= modY + 8 * 5 && device_mouse_y(device) < modY + 8 * 6) {
-                        indiceItem = 5;
-                    } else if (device_mouse_y(device) >= modY + 8 * 6 && device_mouse_y(device) < modY + 8 * 7) {
-                        indiceItem = 6;
-                    } else if (device_mouse_y(device) >= modY + 8 * 7 && device_mouse_y(device) < modY + 8 * 8) {
-                        indiceItem = 7;
-                    } else if (device_mouse_y(device) >= modY + 8 * 8 && device_mouse_y(device) < modY + 8 * 9) {
-                        indiceItem = 8;
-                    } else if (device_mouse_y(device) >= modY + 8 * 9 && device_mouse_y(device) < modY + 8 * 10) {
-                        indiceItem = 9;
-                    } else if (device_mouse_y(device) >= modY + 8 * 10 && device_mouse_y(device) < modY + 8 * 11) {
-                        indiceItem = 10;
-                    } else if (device_mouse_y(device) >= modY + 8 * 11 && device_mouse_y(device) < modY + 8 * 12) {
-                        indiceItem = 11;
-                    } else if (device_mouse_y(device) >= modY + 8 * 12 && device_mouse_y(device) < modY + 8 * 13) {
-                        indiceItem = 12;
-                    } else if (device_mouse_y(device) >= modY + 8 * 13 && device_mouse_y(device) < modY + 8 * 14) {
-                        indiceItem = 13;
-                    } else if (device_mouse_y(device) >= modY + 8 * 14 && device_mouse_y(device) < modY + 8 * 15) {
-                        indiceItem = 14;
-                    } else if (device_mouse_y(device) >= modY + 8 * 15 && device_mouse_y(device) < modY + 8 * 16) {
-                        indiceItem = 15;
-                    } else if (device_mouse_y(device) >= modY + 8 * 16 && device_mouse_y(device) < modY + 8 * 17) {
-                        indiceItem = 16;
-                    } else if (device_mouse_y(device) >= modY + 8 * 17 && device_mouse_y(device) < modY + 8 * 18) {
-                        indiceItem = 17;
-                    } else if (device_mouse_y(device) >= modY + 8 * 18 && device_mouse_y(device) < modY + 8 * 19) {
-                        indiceItem = 18;
-                    } else if (device_mouse_y(device) >= modY + 8 * 19 && device_mouse_y(device) < modY + 8 * 20) {
-                        indiceItem = 19;
-                    }
+                    var _my = device_mouse_y(device) - modY;
+                    if (_my >= 0 && _my < 160) indiceItem = floor(_my / 8); else indiceItem = -1;
                     
                     if (indiceItem != -1) {
                         if (instance_exists(idPadre)) {
@@ -889,49 +807,8 @@ device_mouse_check_button(4, mb_left)
                     sectorNpc = false;
                     sectorPj = true;
                     
-                    indiceItem = -1;
-                    
-                    if (device_mouse_y(device) >= modY && device_mouse_y(device) < modY + 8 * 1) {
-                        indiceItem = 0;
-                    } else if (device_mouse_y(device) >= modY + 8 * 1 && device_mouse_y(device) < modY + 8 * 2) {
-                        indiceItem = 1;
-                    } else if (device_mouse_y(device) >= modY + 8 * 2 && device_mouse_y(device) < modY + 8 * 3) {
-                        indiceItem = 2;
-                    } else if (device_mouse_y(device) >= modY + 8 * 3 && device_mouse_y(device) < modY + 8 * 4) {
-                        indiceItem = 3;
-                    } else if (device_mouse_y(device) >= modY + 8 * 4 && device_mouse_y(device) < modY + 8 * 5) {
-                        indiceItem = 4;
-                    } else if (device_mouse_y(device) >= modY + 8 * 5 && device_mouse_y(device) < modY + 8 * 6) {
-                        indiceItem = 5;
-                    } else if (device_mouse_y(device) >= modY + 8 * 6 && device_mouse_y(device) < modY + 8 * 7) {
-                        indiceItem = 6;
-                    } else if (device_mouse_y(device) >= modY + 8 * 7 && device_mouse_y(device) < modY + 8 * 8) {
-                        indiceItem = 7;
-                    } else if (device_mouse_y(device) >= modY + 8 * 8 && device_mouse_y(device) < modY + 8 * 9) {
-                        indiceItem = 8;
-                    } else if (device_mouse_y(device) >= modY + 8 * 9 && device_mouse_y(device) < modY + 8 * 10) {
-                        indiceItem = 9;
-                    } else if (device_mouse_y(device) >= modY + 8 * 10 && device_mouse_y(device) < modY + 8 * 11) {
-                        indiceItem = 10;
-                    } else if (device_mouse_y(device) >= modY + 8 * 11 && device_mouse_y(device) < modY + 8 * 12) {
-                        indiceItem = 11;
-                    } else if (device_mouse_y(device) >= modY + 8 * 12 && device_mouse_y(device) < modY + 8 * 13) {
-                        indiceItem = 12;
-                    } else if (device_mouse_y(device) >= modY + 8 * 13 && device_mouse_y(device) < modY + 8 * 14) {
-                        indiceItem = 13;
-                    } else if (device_mouse_y(device) >= modY + 8 * 14 && device_mouse_y(device) < modY + 8 * 15) {
-                        indiceItem = 14;
-                    } else if (device_mouse_y(device) >= modY + 8 * 15 && device_mouse_y(device) < modY + 8 * 16) {
-                        indiceItem = 15;
-                    } else if (device_mouse_y(device) >= modY + 8 * 16 && device_mouse_y(device) < modY + 8 * 17) {
-                        indiceItem = 16;
-                    } else if (device_mouse_y(device) >= modY + 8 * 17 && device_mouse_y(device) < modY + 8 * 18) {
-                        indiceItem = 17;
-                    } else if (device_mouse_y(device) >= modY + 8 * 18 && device_mouse_y(device) < modY + 8 * 19) {
-                        indiceItem = 18;
-                    } else if (device_mouse_y(device) >= modY + 8 * 19 && device_mouse_y(device) < modY + 8 * 20) {
-                        indiceItem = 19;
-                    }
+                    var _my = device_mouse_y(device) - modY;
+                    if (_my >= 0 && _my < 160) indiceItem = floor(_my / 8); else indiceItem = -1;
                     
                     if (indiceItem != -1) {
                         if (obj_inventario.indiceInv[indiceItem] != -1) {
@@ -1091,49 +968,8 @@ device_mouse_check_button(4, mb_left)
                     sectorNpc = true;
                     sectorPj = false;
                     
-                    indiceItem = -1;
-                    
-                    if (device_mouse_y(device) >= modY && device_mouse_y(device) < modY + 8 * 1) {
-                        indiceItem = 0;
-                    } else if (device_mouse_y(device) >= modY + 8 * 1 && device_mouse_y(device) < modY + 8 * 2) {
-                        indiceItem = 1;
-                    } else if (device_mouse_y(device) >= modY + 8 * 2 && device_mouse_y(device) < modY + 8 * 3) {
-                        indiceItem = 2;
-                    } else if (device_mouse_y(device) >= modY + 8 * 3 && device_mouse_y(device) < modY + 8 * 4) {
-                        indiceItem = 3;
-                    } else if (device_mouse_y(device) >= modY + 8 * 4 && device_mouse_y(device) < modY + 8 * 5) {
-                        indiceItem = 4;
-                    } else if (device_mouse_y(device) >= modY + 8 * 5 && device_mouse_y(device) < modY + 8 * 6) {
-                        indiceItem = 5;
-                    } else if (device_mouse_y(device) >= modY + 8 * 6 && device_mouse_y(device) < modY + 8 * 7) {
-                        indiceItem = 6;
-                    } else if (device_mouse_y(device) >= modY + 8 * 7 && device_mouse_y(device) < modY + 8 * 8) {
-                        indiceItem = 7;
-                    } else if (device_mouse_y(device) >= modY + 8 * 8 && device_mouse_y(device) < modY + 8 * 9) {
-                        indiceItem = 8;
-                    } else if (device_mouse_y(device) >= modY + 8 * 9 && device_mouse_y(device) < modY + 8 * 10) {
-                        indiceItem = 9;
-                    } else if (device_mouse_y(device) >= modY + 8 * 10 && device_mouse_y(device) < modY + 8 * 11) {
-                        indiceItem = 10;
-                    } else if (device_mouse_y(device) >= modY + 8 * 11 && device_mouse_y(device) < modY + 8 * 12) {
-                        indiceItem = 11;
-                    } else if (device_mouse_y(device) >= modY + 8 * 12 && device_mouse_y(device) < modY + 8 * 13) {
-                        indiceItem = 12;
-                    } else if (device_mouse_y(device) >= modY + 8 * 13 && device_mouse_y(device) < modY + 8 * 14) {
-                        indiceItem = 13;
-                    } else if (device_mouse_y(device) >= modY + 8 * 14 && device_mouse_y(device) < modY + 8 * 15) {
-                        indiceItem = 14;
-                    } else if (device_mouse_y(device) >= modY + 8 * 15 && device_mouse_y(device) < modY + 8 * 16) {
-                        indiceItem = 15;
-                    } else if (device_mouse_y(device) >= modY + 8 * 16 && device_mouse_y(device) < modY + 8 * 17) {
-                        indiceItem = 16;
-                    } else if (device_mouse_y(device) >= modY + 8 * 17 && device_mouse_y(device) < modY + 8 * 18) {
-                        indiceItem = 17;
-                    } else if (device_mouse_y(device) >= modY + 8 * 18 && device_mouse_y(device) < modY + 8 * 19) {
-                        indiceItem = 18;
-                    } else if (device_mouse_y(device) >= modY + 8 * 19 && device_mouse_y(device) < modY + 8 * 20) {
-                        indiceItem = 19;
-                    }
+                    var _my = device_mouse_y(device) - modY;
+                    if (_my >= 0 && _my < 160) indiceItem = floor(_my / 8); else indiceItem = -1;
                     
                     if (indiceItem != -1) {
                         if (idPadre.indiceNpc[indiceItem] != -1) {

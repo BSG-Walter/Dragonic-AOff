@@ -1,4 +1,4 @@
-with (other) {
+﻿with (other) {
 /// Estado inicial
 
 if (instance_exists(obj_crearPJ)) {
@@ -790,4 +790,5 @@ insigniaPionero = false;
 ultimoArbol = noone;
 
 /* */
-}/*  */
+}
+/*  */

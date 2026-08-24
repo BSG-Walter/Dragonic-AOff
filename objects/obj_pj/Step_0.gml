@@ -26,6 +26,17 @@ if (obj_opciones.opcionArboles) {
     }
 }
 
+// transparencia en arboles
+var _inst = noone
+if (obj_opciones.opcionArboles) _inst = instance_place(x, y, obj_arbol_basic);
+if (_inst != noone) {
+	_inst.image_alpha = 0.5;
+	_inst.alarm[0] = 1;
+}
+
+ // cache mouse una vez por step
+var _mouseDown = device_mouse_check_button(0, mb_left) || device_mouse_check_button(1, mb_left) || device_mouse_check_button(2, mb_left) || device_mouse_check_button(3, mb_left) || device_mouse_check_button(4, mb_left);
+var _device = _mouseDown ? elegirDeviceLibre() : -1;
 if (puedeMoverse) {
     if (rightKey) {
         direccion = 3;
@@ -236,7 +247,6 @@ if (!obj_opciones.opcionTechos) {
     } else {
         with (obj_techo_basic) {
             visible = true;
-            image_alpha = 1;
         }
     }
 
@@ -248,14 +258,12 @@ if (!obj_opciones.opcionTechos) {
     ) {
     
         with (obj_techo_basic) {
-            visible = true;
             image_alpha = 0.35;
         }
         
     } else {
     
         with (obj_techo_basic) {
-            visible = true;
             image_alpha = 1;
         }
         
@@ -351,14 +359,10 @@ if (!invisible) {
 var device = -1;
 
 if (
-device_mouse_check_button(0, mb_left) ||
-device_mouse_check_button(1, mb_left) ||
-device_mouse_check_button(2, mb_left) ||
-device_mouse_check_button(3, mb_left) ||
-device_mouse_check_button(4, mb_left)
+_mouseDown
 ) {
 
-    device = elegirDeviceLibre();
+    device = _device;
 
     if (device != -1) {
     
