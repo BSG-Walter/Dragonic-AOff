@@ -281,8 +281,8 @@ alarm[2] = intervaloAtaque;
 
 // Fuerza
 
-danoMeleeMin = obj_pj.danoMin * random_range(0.75, 0.80 + pj_avance * 0.08);
-danoMeleeMax = obj_pj.danoMax * random_range(0.75, 0.80 + pj_avance * 0.08);
+danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85 + pj_avance * 0.15);
+danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85 + pj_avance * 0.15);
 
 // Evasión
 
