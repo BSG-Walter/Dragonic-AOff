@@ -28,7 +28,8 @@ if (trabajando) {
             cantidadMadera = 11;
         }  else {
             cantidadMadera = 15;
-        } 
+        }
+        if (cantidadMadera > 0) cantidadMadera = max(1, floor(cantidadMadera * RECURSO_FACTOR));
     
         var existe = false;
         
@@ -144,7 +145,8 @@ if (trabajando) {
             cantidadMinerales = 11;
         }  else {
             cantidadMinerales = 15;
-        } 
+        }
+        if (cantidadMinerales > 0) cantidadMinerales = max(1, floor(cantidadMinerales * RECURSO_FACTOR));
     
         var existe = false;
         
@@ -481,6 +483,12 @@ if (trabajando) {
                             cantidadSalmon = 0;
                             cantidadCaballito = 0;
                         }
+                        
+                        if (cantidadMerluza > 0) cantidadMerluza = max(1, floor(cantidadMerluza * RECURSO_FACTOR));
+                        if (cantidadPejerrey > 0) cantidadPejerrey = max(1, floor(cantidadPejerrey * RECURSO_FACTOR));
+                        if (cantidadPezEspada > 0) cantidadPezEspada = max(1, floor(cantidadPezEspada * RECURSO_FACTOR));
+                        if (cantidadSalmon > 0) cantidadSalmon = max(1, floor(cantidadSalmon * RECURSO_FACTOR));
+                        if (cantidadCaballito > 0) cantidadCaballito = max(1, floor(cantidadCaballito * RECURSO_FACTOR));
                         
                         // Randomizo
                         
