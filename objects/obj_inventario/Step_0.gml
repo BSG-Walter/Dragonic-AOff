@@ -332,9 +332,7 @@ device_mouse_check_button(4, mb_left)
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
                                 } else if (!validoSkill) {
-                                    idFaltaSkill = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_falta_skill);
-                                    idFaltaSkill.nroSkill = nroSkillInv[posItem];
-                                    idFaltaSkill.skillRequerido = skillRequeridoInv[posItem];
+                                    idFaltaSkill = crearTextoFaltaSkill(nroSkillInv[posItem], skillRequeridoInv[posItem]);
                                 }                
                                 
                                 if (validoRaza && validoGenero && validoSkill && validoClase) {

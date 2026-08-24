@@ -12,8 +12,7 @@ if (obj_pj.skills[3] < obj_pj.skillsNaturales[obj_pj.nivel]) {
     if (random(1) < 0.35 * SKILL_FACTOR) {
         obj_skills_libres.mostrado = false;
         obj_pj.skills[3]++;
-        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-        idSubirSkills.indice = 3;
+        var idSubirSkills = crearTextoSubirSkill(3);
     }
 }
 

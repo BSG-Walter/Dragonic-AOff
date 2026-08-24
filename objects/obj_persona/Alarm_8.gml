@@ -143,8 +143,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     
                                                     other.dano = round(random_range(40, 60)); 
                                                     other.danoTotal = calcularDanoMagicoIAaNPC(other.dano, other.id);
-                                                    var idDano = instance_create_depth(x, y, 0, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, -1);
                                                     salud -= other.danoTotal;
                                                     
                                                     alarm[5] = 1;
@@ -167,8 +166,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     
                                                     other.dano = round(random_range(25, 35)); 
                                                     other.danoTotal = calcularDanoMagicoIAaNPC(other.dano, other.id);
-                                                    var idDano = instance_create_depth(x, y, 0, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, -1);
                                                     salud -= other.danoTotal;
                                                     
                                                     alarm[5] = 1;
@@ -217,9 +215,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     other.dano = round(random_range(other.danoMeleeMin, other.danoMeleeMax));
                                                     other.danoTotal = calcularDanoArcoIAaNPC(floor(other.dano * obj_pj.modDanoLvl), other.id);
                                                     
-                                                    var idDano = instance_create_depth(x, y, 0, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
-                                                    idDano.padre = id;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, id);
                                                     
                                                     reproducirSonido(snd_golpeANPC, false, false);
                                                     
@@ -374,9 +370,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                             
                             var danoTotal = floor(calcularDanoMagicoIAaIA(dano, idIA) * modBaculo); 
                                                     
-                            var idDano = instance_create_depth(idIA.x, idIA.y, 0, obj_efecto_dano);
-                            idDano.dano = danoTotal;
-                            idDano.padre = idIA;
+                            var idDano = crearTextoDano(idIA.x, idIA.y, danoTotal, idIA);
                             
                             if (idIA.salud - danoTotal > 0) {
                                 idIA.salud -= danoTotal;
@@ -598,8 +592,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                         if (obj_pj.skills[17] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[17]++;
-                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = 17;
+                                            var idSubirSkills = crearTextoSubirSkill(17);
                                         }
                                     }
                                 }

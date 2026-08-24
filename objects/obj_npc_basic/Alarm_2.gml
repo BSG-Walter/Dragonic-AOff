@@ -100,8 +100,7 @@ if (target == -1 || target == obj_pj) {
                     if (random(1) < 0.5 * SKILL_FACTOR) {
                         obj_skills_libres.mostrado = false;
                         obj_pj.skills[6]++;
-                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                        idSubirSkills.indice = 6;
+                        var idSubirSkills = crearTextoSubirSkill(6);
                     }
                 }
                 
@@ -159,8 +158,7 @@ if (target == -1 || target == obj_pj) {
                 if (random(1) < 0.5 * SKILL_FACTOR) {
                     obj_skills_libres.mostrado = false;
                     obj_pj.skills[1]++;
-                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                    idSubirSkills.indice = 1;
+                    var idSubirSkills = crearTextoSubirSkill(1);
                 }
             }
             
@@ -310,9 +308,7 @@ if (target != -1 && target != obj_pj && personaRoom != -1 && instance_exists(per
         var dano = round(random_range(danoMeleeMin, danoMeleeMax));
         var danoTotal = calcularDanoFisicoNPCaIA(dano, personaRoom);
         
-        idDano = instance_create_depth(personaRoom.x, personaRoom.y - 41, 0, obj_efecto_dano);
-        idDano.dano = danoTotal;
-        idDano.padre = personaRoom.id;
+        idDano = crearTextoDano(personaRoom.x, personaRoom.y - 41, danoTotal, personaRoom.id);
         
         personaRoom.salud -= danoTotal;
         reproducirSonido(snd_golpeRecibido, false, false);

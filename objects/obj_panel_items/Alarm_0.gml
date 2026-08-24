@@ -87,8 +87,7 @@ if (clicMantenido) {
                                     if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                         obj_skills_libres.mostrado = false;
                                         obj_pj.skills[16]++;
-                                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                        idSubirSkills.indice = 16;
+                                        var idSubirSkills = crearTextoSubirSkill(16);
                                     }
                                 }
                             }
@@ -130,8 +129,7 @@ if (clicMantenido) {
                                                     
                                                         obj_skills_libres.mostrado = false;
                                                         obj_pj.skills[16]++;
-                                                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                                        idSubirSkills.indice = 16;
+                                                        var idSubirSkills = crearTextoSubirSkill(16);
                                                         
                                                         var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
                                                                 
@@ -213,8 +211,7 @@ if (clicMantenido) {
                                                     
                                                         obj_skills_libres.mostrado = false;
                                                         obj_pj.skills[16]++;
-                                                        var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                                        idSubirSkills.indice = 16;
+                                                        var idSubirSkills = crearTextoSubirSkill(16);
                                                         
                                                         var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
                                                                 

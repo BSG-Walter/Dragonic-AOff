@@ -33,9 +33,7 @@ if (targetNPC != -1) {
     
         var dano = round(random_range(danoMeleeMin, danoMeleeMax) * 1.25);
         
-        idDano = instance_create_depth(targetNPC.x, targetNPC.y - 41, 0, obj_efecto_dano);
-        idDano.dano = dano;
-        idDano.padre = targetNPC.id;
+        idDano = crearTextoDano(targetNPC.x, targetNPC.y - 41, dano, targetNPC.id);
         
         var expOtorgada = 0;
                                                 

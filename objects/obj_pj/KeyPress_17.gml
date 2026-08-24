@@ -196,8 +196,8 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         dano = 1;
                                     }
                                     
-                                    idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
-                                    idDano.apunala = false;
+                                    idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
+                                    
 									
 									if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7 && (obj_pj.clase == 1 || (obj_pj.clase == 2 && obj_pj.skills[4] >= 10))) {
 										dano = round(dano * 1.25);
@@ -239,7 +239,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                             
                                             if (random(7.5) > chancesApu) {
                                                 dano = round(dano * 3.4);
-                                                idDano.apunala = true;
+                                                idDano.color = make_color_rgb(230, 211, 128);
                                             }
                                         
                                         }
@@ -252,8 +252,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                                 if (random(1) < 0.35 * SKILL_FACTOR) {
                                                     obj_skills_libres.mostrado = false;
                                                     obj_pj.skills[4]++;
-                                                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                                    idSubirSkills.indice = 4;
+                                                    var idSubirSkills = crearTextoSubirSkill(4);
                                                 }
                                             }
                                         }    
@@ -263,8 +262,7 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[2]++;
-                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = 2;
+                                            var idSubirSkills = crearTextoSubirSkill(2);
                                         }
                                     }
                                     
@@ -289,7 +287,9 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     expOtorgada = expOtorgada * obj_opciones.multiExp
 
                                     idDano.padre = idNPC;
-                                    idDano.dano = dano;
+                                    
+
+                                    idDano.texto = string(dano);
                                     idNPC.salud -= dano;
                                     
                                     if (idNPC.object_index == obj_persona) {
@@ -539,14 +539,13 @@ if (obj_tecla_ctrl.teclaApretada) {
                                         dano = 1;
                                     }
                                     
-                                    idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
+                                    idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
                                     
                                     if (obj_pj.skills[13] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[13]++;
-                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = 13;
+                                            var idSubirSkills = crearTextoSubirSkill(13);
                                         }
                                     }
                                     
@@ -571,7 +570,9 @@ if (obj_tecla_ctrl.teclaApretada) {
                                     expOtorgada = expOtorgada * obj_opciones.multiExp
                                     
                                     idDano.padre = idNPC;
-                                    idDano.dano = dano;
+                                    
+                                    
+                                    idDano.texto = string(dano);
                                     idNPC.salud -= dano;
                                     
                                     if (idNPC.object_index == obj_persona) {

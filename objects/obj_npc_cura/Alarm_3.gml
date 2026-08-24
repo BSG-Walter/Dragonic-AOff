@@ -13,9 +13,7 @@ if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
         
         var danoTotal = calcularDanoMagicoNPC(dano);
                                 
-        var idDano = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_dano);
-        idDano.dano = danoTotal;
-        idDano.padre = obj_pj.id;
+        var idDano = crearTextoDano(obj_pj.x, obj_pj.y, danoTotal, obj_pj.id);
         
         var idMsg = instance_create_depth(x, y, 0, obj_msg);
         idMsg.desc = desc2;
@@ -86,9 +84,7 @@ if (instance_number(obj_persona) > 0 && !obj_persona.muerto && obj_persona.pk) {
             
             var dano = floor(random_range(87, 98));
             var danoTotal = calcularDanoMagicoNPCaIA(dano, obj_persona.id);
-            idDano = instance_create_depth(obj_persona.x, obj_persona.y - 41, 0, obj_efecto_dano);
-            idDano.dano = danoTotal;
-            idDano.padre = obj_persona.id;
+            idDano = crearTextoDano(obj_persona.x, obj_persona.y - 41, danoTotal, obj_persona.id);
             
             reproducirSonido(snd_apocalipsis, false, false);
             obj_persona.salud -= danoTotal;

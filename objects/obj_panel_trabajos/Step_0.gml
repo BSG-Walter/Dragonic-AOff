@@ -379,8 +379,7 @@ device_mouse_check_button(4, mb_left)
                                         if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[indiceSkill]++;
-                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = indiceSkill;
+                                            var idSubirSkills = crearTextoSubirSkill(indiceSkill);
                                             alarm[0] = 1;
                                         }
                                     }
@@ -559,8 +558,7 @@ device_mouse_check_button(4, mb_left)
                                         if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[10]++;
-                                            var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = 10;
+                                            var idSubirSkills = crearTextoSubirSkill(10);
                                             alarm[0] = 1;
                                         }
                                     }

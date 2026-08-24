@@ -319,8 +319,7 @@ device_mouse_check_button(4, mb_left)
                                                 if (random(1) < 0.35 * SKILL_FACTOR) {
                                                     obj_skills_libres.mostrado = false;
                                                     obj_pj.skills[11]++;
-                                                    var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-                                                    idSubirSkills.indice = 11;
+                                                    var idSubirSkills = crearTextoSubirSkill(11);
                                                 }
                                             }
                                             

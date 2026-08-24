@@ -536,8 +536,7 @@ _mouseDown
 	                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
 	                                                                obj_skills_libres.mostrado = false;
 	                                                                skills[12]++;
-	                                                                var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-	                                                                idSubirSkills.indice = 12;
+	                                                                var idSubirSkills = crearTextoSubirSkill(12);
 	                                                            }
 	                                                        }
 														}
@@ -559,7 +558,7 @@ _mouseDown
 	                                                                dano = 1;
 	                                                            }
                                                     
-	                                                            idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
+	                                                            idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
                                                             
 	                                                            var expOtorgada = 0;
                                                                 
@@ -582,7 +581,9 @@ _mouseDown
                                                                 expOtorgada = expOtorgada * obj_opciones.multiExp
                                                     
 	                                                            idDano.padre = idNPC;
-	                                                            idDano.dano = dano;
+	                                                            
+                                                    
+	                                                            idDano.texto = string(dano);
 	                                                            salud -= dano;
                                                             
 	                                                            reproducirSonido(snd_flechaAcertada, false, false);
@@ -638,8 +639,7 @@ _mouseDown
 			                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
 			                                                                obj_skills_libres.mostrado = false;
 			                                                                obj_pj.skills[12]++;
-			                                                                var idSubirSkills = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_skill);
-			                                                                idSubirSkills.indice = 12;
+			                                                                var idSubirSkills = crearTextoSubirSkill(12);
 			                                                            }
 			                                                        }
 																
@@ -915,8 +915,7 @@ _mouseDown
                                                                 if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
-                                                                    var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                                    idSubirSkills.indice = 0;
+                                                                    var idSubirSkills = crearTextoSubirSkill(0);
                                                                 }
                                                             }
                                                         
@@ -968,7 +967,7 @@ _mouseDown
                                                                 var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
                                                             }
                                                             
-                                                            idDano = instance_create_depth(idNPC.x, idNPC.y, 0, obj_efecto_dano);
+                                                            idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
                                                             
                                                             var expOtorgada = 0;
                                                             
@@ -991,7 +990,9 @@ _mouseDown
                                                             expOtorgada = expOtorgada * obj_opciones.multiExp
                                                 
                                                             idDano.padre = idNPC;
-                                                            idDano.dano = dano;
+                                                            
+                                                
+                                                            idDano.texto = string(dano);
                                                             idNPC.salud -= dano;
                                                             
                                                             vibrarPantalla();
@@ -1073,8 +1074,7 @@ _mouseDown
                                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                            idSubirSkills.indice = 0;
+                                                            var idSubirSkills = crearTextoSubirSkill(0);
                                                         }
                                                     }
                                                 
@@ -1101,11 +1101,10 @@ _mouseDown
                                                     idEfectoHechizo.padre = id;
                                                     
                                                     var cura = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
-                                                    idCura = instance_create_depth(x, y - 40, 0, obj_efecto_dano);
+                                                    idCura = crearTextoDano(x, y - 40, cura, id);
                                         
-                                                    idCura.padre = id;
-                                                    idCura.dano = cura;
-                                                    idCura.cura = true;
+                                                    
+                                                    idCura.color = c_white;
                                                     
                                                     if (salud <= saludMax - cura) {
                                                         salud += cura;
@@ -1197,8 +1196,7 @@ _mouseDown
                                                                 if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                     obj_skills_libres.mostrado = false;
                                                                     skills[0]++;
-                                                                    var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                                    idSubirSkills.indice = 0;
+                                                                    var idSubirSkills = crearTextoSubirSkill(0);
                                                                 }
                                                             }
                                                         
@@ -1286,8 +1284,7 @@ _mouseDown
                                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                            idSubirSkills.indice = 0;
+                                                            var idSubirSkills = crearTextoSubirSkill(0);
                                                         }
                                                     }
                                                 
@@ -1347,8 +1344,7 @@ _mouseDown
                                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                                             obj_skills_libres.mostrado = false;
                                                             skills[0]++;
-                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                            idSubirSkills.indice = 0;
+                                                            var idSubirSkills = crearTextoSubirSkill(0);
                                                         }
                                                     }
                                                 
@@ -1403,8 +1399,7 @@ _mouseDown
                                                             if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                 obj_skills_libres.mostrado = false;
                                                                 skills[0]++;
-                                                                var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                                idSubirSkills.indice = 0;
+                                                                var idSubirSkills = crearTextoSubirSkill(0);
                                                             }
                                                         }
                                                     
@@ -1481,8 +1476,7 @@ _mouseDown
                                                                         if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                             obj_skills_libres.mostrado = false;
                                                                             skills[0]++;
-                                                                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                                            idSubirSkills.indice = 0;
+                                                                            var idSubirSkills = crearTextoSubirSkill(0);
                                                                         }
                                                                     }
                                                                 
@@ -1547,8 +1541,7 @@ _mouseDown
                                                                     if (random(1) < 0.35 * SKILL_FACTOR) {
                                                                         obj_skills_libres.mostrado = false;
                                                                         skills[0]++;
-                                                                        var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                                                        idSubirSkills.indice = 0;
+                                                                        var idSubirSkills = crearTextoSubirSkill(0);
                                                                     }
                                                                 }
                                                             

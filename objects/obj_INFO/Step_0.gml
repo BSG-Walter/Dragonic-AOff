@@ -19,7 +19,7 @@ if (modY < limite) {
 }
 
 if (tiempo == -1) {
-    image_alpha -= 0.0085;
+    image_alpha -= velocidadFade;
     
     if (image_alpha <= 0) {
         instance_destroy();

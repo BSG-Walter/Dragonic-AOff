@@ -81,9 +81,7 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
                     var danoTotal = calcularDanoMagicoNPCaIA(dano, personaRoom);
-                    idDano = instance_create_depth(personaRoom.x, personaRoom.y - 41, 0, obj_efecto_dano);
-                    idDano.dano = danoTotal;
-                    idDano.padre = personaRoom.id;
+                    idDano = crearTextoDano(personaRoom.x, personaRoom.y - 41, danoTotal, personaRoom.id);
                     
 					// Palabras mágicas
         

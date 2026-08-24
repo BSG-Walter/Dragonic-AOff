@@ -1,9 +1,7 @@
 ﻿// Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function daniarPj(danoTotal, envenena){
-	idDano = instance_create_depth(obj_pj.x, obj_pj.y - 41, 0, obj_efecto_dano);
-    idDano.dano = danoTotal;
-    idDano.padre = obj_pj.id;
+	idDano = crearTextoDano(obj_pj.x, obj_pj.y - 41, danoTotal, obj_pj.id);
 	
 	reproducirSonido(snd_golpeRecibido, false, false);
 	vibrarPantalla();

@@ -48,8 +48,7 @@ if (trabajando) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
-                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 5;
+                            var idSubirSkills = crearTextoSubirSkill(5);
                         }
                     }
                     
@@ -95,8 +94,7 @@ if (trabajando) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
-                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 5;
+                            var idSubirSkills = crearTextoSubirSkill(5);
                         }
                     }
                     
@@ -165,8 +163,7 @@ if (trabajando) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
-                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 8;
+                            var idSubirSkills = crearTextoSubirSkill(8);
                         }
                     }
                     
@@ -212,8 +209,7 @@ if (trabajando) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
-                            var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 8;
+                            var idSubirSkills = crearTextoSubirSkill(8);
                         }
                     }
                     
@@ -613,8 +609,7 @@ if (trabajando) {
                                 if (random(1) < 0.35 * SKILL_FACTOR) {
                                     obj_skills_libres.mostrado = false;
                                     skills[7]++;
-                                    var idSubirSkills = instance_create_depth(x, y, 0, obj_efecto_subir_skill);
-                                    idSubirSkills.indice = 7;
+                                    var idSubirSkills = crearTextoSubirSkill(7);
                                 }
                             }
                             
