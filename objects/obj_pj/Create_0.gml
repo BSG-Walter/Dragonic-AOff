@@ -786,7 +786,6 @@ estaEnPolo = false;
 
 insigniaPionero = false;
 
-// Cache para arboles (optimizacion)
 ultimoArbol = noone;
 
 /* */

@@ -1,8 +1,8 @@
-/// @description  Gráfico
+﻿/// @description  Gráfico
 
 image_index = indice; 
 
-/// Control posición - optimizado: solo 8 vecinos en vez de espiral O(n²)
+/// Control posición
 
 if (!noSetearAlarm) {
 

@@ -1,4 +1,4 @@
-/// @description  Control general / control mouse
+﻿/// @description  Control general / control mouse
 
 if (obj_skills_libres.mostrado) {
 
@@ -8,7 +8,6 @@ if (obj_skills_libres.mostrado) {
     x = hor;
     y = ver + global.skillOffsetY[indice];
     
-    // early-out si no hay nada que hacer (ahorra 5 checks*18 botones)
     if (obj_pj.skills[indice] <= 0 || obj_pj.skills[indice] <= skillsIniciales) exit;
     
     var device = -1;

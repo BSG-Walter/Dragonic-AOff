@@ -20,7 +20,6 @@ if (instance_exists(padre)) {
             y = padre.y + 4;
         }
     
-        // cache, switch solo si cambia el arma
         if (padre.eqArma != ultimoEqArma) {
             ultimoEqArma = padre.eqArma;
             switch (padre.eqArma) {

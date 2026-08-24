@@ -5,9 +5,11 @@ texto = "";
 color = c_white;
 fuente = fnt_Vedrana_7_bold;
 padre = obj_pj.id;
+depth = -10000;
 modY = 0;
 limite = 12;
 tiempo = -1;
+desfaseY = 57;
 
 // Manejo de posición del mensaje
 

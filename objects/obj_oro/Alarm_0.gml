@@ -1,4 +1,4 @@
-/// @description  Control posición
+﻿/// @description  Control posición
 
 if (!noSetearAlarm) {
 

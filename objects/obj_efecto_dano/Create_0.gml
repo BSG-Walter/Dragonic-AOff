@@ -4,6 +4,7 @@ visible = false;
 image_speed = 0;
 dano = 0;
 padre = -1;
+depth = -10000;
 apunala = false;
 cura = false;
 colorApu = make_color_rgb(230, 211, 128);

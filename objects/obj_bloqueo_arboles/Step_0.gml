@@ -6,10 +6,8 @@ if (activo) {
     }
 }
 
- // early-out barato antes de checks de mouse (ahorra 5*40 checks/step)
 if (!obj_pj.trabajoEquipado || obj_pj.trabajoActual != 147 || obj_pj.trabajoEnInv == -1) exit;
 if (!obj_pj.puedeMoverse || obj_flecha_abajo.apretada || obj_flecha_arriba.apretada || obj_flecha_izq.apretada || obj_flecha_der.apretada) exit;
- // solo si está cerca del PJ (4 place_meeting -> 1 check barato)
 if (abs(x - obj_pj.x) > 64 || abs(y - obj_pj.y) > 64) exit;
 
 var device = -1;
