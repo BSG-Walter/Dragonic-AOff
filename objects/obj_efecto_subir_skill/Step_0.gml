@@ -1,9 +1,6 @@
 /// @description  Control general
 
-if (instance_exists(padre)) {
-    x = padre.x;
-    y = padre.y;
-} else {
+if (!instance_exists(padre)) {
     instance_destroy();
 }
 
