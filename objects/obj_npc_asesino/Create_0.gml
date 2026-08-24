@@ -1,28 +1,10 @@
 /// @description  Estado inicial
 event_inherited();
-corregirPosNPCEnTelep(); 
 nombre = "Asesino";
-roomInicial = room;
-hostil = true;
-image_speed = 0;
-siguiendo = false;
-direccion = 0;
-puedeMoverse = true;
-moviendose = false;
-xInicio = x;
-yInicio = y;
-spd = 2;
-envenena = false;
-target = -1;
-targetNPC = -1;
 
 dropeaItem = true;
 indItem = 1;
 cantItem = 1;
-
-// Persona
-
-personaRoom = -1;
 
 // Salud
 
@@ -55,17 +37,6 @@ index[3, 2] = 17;
 index[3, 3] = 18;
 index[3, 4] = 19;
 
-frame = 0;
-
-// Alarm 2
-
-intervaloAtaque = 120;
-alarm[2] = random_range(intervaloAtaque, intervaloAtaque * 2);
-
-// Alarm 3
-
-alarm[3] = 1;
-
 // Fuerza (La fuerza es distinta a la del manual)
 
 ataque = 200;
@@ -85,21 +56,4 @@ experiencia = 1200; // La experiencia es igual a la del manual
 
 oro = obj_pj.modOro * 350; // El oro es igual al del manual
 
-// Paralizado / Inmovilizado
-
-paralizado = false;
-inmovilizado = false;
-
-// Doble clic
-
-dobleClic = false;
-
 // Doma
-
-domable = false;
-domado = false;
-
-// Invocado
-
-invocado = false;
-

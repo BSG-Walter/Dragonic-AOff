@@ -1,25 +1,8 @@
 /// @description  Estado inicial
 event_inherited();
-corregirPosNPCEnTelep(); 
 nombre = "Duende Molesto";
-roomInicial = room;
-hostil = true;
-image_speed = 0;
-siguiendo = false;
-direccion = 0;
-puedeMoverse = true;
-moviendose = false;
-xInicio = x;
-yInicio = y;
-spd = 2;
-envenena = false;
-target = -1;
 objHechizo = obj_dardo_magico;
 sndHechizo = snd_dardoMagico;
-
-// Persona
-
-personaRoom = -1;
 
 // Salud
 
@@ -64,17 +47,6 @@ index[3, 5] = 29;
 index[3, 6] = 30;
 index[3, 7] = 31;
 
-frame = 0;
-
-// Alarm 2
-
-intervaloAtaque = 120;
-alarm[2] = random_range(intervaloAtaque, intervaloAtaque * 2);
-
-// Alarm 3
-
-alarm[3] = 1;
-
 // Fuerza (La fuerza es distinta a la del manual)
 
 ataque = 80;
@@ -97,21 +69,4 @@ experiencia = 100; // La experiencia es igual a la del manual
 
 oro = obj_pj.modOro * 80; // El oro es igual al del manual
 
-// Paralizado / Inmovilizado
-
-paralizado = false;
-inmovilizado = false;
-
-// Doble clic
-
-dobleClic = false;
-
 // Doma
-
-domable = false;
-domado = false;
-
-// Invocado
-
-invocado = false;
-

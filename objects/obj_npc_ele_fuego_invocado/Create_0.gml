@@ -1,24 +1,6 @@
 /// @description  Estado inicial
 event_inherited();
-corregirPosNPCEnTelep(); 
 nombre = "Elemental de Fuego";
-roomInicial = room;
-hostil = true;
-image_speed = 0;
-siguiendo = false;
-direccion = 0;
-puedeMoverse = true;
-moviendose = false;
-xInicio = x;
-yInicio = y;
-spd = 2;
-envenena = false;
-target = -1;
-targetNPC = -1;
-
-// Persona
-
-personaRoom = -1;
 
 // Salud
 
@@ -63,16 +45,7 @@ index[3, 5] = 29;
 index[3, 6] = 30;
 index[3, 7] = 31;
 
-frame = 0;
-
-// Alarm 2
-
 intervaloAtaque = 180;
-alarm[2] = random_range(intervaloAtaque, intervaloAtaque * 2);
-
-// Alarm 3
-
-alarm[3] = 1;
 
 // Fuerza (La fuerza es distinta a la del manual)
 
@@ -93,30 +66,6 @@ experiencia = 0; // La experiencia es igual a la del manual
 
 oro = 0; // El oro es igual al del manual
 
-// Paralizado / Inmovilizado
-
-paralizado = false;
-inmovilizado = false;
-
-// Doble clic
-
-dobleClic = false;
-
 // Doma
 
-domable = false;
-domado = false;
-
-// Invocado
-
-invocado = false;
-
 // Dice palabras mágicas
-
-dicePalabrasMagicas = false;
-palabrasMagicas = "";
-
-// Guarda
-
-guardando = false;
-

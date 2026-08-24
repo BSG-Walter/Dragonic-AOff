@@ -1,24 +1,6 @@
 /// @description  Estado inicial
 event_inherited();
-corregirPosNPCEnTelep(); 
 nombre = "Rata";
-roomInicial = room;
-hostil = true;
-image_speed = 0;
-siguiendo = false;
-direccion = 0;
-puedeMoverse = true;
-moviendose = false;
-xInicio = x;
-yInicio = y;
-spd = 2;
-envenena = false;
-target = -1;
-targetNPC = -1;
-
-// Persona
-
-personaRoom = -1;
 
 // Salud
 
@@ -43,17 +25,6 @@ index[3, 0] = 9;
 index[3, 1] = 10;
 index[3, 2] = 11;
 
-frame = 0;
-
-// Alarm 2
-
-intervaloAtaque = 120;
-alarm[2] = random_range(intervaloAtaque, intervaloAtaque * 2);
-
-// Alarm 3
-
-alarm[3] = 1;
-
 // Fuerza (La fuerza es distinta a la del manual)
 
 ataque = 10;
@@ -69,22 +40,7 @@ evasion = 20; // La evasión es igual a la del manual
 
 experiencia = 15; // La experiencia es igual a la del manual
 
-// Paralizado / Inmovilizado
-
-paralizado = false;
-inmovilizado = false;
-
-// Doble clic
-
-dobleClic = false;
-
 // Doma
 
 domable = true;
-domado = false;
 puntosDomaNPC = 15;
-
-// Invocado
-
-invocado = false;
-
