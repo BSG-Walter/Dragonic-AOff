@@ -9,10 +9,10 @@ visible = false;
 
 pj_avance = (obj_pj.nivel/obj_pj.nivelMax); //indica que tan cerca esta el pj del nivel max. (de 0 a 1)
 
-gradoIA = 0.65; // Media
+gradoIA = 0.55; // Media
 
 if (obj_control_opciones.dificultad == 1) {
-    gradoIA = 0.75; // Alta
+    gradoIA = 0.65; // Alta
 }
 //aumentamos dificultad gradualmente
 gradoIA+= pj_avance*0.01
@@ -165,7 +165,7 @@ switch (clase) {
         break;
 }
 
-saludMax = floor(saludMax + saludMax * (pj_avance*0.15)); //hasta +15% de stats segun el nivel de nuestro pj
+saludMax = floor(saludMax + saludMax * (pj_avance*0.08)); //hasta +8% de stats segun el nivel de nuestro pj
 salud = saludMax;
 
 // Maná
@@ -202,7 +202,7 @@ switch (clase) {
         break;
 }
 manaMax= manaMax * 0.75
-manaMax = floor( manaMax + manaMax * (pj_avance*0.15)); //hasta +15% de stats segun el nivel de nuestro pj
+manaMax = floor( manaMax + manaMax * (pj_avance*0.08)); //hasta +8% de stats segun el nivel de nuestro pj
 
 if (manaMax < 0) {
     manaMax = 0;
@@ -281,12 +281,12 @@ alarm[2] = intervaloAtaque;
 
 // Fuerza
 
-danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85 + pj_avance * 0.15); //a niveles maximos los bots pueden igualar nuestro daño
-danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85 + pj_avance * 0.15);
+danoMeleeMin = obj_pj.danoMin * random_range(0.75, 0.80 + pj_avance * 0.08);
+danoMeleeMax = obj_pj.danoMax * random_range(0.75, 0.80 + pj_avance * 0.08);
 
 // Evasión
 
-evasion = random_range(25, 30);
+evasion = random_range(20, 25);
 
 switch (nroRaza) {
     case 0: // Humano
@@ -303,7 +303,7 @@ switch (nroRaza) {
         break;
 }
 
-evasion = round(evasion * 1.45);
+evasion = round(evasion * 1.25);
 
 // Experiencia otorgada al morir
 

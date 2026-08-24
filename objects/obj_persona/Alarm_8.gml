@@ -258,12 +258,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             
             if (random(10) > rand) {
                     
-                var randInmo = 6.5; // Clero
+                var randInmo = 7.0; // Clero
                 
                 if (clase == 1) { // Mago
-                    randInmo = 8.5;
+                    randInmo = 9.0;
                 } else if (clase == 2) { // Caza
-                    randInmo = 7.5;
+                    randInmo = 8.0;
                 }
             
                 if (obj_pj.nivel >= 24 && !idIA.inmovilizado && random(10) > randInmo && mana >= 300) {
@@ -455,12 +455,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             
                 if (random(10) > rand) {
                     
-                    var randInmo = 6.5; // Clero
+                    var randInmo = 7.0; // Clero
                     
                     if (clase == 1) { // Mago
-                        randInmo = 8.5;
+                        randInmo = 9.0;
                     } else if (clase == 2) { // Caza
-                        randInmo = 7.5;
+                        randInmo = 8.0;
                     }
                 
                     if (obj_pj.nivel >= 24 && !obj_pj.inmovilizado && random(10) > randInmo && mana >= 300) {
