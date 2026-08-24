@@ -65,6 +65,7 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
             xInicio = x;
             // frame = 0;
             alarm[0] = 1;
+            x += spd;
             if (!muerto) {
                 reproducirSonido(sndPaso, false, false);
             }
@@ -92,6 +93,7 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
             xInicio = x;
             // frame = 0;
             alarm[0] = 1;
+            x -= spd;
             if (!muerto) {
                 reproducirSonido(sndPaso, false, false);
             }
@@ -119,6 +121,7 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
             yInicio = y;
             // frame = 0;
             alarm[0] = 1;
+            y -= spd;
             if (!muerto) {
                 reproducirSonido(sndPaso, false, false);
             }
@@ -146,6 +149,7 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
             yInicio = y;
             // frame = 0;
             alarm[0] = 1;
+            y += spd;
             if (!muerto) {
                 reproducirSonido(sndPaso, false, false);
             }
@@ -165,9 +169,8 @@ switch (ultimaTecla) {
                 pasos++;
                 puedeMoverse = false;
             } else {
-                var _dest = yInicio + 32;
-                if (abs(_dest - y) > 8) _dest = round(y / 32) * 32;
-                y = _dest;
+                y += spdUltimoPaso;
+                y = floor(y);
                 pasos = 0;
                 puedeMoverse = true;     
             }
@@ -180,9 +183,9 @@ switch (ultimaTecla) {
                 pasos++;
                 puedeMoverse = false;
             } else {
-                var _dest = yInicio - 32;
-                if (abs(_dest - y) > 8) _dest = round(y / 32) * 32;
-                y = _dest;
+                y -= spdUltimoPaso;
+                y = floor(y);
+                y++;
                 pasos = 0;
                 puedeMoverse = true;  
             } 
@@ -195,9 +198,9 @@ switch (ultimaTecla) {
                 pasos++;
                 puedeMoverse = false;
             } else {
-                var _dest = xInicio - 32;
-                if (abs(_dest - x) > 8) _dest = round(x / 32) * 32;
-                x = _dest;
+                x -= spdUltimoPaso;
+                x = floor(x);
+                x++;
                 pasos = 0;
                 puedeMoverse = true;
             }
@@ -210,9 +213,8 @@ switch (ultimaTecla) {
                 pasos++;
                 puedeMoverse = false;
             } else {
-                var _dest = xInicio + 32;
-                if (abs(_dest - x) > 8) _dest = round(x / 32) * 32;
-                x = _dest;
+                x += spdUltimoPaso;
+                x = floor(x);
                 pasos = 0;
                 puedeMoverse = true;      
             }

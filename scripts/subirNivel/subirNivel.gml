@@ -1,4 +1,4 @@
-/// @description  subirNivel()
+﻿/// @description  subirNivel()
 function subirNivel() {
 
 	var _oldVida = obj_pj.saludMax;
@@ -221,7 +221,7 @@ function subirNivel() {
 	_info.padre = obj_pj.id;
 	_info.texto = _txt;
 	_info.color = c_yellow;
-	_info.fuente = fnt_Vedrana_7_bold;
+	_info.fuente = fnt_Vedrana_8_bold;
 	_info.tiempo = 300;
 	_info.limite = 20;
 	_info.desfaseY = 65;

@@ -22,10 +22,10 @@ if (instance_exists(obj_nombrePJ)) {
 }
 
 image_speed = 0;
-spd = 32 / 14; // un tile (32px) cada 14 frames
+spd = 2.35;
 spdUltimoPaso = 1.46; // En realidad es 1.45
 pasos = 0;
-pasosMax = 14;
+pasosMax = 13;
 idCuadroDestino = 0;
 puedeMoverse = true;
 xInicio = x;
