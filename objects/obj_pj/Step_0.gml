@@ -11,12 +11,19 @@
 */
 var bloqueo = false;
 
-// transparencia en arboles
-var _inst = noone
-if (obj_opciones.opcionArboles) _inst = instance_place(x, y, obj_arbol_basic);
-if (_inst != noone) {
-	_inst.image_alpha = 0.5;
-	_inst.alarm[0] = 1;
+// transparencia en arboles - optimizado: O(1) en vez de O(N) place_meeting por arbol
+if (obj_opciones.opcionArboles) {
+    var _currArbol = instance_place(x, y, obj_arbol_basic);
+    if (_currArbol != ultimoArbol) {
+        if (ultimoArbol != noone && instance_exists(ultimoArbol)) ultimoArbol.image_alpha = 1;
+        if (_currArbol != noone) _currArbol.image_alpha = 0.5;
+        ultimoArbol = _currArbol;
+    }
+} else {
+    if (ultimoArbol != noone) {
+        if (instance_exists(ultimoArbol)) ultimoArbol.image_alpha = 1;
+        ultimoArbol = noone;
+    }
 }
 
 if (puedeMoverse) {
@@ -229,6 +236,7 @@ if (!obj_opciones.opcionTechos) {
     } else {
         with (obj_techo_basic) {
             visible = true;
+            image_alpha = 1;
         }
     }
 
@@ -240,12 +248,14 @@ if (!obj_opciones.opcionTechos) {
     ) {
     
         with (obj_techo_basic) {
+            visible = true;
             image_alpha = 0.35;
         }
         
     } else {
     
         with (obj_techo_basic) {
+            visible = true;
             image_alpha = 1;
         }
         

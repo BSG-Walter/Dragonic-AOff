@@ -6,6 +6,12 @@ if (activo) {
     }
 }
 
+ // early-out barato antes de checks de mouse (ahorra 5*40 checks/step)
+if (!obj_pj.trabajoEquipado || obj_pj.trabajoActual != 147 || obj_pj.trabajoEnInv == -1) exit;
+if (!obj_pj.puedeMoverse || obj_flecha_abajo.apretada || obj_flecha_arriba.apretada || obj_flecha_izq.apretada || obj_flecha_der.apretada) exit;
+ // solo si está cerca del PJ (4 place_meeting -> 1 check barato)
+if (abs(x - obj_pj.x) > 64 || abs(y - obj_pj.y) > 64) exit;
+
 var device = -1;
 
 if (
@@ -24,15 +30,12 @@ device_mouse_check_button(4, mb_left)
         
             obj_control_devices.devicesL[device] = true;
             
-            if (obj_pj.puedeMoverse && !obj_flecha_abajo.apretada && !obj_flecha_arriba.apretada && !obj_flecha_izq.apretada && !obj_flecha_der.apretada && obj_pj.trabajoEquipado) {
-                if (obj_pj.trabajoActual == 147) {
-                    if (obj_pj.trabajoEnInv != -1) {
-                        if (
-                        place_meeting(x - 32, y, obj_pj) ||
-                        place_meeting(x + 32, y, obj_pj) ||
-                        place_meeting(x, y - 32, obj_pj) ||
-                        place_meeting(x, y + 32, obj_pj)
-                        ) {
+            if (
+            place_meeting(x - 32, y, obj_pj) ||
+            place_meeting(x + 32, y, obj_pj) ||
+            place_meeting(x, y - 32, obj_pj) ||
+            place_meeting(x, y + 32, obj_pj)
+            ) {
                         
                             obj_pj.trabajaMineria = false;
                             obj_pj.trabajaFragua = false;
@@ -49,9 +52,6 @@ device_mouse_check_button(4, mb_left)
                             
                             obj_pj.alarm[11] = 60;
                             
-                        }
-                    }    
-                }    
             }
             
             obj_control_devices.devicesL[device] = false;
@@ -61,4 +61,3 @@ device_mouse_check_button(4, mb_left)
     }
 
 }
-

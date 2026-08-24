@@ -36,12 +36,14 @@ if (visible) {
                     if (obj_opciones.opcionTechos) {
                         obj_opciones.opcionTechos = false;
                         with (obj_techo_basic) {
+                            visible = true;
                             image_alpha = 1;
                         }
                     } else {
                         obj_opciones.opcionTechos = true;
                         with (obj_techo_basic) {
                             visible = true;
+                            image_alpha = 1;
                         }
                     }
                 } else if (device_mouse_y(device) <= y - 32 + 48) {
@@ -172,7 +174,7 @@ if (visible) {
                 // Guardo los datos
                 
                 ini_open("opciones.ini");
-                write("opcionesFX", "opcionesTechos", obj_opciones.opcionTechos);
+                write("opcionesFX", "opcionTechos", obj_opciones.opcionTechos);
                 write("opcionesFX", "opcionArboles", obj_opciones.opcionArboles);
                 write("opcionesFX", "opcionVibracion", obj_opciones.opcionVibracion);
                 write("opcionesFX", "opcionAnimacionAgua", obj_opciones.opcionAnimacionAgua);
