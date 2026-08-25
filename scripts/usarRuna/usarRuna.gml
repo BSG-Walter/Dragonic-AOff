@@ -1,4 +1,4 @@
-/// @description  usarRuna()
+﻿/// @description  usarRuna()
 function usarRuna() {
 
 	/// Teletransporta
@@ -38,7 +38,7 @@ function usarRuna() {
 	                instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
 	                );
                 
-	                instance_create(xNuevo, yNuevo, obj_pj.criaturasHijas[j, 1]);
+	                instance_create_depth(xNuevo, yNuevo, 0, obj_pj.criaturasHijas[j, 1]);
                 
 	                obj_pj.criaturasHijas[j, 3] = -1;
                 

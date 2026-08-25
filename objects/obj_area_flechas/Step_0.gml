@@ -1,7 +1,7 @@
 /// @description  Control posición
 
-x = __view_get( e__VW.XView, 0 ) + 70; 
-y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 70;
+x = global.render_x + 70; 
+y = global.render_y + get_render_height() - 70;
 
 if (
 position_meeting(device_mouse_x(0), device_mouse_y(0), self) ||

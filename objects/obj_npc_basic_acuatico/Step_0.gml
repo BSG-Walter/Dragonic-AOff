@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 //////////////////////////
 
@@ -10,8 +10,8 @@ if (personaRoom != -1 && instance_exists(personaRoom) && !personaRoom.muerto) {
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         if (distance_to_object(personaRoom) <= 250) {
             target = personaRoom;
@@ -27,8 +27,8 @@ if (target == obj_pj) {
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         target = -1;
     }
@@ -180,8 +180,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() * 0.5 && (y <= global.render_y + get_render_width() * 0.5))
 ) {
 
     if (y < obj_pj.y) {
@@ -231,11 +231,11 @@ device_mouse_check_button(4, mb_left)
                 // No puede domar
                 
                 if (!obj_pj.muerto) {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡No podés domar a esta criatura!";
                 } else {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡Estás muerto!";
                 }

@@ -1,5 +1,5 @@
-/// @description  Control mouse
-
+﻿/// @description  Control mouse
+event_inherited()
 var device = -1;
 
 if (
@@ -28,7 +28,7 @@ device_mouse_check_button(4, mb_left)
                 agarrar();
                 image_index = 1;
             } else {
-                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                 idINFO.padre = obj_pj.id;
                 idINFO.texto = "¡Estás muerto!";
             }

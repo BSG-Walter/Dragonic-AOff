@@ -1,8 +1,13 @@
-/// @description  Quito el background 2
+var layTiles = layer_get_id("Foreground_Tiles");
+if (layTiles != -1) layer_set_visible(layTiles, false);
+var layTilesCian = layer_get_id("Foreground_Tiles_Cian");
+if (layTilesCian != -1) layer_set_visible(layTilesCian, false);
+var layTechos = layer_get_id("Foreground_Techos");
+if (layTechos != -1) layer_set_visible(layTechos, false);
 
-__background_set( e__BG.Visible, 2, false );
-
-if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+if (is_ingame_room()) {
     nombreMapa = obtenerNombreMapa(room, -1, -1);
 }
 
+render_width = get_render_width()
+render_height = get_render_height()

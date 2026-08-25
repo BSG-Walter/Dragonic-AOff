@@ -476,7 +476,7 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
     i++;
     
-    if (i * 32 > __view_get( e__VW.WView, 0 ) * 0.75) {
+    if (i * 32 > get_render_width() * 0.75) {
         domado = true;
         instance_destroy();
     }
@@ -484,6 +484,6 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
 }
 
 visible = true;
-var idEfecto = instance_create(x, y, obj_efecto_login);
+var idEfecto = instance_create_depth(x, y, 0, obj_efecto_login);
 idEfecto.padre = id;
 

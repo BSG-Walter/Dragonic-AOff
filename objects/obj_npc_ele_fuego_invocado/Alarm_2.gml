@@ -1,12 +1,12 @@
-/// @description  Ataque a Persona
+﻿/// @description  Ataque a Persona
 
 if (personaRoom != -1 && instance_exists(personaRoom)) {
 
     if (
     personaRoom.enemigo &&
     !personaRoom.muerto &&
-    (personaRoom.x >= __view_get( e__VW.XView, 0 ) && (personaRoom.x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (personaRoom.y >= __view_get( e__VW.YView, 0 ) && (personaRoom.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (personaRoom.x >= global.render_x && (personaRoom.x <= global.render_x + get_render_width())) &&
+    (personaRoom.y >= global.render_y && (personaRoom.y <= global.render_y + get_render_height()))
     ) {
     
         // Si la IA está viva y está dentro de la view
@@ -27,8 +27,8 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
         }
         
         if (
-        distanciaX <= (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 )) * 0.5 &&
-        distanciaY <= (__view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )) * 0.5
+        distanciaX <= (global.render_x + get_render_width()) * 0.5 &&
+        distanciaY <= (global.render_y + get_render_height()) * 0.5
         ) {
         
             if (!paralizado) {
@@ -76,14 +76,12 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(personaRoom.x, personaRoom.y, obj_tormenta_de_fuego);
+                    var idHechizo = instance_create_depth(personaRoom.x, personaRoom.y, 0, obj_tormenta_de_fuego);
                     idHechizo.padre = personaRoom.id;
                     
                     var dano = floor(random_range(danoHechizoMin, danoHechizoMax));
                     var danoTotal = calcularDanoMagicoNPCaIA(dano, personaRoom);
-                    idDano = instance_create(personaRoom.x, personaRoom.y - 41, obj_efecto_dano);
-                    idDano.dano = danoTotal;
-                    idDano.padre = personaRoom.id;
+                    idDano = crearTextoDano(personaRoom.x, personaRoom.y - 41, danoTotal, personaRoom.id);
                     
 					// Palabras mágicas
         
@@ -94,7 +92,7 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                     reproducirSonido(snd_tormentaDeFuego, false, false);
                     personaRoom.salud -= danoTotal;
                     
-                    if (personaRoom.salud <= 0) {
+                    if (personaRoom.salud <= 0 && !is_special_room()) {
                         if (personaRoom.pk) {
                             obj_pj.criminalesMatados++;
                         } else {

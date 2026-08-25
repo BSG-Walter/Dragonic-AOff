@@ -1,30 +1,15 @@
 /// @description  hayEnemigosCerca()
 function hayEnemigosCerca() {
 
-	enemigosCerca = false;
-
-	if (pk) {
-
-	    with (obj_persona) {
-	        if (!muerto & !pk && distance_to_object(other) <= 250) {
-	            other.enemigosCerca = true;
-	            break;
-	        }
+	var _enemigosCerca = false;
+	var _maxDistancia = (get_render_width() / 2)
+	
+	with (obj_persona) {
+	    if (!muerto & pk!= other.pk && distance_to_object(other) <= _maxDistancia) {
+	        other.enemigosCerca = true;
+	        break;
 	    }
-
-	} else {
-
-	    with (obj_persona) {
-	        if (!muerto && pk && distance_to_object(other) <= 250) {
-	            other.enemigosCerca = true;
-	            break;
-	        }
-	    }
-    
 	}
-    
-	return enemigosCerca;
-
-
-
+	
+	return _enemigosCerca;
 }

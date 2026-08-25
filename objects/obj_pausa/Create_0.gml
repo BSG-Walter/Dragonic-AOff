@@ -1,9 +1,9 @@
-/// @description  Estado inicial
+﻿/// @description  Estado inicial
 
 audio_pause_all();
 
-wViewInicio = __view_get( e__VW.WView, 0 );
-hViewInicio = __view_get( e__VW.HView, 0 );
+wViewInicio = get_render_width();
+hViewInicio = get_render_height();
 
 IACerca = false;
 
@@ -257,7 +257,7 @@ if (!roomDesconocida) {
         }
     }
     
-    instance_create(__view_get( e__VW.XView, 0 ) + 326 + j * 14.75, __view_get( e__VW.YView, 0 ) + 95 + i * 17.25, obj_borde_mapa);
+    instance_create_depth(global.render_x + 326 + j * 14.75, global.render_y + 95 + i * 17.25, 0, obj_borde_mapa);
     nombreMapaPausa = obtenerNombreMapa(room, i, j);
 
 } else {

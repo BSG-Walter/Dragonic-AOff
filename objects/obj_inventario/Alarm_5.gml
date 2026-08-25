@@ -1,4 +1,4 @@
-/// @description  Crea el numpad
+﻿/// @description  Crea el numpad
 
 keyboard_key_press(ord("T"));
 obj_tecla_T.teclaApretada = true;
@@ -16,7 +16,7 @@ device_mouse_check_button(4, mb_left)
         if (device_mouse_check_button(deviceDC, mb_left)) {
             
             if (posSeleccionado != -1) {
-                instance_create(__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5, obj_numpad);
+                instance_create_depth(global.render_x + get_render_width() * 0.5, global.render_y + get_render_height() * 0.5, 0, obj_numpad);
                 
                 obj_tecla_T.teclaApretada = false;
                 timerAcelerador = 1;

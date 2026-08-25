@@ -1,9 +1,9 @@
-/// @description  Paralisis / Inmovilización
+﻿/// @description  Paralisis / Inmovilización
 
 inmovilizado = false;
 paralizado = false;
 
-var idINFO = instance_create(x, y, obj_INFO);
+var idINFO = instance_create_depth(x, y, 0, obj_INFO);
 idINFO.padre = id;
 idINFO.color = make_color_rgb(211, 90, 211);
 idINFO.texto = "¡Removido!"; 

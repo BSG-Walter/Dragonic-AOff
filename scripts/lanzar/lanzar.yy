@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "lanzar",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Dragonic AOff",
-    "path": "Dragonic AOff.yyp",
+  "$GMScript":"v1",
+  "%Name":"lanzar",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"lanzar",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

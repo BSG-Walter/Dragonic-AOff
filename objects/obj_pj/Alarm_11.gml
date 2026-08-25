@@ -1,4 +1,4 @@
-/// @description  Trabaja
+﻿/// @description  Trabaja
 
 if (trabajando) {
 
@@ -28,7 +28,8 @@ if (trabajando) {
             cantidadMadera = 11;
         }  else {
             cantidadMadera = 15;
-        } 
+        }
+        if (cantidadMadera > 0) cantidadMadera = max(1, floor(cantidadMadera * RECURSO_FACTOR));
     
         var existe = false;
         
@@ -44,11 +45,10 @@ if (trabajando) {
                     obj_inventario.cantInv[i] += cantidadMadera;
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
-                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 5;
+                            var idSubirSkills = crearTextoSubirSkill(5);
                         }
                     }
                     
@@ -91,11 +91,10 @@ if (trabajando) {
                     obj_inventario.nombreInv[i] = datosItem[14];
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[5]++;
-                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 5;
+                            var idSubirSkills = crearTextoSubirSkill(5);
                         }
                     }
                     
@@ -106,7 +105,7 @@ if (trabajando) {
             
             if (!hayLugar) {
                 trabajando = false;
-                var idINFO = instance_create(x, y, obj_INFO);
+                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                 idINFO.padre = id;
                 idINFO.texto = "Dejaste de trabajar";
                 obj_pj.alarm[11] = -1;
@@ -144,7 +143,8 @@ if (trabajando) {
             cantidadMinerales = 11;
         }  else {
             cantidadMinerales = 15;
-        } 
+        }
+        if (cantidadMinerales > 0) cantidadMinerales = max(1, floor(cantidadMinerales * RECURSO_FACTOR));
     
         var existe = false;
         
@@ -160,11 +160,10 @@ if (trabajando) {
                     obj_inventario.cantInv[i] += cantidadMinerales;
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
-                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 8;
+                            var idSubirSkills = crearTextoSubirSkill(8);
                         }
                     }
                     
@@ -207,11 +206,10 @@ if (trabajando) {
                     obj_inventario.nombreInv[i] = datosItem[14];
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(10) > 6.5) {
+                        if (random(1) < 0.35 * SKILL_FACTOR) {
                             obj_skills_libres.mostrado = false;
                             skills[8]++;
-                            var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
-                            idSubirSkills.indice = 8;
+                            var idSubirSkills = crearTextoSubirSkill(8);
                         }
                     }
                     
@@ -222,7 +220,7 @@ if (trabajando) {
             
             if (!hayLugar) {
                 trabajando = false;
-                var idINFO = instance_create(x, y, obj_INFO);
+                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                 idINFO.padre = id;
                 idINFO.texto = "Dejaste de trabajar";
                 obj_pj.alarm[11] = -1;
@@ -346,7 +344,7 @@ if (trabajando) {
                 
                 if (!hayLugar) {
                     trabajando = false;
-                    var idINFO = instance_create(x, y, obj_INFO);
+                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                     idINFO.padre = id;
                     idINFO.texto = "Dejaste de trabajar";
                     obj_pj.alarm[11] = -1;
@@ -386,7 +384,7 @@ if (trabajando) {
         
         } else {
             trabajando = false;
-            var idINFO = instance_create(x, y, obj_INFO);
+            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "Dejaste de trabajar";
             obj_pj.alarm[11] = -1;
@@ -481,6 +479,12 @@ if (trabajando) {
                             cantidadSalmon = 0;
                             cantidadCaballito = 0;
                         }
+                        
+                        if (cantidadMerluza > 0) cantidadMerluza = max(1, floor(cantidadMerluza * RECURSO_FACTOR));
+                        if (cantidadPejerrey > 0) cantidadPejerrey = max(1, floor(cantidadPejerrey * RECURSO_FACTOR));
+                        if (cantidadPezEspada > 0) cantidadPezEspada = max(1, floor(cantidadPezEspada * RECURSO_FACTOR));
+                        if (cantidadSalmon > 0) cantidadSalmon = max(1, floor(cantidadSalmon * RECURSO_FACTOR));
+                        if (cantidadCaballito > 0) cantidadCaballito = max(1, floor(cantidadCaballito * RECURSO_FACTOR));
                         
                         // Randomizo
                         
@@ -579,7 +583,7 @@ if (trabajando) {
                                         trabajaPesca = false;
                                         trabajando = false;
                                         trabajando = false;
-                                        var idINFO = instance_create(x, y, obj_INFO);
+                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                         idINFO.padre = id;
                                         idINFO.texto = "Dejaste de trabajar";
                                         obj_pj.alarm[11] = -1;
@@ -602,11 +606,10 @@ if (trabajando) {
                             reproducirSonido(snd_pescar, false, false);
                         
                             if (skills[7] < skillsNaturales[nivel]) {
-                                if (random(10) > 6.5) {
+                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                     obj_skills_libres.mostrado = false;
                                     skills[7]++;
-                                    var idSubirSkills = instance_create(x, y, obj_efecto_subir_skill);
-                                    idSubirSkills.indice = 7;
+                                    var idSubirSkills = crearTextoSubirSkill(7);
                                 }
                             }
                             
@@ -624,7 +627,7 @@ if (trabajando) {
                         trabajaFragua = false;
                         trabajaPesca = false;
                         trabajando = false;
-                        var idINFO = instance_create(x, y, obj_INFO);
+                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                         idINFO.padre = id;
                         idINFO.texto = "Dejaste de trabajar";
                         obj_pj.alarm[11] = -1;

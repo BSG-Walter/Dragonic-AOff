@@ -1,4 +1,4 @@
-// Script assets have changed for v2.3.0 see
+﻿// Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function meditar(){
 	with(obj_tecla_f6){
@@ -13,13 +13,13 @@ function meditar(){
 	            }
                 
 	        } else {
-	            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡No podés meditar en movimiento!";
 	        }
                 
 	    } else {
-	        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	        idINFO.padre = obj_pj.id;
 	        idINFO.texto = "¡Estás muerto!";
 	    }

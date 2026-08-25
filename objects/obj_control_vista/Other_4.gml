@@ -1,9 +1,12 @@
 /// @description  Tamaño pantalla
 
-var relAspecto = 600 / 360;
+var relAspecto = RESOLUTION_WIDTH / RESOLUTION_HEIGHT;
 var ancho = display_get_width();
 var alto = display_get_height();
 
+set_render_resolution(RESOLUTION_WIDTH, RESOLUTION_HEIGHT)
+
+camera_set_view_target(view_camera[0], -1);
 /*
 
 view_xview[0] = 0;

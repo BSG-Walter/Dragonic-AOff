@@ -9,7 +9,7 @@ function dec(argument0) {
 
 	while (!file_text_eof(archivoOrigen)) {
 	    cadena = file_text_read_string(archivoOrigen);
-	    file_text_readln(archivoOrigen);
+		file_text_readln(archivoOrigen)
 	    cadena = base64_decode(cadena);
 	    file_text_write_string(archivoDestino, cadena);
 	    file_text_writeln(archivoDestino);

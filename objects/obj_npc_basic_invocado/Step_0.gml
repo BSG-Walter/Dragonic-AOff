@@ -1,4 +1,4 @@
-/// @description  Control general invocado
+﻿/// @description  Control general invocado
 
 //////////////////////////
 
@@ -160,8 +160,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() * 0.5 && (y <= global.render_y + get_render_width() * 0.5))
 ) {
 
     if (y < obj_pj.y) {
@@ -214,7 +214,7 @@ device_mouse_check_button(4, mb_left)
                     guardando = true;
 					salud = 0;
                 } else {
-                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                     idINFO.padre = obj_pj.id;
                     idINFO.texto = "¡Estás muerto!";
                 }

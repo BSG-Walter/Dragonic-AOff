@@ -1,4 +1,4 @@
-/// @description  crearNPCsRoom(room)
+﻿/// @description  crearNPCsRoom(room)
 /// @param room
 function crearNPCsRoom(argument0) {
 
@@ -787,7 +787,7 @@ function crearNPCsRoom(argument0) {
 	                instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
 	                );
                 
-	                instance_create(xNuevo, yNuevo, vectorNPCs[i, 0]);
+	                instance_create_depth(xNuevo, yNuevo, 0, vectorNPCs[i, 0]);
                 
 	            } else {
             
@@ -817,7 +817,7 @@ function crearNPCsRoom(argument0) {
 	                instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
 	                );
                 
-	                instance_create(xNuevo, yNuevo, vectorNPCs[i, 0]);
+	                instance_create_depth(xNuevo, yNuevo, 0, vectorNPCs[i, 0]);
                 
 	            }
             

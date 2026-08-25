@@ -2,8 +2,8 @@
 
 if (obj_ayuda.mostrado) {
 
-    x = __view_get( e__VW.XView, 0 ) + 322;
-    y = __view_get( e__VW.YView, 0 ) + 158;
+    x = global.render_x + 322;
+    y = global.render_y + 158;
     
     var device = -1;
     

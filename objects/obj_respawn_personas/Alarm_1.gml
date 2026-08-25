@@ -1,10 +1,10 @@
-/// @description  Spawn
+﻿/// @description  Spawn
 
 var rand = 2.5;
 
 if (random(10) > rand) {
     
-    if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+    if (is_ingame_room() && !is_special_room()) {
     
         var repetir = irandom_range(1, irandom_range(2, 3));
         
@@ -56,9 +56,9 @@ if (random(10) > rand) {
                 instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
                 );
                 
-                var idPersona = instance_create(xNuevo, yNuevo, obj_persona);
+                var idPersona = instance_create_depth(xNuevo, yNuevo, 0, obj_persona);
                 
-                var idEfecto = instance_create(idPersona.x, idPersona.y, obj_efecto_login);
+                var idEfecto = instance_create_depth(idPersona.x, idPersona.y, 0, obj_efecto_login);
                 idEfecto.padre = idPersona;
                 with (idPersona) {
                     guardarDatosIAEnGlobalIA();
@@ -100,13 +100,14 @@ if (obj_control_opciones.simularHorarios) {
     }
     
 } else {
-    intervaloMin = 9000;
+    intervaloMin = 8000;
 }
     
-if (room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+if (is_ingame_room() && !is_special_room()) {
     intervaloMin = intervaloMin / setearIntervaloCreacionIA(room);
 }
 
+intervaloMin-= (intervaloMin*(obj_pj.nivel/obj_pj.nivelMax))*0.5
 intervaloMax = intervaloMin + intervaloMin / 2.5;
 
 alarm[1] = floor(random_range(intervaloMin, intervaloMax) * random_range(0.5, 0.75));

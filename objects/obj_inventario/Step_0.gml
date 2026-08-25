@@ -1,4 +1,4 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
 if (!visible) {
     tirando = false;
@@ -34,10 +34,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= global.inventario_x + 121 &&
+                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_y(device) >= global.inventario_y + 8 &&
+                        device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -54,8 +54,8 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
-                            posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                            posX = posX - global.inventario_x - 120;
+                            posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
                             
@@ -188,7 +188,10 @@ device_mouse_check_button(4, mb_left)
 									equipadoInv[posSeleccionado] = equipadoInvAux;
 									
 								}
-							
+								//actualizamos el valor de la flecha actual seleccionada
+								if (tipoInv[posSeleccionado] == "flecha") obj_pj.flechaEnInv = posSeleccionado
+								if (tipoInv[posItem] == "flecha") obj_pj.flechaEnInv = posItem
+								
                                 seleccionado = indiceInv[posItem];
                                 posSeleccionado = posItem;
                                 posDobleClic = posItem;
@@ -317,21 +320,19 @@ device_mouse_check_button(4, mb_left)
                                 }
                                 
                                 if (!validoRaza) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu raza no puede usar este ítem!"; 
                                 } else if (!validoGenero) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu género no puede usar este ítem!"; 
                                 } else if (!validoClase) {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
                                 } else if (!validoSkill) {
-                                    idFaltaSkill = instance_create(obj_pj.x, obj_pj.y, obj_efecto_falta_skill);
-                                    idFaltaSkill.nroSkill = nroSkillInv[posItem];
-                                    idFaltaSkill.skillRequerido = skillRequeridoInv[posItem];
+                                    idFaltaSkill = crearTextoFaltaSkill(nroSkillInv[posItem], skillRequeridoInv[posItem]);
                                 }                
                                 
                                 if (validoRaza && validoGenero && validoSkill && validoClase) {
@@ -538,10 +539,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= global.inventario_x + 121 &&
+                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_y(device) >= global.inventario_y + 8 &&
+                        device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -551,8 +552,8 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
-                            posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                            posX = posX - global.inventario_x - 120;
+                            posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
                             
@@ -637,10 +638,10 @@ device_mouse_check_button(4, mb_left)
                         var posY = 0;
                             
                         if (
-                        device_mouse_x(device) >= __view_get( e__VW.XView, 1 ) + 121 &&
-                        device_mouse_x(device) <= __view_get( e__VW.XView, 1 ) + 120 + 320 &&
-                        device_mouse_y(device) >= __view_get( e__VW.YView, 1 ) + 8 &&
-                        device_mouse_y(device) <= __view_get( e__VW.YView, 1 ) + 7 + 64
+                        device_mouse_x(device) >= global.inventario_x + 121 &&
+                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_y(device) >= global.inventario_y + 8 &&
+                        device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
                         
                             obj_control_devices.devicesL[device] = true;
@@ -650,8 +651,8 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - __view_get( e__VW.XView, 1 ) - 120;
-                            posY = posY - room_height + __view_get( e__VW.HView, 1 ) - 7;
+                            posX = posX - global.inventario_x - 120;
+                            posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
                             
@@ -714,7 +715,7 @@ device_mouse_check_button(4, mb_left)
                                             !position_meeting(obj_pj.x, obj_pj.y - 16, obj_item) &&
                                             !position_meeting(obj_pj.x, obj_pj.y - 16, obj_oro)
                                             ) {
-                                                var idItemTirado = instance_create(obj_pj.x, obj_pj.y, obj_item);
+                                                var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                                 idItemTirado.superpone = true;
                                                 idItemTirado.indice = indiceInv[posItem];
                                                 idItemTirado.cantidad = 1;

@@ -1,12 +1,12 @@
-/// @description  Fabricar rápidamente
+﻿/// @description  Fabricar rápidamente
 
 if (clicMantenido) {
     if (deviceMantenido != -1) {
     
         var device = deviceMantenido;
     
-        var posX = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5 - 144;
-        var posY = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5 - 113;
+        var posX = global.render_x + get_render_width() * 0.5 - 144;
+        var posY = global.render_y + get_render_height() * 0.5 - 113;
         
         if (
         (device_mouse_x(device) >= posX + 122 && device_mouse_x(device) <= posX + 178) &&
@@ -96,12 +96,11 @@ if (clicMantenido) {
                         
                         if (valido) {
                         
-                            if (modo == 2 || random(10) > 6.5) {
+                            if (modo == 2 || random(1) < 0.35 * SKILL_FACTOR) {
                                 if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                     obj_skills_libres.mostrado = false;
                                     obj_pj.skills[indiceSkill]++;
-                                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                    idSubirSkills.indice = indiceSkill;
+                                    var idSubirSkills = crearTextoSubirSkill(indiceSkill);
                                     alarm[0] = 1;
                                 }
                             }
@@ -264,12 +263,11 @@ if (clicMantenido) {
                         
                         if (valido) {
                         
-                            if (random(10) > 4.5) {
+                            if (random(1) < 0.55 * SKILL_FACTOR) {
                                 if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                     obj_skills_libres.mostrado = false;
                                     obj_pj.skills[10]++;
-                                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                    idSubirSkills.indice = 10;
+                                    var idSubirSkills = crearTextoSubirSkill(10);
                                     alarm[0] = 1;
                                 }
                             }

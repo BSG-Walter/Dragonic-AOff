@@ -1,10 +1,10 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
-x = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5;
-y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5;
+x = global.render_x + get_render_width() * 0.5;
+y = global.render_y + get_render_height() * 0.5;
 
-posX = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5 - 24;
-posY = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5 - 45;
+posX = global.render_x + get_render_width() * 0.5 - 24;
+posY = global.render_y + get_render_height() * 0.5 - 45;
 
 var device = -1;
     
@@ -88,7 +88,7 @@ device_mouse_check_button(4, mb_left)
                                 !position_meeting(obj_pj.x, obj_pj.y - 16, obj_item) &&
                                 !position_meeting(obj_pj.x, obj_pj.y - 16, obj_oro)
                                 ) {
-                                    var idItemTirado = instance_create(obj_pj.x, obj_pj.y, obj_item);
+                                    var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                     idItemTirado.superpone = true;
                                     idItemTirado.indice = obj_inventario.indiceInv[obj_inventario.posSeleccionado];
                                     idItemTirado.cantidad = cant;

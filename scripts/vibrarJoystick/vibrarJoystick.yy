@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "vibrarJoystick",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Dragonic AOff",
-    "path": "Dragonic AOff.yyp",
+  "$GMScript":"v1",
+  "%Name":"vibrarJoystick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"vibrarJoystick",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

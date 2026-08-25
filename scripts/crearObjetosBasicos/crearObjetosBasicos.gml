@@ -1,169 +1,170 @@
-/// @description  crearObjetosBasicos(partida)
+﻿/// @description  crearObjetosBasicos(partida)
 /// @param partida
 function crearObjetosBasicos(argument0) {
 
 	if (argument0 == -1) {
 
-	    instance_create(0, 0, obj_panel_items);
-	    instance_create(0, 0, obj_npcs_mundo);
-	    instance_create(0, 0, obj_respawn_personas);
-	    instance_create(1296, 1808, obj_pj);
-	    instance_create(0, 0, obj_flecha_arriba);
-	    instance_create(0, 0, obj_flecha_abajo);
-	    instance_create(0, 0, obj_flecha_izq);
-	    instance_create(0, 0, obj_flecha_der);
-	    instance_create(0, 0, obj_control_inmo_pj);
-	    instance_create(498, 2408, obj_tecla_ctrl);
-	    instance_create(0, 0, obj_seguro);
-	    instance_create(0, 0, obj_manual);
-	    instance_create(450, 2408, obj_tecla_A);
-	    instance_create(0, 0, obj_escudo);
-	    instance_create(0, 0, obj_arma);
-	    instance_create(474, 2440, obj_tecla_U);
-	    instance_create(546, 2440, obj_tecla_f6);
-	    instance_create(0, 0, obj_hechizos);
-	    instance_create(474, 2440, obj_tecla_lanzar);
-	    instance_create(450, 2440, obj_tecla_inventario);
-	    instance_create(450, 2440, obj_tecla_hechizos);
-	    instance_create(0, 0, obj_control_animacion_agua);
-	    instance_create(0, 0, obj_inventario);
-	    instance_create(0, 0, obj_skills_libres);
+	    instance_create_depth(0, 0, 0, obj_panel_items);
+	    instance_create_depth(0, 0, 0, obj_npcs_mundo);
+	    instance_create_depth(1296, 1808, 0, obj_pj);
+		instance_create_depth(0, 0, 0, obj_respawn_personas);
+	    instance_create_depth(0, 0, 0, obj_flecha_arriba);
+	    instance_create_depth(0, 0, 0, obj_flecha_abajo);
+	    instance_create_depth(0, 0, 0, obj_flecha_izq);
+	    instance_create_depth(0, 0, 0, obj_flecha_der);
+	    instance_create_depth(0, 0, 0, obj_control_inmo_pj);
+	    instance_create_depth(498, 8, 0, obj_tecla_ctrl);
+	    instance_create_depth(0, 0, 0, obj_seguro);
+	    instance_create_depth(0, 0, 0, obj_manual);
+	    instance_create_depth(450, 8, 0, obj_tecla_A);
+	    instance_create_depth(0, 0, 0, obj_escudo);
+	    instance_create_depth(0, 0, 0, obj_arma);
+	    instance_create_depth(474, 40, 0, obj_tecla_U);
+	    instance_create_depth(546, 40, 0, obj_tecla_f6);
+	    instance_create_depth(0, 0, 0, obj_hechizos);
+	    instance_create_depth(474, 40, 0, obj_tecla_lanzar);
+	    instance_create_depth(450, 40, 0, obj_tecla_inventario);
+	    instance_create_depth(450, 40, 0, obj_tecla_hechizos);
+	    instance_create_depth(0, 0, 0, obj_control_animacion_agua);
+	    instance_create_depth(0, 0, 0, obj_inventario);
+	    instance_create_depth(0, 0, 0, obj_skills_libres);
     
-	    var idSkillI1 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI1 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI1.indice = 0;
-	    var idSkillI2 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI2 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI2.indice = 1;
-	    var idSkillI3 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI3 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI3.indice = 2;
-	    var idSkillI4 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI4 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI4.indice = 3;
-	    var idSkillI5 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI5 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI5.indice = 4;
-	    var idSkillI6 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI6 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI6.indice = 5;
-	    var idSkillI7 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI7 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI7.indice = 6;
-	    var idSkillI8 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI8 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI8.indice = 7;
-	    var idSkillI9 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI9 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI9.indice = 8;
-	    var idSkillI10 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI10 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI10.indice = 9;
-	    var idSkillI11 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI11 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI11.indice = 10;
-	    var idSkillI12 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI12 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI12.indice = 11;
-	    var idSkillI13 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI13 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI13.indice = 12;
-	    var idSkillI14 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI14 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI14.indice = 13;
-	    var idSkillI15 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI15 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI15.indice = 14;
-	    var idSkillI16 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI16 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI16.indice = 15;
-	    var idSkillI17 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI17 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI17.indice = 16;
-	    var idSkillI18 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI18 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI18.indice = 17;
     
-	    var idSkillD1 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD1 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD1.indice = 0;
-	    var idSkillD2 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD2 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD2.indice = 1;
-	    var idSkillD3 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD3 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD3.indice = 2;
-	    var idSkillD4 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD4 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD4.indice = 3;
-	    var idSkillD5 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD5 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD5.indice = 4;
-	    var idSkillD6 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD6 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD6.indice = 5;
-	    var idSkillD7 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD7 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD7.indice = 6;
-	    var idSkillD8 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD8 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD8.indice = 7;
-	    var idSkillD9 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD9 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD9.indice = 8;
-	    var idSkillD10 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD10 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD10.indice = 9;
-	    var idSkillD11 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD11 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD11.indice = 10;
-	    var idSkillD12 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD12 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD12.indice = 11;
-	    var idSkillD13 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD13 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD13.indice = 12;
-	    var idSkillD14 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD14 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD14.indice = 13;
-	    var idSkillD15 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD15 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD15.indice = 14;
-	    var idSkillD16 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD16 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD16.indice = 15;
-	    var idSkillD17 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD17 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD17.indice = 16;
-	    var idSkillD18 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD18 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD18.indice = 17;
        
-	    instance_create(0, 0, obj_banco);
-	    instance_create(0, 0, obj_personas_mundo);
-	    instance_create(0, 0, obj_items_mundo);
-	    instance_create(0, 0, obj_flecha_der_manual);
-	    instance_create(0, 0, obj_flecha_izq_manual);
-	    instance_create(0, 0, obj_area_flechas);
-	    instance_create(0, 0, obj_tecla_T);
-	    instance_create(0, 0, obj_limpieza_mundo);
-	    instance_create(0, 0, obj_panel_trabajos);
-	    instance_create(0, 0, obj_gui);
-	    instance_create(85, 2455, obj_cambiar_vista_hechizos);
-	    instance_create(85, 2455, obj_mover_inventario);
-	    instance_create(0, 0, obj_controles);
+	   	instance_create_depth(0, 0, 0, obj_agregar_bot);
+	    instance_create_depth(0, 0, 0, obj_banco);
+	    instance_create_depth(0, 0, 0, obj_personas_mundo);
+	    instance_create_depth(0, 0, 0, obj_items_mundo);
+	    instance_create_depth(0, 0, 0, obj_flecha_der_manual);
+	    instance_create_depth(0, 0, 0, obj_flecha_izq_manual);
+	    instance_create_depth(0, 0, 0, obj_area_flechas);
+	    instance_create_depth(0, 0, 0, obj_tecla_T);
+	    instance_create_depth(0, 0, 0, obj_limpieza_mundo);
+	    instance_create_depth(0, 0, 0, obj_panel_trabajos);
+	    instance_create_depth(0, 0, 0, obj_gui);
+	    instance_create_depth(85, 55, 0, obj_cambiar_vista_hechizos);
+	    instance_create_depth(85, 55, 0, obj_mover_inventario);
+	    instance_create_depth(0, 0, 0, obj_controles);
     
-	    var idAyuda = instance_create(0, 0, obj_ayuda);
+	    var idAyuda = instance_create_depth(0, 0, 0, obj_ayuda);
 	    idAyuda.titilando = true;
 	    idAyuda.alarm[0] = 1;
     
-	    instance_create(0, 0, obj_configuracion);
-	    instance_create(0, 0, obj_panel_opciones);
-	    instance_create(0, 0, obj_boton_pausa);
-	    instance_create(0, 0, obj_indice_manual);
+	    instance_create_depth(0, 0, 0, obj_configuracion);
+	    instance_create_depth(0, 0, 0, obj_panel_opciones);
+	    instance_create_depth(0, 0, 0, obj_boton_pausa);
+	    instance_create_depth(0, 0, 0, obj_indice_manual);
     
-	    var idIndx1 = instance_create(0, 0, obj_indice_manual_1);
+	    var idIndx1 = instance_create_depth(0, 0, 0, obj_indice_manual_1);
 	    idIndx1.image_xscale = 5;
 	    idIndx1.image_yscale = 0.5;
-	    var idIndx2 = instance_create(0, 0, obj_indice_manual_2);
+	    var idIndx2 = instance_create_depth(0, 0, 0, obj_indice_manual_2);
 	    idIndx2.image_xscale = 5;
 	    idIndx2.image_yscale = 0.5;
-	    var idIndx3 = instance_create(0, 0, obj_indice_manual_3);
+	    var idIndx3 = instance_create_depth(0, 0, 0, obj_indice_manual_3);
 	    idIndx3.image_xscale = 5;
 	    idIndx3.image_yscale = 0.5;
-	    var idIndx4 = instance_create(0, 0, obj_indice_manual_4);
+	    var idIndx4 = instance_create_depth(0, 0, 0, obj_indice_manual_4);
 	    idIndx4.image_xscale = 5;
 	    idIndx4.image_yscale = 0.5;
-	    var idIndx5 = instance_create(0, 0, obj_indice_manual_5);
+	    var idIndx5 = instance_create_depth(0, 0, 0, obj_indice_manual_5);
 	    idIndx5.image_xscale = 5;
 	    idIndx5.image_yscale = 0.5;
-	    var idIndx6 = instance_create(0, 0, obj_indice_manual_6);
+	    var idIndx6 = instance_create_depth(0, 0, 0, obj_indice_manual_6);
 	    idIndx6.image_xscale = 5;
 	    idIndx6.image_yscale = 0.5;
-	    var idIndx7 = instance_create(0, 0, obj_indice_manual_7);
+	    var idIndx7 = instance_create_depth(0, 0, 0, obj_indice_manual_7);
 	    idIndx7.image_xscale = 5;
 	    idIndx7.image_yscale = 0.5;
-	    var idIndx8 = instance_create(0, 0, obj_indice_manual_8);
+	    var idIndx8 = instance_create_depth(0, 0, 0, obj_indice_manual_8);
 	    idIndx8.image_xscale = 5;
 	    idIndx8.image_yscale = 0.5;
-	    var idIndx9 = instance_create(0, 0, obj_indice_manual_9);
+	    var idIndx9 = instance_create_depth(0, 0, 0, obj_indice_manual_9);
 	    idIndx9.image_xscale = 5;
 	    idIndx9.image_yscale = 0.5;
-	    var idIndx10 = instance_create(0, 0, obj_indice_manual_10);
+	    var idIndx10 = instance_create_depth(0, 0, 0, obj_indice_manual_10);
 	    idIndx10.image_xscale = 5;
 	    idIndx10.image_yscale = 0.5;
-	    var idIndx11 = instance_create(0, 0, obj_indice_manual_11);
+	    var idIndx11 = instance_create_depth(0, 0, 0, obj_indice_manual_11);
 	    idIndx11.image_xscale = 5;
 	    idIndx11.image_yscale = 0.5;
-	    var idIndx12 = instance_create(0, 0, obj_indice_manual_12);
+	    var idIndx12 = instance_create_depth(0, 0, 0, obj_indice_manual_12);
 	    idIndx12.image_xscale = 5;
 	    idIndx12.image_yscale = 0.5;
     
-	    instance_create(0, 0, obj_mapas_mundo);
+	    instance_create_depth(0, 0, 0, obj_mapas_mundo);
 
 	} else {
     
@@ -186,13 +187,12 @@ function crearObjetosBasicos(argument0) {
 	    dec("partida" + string(argument0) + ".ini");
 	    ini_open("partida" + string(argument0) + ".ini");
 
-	    instance_create(0, 0, obj_panel_items);
-	    instance_create(0, 0, obj_npcs_mundo);
-	    instance_create(0, 0, obj_respawn_personas);
+	    instance_create_depth(0, 0, 0, obj_panel_items);
+	    instance_create_depth(0, 0, 0, obj_npcs_mundo);
     
 	    // obj_pj
     
-	    var idPJ = instance_create(464, 1008, obj_pj);
+	    var idPJ = instance_create_depth(464, 1008, 0, obj_pj);
     
 	    idPJ.x = read("obj_pj", "x", 464);
 	    idPJ.y = read("obj_pj", "y", 1008);
@@ -332,28 +332,30 @@ function crearObjetosBasicos(argument0) {
 	    idPJ.estaEnPolo = read("obj_pj", "estaEnPolo", 0); 
     
 	    // FIN obj_pj
+		
+		instance_create_depth(0, 0, 0, obj_respawn_personas);
     
 	    // Flechas
     
-	    var idFlechaArriba = instance_create(0, 0, obj_flecha_arriba);
+	    var idFlechaArriba = instance_create_depth(0, 0, 0, obj_flecha_arriba);
     
 	    idFlechaArriba.apretada = read("obj_flecha_arriba", "apretada", false);
 	    idFlechaArriba.valido = read("obj_flecha_arriba", "valido", true);
 	    idFlechaArriba.PJTelep = read("obj_flecha_arriba", "PJTelep", false);
     
-	    var idFlechaAbajo = instance_create(0, 0, obj_flecha_abajo);
+	    var idFlechaAbajo = instance_create_depth(0, 0, 0, obj_flecha_abajo);
     
 	    idFlechaAbajo.apretada = read("obj_flecha_abajo", "apretada", false);
 	    idFlechaAbajo.valido = read("obj_flecha_abajo", "valido", true);
 	    idFlechaAbajo.PJTelep = read("obj_flecha_abajo", "PJTelep", false);
     
-	    var idFlechaIzq = instance_create(0, 0, obj_flecha_izq);
+	    var idFlechaIzq = instance_create_depth(0, 0, 0, obj_flecha_izq);
     
 	    idFlechaIzq.apretada = read("obj_flecha_izq", "apretada", false);
 	    idFlechaIzq.valido = read("obj_flecha_izq", "valido", true);
 	    idFlechaIzq.PJTelep = read("obj_flecha_izq", "PJTelep", false);  
     
-	    var idFlechaDer = instance_create(0, 0, obj_flecha_der);    
+	    var idFlechaDer = instance_create_depth(0, 0, 0, obj_flecha_der);    
     
 	    idFlechaDer.apretada = read("obj_flecha_der", "apretada", false);
 	    idFlechaDer.valido = read("obj_flecha_der", "valido", true);
@@ -365,183 +367,184 @@ function crearObjetosBasicos(argument0) {
     
 	    // FIN Flechas
     
-	    var idControlInmoPJ = instance_create(0, 0, obj_control_inmo_pj);
+	    var idControlInmoPJ = instance_create_depth(0, 0, 0, obj_control_inmo_pj);
 	    idControlInmoPJ.alarm[0] = read("obj_control_inmo_pj", "alarm[0]", 1);
     
-	    var idCtrl = instance_create(498, 2408, obj_tecla_ctrl);
+	    var idCtrl = instance_create_depth(498, 08, 0, obj_tecla_ctrl);
 	    idCtrl.teclaApretada = read("obj_tecla_ctrl", "teclaApretada", false);
     
-	    var idSeguro = instance_create(0, 0, obj_seguro);
+	    var idSeguro = instance_create_depth(0, 0, 0, obj_seguro);
 	    idSeguro.activo = read("obj_seguro", "activo", true);
     
-	    instance_create(0, 0, obj_manual);
-	    instance_create(450, 2408, obj_tecla_A);
+	    instance_create_depth(0, 0, 0, obj_manual);
+	    instance_create_depth(450, 08, 0, obj_tecla_A);
 		
-		instance_create(0, 0, obj_escudo);
-		instance_create(0, 0, obj_arma);
+		instance_create_depth(0, 0, 0, obj_escudo);
+		instance_create_depth(0, 0, 0, obj_arma);
     
-	    instance_create(474, 2440, obj_tecla_U);
+	    instance_create_depth(474, 40, 0, obj_tecla_U);
     
-	    var idF6 = instance_create(546, 2440, obj_tecla_f6);
+	    var idF6 = instance_create_depth(546, 40, 0, obj_tecla_f6);
 	    idF6.teclaApretada = read("obj_tecla_f6", "teclaApretada", false);
     
-	    instance_create(0, 0, obj_hechizos);
+	    instance_create_depth(0, 0, 0, obj_hechizos);
     
 	    cargarHechizos(); 
     
-	    instance_create(474, 2440, obj_tecla_lanzar);
-	    instance_create(450, 2440, obj_tecla_inventario);
-	    instance_create(450, 2440, obj_tecla_hechizos);
+	    instance_create_depth(474, 40, 0, obj_tecla_lanzar);
+	    instance_create_depth(450, 40, 0, obj_tecla_inventario);
+	    instance_create_depth(450, 40, 0, obj_tecla_hechizos);
     
-	    var idControlAnimAgua = instance_create(0, 0, obj_control_animacion_agua);
+	    var idControlAnimAgua = instance_create_depth(0, 0, 0, obj_control_animacion_agua);
 	    idControlAnimAgua.alarm[0] = read("obj_control_animacion_agua", "alarm[0]", 1);
 	    idControlAnimAgua.direccionX = read("obj_control_animacion_agua", "direccionX", 0);
 	    idControlAnimAgua.direccionY = read("obj_control_animacion_agua", "direccionY", 0);
     
-	    var idInventario = instance_create(0, 0, obj_inventario);
+	    var idInventario = instance_create_depth(0, 0, 0, obj_inventario);
 	    idInventario.alarm[4] = read("obj_inventario", "alarm[4]", 1);
     
 	    cargarInventario();     
     
-	    instance_create(0, 0, obj_skills_libres);
+	    instance_create_depth(0, 0, 0, obj_skills_libres);
     
-	    var idSkillI1 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI1 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI1.indice = 0;
-	    var idSkillI2 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI2 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI2.indice = 1;
-	    var idSkillI3 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI3 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI3.indice = 2;
-	    var idSkillI4 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI4 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI4.indice = 3;
-	    var idSkillI5 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI5 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI5.indice = 4;
-	    var idSkillI6 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI6 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI6.indice = 5;
-	    var idSkillI7 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI7 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI7.indice = 6;
-	    var idSkillI8 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI8 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI8.indice = 7;
-	    var idSkillI9 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI9 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI9.indice = 8;
-	    var idSkillI10 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI10 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI10.indice = 9;
-	    var idSkillI11 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI11 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI11.indice = 10;
-	    var idSkillI12 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI12 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI12.indice = 11;
-	    var idSkillI13 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI13 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI13.indice = 12;
-	    var idSkillI14 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI14 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI14.indice = 13;
-	    var idSkillI15 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI15 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI15.indice = 14;
-	    var idSkillI16 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI16 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI16.indice = 15;
-	    var idSkillI17 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI17 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI17.indice = 16;
-	    var idSkillI18 = instance_create(0, 0, obj_boton_panel_skills_izq);
+	    var idSkillI18 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_izq);
 	    idSkillI18.indice = 17;
     
-	    var idSkillD1 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD1 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD1.indice = 0;
-	    var idSkillD2 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD2 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD2.indice = 1;
-	    var idSkillD3 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD3 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD3.indice = 2;
-	    var idSkillD4 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD4 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD4.indice = 3;
-	    var idSkillD5 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD5 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD5.indice = 4;
-	    var idSkillD6 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD6 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD6.indice = 5;
-	    var idSkillD7 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD7 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD7.indice = 6;
-	    var idSkillD8 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD8 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD8.indice = 7;
-	    var idSkillD9 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD9 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD9.indice = 8;
-	    var idSkillD10 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD10 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD10.indice = 9;
-	    var idSkillD11 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD11 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD11.indice = 10;
-	    var idSkillD12 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD12 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD12.indice = 11;
-	    var idSkillD13 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD13 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD13.indice = 12;
-	    var idSkillD14 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD14 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD14.indice = 13;
-	    var idSkillD15 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD15 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD15.indice = 14;
-	    var idSkillD16 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD16 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD16.indice = 15;
-	    var idSkillD17 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD17 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD17.indice = 16;
-	    var idSkillD18 = instance_create(0, 0, obj_boton_panel_skills_der);
+	    var idSkillD18 = instance_create_depth(0, 0, 0, obj_boton_panel_skills_der);
 	    idSkillD18.indice = 17;
        
-	    instance_create(0, 0, obj_banco);
+	    instance_create_depth(0, 0, 0, obj_banco);
     
 	    cargarBanco();
+		
+		instance_create_depth(0, 0, 0, obj_agregar_bot);
+	    instance_create_depth(0, 0, 0, obj_personas_mundo);
+	    instance_create_depth(0, 0, 0, obj_items_mundo);
+	    instance_create_depth(0, 0, 0, obj_flecha_der_manual);
+	    instance_create_depth(0, 0, 0, obj_flecha_izq_manual);
+	    instance_create_depth(0, 0, 0, obj_area_flechas);
     
-	    instance_create(0, 0, obj_personas_mundo);
-	    instance_create(0, 0, obj_items_mundo);
-	    instance_create(0, 0, obj_flecha_der_manual);
-	    instance_create(0, 0, obj_flecha_izq_manual);
-	    instance_create(0, 0, obj_area_flechas);
-    
-	    var idT = instance_create(0, 0, obj_tecla_T);
+	    var idT = instance_create_depth(0, 0, 0, obj_tecla_T);
 	    idT.teclaApretada = read("obj_tecla_T", "teclaApretada", false);
     
-	    instance_create(0, 0, obj_limpieza_mundo);
-	    instance_create(0, 0, obj_panel_trabajos);
-	    instance_create(0, 0, obj_gui);
-	    instance_create(85, 2455, obj_cambiar_vista_hechizos);
-	    instance_create(85, 2455, obj_mover_inventario);
-	    instance_create(0, 0, obj_controles);
-	    instance_create(0, 0, obj_ayuda);
-	    instance_create(0, 0, obj_configuracion);
-	    instance_create(0, 0, obj_panel_opciones);
-	    instance_create(0, 0, obj_boton_pausa);
-	    instance_create(0, 0, obj_indice_manual);
+	    instance_create_depth(0, 0, 0, obj_limpieza_mundo);
+	    instance_create_depth(0, 0, 0, obj_panel_trabajos);
+	    instance_create_depth(0, 0, 0, obj_gui);
+	    instance_create_depth(85, 55, 0, obj_cambiar_vista_hechizos);
+	    instance_create_depth(85, 55, 0, obj_mover_inventario);
+	    instance_create_depth(0, 0, 0, obj_controles);
+	    instance_create_depth(0, 0, 0, obj_ayuda);
+	    instance_create_depth(0, 0, 0, obj_configuracion);
+	    instance_create_depth(0, 0, 0, obj_panel_opciones);
+	    instance_create_depth(0, 0, 0, obj_boton_pausa);
+	    instance_create_depth(0, 0, 0, obj_indice_manual);
     
-	    var idIndx1 = instance_create(0, 0, obj_indice_manual_1);
+	    var idIndx1 = instance_create_depth(0, 0, 0, obj_indice_manual_1);
 	    idIndx1.image_xscale = 5;
 	    idIndx1.image_yscale = 0.5;
-	    var idIndx2 = instance_create(0, 0, obj_indice_manual_2);
+	    var idIndx2 = instance_create_depth(0, 0, 0, obj_indice_manual_2);
 	    idIndx2.image_xscale = 5;
 	    idIndx2.image_yscale = 0.5;
-	    var idIndx3 = instance_create(0, 0, obj_indice_manual_3);
+	    var idIndx3 = instance_create_depth(0, 0, 0, obj_indice_manual_3);
 	    idIndx3.image_xscale = 5;
 	    idIndx3.image_yscale = 0.5;
-	    var idIndx4 = instance_create(0, 0, obj_indice_manual_4);
+	    var idIndx4 = instance_create_depth(0, 0, 0, obj_indice_manual_4);
 	    idIndx4.image_xscale = 5;
 	    idIndx4.image_yscale = 0.5;
-	    var idIndx5 = instance_create(0, 0, obj_indice_manual_5);
+	    var idIndx5 = instance_create_depth(0, 0, 0, obj_indice_manual_5);
 	    idIndx5.image_xscale = 5;
 	    idIndx5.image_yscale = 0.5;
-	    var idIndx6 = instance_create(0, 0, obj_indice_manual_6);
+	    var idIndx6 = instance_create_depth(0, 0, 0, obj_indice_manual_6);
 	    idIndx6.image_xscale = 5;
 	    idIndx6.image_yscale = 0.5;
-	    var idIndx7 = instance_create(0, 0, obj_indice_manual_7);
+	    var idIndx7 = instance_create_depth(0, 0, 0, obj_indice_manual_7);
 	    idIndx7.image_xscale = 5;
 	    idIndx7.image_yscale = 0.5;
-	    var idIndx8 = instance_create(0, 0, obj_indice_manual_8);
+	    var idIndx8 = instance_create_depth(0, 0, 0, obj_indice_manual_8);
 	    idIndx8.image_xscale = 5;
 	    idIndx8.image_yscale = 0.5;
-	    var idIndx9 = instance_create(0, 0, obj_indice_manual_9);
+	    var idIndx9 = instance_create_depth(0, 0, 0, obj_indice_manual_9);
 	    idIndx9.image_xscale = 5;
 	    idIndx9.image_yscale = 0.5;
-	    var idIndx10 = instance_create(0, 0, obj_indice_manual_10);
+	    var idIndx10 = instance_create_depth(0, 0, 0, obj_indice_manual_10);
 	    idIndx10.image_xscale = 5;
 	    idIndx10.image_yscale = 0.5;
-	    var idIndx11 = instance_create(0, 0, obj_indice_manual_11);
+	    var idIndx11 = instance_create_depth(0, 0, 0, obj_indice_manual_11);
 	    idIndx11.image_xscale = 5;
 	    idIndx11.image_yscale = 0.5;
-	    var idIndx12 = instance_create(0, 0, obj_indice_manual_12);
+	    var idIndx12 = instance_create_depth(0, 0, 0, obj_indice_manual_12);
 	    idIndx12.image_xscale = 5;
 	    idIndx12.image_yscale = 0.5;
     
-	    var idMapasMundo = instance_create(0, 0, obj_mapas_mundo);
+	    var idMapasMundo = instance_create_depth(0, 0, 0, obj_mapas_mundo);
     
 	    idMapasMundo.mapas[0] = read("obj_mapas_mundo", "mapas[0]", false);
 	    idMapasMundo.mapas[1] = read("obj_mapas_mundo", "mapas[1]", false);

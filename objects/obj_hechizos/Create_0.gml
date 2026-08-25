@@ -35,6 +35,7 @@ seleccionado = -1;
 
 moviendoHechizo = false;
 posHechizoAMover = 0;
+posSeleccionado = -1;
 
 var i = 0;
 
@@ -65,6 +66,17 @@ if (obj_pj.clase == 7) {
 	palabrasMagicasHechizos[0] = "OHL VOR PEK";
 }
 
+// Seleccionar el primer hechizo disponible por defecto
+var i = 0;
+repeat(maximoHechizos) {
+    if (indiceHechizos[i] != -1) {
+        seleccionado = indiceHechizos[i];
+        posSeleccionado = i;
+        break;
+    }
+    i++;
+}
+
 // Doble clic
 
 dobleClic = false;
@@ -73,6 +85,6 @@ posDobleClic = -1;
 // Paneles
 
 primerPanel = true;
-
+depth = -16000001
 /* */
 /*  */

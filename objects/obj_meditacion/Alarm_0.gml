@@ -1,4 +1,4 @@
-/// @description  Incremento la maná
+﻿/// @description  Incremento la maná
 
 manaIncrementada = round(obj_pj.skills[3] * 1.15);
 
@@ -9,11 +9,10 @@ if (obj_pj.mana + manaIncrementada <= obj_pj.manaMax) {
 }
 
 if (obj_pj.skills[3] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-    if (random(10) > 6.5) {
+    if (random(1) < 0.35 * SKILL_FACTOR) {
         obj_skills_libres.mostrado = false;
         obj_pj.skills[3]++;
-        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-        idSubirSkills.indice = 3;
+        var idSubirSkills = crearTextoSubirSkill(3);
     }
 }
 

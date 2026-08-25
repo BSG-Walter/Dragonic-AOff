@@ -1,8 +1,8 @@
-/// @description  Control de posición de teletransporte / logueo / encierro
+﻿/// @description  Control de posición de teletransporte / logueo / encierro
 
 var i = 1;
 
-var idBloqueo = instance_create(x - 16, y, obj_bloqueo);
+var idBloqueo = instance_create_depth(x - 16, y, 0, obj_bloqueo);
 
 tile = tile_layer_find(1000000, x, y);
 
@@ -391,7 +391,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
     
     i++;
     
-    if (i * 32 > __view_get( e__VW.WView, 0 ) * 0.75) {
+    if (i * 32 > get_render_width() * 0.75) {
         instance_destroy();
     }
 
@@ -404,9 +404,11 @@ if (instance_exists(idBloqueo)) {
 }
 
 if (!teletransporta) {
-    instance_create(x, y, obj_efecto_login);
+    instance_create_depth(x, y, 0, obj_efecto_login);
     reproducirSonido(snd_logueo, false, false);
 }
+
+alinearPJ()
 
 teletransporta = false;
 

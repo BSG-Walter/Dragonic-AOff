@@ -1,5 +1,4 @@
 /// @description  Estado inicial
-
 opcionTechos = true;
 opcionArboles = true;
 opcionVibracion = true;
@@ -9,6 +8,9 @@ opcionNubes = true;
 opcionPeces = true;
 opcionOptimizarCiudades = false;
 opcionInsigniaPionero = true;
+multiExp = 1
+multiOro = 1
+maxBots = 6
 
 if (file_exists("opciones.ini")) {
     ini_open("opciones.ini");
@@ -21,6 +23,9 @@ if (file_exists("opciones.ini")) {
     opcionPeces = read("opcionesFX", "opcionPeces", 1);
     opcionOptimizarCiudades = read("opcionesFX", "opcionOptimizarCiudades", 0);
     opcionInsigniaPionero = read("opcionesFX", "opcionInsigniaPionero", true);
+	multiExp = read("dificultad", "multiExp", 1)
+	multiOro = read("dificultad", "multiOro", 1)
+	maxBots = read("dificultad", "maxBots", 6)
     ini_close();
 }
 
@@ -33,6 +38,4 @@ sonidoLluvia = -1;
 
 alarm[1] = 1;
 alarm[2] = floor(60 * 60 * random_range(frecuenciaLluviaMin, frecuenciaLluviaMax))
-
-
 

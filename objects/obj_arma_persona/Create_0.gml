@@ -26,4 +26,6 @@ index[3, 2] = 14;
 index[3, 3] = 15;
 
 frame = 0;
+ultimoEqArma = -2; // cache para no hacer switch cada step
+
 

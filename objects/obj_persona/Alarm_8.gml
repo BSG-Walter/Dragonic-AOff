@@ -1,4 +1,4 @@
-/// @description  Inmoviliza / tira hechizos a NPCs / Ataca PJ
+﻿/// @description  Inmoviliza / tira hechizos a NPCs / Ataca PJ
 
 if (!muerto && !obj_mapas_mundo.mapas[room]) {
 
@@ -65,8 +65,8 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
     }
     
     if (
-    (x < __view_get( e__VW.XView, 0 ) && (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (y < __view_get( e__VW.YView, 0 ) && (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < global.render_x && (x > global.render_x + get_render_width())) &&
+    (y < global.render_y && (y > global.render_y + get_render_height()))
     ) {
        atacaNPC = true; 
     }      
@@ -78,9 +78,9 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
     
     if (!inmovilizado || (inmovilizado && obj_pj.nivel < 16)) {
         
-        var idIA = elegirIAObjetivoIA(true);
+        var idIA = IAObj
     
-        if (idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
+        if (room != rm_arena && idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
             if (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando)) {
                 idIA = -1;
             }
@@ -119,7 +119,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                 inmovilizado = true;
                                                 other.mana -= 300;                
                                                 var idEfectoHechizo = -1;
-                                                idEfectoHechizo = instance_create(x, y, obj_inmovilizar);
+                                                idEfectoHechizo = instance_create_depth(x, y, 0, obj_inmovilizar);
                                                 idEfectoHechizo.padre = id;
                                                 
                                                 reproducirSonido(snd_inmovilizar, false, false);
@@ -138,13 +138,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     other.yaTiroHechizo = true;
                                                     other.mana -= 210;                
                                                     var idEfectoHechizo = -1;
-                                                    idEfectoHechizo = instance_create(x, y, obj_tormenta_de_fuego);
+                                                    idEfectoHechizo = instance_create_depth(x, y, 0, obj_tormenta_de_fuego);
                                                     idEfectoHechizo.padre = id;
                                                     
                                                     other.dano = round(random_range(40, 60)); 
                                                     other.danoTotal = calcularDanoMagicoIAaNPC(other.dano, other.id);
-                                                    var idDano = instance_create(x, y, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, -1);
                                                     salud -= other.danoTotal;
                                                     
                                                     alarm[5] = 1;
@@ -162,13 +161,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     other.yaTiroHechizo = true;
                                                     other.mana -= 45;                
                                                     var idEfectoHechizo = -1;
-                                                    idEfectoHechizo = instance_create(x, y, obj_misil_magico);
+                                                    idEfectoHechizo = instance_create_depth(x, y, 0, obj_misil_magico);
                                                     idEfectoHechizo.padre = id;
                                                     
                                                     other.dano = round(random_range(25, 35)); 
                                                     other.danoTotal = calcularDanoMagicoIAaNPC(other.dano, other.id);
-                                                    var idDano = instance_create(x, y, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, -1);
                                                     salud -= other.danoTotal;
                                                     
                                                     alarm[5] = 1;
@@ -217,16 +215,14 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                     other.dano = round(random_range(other.danoMeleeMin, other.danoMeleeMax));
                                                     other.danoTotal = calcularDanoArcoIAaNPC(floor(other.dano * obj_pj.modDanoLvl), other.id);
                                                     
-                                                    var idDano = instance_create(x, y, obj_efecto_dano);
-                                                    idDano.dano = other.danoTotal;
-                                                    idDano.padre = id;
+                                                    var idDano = crearTextoDano(x, y, other.danoTotal, id);
                                                     
                                                     reproducirSonido(snd_golpeANPC, false, false);
                                                     
                                                     salud -= other.danoTotal;
                                                     
                                                 } else {
-                                                    var idINFO = instance_create(other.x, other.y + 9, obj_INFO);
+                                                    var idINFO = instance_create_depth(other.x, other.y + 9, 0, obj_INFO);
                                                     idINFO.padre = other.id;
                                                     idINFO.texto = "¡Falla!";
                                                     idINFO.color = c_red;
@@ -258,12 +254,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             
             if (random(10) > rand) {
                     
-                var randInmo = 6.5; // Clero
+                var randInmo = 7.0; // Clero
                 
                 if (clase == 1) { // Mago
-                    randInmo = 8.5;
+                    randInmo = 9.0;
                 } else if (clase == 2) { // Caza
-                    randInmo = 7.5;
+                    randInmo = 8.0;
                 }
             
                 if (obj_pj.nivel >= 24 && !idIA.inmovilizado && random(10) > randInmo && mana >= 300) {
@@ -272,7 +268,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                             
                     mana -= 300;                
                     var idEfectoHechizo = -1;
-                    idEfectoHechizo = instance_create(idIA.x, idIA.y, obj_inmovilizar);
+                    idEfectoHechizo = instance_create_depth(idIA.x, idIA.y, 0, obj_inmovilizar);
                     idEfectoHechizo.padre = idIA;
                     
                     reproducirSonido(snd_inmovilizar, false, false);
@@ -361,7 +357,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                             mana -= restaMana;
                                             
                             var idEfectoHechizo = -1;
-                            idEfectoHechizo = instance_create(idIA.x, idIA.y, efecto);
+                            idEfectoHechizo = instance_create_depth(idIA.x, idIA.y, 0, efecto);
                             idEfectoHechizo.padre = idIA;
                             
                             var modBaculo = 1.031;
@@ -374,9 +370,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                             
                             var danoTotal = floor(calcularDanoMagicoIAaIA(dano, idIA) * modBaculo); 
                                                     
-                            var idDano = instance_create(idIA.x, idIA.y, obj_efecto_dano);
-                            idDano.dano = danoTotal;
-                            idDano.padre = idIA;
+                            var idDano = crearTextoDano(idIA.x, idIA.y, danoTotal, idIA);
                             
                             if (idIA.salud - danoTotal > 0) {
                                 idIA.salud -= danoTotal;
@@ -404,7 +398,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                     
                 }
             } else {
-                var idINFO = instance_create(x, y, obj_INFO);
+                var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                 idINFO.padre = id;
                 idINFO.color = make_color_rgb(211, 90, 211);
                 idINFO.texto = "¡Target inválido!"; 
@@ -415,8 +409,8 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             var valido = false;
         
             if (
-            (x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-            (y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+            (x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+            (y >= global.render_y && (y <= global.render_y + get_render_height()))
             ) {
                valido = true; 
             }
@@ -455,12 +449,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
             
                 if (random(10) > rand) {
                     
-                    var randInmo = 6.5; // Clero
+                    var randInmo = 7.0; // Clero
                     
                     if (clase == 1) { // Mago
-                        randInmo = 8.5;
+                        randInmo = 9.0;
                     } else if (clase == 2) { // Caza
-                        randInmo = 7.5;
+                        randInmo = 8.0;
                     }
                 
                     if (obj_pj.nivel >= 24 && !obj_pj.inmovilizado && random(10) > randInmo && mana >= 300) {
@@ -469,7 +463,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                 
                         mana -= 300;                
                         var idEfectoHechizo = -1;
-                        idEfectoHechizo = instance_create(obj_pj.x, obj_pj.y, obj_inmovilizar);
+                        idEfectoHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_inmovilizar);
                         idEfectoHechizo.padre = obj_pj.id;
                         
                         reproducirSonido(snd_inmovilizar, false, false);
@@ -562,7 +556,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                 mana -= restaMana;
                                                 
                                 var idEfectoHechizo = -1;
-                                idEfectoHechizo = instance_create(obj_pj.x, obj_pj.y, efecto);
+                                idEfectoHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, efecto);
                                 idEfectoHechizo.padre = obj_pj.id;
                                 
                                 var danoTotal = calcularDanoMagicoNPC(dano);
@@ -593,13 +587,12 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                 
                                 // Skill
                                 
-                                if (random(10) > 6.5) {
+                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                     if (obj_pj.skills[17] < 100) {
                                         if (obj_pj.skills[17] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                             obj_skills_libres.mostrado = false;
                                             obj_pj.skills[17]++;
-                                            var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                            idSubirSkills.indice = 17;
+                                            var idSubirSkills = crearTextoSubirSkill(17);
                                         }
                                     }
                                 }
@@ -615,7 +608,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                         
                     }
                 } else {
-                    var idINFO = instance_create(x, y, obj_INFO);
+                    var idINFO = instance_create_depth(x, y, 0, obj_INFO);
                     idINFO.padre = id;
                     idINFO.color = make_color_rgb(211, 90, 211);
                     idINFO.texto = "¡Target inválido!"; 

@@ -1,4 +1,4 @@
-/// @description  Ataque
+﻿/// @description  Ataque
 
 if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
@@ -13,9 +13,9 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             }
             break;
         case 1:
-            if (place_meeting(x, y + 32, obj_persona)) {
+            if (place_meeting(x, y - 32, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x, y + 32, obj_persona);
+                idIA = instance_place(x, y - 32, obj_persona);
             }
             break;
         case 2:
@@ -32,7 +32,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             break;
     }
     
-    var esEnemigo = pk || idIA.pk;
+    var esEnemigo = (room == rm_arena) ? (pk != idIA.pk) : (pk || idIA.pk);
     
     if (ataca) {
         ataca = esEnemigo;
@@ -79,7 +79,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(idIA.x, idIA.y, obj_INFO);
+                var idINFO = instance_create_depth(idIA.x, idIA.y, 0, obj_INFO);
                 idINFO.padre = idIA;
                 idINFO.texto = "¡Defendido con escudo!";
                 idINFO.color = c_red;
@@ -126,7 +126,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         
             ataca = false;
             
-            var idINFO = instance_create(x, y + 9, obj_INFO);
+            var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
@@ -140,9 +140,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         var dano = round(random_range(danoMeleeMin, danoMeleeMax));
         var danoTotal = floor(0.85 * calcularDanoFisicoIAaIA(dano * obj_pj.modDanoLvl, idIA));
         
-        idDano = instance_create(idIA.x, idIA.y - 41, obj_efecto_dano);
-        idDano.dano = danoTotal;
-        idDano.padre = idIA;
+        idDano = crearTextoDano(idIA.x, idIA.y - 41, danoTotal, idIA);
         
         reproducirSonido(snd_golpeRecibido, false, false);
         
@@ -231,7 +229,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             
                 ataca = false;
                 
-                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                 idINFO.padre = obj_pj.id;
                 idINFO.texto = "¡Defendido con escudo!";
                 idINFO.color = c_red;
@@ -239,11 +237,10 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
                 reproducirSonido(snd_defensaEscudo, false, false);
                     
                 if (obj_pj.skills[6] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                    if (random(10) > 5) {
+                    if (random(1) < 0.5 * SKILL_FACTOR) {
                         obj_skills_libres.mostrado = false;
                         obj_pj.skills[6]++;
-                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                        idSubirSkills.indice = 6;
+                        var idSubirSkills = crearTextoSubirSkill(6);
                     }
                 }
                 
@@ -294,17 +291,16 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         
             ataca = false;
             
-            var idINFO = instance_create(x, y + 9, obj_INFO);
+            var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
             idINFO.padre = id;
             idINFO.texto = "¡Falla!";
             idINFO.color = c_red;
             
             if (obj_pj.skills[1] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                if (random(10) > 5) {
+                if (random(1) < 0.5 * SKILL_FACTOR) {
                     obj_skills_libres.mostrado = false;
                     obj_pj.skills[1]++;
-                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                    idSubirSkills.indice = 1;
+                    var idSubirSkills = crearTextoSubirSkill(1);
                 }
             }
             

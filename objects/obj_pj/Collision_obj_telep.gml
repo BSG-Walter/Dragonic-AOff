@@ -1,4 +1,4 @@
-/// @description  Teletransporta
+﻿/// @description  Teletransporta
 
 if (!teletransporta) {
 
@@ -54,7 +54,7 @@ if (!teletransporta) {
                             instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
                             );
                             
-                            instance_create(xNuevo, yNuevo, criaturasHijas[j, 1]);
+                            instance_create_depth(xNuevo, yNuevo, 0, criaturasHijas[j, 1]);
                             
                             criaturasHijas[j, 3] = -1;
                             
@@ -371,7 +371,7 @@ if (!teletransporta) {
             
             alarm[9] = 1;
                  
-            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
             idINFO.texto = "¡Nivel menor a " + string(other.nivelRequerido) + "!";
             idINFO.padre = obj_pj.id;                
             

@@ -1,12 +1,12 @@
-/// @description  Transferir rápidamente
+﻿/// @description  Transferir rápidamente
 
 if (clicMantenido) {
     if (deviceMantenido != -1) {
     
         var device = deviceMantenido;
     
-        var posX = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5 - 144;
-        var posY = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.5 - 113;
+        var posX = global.render_x + get_render_width() * 0.5 - 144;
+        var posY = global.render_y + get_render_height() * 0.5 - 113;
         
         if (!modoBanco) {
         
@@ -82,13 +82,12 @@ if (clicMantenido) {
                                 
                             }
                         
-                            if (random(10) > 6.5) {
+                            if (random(1) < 0.35 * SKILL_FACTOR) {
                                 if (obj_pj.skills[16] < 100) {
                                     if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                         obj_skills_libres.mostrado = false;
                                         obj_pj.skills[16]++;
-                                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                        idSubirSkills.indice = 16;
+                                        var idSubirSkills = crearTextoSubirSkill(16);
                                     }
                                 }
                             }
@@ -124,14 +123,13 @@ if (clicMantenido) {
 												
 											obj_skills_libres.mostrado = false;
                                             
-                                            if (random(10) > 6.5) {
+                                            if (random(1) < 0.35 * SKILL_FACTOR) {
                                                 if (obj_pj.skills[16] < 100) {
                                                     if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                                     
                                                         obj_skills_libres.mostrado = false;
                                                         obj_pj.skills[16]++;
-                                                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                                        idSubirSkills.indice = 16;
+                                                        var idSubirSkills = crearTextoSubirSkill(16);
                                                         
                                                         var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
                                                                 
@@ -207,14 +205,13 @@ if (clicMantenido) {
                                             obj_inventario.clase8ValidaInv[i] = datosItem[13];
                                             obj_inventario.nombreInv[i] = datosItem[14];
                                             
-                                            if (random(10) > 6.5) {
+                                            if (random(1) < 0.35 * SKILL_FACTOR) {
                                                 if (obj_pj.skills[16] < 100) {
                                                     if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
                                                     
                                                         obj_skills_libres.mostrado = false;
                                                         obj_pj.skills[16]++;
-                                                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                                        idSubirSkills.indice = 16;
+                                                        var idSubirSkills = crearTextoSubirSkill(16);
                                                         
                                                         var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
                                                                 

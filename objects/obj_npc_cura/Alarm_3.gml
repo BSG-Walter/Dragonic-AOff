@@ -1,23 +1,21 @@
-/// @description  Tira hechizos si el PJ es PK
+﻿/// @description  Tira hechizos si el PJ es PK
 
 if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
     if (
-    (x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+    (y >= global.render_y && (y <= global.render_y + get_render_height()))
     ) {
     
         var dano = floor(random_range(87, 98));
     
-        var idEfectoHechizo = instance_create(obj_pj.x, obj_pj.y, obj_apocalipsis);
+        var idEfectoHechizo = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_apocalipsis);
         idEfectoHechizo.padre = obj_pj.id;
         
         var danoTotal = calcularDanoMagicoNPC(dano);
                                 
-        var idDano = instance_create(obj_pj.x, obj_pj.y, obj_efecto_dano);
-        idDano.dano = danoTotal;
-        idDano.padre = obj_pj.id;
+        var idDano = crearTextoDano(obj_pj.x, obj_pj.y, danoTotal, obj_pj.id);
         
-        var idMsg = instance_create(x, y, obj_msg);
+        var idMsg = instance_create_depth(x, y, 0, obj_msg);
         idMsg.desc = desc2;
         idMsg.tiempo = 150;
         
@@ -55,8 +53,8 @@ if (obj_pj.pk && !obj_pj.invisible && !obj_pj.muerto) {
 if (instance_number(obj_persona) > 0 && !obj_persona.muerto && obj_persona.pk) {
     
     if (
-    (obj_persona.x >= __view_get( e__VW.XView, 0 ) && (obj_persona.x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (obj_persona.y >= __view_get( e__VW.YView, 0 ) && (obj_persona.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (obj_persona.x >= global.render_x && (obj_persona.x <= global.render_x + get_render_width())) &&
+    (obj_persona.y >= global.render_y && (obj_persona.y <= global.render_y + get_render_height()))
     ) {
     
         // Si la IA está viva y está dentro de la view (Para que no muera constantemente OOV y queden los ítems tirados)
@@ -77,18 +75,16 @@ if (instance_number(obj_persona) > 0 && !obj_persona.muerto && obj_persona.pk) {
         }
         
         if (
-        distanciaX <= __view_get( e__VW.WView, 0 ) * 0.5 &&
-        distanciaY <= __view_get( e__VW.HView, 0 ) * 0.5
+        distanciaX <= get_render_width() * 0.5 &&
+        distanciaY <= get_render_height() * 0.5
         ) {
             
-            var idHechizo = instance_create(obj_persona.x, obj_persona.y, obj_apocalipsis);
+            var idHechizo = instance_create_depth(obj_persona.x, obj_persona.y, 0, obj_apocalipsis);
             idHechizo.padre = obj_persona.id;
             
             var dano = floor(random_range(87, 98));
             var danoTotal = calcularDanoMagicoNPCaIA(dano, obj_persona.id);
-            idDano = instance_create(obj_persona.x, obj_persona.y - 41, obj_efecto_dano);
-            idDano.dano = danoTotal;
-            idDano.padre = obj_persona.id;
+            idDano = crearTextoDano(obj_persona.x, obj_persona.y - 41, danoTotal, obj_persona.id);
             
             reproducirSonido(snd_apocalipsis, false, false);
             obj_persona.salud -= danoTotal;

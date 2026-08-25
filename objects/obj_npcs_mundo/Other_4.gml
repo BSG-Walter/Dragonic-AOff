@@ -1,5 +1,4 @@
-/// @description  Creo los NPCs
-
+﻿/// @description  Creo los NPCs
 crearNPCsRoom(room);
 
 /*
@@ -33,7 +32,7 @@ if (datosNPC[0] != -1) {
     }
 
     for (var j = 1; j < i; j++) {
-        var idNPC = instance_create(datosNPC[2], datosNPC[3], datosNPC[0]); 
+        var idNPC = instance_create_depth(datosNPC[2], datosNPC[3], 0, datosNPC[0]); 
         idNPC.salud = datosNPC[1];
         idNPC.inmovilizado = datosNPC[4];
         idNPC.paralizado = datosNPC[5];
@@ -44,7 +43,7 @@ if (datosNPC[0] != -1) {
     }
     
     if (i > 1) {
-        var idNPC = instance_create(datosNPC[2], datosNPC[3], datosNPC[0]); 
+        var idNPC = instance_create_depth(datosNPC[2], datosNPC[3], 0, datosNPC[0]); 
         idNPC.salud = datosNPC[1];
         idNPC.inmovilizado = datosNPC[4];
         idNPC.paralizado = datosNPC[5];

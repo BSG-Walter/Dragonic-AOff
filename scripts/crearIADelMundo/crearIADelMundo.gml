@@ -1,4 +1,4 @@
-/// @description  crearIADelMundo()
+﻿/// @description  crearIADelMundo()
 function crearIADelMundo() {
 
 	/*
@@ -177,7 +177,7 @@ function crearIADelMundo() {
         
 	        if (datosIA[0] != -1) {
         
-	            var idIA = instance_create(datosIA[0], datosIA[1], obj_persona);             
+	            var idIA = instance_create_depth(datosIA[0], datosIA[1], 0, obj_persona);             
 	            idIA.enemigo = datosIA[2]; 
 	            idIA.direccion = datosIA[3]; 
 	            idIA.yaHabloEnojado1 = datosIA[4]; 
@@ -248,7 +248,7 @@ function crearIADelMundo() {
 	            }
             
 	            if (creoEfectoLogin) {
-	                var idEfecto = instance_create(idIA.x, idIA.y, obj_efecto_login);
+	                var idEfecto = instance_create_depth(idIA.x, idIA.y, 0, obj_efecto_login);
 	                idEfecto.padre = idIA;
 	                reproducirSonido(snd_logueo, false, false);
 	            }

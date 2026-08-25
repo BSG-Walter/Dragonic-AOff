@@ -24,11 +24,11 @@ function reproducirSonido(argument0, argument1, argument2) {
 	    argument0 != snd_resucitar
 	    ) {
     
-	        if (x < __view_get( e__VW.XView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.25 || x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.25) {
+	        if (x < global.render_x - get_render_width() * 0.25 || x > global.render_x + get_render_width() + get_render_width() * 0.25) {
 	            valido = false;
 	        }
         
-	        if (y < __view_get( e__VW.YView, 0 ) - __view_get( e__VW.HView, 0 ) * 0.25 || y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) + __view_get( e__VW.HView, 0 ) * 0.25) {
+	        if (y < global.render_y - get_render_height() * 0.25 || y > global.render_y + get_render_height() + get_render_height() * 0.25) {
 	            valido = false;
 	        }
         

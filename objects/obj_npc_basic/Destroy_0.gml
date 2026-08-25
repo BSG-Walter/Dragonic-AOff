@@ -1,4 +1,4 @@
-/// @description  Creo el oro (O drop)
+﻿/// @description  Creo el oro (O drop)
 /// @param O drop
 
 if (salud <= 0) {
@@ -26,12 +26,12 @@ if (salud <= 0) {
     }
 	
     if (oro > 0) {    
-	    var idOro = instance_create(xOro, yOro, obj_oro);
-	    idOro.valor = oro; 
+	    var idOro = instance_create_depth(xOro, yOro, 0, obj_oro);
+	    idOro.valor = oro * obj_opciones.multiOro;
 	}
 	
     if (dropeaItem) {
-	    var idItem = instance_create(xOro, yOro, obj_item);
+	    var idItem = instance_create_depth(xOro, yOro, 0, obj_item);
 	    idItem.indice = indItem;
 	    idItem.cantidad = cantItem;
 	}
@@ -66,7 +66,7 @@ if (roomInicial == room && salud <= 0) {
     instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
     );
     
-    instance_create(xNuevo, yNuevo, object_index);
+    instance_create_depth(xNuevo, yNuevo, 0, object_index);
 
 }
 

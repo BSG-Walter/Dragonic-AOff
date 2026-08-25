@@ -2,9 +2,6 @@
 
 if (instance_exists(padre)) {
 
-    x = padre.x;
-    y = padre.y;
-    
     if (padre == obj_pj.id || padre.object_index == obj_persona) {
         if (padre.dicePalabrasMagicas && padre.palabrasMagicas != "") {
             instance_destroy();
@@ -14,7 +11,7 @@ if (instance_exists(padre)) {
     visible = true;
     
 } else {
-    instance_destroy();
+    visible = true;
 }
 
 if (modY < limite) {
@@ -22,7 +19,7 @@ if (modY < limite) {
 }
 
 if (tiempo == -1) {
-    image_alpha -= 0.015;
+    image_alpha -= velocidadFade;
     
     if (image_alpha <= 0) {
         instance_destroy();

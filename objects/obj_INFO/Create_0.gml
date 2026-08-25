@@ -5,9 +5,13 @@ texto = "";
 color = c_white;
 fuente = fnt_Vedrana_7_bold;
 padre = obj_pj.id;
+depth = -10000;
 modY = 0;
 limite = 12;
 tiempo = -1;
+velocidadFade = 0.0085;
+esDano = false;
+desfaseY = 57;
 
 // Manejo de posición del mensaje
 
@@ -50,7 +54,7 @@ if (padre == obj_pj.id) {
 } else {
 
     with (obj_INFO) {
-        if (id != other.id && padre != obj_pj.id && padre == other.padre) {
+        if (id != other.id && padre != obj_pj.id && padre == other.padre && !other.esDano && !esDano) {
             instance_destroy();
         }
     }

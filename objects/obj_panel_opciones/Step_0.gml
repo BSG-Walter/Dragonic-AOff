@@ -1,7 +1,7 @@
-/// @description  Control general / control mouse
+﻿/// @description  Control general / control mouse
 
-x = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 26;
-y = __view_get( e__VW.YView, 0 ) + 36;
+x = global.render_x + get_render_width() - 26;
+y = global.render_y + 36;
 
 if (visible) {
 
@@ -24,18 +24,6 @@ if (visible) {
                 obj_control_devices.devicesL[device] = true;
                 
                 if (device_mouse_y(device) <= y - 32 + 16) {
-                    if (obj_opciones.opcionTechos) {
-                        obj_opciones.opcionTechos = false;
-                        with (obj_techo_basic) {
-                            image_alpha = 1;
-                        }
-                    } else {
-                        obj_opciones.opcionTechos = true;
-                        with (obj_techo_basic) {
-                            visible = true;
-                        }
-                    }
-                } else if (device_mouse_y(device) <= y - 32 + 32) {
                     if (obj_opciones.opcionArboles) {
                         obj_opciones.opcionArboles = false;
                         with (obj_arbol_basic) {
@@ -43,6 +31,20 @@ if (visible) {
                         }
                     } else {
                         obj_opciones.opcionArboles = true;
+                    }
+                } else if (device_mouse_y(device) <= y - 32 + 32) {
+                    if (obj_opciones.opcionTechos) {
+                        obj_opciones.opcionTechos = false;
+                        with (obj_techo_basic) {
+                            visible = true;
+                            image_alpha = 1;
+                        }
+                    } else {
+                        obj_opciones.opcionTechos = true;
+                        with (obj_techo_basic) {
+                            visible = true;
+                            image_alpha = 1;
+                        }
                     }
                 } else if (device_mouse_y(device) <= y - 32 + 48) {
                     if (obj_opciones.opcionVibracion) {
@@ -53,20 +55,30 @@ if (visible) {
                 } else if (device_mouse_y(device) <= y - 32 + 64) {
                     if (obj_opciones.opcionAnimacionAgua) {
                         obj_opciones.opcionAnimacionAgua = false;
-                        __background_set( e__BG.Index, 1, bck_agua_1 );
+                        var lay = layer_get_id("Background_Agua");
+                        if (lay != -1) {
+                            var bg = layer_background_get_id(lay);
+                            if (bg != -1) layer_background_sprite(bg, bck_agua_1);
+                            layer_hspeed(lay, 0);
+                            layer_vspeed(lay, 0);
+                        }
                         with (obj_pez) {
                             instance_destroy();
                         }
                     } else {
                         obj_opciones.opcionAnimacionAgua = true;
-                        __background_set( e__BG.Index, 1, bck_agua_2 );
+                        var lay = layer_get_id("Background_Agua");
+                        if (lay != -1) {
+                            var bg = layer_background_get_id(lay);
+                            if (bg != -1) layer_background_sprite(bg, bck_agua_2);
+                        }
                         obj_control_animacion_agua.alarm[0] = 300;
                         if (obj_opciones.opcionPeces) {
                             with (obj_pez) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(__view_get( e__VW.XView, 0 ) + random(__view_get( e__VW.WView, 0 )), __view_get( e__VW.YView, 0 ) + random(__view_get( e__VW.HView, 0 )), obj_pez);
+                                instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_pez);
                             }
                         }
                     }
@@ -96,7 +108,7 @@ if (visible) {
                             instance_destroy();
                         }
                         repeat(25) {
-                            instance_create(__view_get( e__VW.XView, 0 ) + random(__view_get( e__VW.WView, 0 )), __view_get( e__VW.YView, 0 ) + random(__view_get( e__VW.HView, 0 )), obj_particula);
+                            instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_particula);
                         }
                         if (obj_opciones.lloviendo) { 
 							crearLluvia(75, 0, 0);
@@ -120,7 +132,7 @@ if (visible) {
                         with (obj_nubes) {
                             instance_destroy();
                         }
-                        instance_create(0, 0, obj_nubes);
+                        instance_create_depth(0, 0, 0, obj_nubes);
                     }
                 } else if (device_mouse_y(device) <= y - 32 + 112) {
                     if (obj_opciones.opcionPeces) {
@@ -135,7 +147,7 @@ if (visible) {
                                 instance_destroy();
                             }
                             repeat(5) {
-                                instance_create(__view_get( e__VW.XView, 0 ) + random(__view_get( e__VW.WView, 0 )), __view_get( e__VW.YView, 0 ) + random(__view_get( e__VW.HView, 0 )), obj_pez);
+                                instance_create_depth(global.render_x + random(get_render_width()), global.render_y + random(get_render_height()), 0, obj_pez);
                             }
                         }
                     }
@@ -147,7 +159,7 @@ if (visible) {
                     }
                     if (obj_mapas_mundo.mapas[room]) {
                         // Si es zona segura (ciudad)
-                        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                         idINFO.padre = obj_pj.id;
                         idINFO.texto = "Volvé a entrar al mapa para ver los cambios";                        
                     }
@@ -162,7 +174,7 @@ if (visible) {
                 // Guardo los datos
                 
                 ini_open("opciones.ini");
-                write("opcionesFX", "opcionesTechos", obj_opciones.opcionTechos);
+                write("opcionesFX", "opcionTechos", obj_opciones.opcionTechos);
                 write("opcionesFX", "opcionArboles", obj_opciones.opcionArboles);
                 write("opcionesFX", "opcionVibracion", obj_opciones.opcionVibracion);
                 write("opcionesFX", "opcionAnimacionAgua", obj_opciones.opcionAnimacionAgua);

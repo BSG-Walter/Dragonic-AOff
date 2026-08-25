@@ -3,9 +3,9 @@
 if (!muerto && !inmovilizado) {
 
     yaEncontroItem = false;
-    var IAObj = elegirIAObjetivoIA(true);
+    IAObj = elegirIAObjetivoIA(true);
     
-    if (IAObj != -1 && enemigo && !obj_pj.inmovilizado && (!IAObj.inmovilizado && IAAtacaAPJ()) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) {
+    if (room != rm_arena && IAObj != -1 && enemigo && !obj_pj.inmovilizado && (!IAObj.inmovilizado && IAAtacaAPJ()) && (!obj_pj.invisible || (obj_pj.invisible && obj_pj.meditando))) {
         IAObj = -1;
     }
     
@@ -153,8 +153,8 @@ if (!muerto && !inmovilizado) {
         if (obj_pj.inmovilizado && clase == 0) {
         
             if (
-            (x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-            (y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+            (x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+            (y >= global.render_y && (y <= global.render_y + get_render_height()))
             ) {
                valido = true; 
             }
@@ -197,8 +197,8 @@ if (!muerto && !inmovilizado) {
                     
                         // Si tiene algún bloqueo en frente...
                     
-                        xObjetivo = floor(random_range(__view_get( e__VW.XView, 0 ) + 64, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 64));
-                        yObjetivo = floor(random_range(__view_get( e__VW.YView, 0 ) + 64, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 64));
+                        xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
+                        yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
                         
                         alarm[5] = 60 * random_range(1.5, 2);
             
@@ -228,8 +228,8 @@ if (!muerto && !inmovilizado) {
             
                 // OOV
                 
-                xObjetivo = floor(random_range(__view_get( e__VW.XView, 0 ) + 64, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 64));
-                yObjetivo = floor(random_range(__view_get( e__VW.YView, 0 ) + 64, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 64));
+                xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
+                yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
                 
                 alarm[5] = 60 * random_range(3, 4);
                 
@@ -249,8 +249,8 @@ if (!muerto && !inmovilizado) {
             (!obj_pj.invisible || (obj_pj.invisible && (obj_pj.inmovilizado || obj_pj.meditando))) ||
             mantienePos
             ) {
-                xObjetivo = floor(random_range(__view_get( e__VW.XView, 0 ) + 64, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 64));
-                yObjetivo = floor(random_range(__view_get( e__VW.YView, 0 ) + 64, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 64));
+                xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
+                yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
             } else {
                 xObjetivo = floor(random(room_width));
                 yObjetivo = floor(random(room_height));
@@ -260,7 +260,8 @@ if (!muerto && !inmovilizado) {
         
     } else if (IAObj != -1) {
     
-        if (clase == 0 && (pk || IAObj.pk) && (!enemigo || obj_pj.muerto) && cantidadIARivalCerca() == 1 && IAObj.inmovilizado) {
+        var esRivalIA = (room == rm_arena) ? (pk != IAObj.pk) : (pk || IAObj.pk);
+        if (clase == 0 && esRivalIA && (!enemigo || obj_pj.muerto) && cantidadIARivalCerca() == 1 && IAObj.inmovilizado) {
         
             if (
             !place_meeting(x + 32, y, IAObj) &&
@@ -338,8 +339,8 @@ if (!muerto && !inmovilizado) {
         
     } else {
     
-        xObjetivo = floor(random_range(__view_get( e__VW.XView, 0 ) + 64, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) - 64));
-        yObjetivo = floor(random_range(__view_get( e__VW.YView, 0 ) + 64, __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ) - 64));
+        xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
+        yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
         
         alarm[5] = floor(random_range(1.5 * 60, 2 * 60));
         

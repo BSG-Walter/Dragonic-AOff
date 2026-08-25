@@ -1,4 +1,4 @@
-/// @description  Creo el drop
+﻿/// @description  Creo el drop
 
 /*
 
@@ -16,7 +16,7 @@ if (pasos == 0) { // xObjetivo == x && yObjetivo == y
 
     if (vecItems[indiceTirarItems] != -1) {  
 		if (vecItems[indiceTirarItems] < 164 || vecItems[indiceTirarItems] > 211) { // Si no es armadura faccionaria...
-	        var idItem = instance_create(x, y, obj_item);  
+	        var idItem = instance_create_depth(x, y, 0, obj_item);  
 	        idItem.indice = vecItems[indiceTirarItems];
 	        idItem.cantidad = cantItems[indiceTirarItems];
 		}

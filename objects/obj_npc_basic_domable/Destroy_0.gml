@@ -1,4 +1,4 @@
-/// @description  Creo el oro (O drop)
+﻿/// @description  Creo el oro (O drop)
 /// @param O drop
 
 // Si no estaba domado dropea
@@ -28,12 +28,12 @@ if (!domado && salud <= 0) {
     }
 	
     if (oro > 0) {    
-	    var idOro = instance_create(xOro, yOro, obj_oro);
-	    idOro.valor = oro; 
+	    var idOro = instance_create_depth(xOro, yOro, 0, obj_oro);
+	    idOro.valor = oro * obj_opciones.multiOro; 
 	}
 	
     if (dropeaItem) {
-	    var idItem = instance_create(xOro, yOro, obj_item);
+	    var idItem = instance_create_depth(xOro, yOro, 0, obj_item);
 	    idItem.indice = indItem;
 	    idItem.cantidad = cantItem;
 	}
@@ -56,7 +56,7 @@ if (domado) {
     
         obj_pj.criaturasHijas[i, 1] = -1;
     
-        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
         idINFO.color = c_red;
         idINFO.padre = obj_pj.id;
         idINFO.texto = "¡Tu mascota murió!";
@@ -93,7 +93,7 @@ if (roomInicial == room && salud <= 0) {
     instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
     );
     
-    instance_create(xNuevo, yNuevo, object_index);
+    instance_create_depth(xNuevo, yNuevo, 0, object_index);
 
 }
 

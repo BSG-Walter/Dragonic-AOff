@@ -1,9 +1,9 @@
-/// @description  Hago que los items se caigan al morir
+﻿/// @description  Hago que los items se caigan al morir
 
 if (indiceInv[indiceTirarItems] != 144 && indiceInv[indiceTirarItems] != 145 && (indiceInv[indiceTirarItems] < 164 || indiceInv[indiceTirarItems] > 211)) {
 
     if (indiceInv[indiceTirarItems] != -1) {
-        var idItem = instance_create(obj_pj.x, obj_pj.y, obj_item);
+        var idItem = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
         idItem.indice = indiceInv[indiceTirarItems];
         idItem.cantidad = cantInv[indiceTirarItems];
         idItem.tipo = tipoInv[indiceTirarItems];

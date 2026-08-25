@@ -1,4 +1,4 @@
-/// @description  abrigaIA()
+﻿/// @description  abrigaIA()
 function abrigaIA() {
 
 	var eqRopaIA = -1
@@ -20,7 +20,7 @@ function abrigaIA() {
 			instance_destroy();
 	}
 	
-	var idINFO = instance_create(x, y, obj_INFO)
+	var idINFO = instance_create_depth(x, y, 0, obj_INFO)
 	idINFO.padre = id;
 	idINFO.tiempo = 60 * 5
 	idINFO.texto = choose("¡Hace frío aquí!", "Brrrr... ¡Qué frío!", "Por suerte traje mi abrigo...", "¡Me estaba congelando!", "Detesto el clima frío...", "Espero que tengas abrigo... ¡Ja!")

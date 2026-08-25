@@ -1,12 +1,12 @@
-/// @description  Ataque a Persona
+﻿/// @description  Ataque a Persona
 
 if (personaRoom != -1 && instance_exists(personaRoom)) {
 
     if (
     personaRoom.enemigo &&
     !personaRoom.muerto &&
-    (personaRoom.x >= __view_get( e__VW.XView, 0 ) && (personaRoom.x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-    (personaRoom.y >= __view_get( e__VW.YView, 0 ) && (personaRoom.y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (personaRoom.x >= global.render_x && (personaRoom.x <= global.render_x + get_render_width())) &&
+    (personaRoom.y >= global.render_y && (personaRoom.y <= global.render_y + get_render_height()))
     ) {
     
         // Si la IA está viva y está dentro de la view
@@ -27,8 +27,8 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
         }
         
         if (
-        distanciaX <= (__view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 )) * 0.5 &&
-        distanciaY <= (__view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )) * 0.5
+        distanciaX <= (global.render_x + get_render_width()) * 0.5 &&
+        distanciaY <= (global.render_y + get_render_height()) * 0.5
         ) {
         
             if (!paralizado) {
@@ -76,7 +76,7 @@ if (personaRoom != -1 && instance_exists(personaRoom)) {
                 }
                 
                 if (valido) {
-                    var idHechizo = instance_create(personaRoom.x, personaRoom.y, obj_inmovilizar);
+                    var idHechizo = instance_create_depth(personaRoom.x, personaRoom.y, 0, obj_inmovilizar);
                     idHechizo.padre = personaRoom.id;
                     personaRoom.inmovilizado = true;
 					personaRoom.alarm[7] = 170;

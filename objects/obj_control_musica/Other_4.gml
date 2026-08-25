@@ -1,6 +1,6 @@
 /// @description  Reproduzco
 
-if (obj_opcion_musica.musicaActivada && room != rm_inicio && room != rm_EBGames && room != rm_crearPJ && room != rm_nombrePJ && room != rm_creditos && room != rm_menuPrincipal && room != rm_opciones && room != rm_seleccionarPJ) {
+if (obj_opcion_musica.musicaActivada && is_ingame_room()) {
 
     if (
     room == rm_4 || room == rm_5 || room == rm_6 || room == rm_7 || 

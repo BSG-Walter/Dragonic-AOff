@@ -1,4 +1,4 @@
-/// @description  Control general / control mouse
+﻿/// @description  Control general / control mouse
 
 if (activo) {
     if (!obj_pj.trabajando) {
@@ -51,7 +51,7 @@ device_mouse_check_button(4, mb_left)
                             
 							obj_skills_libres.mostrado = false;
 							
-                            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                             idINFO.texto = "Trabajando";
                             idINFO.padre = obj_pj.id;
                             

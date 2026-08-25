@@ -30,6 +30,7 @@ if (obj_control_seleccionarPJ.elegido != -1) {
                 cargarPJs(8);
                 cargarPJs(9);
             }
+			with(obj_importar_exportar) event_user(0);
             obj_seleccionarPJ_borrar.confirmado = false;
 			with (obj_restaurar_PJ) instance_destroy(); 
         }

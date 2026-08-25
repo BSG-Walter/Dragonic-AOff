@@ -1,24 +1,14 @@
 /// @description  Cambiar dirección
 
 if (obj_opciones.opcionAnimacionAgua) {
-
-    if (direccionX == 0) {
-        __background_set( e__BG.HSpeed, 1, __background_get( e__BG.HSpeed, 1 ) + (0.001) );
-    } else {
-        __background_set( e__BG.HSpeed, 1, __background_get( e__BG.HSpeed, 1 ) - (0.001) );
-    }    
-    if (direccionY == 0) {
-        if (__background_get( e__BG.VSpeed, 1 ) < 0.15) {
-            __background_set( e__BG.VSpeed, 1, __background_get( e__BG.VSpeed, 1 ) + (0.00025) );
-        }
-    } else {
-        if (__background_get( e__BG.VSpeed, 1 ) > -0.15) {
-            __background_set( e__BG.VSpeed, 1, __background_get( e__BG.VSpeed, 1 ) - (0.00025) );
+    var lay = layer_get_id("Background_Agua");
+    if (lay != -1) {
+        velocidadH += 0.001 * direccionX;
+        layer_hspeed(lay, velocidadH);   
+        
+        if (abs(velocidadV) < 0.15) {
+            velocidadV += 0.00025 * direccionY;
+            layer_vspeed(lay, velocidadV);
         }
     }
-    
-} else {
-    __background_set( e__BG.HSpeed, 1, 0 );
-    __background_set( e__BG.VSpeed, 1, 0 );
 }
-

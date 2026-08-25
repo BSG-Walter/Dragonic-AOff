@@ -1,4 +1,4 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 //////////////////////////
 
@@ -10,8 +10,8 @@ if (!domado && personaRoom != -1 && instance_exists(personaRoom) && !personaRoom
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         if (distance_to_object(personaRoom) <= 250) {
             target = personaRoom;
@@ -27,8 +27,8 @@ if (!domado && target == obj_pj) {
     if (
     obj_pj.invisible ||
     obj_pj.muerto ||
-    (x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) ||
-    (y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+    (x < global.render_x || (x > global.render_x + get_render_width())) ||
+    (y < global.render_y || (y > global.render_y + get_render_height()))
     ) {
         target = -1;
     }
@@ -194,8 +194,8 @@ if (puedeMoverse) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() * 0.5 && (y <= global.render_y + get_render_width() * 0.5))
 ) {
 
     if (y < obj_pj.y) {
@@ -288,7 +288,7 @@ device_mouse_check_button(4, mb_left)
                                             
                                                 // Doma
                                             
-                                                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                                 idINFO.padre = obj_pj.id;
                                                 idINFO.texto = "¡Domaste a la criatura!";
 												
@@ -310,46 +310,45 @@ device_mouse_check_button(4, mb_left)
                                                 obj_pj.criaturasHijas[i, 3] = id.roomInicial;
                                                 
                                             } else {
-                                                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                                 idINFO.padre = obj_pj.id;
                                                 idINFO.texto = "¡No pudiste domar a la criatura!";
                                             }
                                             
                                             if (obj_pj.skills[11] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                                if (random(10) > 6.5) {
+                                                if (random(1) < 0.35 * SKILL_FACTOR) {
                                                     obj_skills_libres.mostrado = false;
                                                     obj_pj.skills[11]++;
-                                                    var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-                                                    idSubirSkills.indice = 11;
+                                                    var idSubirSkills = crearTextoSubirSkill(11);
                                                 }
                                             }
                                             
                                         } else {
-                                            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                             idINFO.padre = obj_pj.id;
                                             idINFO.texto = "¡No tenés suficientes puntos para domar!";
                                         }
                                         
                                     } else {
-                                        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                         idINFO.padre = obj_pj.id;
                                         idINFO.texto = "¡No podés domar a más de 3 criaturas!";
                                     }
                                 
                                 } else {
-                                    var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡No podés domar criaturas habiendo invocado otras!";
                                 }
                             
                             } else {
-                                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                                 idINFO.padre = obj_pj.id;
                                 idINFO.texto = "¡No podés domar criaturas en una zona segura!";
                             }
                             
                         } else {
-                            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                             idINFO.padre = obj_pj.id;
                             idINFO.texto = "¡Solo los druidas pueden domar criaturas!";
                         }
@@ -358,7 +357,7 @@ device_mouse_check_button(4, mb_left)
                     
                         // Abandona
                                     
-                        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                         idINFO.padre = obj_pj.id;
                         idINFO.texto = "¡Abandonaste a la criatura!";
                         
@@ -375,7 +374,7 @@ device_mouse_check_button(4, mb_left)
                     }    
                 
                 } else {
-                        var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+                        var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
                         idINFO.padre = obj_pj.id;
                         idINFO.texto = "¡Estás muerto!";
                 }

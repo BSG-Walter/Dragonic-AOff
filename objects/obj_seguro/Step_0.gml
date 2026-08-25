@@ -1,7 +1,7 @@
-/// @description  Control general / Control mouse
+﻿/// @description  Control general / Control mouse
 
-x = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 );
-y = __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 );
+x = global.render_x + get_render_width();
+y = global.render_y + get_render_height();
 
 var device = -1;
     
@@ -21,7 +21,7 @@ device_mouse_check_button(4, mb_left)
         
             obj_control_devices.devicesL[device] = true;
             
-            var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+            var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
     
             if (activo) {
                 idINFO.texto = "Seguro desactivado";

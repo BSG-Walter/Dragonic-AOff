@@ -8,7 +8,7 @@ if (random(10) > 5) {
     part_type_direction(tipoNubes, 0, 0, 0, 0);
 }
 
-part_emitter_region(sistemaNubes, emisorNubes, __view_get( e__VW.XView, 0 ) - __view_get( e__VW.WView, 0 ) * 0.5, __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5, __view_get( e__VW.YView, 0 ), __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 ), ps_shape_rectangle, ps_distr_linear);
+part_emitter_region(sistemaNubes, emisorNubes, global.render_x - get_render_width() * 0.5, global.render_x + get_render_width() * 0.5, global.render_y, global.render_y + get_render_height(), ps_shape_rectangle, ps_distr_linear);
 
 if (esMapaDescubierto()) {
     part_emitter_burst(sistemaNubes, emisorNubes, tipoNubes, nroNubes);

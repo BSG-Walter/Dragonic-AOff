@@ -1,7 +1,7 @@
-/// @description  Posición / Control mouse
+﻿/// @description  Posición / Control mouse
 
-x = __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ) * 0.5;
-y = __view_get( e__VW.YView, 0 );
+x = global.render_x + get_render_width() * 0.5;
+y = global.render_y;
 
 var device = -1;
 
@@ -22,7 +22,7 @@ device_mouse_check_button(4, mb_left)
 	        if (device_mouse_check_button_pressed(device, mb_left) && position_meeting(device_mouse_x(device), device_mouse_y(device), self)) {
         
 	            obj_control_devices.devicesL[device] = true;
-	            instance_create(0, 0, obj_pausa);
+	            instance_create_depth(0, 0, 0, obj_pausa);
 	            obj_control_devices.devicesL[device] = false;
             
 	        }

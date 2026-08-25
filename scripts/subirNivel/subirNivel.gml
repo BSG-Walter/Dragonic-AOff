@@ -1,5 +1,8 @@
-/// @description  subirNivel()
+﻿/// @description  subirNivel()
 function subirNivel() {
+
+	var _oldVida = obj_pj.saludMax;
+	var _oldMana = obj_pj.manaMax;
 
 	obj_skills_libres.mostrado = false;
 	obj_pj.experiencia = 0;
@@ -7,7 +10,7 @@ function subirNivel() {
 	obj_pj.modDanoLvl += 0.0053;
 	obj_pj.skillsLibres += 5;
 	obj_pj.energiaMax += 9;
-	instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_lvl);
+	instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_efecto_subir_lvl);
 
 	// Vida
 
@@ -207,6 +210,21 @@ function subirNivel() {
 	obj_pj.mana = obj_pj.manaMax;
 
 	reproducirSonido(snd_subirNivel, false, false);
+
+	// Texto de nuevo nivel (5 segs)
+	var _vidaGanada = obj_pj.saludMax - _oldVida;
+	var _manaGanada = obj_pj.manaMax - _oldMana;
+	var _txt = "¡Nuevo nivel " + string(obj_pj.nivel) + "!#";
+	_txt += "+" + string(_vidaGanada) + " Vida";
+	if (_manaGanada > 0) _txt += "  +" + string(_manaGanada) + " Maná";
+	var _info = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
+	_info.padre = obj_pj.id;
+	_info.texto = _txt;
+	_info.color = c_yellow;
+	_info.fuente = fnt_Vedrana_8_bold;
+	_info.tiempo = 300;
+	_info.limite = 20;
+	_info.desfaseY = 65;
 
 
 

@@ -1,4 +1,4 @@
-/// @description  IAAtacaConArco(idIA)
+﻿/// @description  IAAtacaConArco(idIA)
 /// @param idIA
 function IAAtacaConArco(argument0) {
 
@@ -6,7 +6,7 @@ function IAAtacaConArco(argument0) {
 
 		var idIA = argument0;
     
-	    if (idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
+	    if (room != rm_arena && idIA != -1 && enemigo && !obj_pj.inmovilizado && IAAtacaAPJ()) {
 	        idIA = -1;
 	    }
 
@@ -53,7 +53,7 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(obj_pj.x, obj_pj.y, obj_INFO);
+	                var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Defendido con escudo!";
 	                idINFO.color = c_red;
@@ -61,11 +61,10 @@ function IAAtacaConArco(argument0) {
 	                reproducirSonido(snd_defensaEscudo, false, false);
                     
 	                if (obj_pj.skills[6] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-	                    if (random(10) > 5) {
+	                    if (random(1) < 0.5 * SKILL_FACTOR) {
 	                        obj_skills_libres.mostrado = false;
 	                        obj_pj.skills[6]++;
-	                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-	                        idSubirSkills.indice = 6;
+	                        var idSubirSkills = crearTextoSubirSkill(6);
 	                    }
 	                }
                 
@@ -114,17 +113,16 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(x, y + 9, obj_INFO);
+	                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
 	                idINFO.padre = id;
 	                idINFO.texto = "¡Falla!";
 	                idINFO.color = c_red;
                 
 	                if (obj_pj.skills[1] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-	                    if (random(10) > 5) {
+	                    if (random(1) < 0.5 * SKILL_FACTOR) {
 	                        obj_skills_libres.mostrado = false;
 	                        obj_pj.skills[1]++;
-	                        var idSubirSkills = instance_create(obj_pj.x, obj_pj.y, obj_efecto_subir_skill);
-	                        idSubirSkills.indice = 1;
+	                        var idSubirSkills = crearTextoSubirSkill(1);
 	                    }
 	                }
                 
@@ -137,22 +135,13 @@ function IAAtacaConArco(argument0) {
 	            var dano = round(random_range(danoMeleeMin, danoMeleeMax));
 	            var danoTotal = calcularDanoFisicoNPC(floor(dano * obj_pj.modDanoLvl));
             
-	            idDano = instance_create(obj_pj.x, obj_pj.y - 41, obj_efecto_dano);
-	            idDano.dano = danoTotal;
-	            idDano.padre = obj_pj.id;
-            
-	            reproducirSonido(snd_flechaAcertada, false, false);
-	            reproducirSonido(snd_golpeRecibido, false, false);
-	            vibrarPantalla();
-            
-	            if (obj_pj.salud - danoTotal >= 1) {
-	                obj_pj.salud -= danoTotal;
-	            } else {
-	                muertePJ();
-	                yaHablo = false;            
-	                gano = true;
-	                alarm[5] = 1;
-	            }
+				daniarPj(danoTotal, false);
+        
+				if (obj_pj.muerto) {
+					yaHablo = false;            
+					gano = true;
+					alarm[5] = 1;
+				}
             
 	        }
     
@@ -200,7 +189,7 @@ function IAAtacaConArco(argument0) {
                 
 	                    ataca = false;
                     
-	                    var idINFO = instance_create(idIA.x, idIA.y, obj_INFO);
+	                    var idINFO = instance_create_depth(idIA.x, idIA.y, 0, obj_INFO);
 	                    idINFO.padre = idIA;
 	                    idINFO.texto = "¡Defendido con escudo!";
 	                    idINFO.color = c_red;
@@ -246,7 +235,7 @@ function IAAtacaConArco(argument0) {
             
 	                ataca = false;
                 
-	                var idINFO = instance_create(x, y + 9, obj_INFO);
+	                var idINFO = instance_create_depth(x, y + 9, 0, obj_INFO);
 	                idINFO.padre = id;
 	                idINFO.texto = "¡Falla!";
 	                idINFO.color = c_red;
@@ -260,9 +249,7 @@ function IAAtacaConArco(argument0) {
 	            var dano = round(random_range(danoMeleeMin, danoMeleeMax));
 	            var danoTotal = floor(0.85 * calcularDanoFisicoIAaIA(dano * obj_pj.modDanoLvl, idIA));
             
-	            idDano = instance_create(idIA.x, idIA.y - 41, obj_efecto_dano);
-	            idDano.dano = danoTotal;
-	            idDano.padre = idIA;
+	            idDano = crearTextoDano(idIA.x, idIA.y - 41, danoTotal, idIA);
             
 	            reproducirSonido(snd_flechaAcertada, false, false);
 	            reproducirSonido(snd_golpeRecibido, false, false);

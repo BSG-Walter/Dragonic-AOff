@@ -1,4 +1,4 @@
-/// @description  Depth / Control mouse
+﻿/// @description  Depth / Control mouse
 
 if (y < obj_pj.y) {
     depth = obj_pj.depth + obj_pj.y - y;
@@ -33,7 +33,7 @@ device_mouse_check_button(4, mb_left)
             if (!dobleClic) {
             
                 obj_hechizos.moviendoHechizo = false;
-                var idMsg = instance_create(x, y, obj_msg);
+                var idMsg = instance_create_depth(x, y, 0, obj_msg);
                 
                 dobleClic = true;
                 alarm[1] = 15;
@@ -69,7 +69,7 @@ device_mouse_check_button(4, mb_left)
                 obj_pj.envenenado = false;
                 obj_pj.veneno = 0;
                 
-                var idMsg = instance_create(x, y, obj_msg);
+                var idMsg = instance_create_depth(x, y, 0, obj_msg);
                 idMsg.desc = desc2;
                 
                 reproducirSonido(snd_resucitar, false, false);
@@ -97,7 +97,7 @@ device_mouse_check_button(4, mb_left)
                     yaEligio = true;
                     alarm[0] = -1;
                 
-                    var idMsg = instance_create(x, y, obj_msg);
+                    var idMsg = instance_create_depth(x, y, 0, obj_msg);
                     
                     if (obj_pj.roomRuna != -1 && obj_pj.roomRuna == room) {
                         idMsg.desc = desc5;

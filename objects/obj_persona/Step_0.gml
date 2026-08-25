@@ -1,7 +1,7 @@
-/// @description  Control general
+﻿/// @description  Control general
 
 detectarBugGrilla();
-
+var idIAAux = IAObj
 // Salud
 
 if (salud <= 0 && !muerto) {
@@ -14,17 +14,23 @@ if (salud <= 0 && !muerto) {
 
 enemigo = false;
 
-if (obj_pj.pk) {
-    enemigo = true;
-} else {
-    if (pk) {
+if (room == rm_arena) {
+    if (pk != obj_pj.pk) {
         enemigo = true;
+    }
+} else {
+    if (obj_pj.pk) {
+        enemigo = true;
+    } else {
+        if (pk) {
+            enemigo = true;
+        }
     }
 }
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y && (y <= global.render_y + get_render_height()))
 ) {
 
     // Tiempo dentro de la view
@@ -69,9 +75,10 @@ if (
                 rand = 0;
             }
             
-            var idIAAux = elegirIAObjetivoIA(false);
+            var esEnemigoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk != pk) : (idIAAux != -1 && (pk || idIAAux.pk));
+            var esAliadoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk == pk) : (idIAAux != -1 && (!pk && !idIAAux.pk));
             
-            if ((enemigo && !obj_pj.muerto) || (idIAAux != -1 && (pk || idIAAux.pk))) {
+            if ((enemigo && !obj_pj.muerto) || esEnemigoIAAux) {
                 if (obj_pj.invisible && idIAAux == -1 && !obj_mapas_mundo.mapas[room]) {
                     mensaje = "¡Muéstrate! Cobarde...";
                 } else {
@@ -113,7 +120,7 @@ if (
                         }   
                     }
                 } 
-            } else if ((!enemigo && !obj_pj.muerto) || (idIAAux != -1 && (!pk && !idIAAux.pk))) {
+            } else if ((!enemigo && !obj_pj.muerto) || esAliadoIAAux) {
                 if (obj_pj.invisible) {
                     if (idIAAux == -1) {
                         mensaje = "¿Hay alguien ahí?";
@@ -258,7 +265,7 @@ if (
                 }
             }
             
-            var idINFO = instance_create(x, y, obj_INFO);
+            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
             idINFO.texto = mensaje;
             idINFO.padre = id;
             idINFO.tiempo = 60 * 5;
@@ -289,7 +296,7 @@ if (
                     break;
             }
             
-            var idINFO = instance_create(x, y, obj_INFO);
+            var idINFO = instance_create_depth(x, y, 0, obj_INFO);
             idINFO.texto = mensaje;
             idINFO.padre = id;
             idINFO.tiempo = 60 * 5;
@@ -314,8 +321,6 @@ if (enemigo && !obj_pj.muerto && !obj_mapas_mundo.mapas[room]) {
         agitando = true;
     }
 } else {
-    
-    var idIAAux = elegirIAObjetivoIA(true);
 
     if (!obj_mapas_mundo.mapas[room] && idIAAux != -1 && !idIAAux.muerto) {
         with (idIAAux) {
@@ -357,22 +362,26 @@ if (condicionBValida) {
     
     if (place_meeting(x + 32, y, obj_persona)) {
         idPersonaCercana = instance_place(x + 32, y, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 3;
         }
     } else if (place_meeting(x - 32, y, obj_persona)) {
         idPersonaCercana = instance_place(x - 32, y, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 2;
         }
     } else if (place_meeting(x, y + 32, obj_persona)) {
         idPersonaCercana = instance_place(x, y + 32, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 0;
         }
     } else if (place_meeting(x, y - 32, obj_persona)) {
         idPersonaCercana = instance_place(x, y - 32, obj_persona);
-        if (!idPersonaCercana.muerto && (idPersonaCercana.pk || pk)) {
+        var esEnemigoCercano = (room == rm_arena) ? (idPersonaCercana.pk != pk) : (idPersonaCercana.pk || pk);
+        if (!idPersonaCercana.muerto && esEnemigoCercano) {
             direccion = 1;
         }
     }
@@ -382,8 +391,8 @@ if (condicionBValida) {
 // Tiempo lejos del PJ
 
 if (
-(x < __view_get( e__VW.XView, 0 ) || (x > __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y < __view_get( e__VW.YView, 0 ) || (y > __view_get( e__VW.YView, 0 ) + __view_get( e__VW.HView, 0 )))
+(x < global.render_x || (x > global.render_x + get_render_width())) &&
+(y < global.render_y || (y > global.render_y + get_render_height()))
 ) {
     tiempoLejosPJ++;
     if (!enemigo) {
@@ -958,8 +967,8 @@ if (pasos > 0) {
 // Depth
 
 if (
-(x >= __view_get( e__VW.XView, 0 ) && (x <= __view_get( e__VW.XView, 0 ) + __view_get( e__VW.WView, 0 ))) &&
-(y >= __view_get( e__VW.YView, 0 ) - __view_get( e__VW.WView, 0 ) / 2 && (y <= __view_get( e__VW.YView, 0 ) + __view_get( e__VW.WView, 0 ) / 2))
+(x >= global.render_x && (x <= global.render_x + get_render_width())) &&
+(y >= global.render_y - get_render_width() / 2 && (y <= global.render_y + get_render_width() / 2))
 ) {
 
     if (y < obj_pj.y) {

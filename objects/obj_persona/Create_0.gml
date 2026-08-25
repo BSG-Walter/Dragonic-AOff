@@ -1,12 +1,21 @@
-/// @description  Estado inicial
-event_inherited();
+﻿/// @description  Estado inicial
+oro = 0;
+dropeaItem = false;
+indItem = 0;
+cantItem = 0;
+roomInicial = -1;
+
 visible = false;
 
-gradoIA = 0.65; // Media
+pj_avance = (obj_pj.nivel/obj_pj.nivelMax); //indica que tan cerca esta el pj del nivel max. (de 0 a 1)
+
+gradoIA = 0.55; // Media
 
 if (obj_control_opciones.dificultad == 1) {
-    gradoIA = 0.75; // Alta
+    gradoIA = 0.65; // Alta
 }
+//aumentamos dificultad gradualmente
+gradoIA+= pj_avance*0.01
 
 hostil = true;
 image_speed = 0;
@@ -53,10 +62,10 @@ if (obj_pj.nivel >= 25) {
 
 // Gráfico arma y escudo 
 
-graficoArma = instance_create(x, y, obj_arma_persona);
+graficoArma = instance_create_depth(x, y, 0, obj_arma_persona);
 graficoArma.padre = id;
 
-graficoEscudo = instance_create(x, y, obj_escudo_persona);
+graficoEscudo = instance_create_depth(x, y, 0, obj_escudo_persona);
 graficoEscudo.padre = id;
 
 // Movimiento horizontal/vertical
@@ -156,7 +165,7 @@ switch (clase) {
         break;
 }
 
-saludMax = floor(saludMax);
+saludMax = floor(saludMax + saludMax * (pj_avance*0.08)); //hasta +8% de stats segun el nivel de nuestro pj
 salud = saludMax;
 
 // Maná
@@ -192,8 +201,8 @@ switch (clase) {
         }
         break;
 }
-
-manaMax = floor(manaMax * 0.75);
+manaMax= manaMax * 0.75
+manaMax = floor( manaMax + manaMax * (pj_avance*0.08)); //hasta +8% de stats segun el nivel de nuestro pj
 
 if (manaMax < 0) {
     manaMax = 0;
@@ -233,6 +242,10 @@ if (random(10) > 8.5) {
 
 nombre = elegirNombreIA();
 
+//forzamos si es pk o no segun el boton apretado en la arena
+if (room == rm_arena) pk = obj_agregar_bot.spawnear_pk;
+
+
 // Gráfico
 
 index[0, 0] = 0;
@@ -268,12 +281,12 @@ alarm[2] = intervaloAtaque;
 
 // Fuerza
 
-danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85);
-danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85);
+danoMeleeMin = obj_pj.danoMin * random_range(0.8, 0.85 + pj_avance * 0.15);
+danoMeleeMax = obj_pj.danoMax * random_range(0.8, 0.85 + pj_avance * 0.15);
 
 // Evasión
 
-evasion = random_range(25, 30);
+evasion = random_range(20, 25);
 
 switch (nroRaza) {
     case 0: // Humano
@@ -290,7 +303,7 @@ switch (nroRaza) {
         break;
 }
 
-evasion = round(evasion * 1.45);
+evasion = round(evasion * 1.25);
 
 // Experiencia otorgada al morir
 
@@ -393,7 +406,7 @@ with (obj_npc_basic) {
 
 // Navegando?
 
-if (obj_pj.nivel >= 25) {
+if (obj_pj.nivel >= 25 && !is_special_room()) {
     if (tile_layer_find(10000000, x, y) == -1 && tile_layer_find(1000000, x, y) == -1 && tile_layer_find(100000, x, y) == -1 && tile_layer_find(10000, x, y) == -1) {
         // Hay agua debajo de la IA
         enBarca = true;
@@ -450,7 +463,8 @@ datosIAAux[0] = -1;
 sigue = true;
 
 // Dibuja
-
+cantIAEnView = 0
+IAObj = elegirIAObjetivoIA(true);
 dibujarIA();
 
 /* */

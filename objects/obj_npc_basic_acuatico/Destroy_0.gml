@@ -1,4 +1,4 @@
-/// @description  Creo el oro (O drop)
+﻿/// @description  Creo el oro (O drop)
 /// @param O drop
 
 // Respawn
@@ -31,6 +31,6 @@ if (roomInicial == room && salud <= 0) {
     instance_position(xNuevo, yNuevo - 16, obj_npc_basic) == noone
     );
     
-    instance_create(xNuevo, yNuevo, object_index);
+    instance_create_depth(xNuevo, yNuevo, 0, object_index);
 
 }

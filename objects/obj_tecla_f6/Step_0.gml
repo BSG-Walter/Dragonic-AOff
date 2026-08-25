@@ -1,5 +1,5 @@
 /// @description  Control mouse
-
+event_inherited()
 var device = -1;
 
 image_index = obj_pj.meditando;
