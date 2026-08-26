@@ -138,12 +138,6 @@ function crearIADelMundo() {
 	            idIA.sprArma = obtenerSpriteArma(idIA.eqArma);
 	            idIA.sprEscudo = obtenerSpriteEscudo(idIA.eqEscudo);
             
-	            idIA.vecItems[0] = _datos.eqArma; 
-	            idIA.vecItems[1] = _datos.eqRopa; 
-	            idIA.vecItems[2] = _datos.eqCascoGorro; 
-	            idIA.vecItems[3] = _datos.eqEscudo; 
-	            idIA.vecItems[4] = _datos.eqFlechas; 
-            
 	            idIA.pk = _datos.pk; 
 	            idIA.rangoFaccion = _datos.rangoFaccion; 
 	            idIA.enBarca = _datos.enBarca;
@@ -173,8 +167,7 @@ function crearIADelMundo() {
 	            idIA.frameArma = 0;
 	            idIA.frameEscudo = 0;
     
-	            idIA.vecItems = itemsGlobalIA[iAux];
-	            idIA.cantItems = cantItemsGlobalIA[iAux];
+	            idIA.inventario = itemsGlobalIA[iAux];
             
 	            globalIA[_datos.lugarEnGlobalIA] = datosIAVacio();
             

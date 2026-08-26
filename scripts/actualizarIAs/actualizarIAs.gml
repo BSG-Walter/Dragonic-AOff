@@ -113,8 +113,7 @@ function actualizarIAs() {
 	            _datos.rangoFaccion = rangoFaccion;
             
 	            obj_personas_mundo.globalIA[i] = _datos;
-	            obj_personas_mundo.itemsGlobalIA[i] = vecItems;
-	            obj_personas_mundo.cantItemsGlobalIA[i] = cantItems;
+	            obj_personas_mundo.itemsGlobalIA[i] = inventario;
             
 	            instance_destroy();
                         

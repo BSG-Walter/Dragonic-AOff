@@ -331,64 +331,26 @@ eqFlechas = -1;
 eqRojas = -1;
 eqAzules = -1;
 
-vecItems[0] = -1;
-vecItems[1] = -1;
-vecItems[2] = -1;
-vecItems[3] = -1;
-vecItems[4] = -1;
-vecItems[5] = -1;
-vecItems[6] = -1;
-vecItems[7] = -1;
-vecItems[8] = -1;
-vecItems[9] = -1;
-vecItems[10] = -1;
-vecItems[11] = -1;
-vecItems[12] = -1;
-vecItems[13] = -1;
-vecItems[14] = -1;
-vecItems[15] = -1;
-vecItems[16] = -1;
-vecItems[17] = -1;
-vecItems[18] = -1;
-vecItems[19] = -1;
-
-cantItems[0] = 1;
-cantItems[1] = 1;
-cantItems[2] = 1;
-cantItems[3] = 1;
-cantItems[4] = floor(random_range(150, 550));
-cantItems[5] = floor(random_range(150, 550));
-cantItems[6] = floor(random_range(150, 550));
-cantItems[7] = 1;
-cantItems[8] = 1;
-cantItems[9] = 1;
-cantItems[10] = 1;
-cantItems[11] = 1;
-cantItems[12] = 1;
-cantItems[13] = 1;
-cantItems[14] = 1;
-cantItems[15] = 1;
-cantItems[16] = 1;
-cantItems[17] = 1;
-cantItems[18] = 1;
-cantItems[19] = 1;
+inventario = inventarioIAVacio();
 
 elegirEquipoIA(id);
 
-eqArma = vecItems[0];
-eqRopa = vecItems[1];
-eqCascoGorro = vecItems[2];
-eqEscudo = vecItems[3];
+eqArma = inventario[0].indice;
+eqRopa = inventario[1].indice;
+eqCascoGorro = inventario[2].indice;
+eqEscudo = inventario[3].indice;
 sprArma = obtenerSpriteArma(eqArma);
 sprEscudo = obtenerSpriteEscudo(eqEscudo);
-eqFlechas = vecItems[4];
-eqRojas = vecItems[5];
-eqAzules = vecItems[6];
+eqFlechas = inventario[4].indice;
+eqRojas = inventario[5].indice;
+eqAzules = inventario[6].indice;
 
-vecItems[7] = irandom_range(101, 115);
-vecItems[8] = irandom_range(116, 119);
-cantItems[7] = irandom_range(50, 100);
-cantItems[8] = irandom_range(50, 100);
+inventario[4].cant = floor(random_range(150, 550));
+inventario[5].cant = floor(random_range(150, 550));
+inventario[6].cant = floor(random_range(150, 550));
+
+inventario[7] = crearSlotIA(irandom_range(101, 115), irandom_range(50, 100));
+inventario[8] = crearSlotIA(irandom_range(116, 119), irandom_range(50, 100));
 
 // Alarm 3
 

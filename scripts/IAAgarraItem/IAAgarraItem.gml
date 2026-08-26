@@ -15,14 +15,14 @@ function IAAgarraItem(argument0) {
 
 	    for (var i = 0; i < 20; i++) {
     
-	        if (argument0.vecItems[i] == indice) {
+	        if (argument0.inventario[i].indice == indice) {
         
-	            if (argument0.cantItems[i] + cantidad <= 10000) {
+	            if (argument0.inventario[i].cant + cantidad <= 10000) {
             
 	                // Hay lugar en slot existente
                 
 	                existe = true;
-	                argument0.cantItems[i] += cantidad;
+	                argument0.inventario[i].cant += cantidad;
 	                instance_destroy();
                 
 	                break;
@@ -43,33 +43,14 @@ function IAAgarraItem(argument0) {
         
 	        for (var i = 0; i < 20; i++) {
         
-	            if (argument0.vecItems[i] == -1) {
+	            if (argument0.inventario[i].indice == -1) {
             
 	                // Hay lugar en slot nuevo
-                
-	                /*
-                
-	                En inventario:
-                
-	                indiceInv
-	                tipoInv
-	                cantInv
-	                equipadoInv
-	                generoInv
-	                razaInv
-                
-	                datosItem:
-                
-	                tipoInv
-	                generoInv
-	                razaInv
-                
-	                */
             
 	                agrego = true;                
                         
-	                argument0.vecItems[i] = indice;
-	                argument0.cantItems[i] = cantidad;
+	                argument0.inventario[i].indice = indice;
+	                argument0.inventario[i].cant = cantidad;
             
 	                instance_destroy();
                 

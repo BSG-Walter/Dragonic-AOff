@@ -15,12 +15,10 @@ for (var i = 1; i < totalMultiIA; i++) {
     globalIA[i] = datosIAVacio();
 }
 
-itemsGlobalIA[0] = -1;
-cantItemsGlobalIA[0] = -1;
+itemsGlobalIA[0] = inventarioIAVacio();
 
 for (var i = 1; i < totalMultiIA; i++) {
-    itemsGlobalIA[i] = -1;
-    cantItemsGlobalIA[i] = -1;
+    itemsGlobalIA[i] = inventarioIAVacio();
 }
 
 direccionPJ = 0;

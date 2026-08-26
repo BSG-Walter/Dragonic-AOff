@@ -384,15 +384,23 @@ function elegirEquipoIA(argument0) {
 
 	// Asigno el equipo
 
-	vecItems[0] = eqArmaIA;
-	vecItems[1] = eqRopaIA;
-	vecItems[2] = eqCascoGorroIA;
-	vecItems[3] = eqEscudoIA;
-	vecItems[4] = eqFlechasIA;
-	vecItems[5] = 141;
-	vecItems[6] = 142;
+	inventario[0].indice = eqArmaIA;
+	inventario[1].indice = eqRopaIA;
+	inventario[2].indice = eqCascoGorroIA;
+	inventario[3].indice = eqEscudoIA;
+	inventario[4].indice = eqFlechasIA;
+	inventario[5].indice = 141;
+	inventario[6].indice = 142;
 
-	return vecItems;
+	inventario[0].cant = 1;
+	inventario[1].cant = 1;
+	inventario[2].cant = 1;
+	inventario[3].cant = 1;
+	inventario[4].cant = 1;
+	inventario[5].cant = 1;
+	inventario[6].cant = 1;
+
+	return inventario;
 
 
 

@@ -175,6 +175,23 @@ function crearSlotNpc(_indice, _cant, _nombre) {
     };
 }
 
+/// @description crearSlotIA(indice, cant)
+function crearSlotIA(_indice, _cant) {
+    return {
+        indice: _indice,
+        cant: _cant
+    };
+}
+
+/// @description inventarioIAVacio() — 20 slots vacíos
+function inventarioIAVacio() {
+    var _inv = array_create(20);
+    for (var i = 0; i < 20; i++) {
+        _inv[i] = crearSlotIA(-1, 0);
+    }
+    return _inv;
+}
+
 /// @description crearHechizo(indice, nombre, tipo, mana, energia, skill, efectoMin, efectoMax, palabrasMagicas)
 function crearHechizo(_indice, _nombre, _tipo, _mana, _energia, _skill, _efectoMin, _efectoMax, _palabrasMagicas) {
     return {
