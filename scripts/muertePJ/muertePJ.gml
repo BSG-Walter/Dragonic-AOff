@@ -30,12 +30,14 @@ function muertePJ() {
 
 	obj_pj.armaActual = -1;
 	obj_pj.armaEnInv = -1;
+	obj_pj.sprArma = -1;
 	obj_pj.flechaActual = -1;
 	obj_pj.flechaEnInv = -1;
 	obj_pj.ropaActual = -1;
 	obj_pj.ropaEnInv = -1;
 	obj_pj.escudoActual = -1;
 	obj_pj.escudoEnInv = -1;
+	obj_pj.sprEscudo = -1;
 	obj_pj.cascoActual = -1;
 	obj_pj.cascoEnInv = -1;
 	obj_pj.laudActual = -1;

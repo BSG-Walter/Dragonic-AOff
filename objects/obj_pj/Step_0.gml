@@ -481,10 +481,11 @@ _mouseDown
                                                 }
                                             
                                                 if (valido) {
-                                                
+
                                                     var defendidoConEscudo = false;
-                                                
-                                                    obj_arma.alarm[0] = 1;
+
+                                                    frameArma = 0;
+                                                    alarm[8] = 1;
                                                     puedeAtacar = false;
                                                     alarm[1] = 35;
                                                     

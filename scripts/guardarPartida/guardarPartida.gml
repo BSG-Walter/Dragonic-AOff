@@ -86,15 +86,7 @@ function guardarPartida(argument0) {
 	    write("obj_mapas_mundo", "mapas[9]", obj_mapas_mundo.mapas[9]);
 	    write("obj_mapas_mundo", "mapas[10]", obj_mapas_mundo.mapas[10]);
 	    write("obj_mapas_mundo", "mapas[11]", obj_mapas_mundo.mapas[11]);
-    
-	    // obj_arma y obj_escudo
-    
-	    write("obj_arma", "frame", obj_arma.frame);
-	    write("obj_arma", "alarm[0]", obj_arma.alarm[0]);
-    
-	    write("obj_escudo", "frame", obj_escudo.frame);
-	    write("obj_escudo", "alarm[0]", obj_escudo.alarm[0]);   
-    
+
 	    // obj_flecha_abajo, obj_flecha_arriba, obj_flecha_der, obj_flecha_izq
     
 	    write("obj_flecha_abajo", "apretada", obj_flecha_abajo.apretada);

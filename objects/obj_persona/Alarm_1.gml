@@ -10,26 +10,27 @@ if (moviendose && !inmovilizado && !muerto) {
         frame = 0;
     }
     
-    graficoArma.image_index = graficoArma.index[direccion, graficoArma.frame];
-    
-    if (graficoArma.frame < 3) {
-        graficoArma.frame++;
-    } else {
-        graficoArma.frame = 0;
+    // No pisar animación de ataque (alarm[3])
+    if (alarm[3] == -1) {
+        if (frameArma < 3) {
+            frameArma++;
+        } else {
+            frameArma = 0;
+        }
     }
-    
-    graficoEscudo.image_index = graficoEscudo.index[direccion, graficoEscudo.frame];
-    
-    if (graficoEscudo.frame < 3) {
-        graficoEscudo.frame++;
+
+    if (frameEscudo < 3) {
+        frameEscudo++;
     } else {
-        graficoEscudo.frame = 0;
+        frameEscudo = 0;
     }
-    
+
 } else {
     image_index = index[direccion, 0];
-    graficoArma.image_index = graficoArma.index[direccion, 0];
-    graficoEscudo.image_index = graficoEscudo.index[direccion, 0];
+    if (alarm[3] == -1) {
+        frameArma = 0;
+    }
+    frameEscudo = 0;
 }
 
 alarm[1] = 6.25;

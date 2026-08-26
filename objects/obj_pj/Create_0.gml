@@ -447,9 +447,24 @@ index[3, 4] = 19;
 
 frame = 0;
 
+// Gráfico arma y escudo
+indexArma[0, 0] = 0; indexArma[0, 1] = 1; indexArma[0, 2] = 2; indexArma[0, 3] = 3; indexArma[0, 4] = 1;
+indexArma[1, 0] = 4; indexArma[1, 1] = 5; indexArma[1, 2] = 6; indexArma[1, 3] = 7; indexArma[1, 4] = 5;
+indexArma[2, 0] = 8; indexArma[2, 1] = 9; indexArma[2, 2] = 10; indexArma[2, 3] = 11; indexArma[2, 4] = 9;
+indexArma[3, 0] = 12; indexArma[3, 1] = 13; indexArma[3, 2] = 14; indexArma[3, 3] = 15; indexArma[3, 4] = 13;
+
+indexEscudo[0, 0] = 0; indexEscudo[0, 1] = 1; indexEscudo[0, 2] = 2; indexEscudo[0, 3] = 3; indexEscudo[0, 4] = 1;
+indexEscudo[1, 0] = 4; indexEscudo[1, 1] = 5; indexEscudo[1, 2] = 6; indexEscudo[1, 3] = 7; indexEscudo[1, 4] = 5;
+indexEscudo[2, 0] = 8; indexEscudo[2, 1] = 9; indexEscudo[2, 2] = 10; indexEscudo[2, 3] = 11; indexEscudo[2, 4] = 9;
+indexEscudo[3, 0] = 12; indexEscudo[3, 1] = 13; indexEscudo[3, 2] = 14; indexEscudo[3, 3] = 15; indexEscudo[3, 4] = 13;
+
+frameArma = 0;
+frameEscudo = 0;
+
 // Equipo
 
 armaActual = -1;
+sprArma = -1;
 armaEnInv = -1;
 
 flechaActual = -1;
@@ -463,6 +478,7 @@ atacaConArco = false;
 atacaConHechizo = false;
 
 escudoActual = -1;
+sprEscudo = -1;
 escudoEnInv = -1;
 
 cascoActual = -1;

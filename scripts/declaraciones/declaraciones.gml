@@ -15,6 +15,59 @@ gml_pragma("global", "init_engine_settings();");
 function init_engine_settings() {
     layer_force_draw_depth(true, 0);
     draw_set_colour(c_black);
+
+    // Mapeo global de sprites de armas y escudos
+    global.sprArmas = array_create(256, -1);
+    global.sprArmas[0] = spr_arma_1;
+    global.sprArmas[1] = spr_arma_1;
+    global.sprArmas[2] = spr_arma_2;
+    global.sprArmas[3] = spr_arma_3;
+    global.sprArmas[4] = spr_arma_3;
+    global.sprArmas[5] = spr_arma_4;
+    global.sprArmas[6] = spr_arma_5;
+    global.sprArmas[7] = spr_arma_6;
+    global.sprArmas[8] = spr_arma_6;
+    global.sprArmas[9] = spr_arma_7;
+    global.sprArmas[10] = spr_arma_8;
+    global.sprArmas[11] = spr_arma_9;
+    global.sprArmas[12] = spr_arma_10;
+    global.sprArmas[13] = spr_arma_11;
+    global.sprArmas[14] = spr_arma_12;
+    global.sprArmas[15] = spr_arma_13;
+    global.sprArmas[16] = spr_arma_14;
+    global.sprArmas[17] = spr_arma_15;
+    global.sprArmas[18] = spr_arma_16;
+    global.sprArmas[19] = spr_arma_17;
+    global.sprArmas[20] = spr_arma_18;
+    global.sprArmas[21] = spr_arma_19;
+    global.sprArmas[22] = spr_arma_20;
+    global.sprArmas[23] = spr_arma_21;
+    global.sprArmas[24] = spr_arma_22;
+    global.sprArmas[25] = spr_arma_23;
+    global.sprArmas[26] = spr_arma_24;
+    global.sprArmas[27] = spr_arma_25;
+    global.sprArmas[227] = spr_arma_26;
+
+    global.sprEscudos = array_create(128, -1);
+    global.sprEscudos[98] = spr_escudo_1;
+    global.sprEscudos[99] = spr_escudo_2;
+    global.sprEscudos[100] = spr_escudo_3;
+}
+
+/// @description obtenerSpriteArma(indice)
+function obtenerSpriteArma(indice) {
+    if (indice >= 0 && indice < array_length(global.sprArmas)) {
+        return global.sprArmas[indice];
+    }
+    return -1;
+}
+
+/// @description obtenerSpriteEscudo(indice)
+function obtenerSpriteEscudo(indice) {
+    if (indice >= 0 && indice < array_length(global.sprEscudos)) {
+        return global.sprEscudos[indice];
+    }
+    return -1;
 }
 
 /// @description textoSkill(indice) - nombre del skill segun su indice

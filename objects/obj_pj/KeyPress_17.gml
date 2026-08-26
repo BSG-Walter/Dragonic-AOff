@@ -171,7 +171,8 @@ if (obj_tecla_ctrl.teclaApretada) {
                             
                             }
                             
-                            obj_arma.alarm[0] = 1;
+                            frameArma = 0;
+                            alarm[8] = 1;
                             alarm[1] = intervaloGolpe;
                             
                             if (energia >= 12) {
@@ -515,7 +516,8 @@ if (obj_tecla_ctrl.teclaApretada) {
                             
                             }
                             
-                            obj_arma.alarm[0] = 1;
+                            frameArma = 0;
+                            alarm[8] = 1;
                             alarm[1] = intervaloGolpe;
                             
                             if (energia >= 12) {

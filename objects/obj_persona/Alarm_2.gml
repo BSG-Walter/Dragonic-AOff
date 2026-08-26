@@ -96,7 +96,8 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
     if (ataca) {
     
-        graficoArma.alarm[0] = 1;
+        frameArma = 0;
+        alarm[3] = 1;
         
         var chancesTacticas = 0;
                                 
@@ -254,7 +255,8 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
     if (ataca) {
     
-        graficoArma.alarm[0] = 1;
+        frameArma = 0;
+        alarm[3] = 1;
     
         var chancesTacticas = 0;
                                 

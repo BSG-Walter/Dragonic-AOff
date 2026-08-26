@@ -169,82 +169,83 @@ with(obj_pj){
 	                                }
 	                            }
                             
-	                        }
+                        }
+
+                        frameArma = 0;
+                        alarm[8] = 1;
+                        alarm[1] = intervaloGolpe;
                             
-	                        obj_arma.alarm[0] = 1;
-	                        alarm[1] = intervaloGolpe;
+                        if (energia >= 12) {
+                            energia -= 12;
+                        } else {
+                            energia = 0;
+                        }
                             
-	                        if (energia >= 12) {
-	                            energia -= 12;
-	                        } else {
-	                            energia = 0;
-	                        }
+                        if (acerto) {
                             
-	                        if (acerto) {
-                            
-	                            with (idNPC) {
+                            with (idNPC) {
                                 
-	                                if (idNPC.object_index == obj_persona) {
-	                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), true);
-	                                } else {
-	                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), false);
-	                                }
+                                if (idNPC.object_index == obj_persona) {
+                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), true);
+                                } else {
+                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), false);
+                                }
                                     
-	                                dano = floor(dano * obj_pj.modDanoLvl);
+                                dano = floor(dano * obj_pj.modDanoLvl);
                                     
-	                                if (dano < 1) {
-	                                    dano = 1;
-	                                }
+                                if (dano < 1) {
+                                    dano = 1;
+                                }
                                     
-	                                idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
-	                                
+                                idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
+                                
 									
 									if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7 && (obj_pj.clase == 1 || (obj_pj.clase == 2 && obj_pj.skills[4] >= 10))) {
 										dano = round(dano * 1.25);
 									}
                                     
-	                                if (obj_pj.skills[4] >= 10 || obj_pj.clase == 1) {
+                                if (obj_pj.skills[4] >= 10 || obj_pj.clase == 1) {
                                     
-	                                    if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7) {
+                                    if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7) {
                                         
-	                                        var chancesApu = 0;
+                                        var chancesApu = 0;
                             
-	                                        if (obj_pj.skills[4] >= 0 && obj_pj.skills[4] <= 10) {
-	                                            chancesApu = 6.75;
-	                                        } else if (obj_pj.skills[4] >= 11 && obj_pj.skills[4] <= 20) {
-	                                            chancesApu = 6.55;
-	                                        }  else if (obj_pj.skills[4] >= 21 && obj_pj.skills[4] <= 30) {
-	                                            chancesApu = 6.5;
-	                                        }  else if (obj_pj.skills[4] >= 31 && obj_pj.skills[4] <= 40) {
-	                                            chancesApu = 6.4;
-	                                        }  else if (obj_pj.skills[4] >= 41 && obj_pj.skills[4] <= 50) {
-	                                            chancesApu = 6.25;
-	                                        }  else if (obj_pj.skills[4] >= 51 && obj_pj.skills[4] <= 60) {
-	                                            chancesApu = 6.15;
-	                                        }  else if (obj_pj.skills[4] >= 61 && obj_pj.skills[4] <= 70) {
-	                                            chancesApu = 6;
-	                                        }  else if (obj_pj.skills[4] >= 71 && obj_pj.skills[4] <= 80) {
-	                                            chancesApu = 5.95;
-	                                        }  else if (obj_pj.skills[4] >= 81 && obj_pj.skills[4] <= 90) {
-	                                            chancesApu = 5.8;
-	                                        }  else if (obj_pj.skills[4] >= 91 && obj_pj.skills[4] <= 100) {
-	                                            chancesApu = 5.75;
-	                                        } 
+                                        if (obj_pj.skills[4] >= 0 && obj_pj.skills[4] <= 10) {
+                                            chancesApu = 6.75;
+                                        } else if (obj_pj.skills[4] >= 11 && obj_pj.skills[4] <= 20) {
+                                            chancesApu = 6.55;
+                                        }  else if (obj_pj.skills[4] >= 21 && obj_pj.skills[4] <= 30) {
+                                            chancesApu = 6.5;
+                                        }  else if (obj_pj.skills[4] >= 31 && obj_pj.skills[4] <= 40) {
+                                            chancesApu = 6.4;
+                                        }  else if (obj_pj.skills[4] >= 41 && obj_pj.skills[4] <= 50) {
+                                            chancesApu = 6.25;
+                                        }  else if (obj_pj.skills[4] >= 51 && obj_pj.skills[4] <= 60) {
+                                            chancesApu = 6.15;
+                                        }  else if (obj_pj.skills[4] >= 61 && obj_pj.skills[4] <= 70) {
+                                            chancesApu = 6;
+                                        }  else if (obj_pj.skills[4] >= 71 && obj_pj.skills[4] <= 80) {
+                                            chancesApu = 5.95;
+                                        }  else if (obj_pj.skills[4] >= 81 && obj_pj.skills[4] <= 90) {
+                                            chancesApu = 5.8;
+                                        }  else if (obj_pj.skills[4] >= 91 && obj_pj.skills[4] <= 100) {
+                                            chancesApu = 5.75;
+                                        } 
                                             
-	                                        if (obj_pj.clase == 1) {
-	                                            chancesApu -= 1.5;
-	                                        } else if (obj_pj.clase == 2) {
-	                                            chancesApu -= 0.5;
-	                                        }
+                                        if (obj_pj.clase == 1) {
+                                            chancesApu -= 1.5;
+                                        } else if (obj_pj.clase == 2) {
+                                            chancesApu -= 0.5;
+                                        }
                                             
-	                                        if (random(7.5) > chancesApu) {
-	                                            dano = round(dano * 3.4);
-	                                            idDano.color = make_color_rgb(230, 211, 128);
-	                                        }
+                                        if (random(7.5) > chancesApu) {
+                                            dano = round(dano * 3.4);
+                                            idDano.color = make_color_rgb(230, 211, 128);
+                                        }
                                         
-	                                    }
+                                    }
                                         
-	                                }
+                                }
                                     
 	                                if (obj_pj.armaActual >= 0 && obj_pj.armaActual <= 7) {
 	                                    if (obj_pj.clase == 1 || obj_pj.skills[4] >= 10) {
@@ -513,24 +514,25 @@ with(obj_pj){
 	                                }
 	                            }
                             
-	                        }
+                        }
                             
-	                        obj_arma.alarm[0] = 1;
-	                        alarm[1] = intervaloGolpe;
+                        frameArma = 0;
+                        alarm[8] = 1;
+                        alarm[1] = intervaloGolpe;
                             
-	                        if (energia >= 12) {
-	                            energia -= 12;
-	                        } else {
-	                            energia = 0;
-	                        }
+                        if (energia >= 12) {
+                            energia -= 12;
+                        } else {
+                            energia = 0;
+                        }
                             
-	                        if (acerto) {
+                        if (acerto) {
                             
-	                            with (idNPC) {
+                            with (idNPC) {
                                 
-	                                if (idNPC.object_index == obj_persona) {
-	                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), true);
-	                                } else {
+                                if (idNPC.object_index == obj_persona) {
+                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), true);
+                                } else {
 	                                    var dano = calcularDanoFisicoPJ(random_range(obj_pj.danoMin, obj_pj.danoMax), false);
 	                                }
 	                                dano = floor(dano * obj_pj.modDanoLvl);

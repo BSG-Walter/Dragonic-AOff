@@ -156,6 +156,7 @@ obj_pj.ropaEnInv = 0;
 equipadoInv[0] = true;
 
 obj_pj.armaActual = indiceInv[1];
+obj_pj.sprArma = obtenerSpriteArma(obj_pj.armaActual);
 obj_pj.armaEnInv = 1;
 equipadoInv[1] = true;
 

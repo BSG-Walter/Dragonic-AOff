@@ -261,7 +261,7 @@ function dibujarIA() {
 	            }
         
 	            if (sprCascoGorro != -1) {
-        
+
 	                if (image_index >= 0 && image_index <= 4) {
 	                    draw_sprite(sprCascoGorro, 0, x, y - 28);
 	                } else if (image_index >= 5 && image_index <= 9) {
@@ -271,9 +271,19 @@ function dibujarIA() {
 	                } else if (image_index >= 15 && image_index <= 19) {
 	                    draw_sprite(sprCascoGorro, 3, x, y - 28);
 	                }
-            
+
 	            }
-            
+
+	        }
+
+	        // Arma y Escudo
+	        if (sprArma != -1) {
+	            var armaY = (nroRaza < 3) ? y : (y + 4);
+	            draw_sprite(sprArma, (direccion * 4) + frameArma, x, armaY);
+	        }
+
+	        if (sprEscudo != -1) {
+	            draw_sprite(sprEscudo, (direccion * 4) + frameEscudo, x, y);
 	        }
 	    } else {
 	        sprite_index = spr_barca;

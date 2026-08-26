@@ -509,9 +509,20 @@ if (!navega) {
                 }
                 
             }
-        
+
         }
-        
+
+        // Arma y Escudo
+
+        if (sprArma != -1) {
+            var armaY = (nroRaza < 3) ? y : (y + 4);
+            draw_sprite(sprArma, indexArma[direccion, frameArma], x, armaY);
+        }
+
+        if (sprEscudo != -1) {
+            draw_sprite(sprEscudo, indexEscudo[direccion, frameEscudo], x, y);
+        }
+
     } else {
         
         sprite_index = spr_muerto;

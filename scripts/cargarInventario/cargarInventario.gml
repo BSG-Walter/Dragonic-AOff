@@ -151,6 +151,7 @@ function cargarInventario() {
 
 	obj_pj.armaActual = read("obj_pj", "armaActual", -1);
 	obj_pj.armaEnInv = read("obj_pj", "armaEnInv", -1);
+	obj_pj.sprArma = obtenerSpriteArma(obj_pj.armaActual);
 
 	obj_pj.flechaActual = read("obj_pj", "flechaActual", -1);
 	obj_pj.flechaEnInv = read("obj_pj", "flechaEnInv", -1);

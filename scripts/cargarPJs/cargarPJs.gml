@@ -59,109 +59,11 @@ function cargarPJs(argument0) {
 	        }
     
 	        if (escudoActual != -1) {
-	            switch (escudoActual) {
-	                case 98:
-	                    imgEscudo = spr_escudo_1;
-	                    break;
-	                case 99:
-	                    imgEscudo = spr_escudo_2;
-	                    break;
-	                case 100:
-	                    imgEscudo = spr_escudo_3;
-	                    break;
-	            }
+	            imgEscudo = obtenerSpriteEscudo(escudoActual);
 	        }
-    
+
 	        if (armaActual != -1) {
-	            switch (armaActual) {
-	                case 0:
-	                    imgArma = spr_arma_1;
-	                    break;
-	                case 1:
-	                    imgArma = spr_arma_1;
-	                    break;
-	                case 2:
-	                    imgArma = spr_arma_2;
-	                    break;
-	                case 3:
-	                    imgArma = spr_arma_3;
-	                    break;
-	                case 4:
-	                    imgArma = spr_arma_3;
-	                    break;
-	                case 5:
-	                    imgArma = spr_arma_4;
-	                    break;
-	                case 6:
-	                    imgArma = spr_arma_5;
-	                    break;
-	                case 7:
-	                    imgArma = spr_arma_6;
-	                    break;
-	                case 8:
-	                    imgArma = spr_arma_6;
-	                    break;
-	                case 9:
-	                    imgArma = spr_arma_7;
-	                    break;
-	                case 10:
-	                    imgArma = spr_arma_8;
-	                    break;
-	                case 11:
-	                    imgArma = spr_arma_9;
-	                    break;
-	                case 12:
-	                    imgArma = spr_arma_10;
-	                    break;
-	                case 13:
-	                    imgArma = spr_arma_11;
-	                    break;
-	                case 14:
-	                    imgArma = spr_arma_12;
-	                    break;
-	                case 15:
-	                    imgArma = spr_arma_13;
-	                    break;
-	                case 16:
-	                    imgArma = spr_arma_14;
-	                    break;
-	                case 17:
-	                    imgArma = spr_arma_15;
-	                    break;
-	                case 18:
-	                    imgArma = spr_arma_16;
-	                    break;
-	                case 19:
-	                    imgArma = spr_arma_17;
-	                    break;
-	                case 20:
-	                    imgArma = spr_arma_18;
-	                    break;
-	                case 21:
-	                    imgArma = spr_arma_19;
-	                    break;
-	                case 22:
-	                    imgArma = spr_arma_20;
-	                    break;
-	                case 23:
-	                    imgArma = spr_arma_21;
-	                    break;
-	                case 24:
-	                    imgArma = spr_arma_22;
-	                    break;
-	                case 25:
-	                    imgArma = spr_arma_23;
-	                    break;
-	                case 26:
-	                    imgArma = spr_arma_24;
-	                    break;
-	                case 27:
-	                    imgArma = spr_arma_25;
-	                    break;
-	                case 227:
-	                    imgArma = spr_arma_26;
-	                    break;
-	            }
+	            imgArma = obtenerSpriteArma(armaActual);
 	        }
     
 	        if (!desnudo) {

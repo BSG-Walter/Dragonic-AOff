@@ -60,13 +60,10 @@ if (obj_pj.nivel >= 25) {
     navega = true;
 }
 
-// Gráfico arma y escudo 
+// Gráfico arma y escudo
 
-graficoArma = instance_create_depth(x, y, 0, obj_arma_persona);
-graficoArma.padre = id;
-
-graficoEscudo = instance_create_depth(x, y, 0, obj_escudo_persona);
-graficoEscudo.padre = id;
+frameArma = 0;
+frameEscudo = 0;
 
 // Movimiento horizontal/vertical
 
@@ -383,6 +380,8 @@ eqArma = vecItems[0];
 eqRopa = vecItems[1];
 eqCascoGorro = vecItems[2];
 eqEscudo = vecItems[3];
+sprArma = obtenerSpriteArma(eqArma);
+sprEscudo = obtenerSpriteEscudo(eqEscudo);
 eqFlechas = vecItems[4];
 eqRojas = vecItems[5];
 eqAzules = vecItems[6];

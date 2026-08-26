@@ -17,8 +17,6 @@ function crearObjetosBasicos(argument0) {
 	    instance_create_depth(0, 0, 0, obj_seguro);
 	    instance_create_depth(0, 0, 0, obj_manual);
 	    instance_create_depth(450, 8, 0, obj_tecla_A);
-	    instance_create_depth(0, 0, 0, obj_escudo);
-	    instance_create_depth(0, 0, 0, obj_arma);
 	    instance_create_depth(474, 40, 0, obj_tecla_U);
 	    instance_create_depth(546, 40, 0, obj_tecla_f6);
 	    instance_create_depth(0, 0, 0, obj_hechizos);
@@ -173,9 +171,7 @@ function crearObjetosBasicos(argument0) {
 	    // obj_control_inmo_pj
 	    // obj_control_animacion_agua
 	    // obj_mapas_mundo
-	    // obj_arma y obj_escudo 
-	    // obj_arma_persona y obj_escudo_persona 
-	    // obj_gui 
+	    // obj_gui
 	    // obj_flecha_abajo, obj_flecha_arriba, obj_flecha_der, obj_flecha_izq
 	    // obj_tecla_ctrl, obj_tecla_T, obj_tecla_f6
 	    // obj_seguro
@@ -267,6 +263,7 @@ function crearObjetosBasicos(argument0) {
     
 	    idPJ.escudoActual = read("obj_pj", "escudoActual", -1);
 	    idPJ.escudoEnInv = read("obj_pj", "escudoEnInv", -1);
+	    idPJ.sprEscudo = obtenerSpriteEscudo(idPJ.escudoActual);
     
 	    idPJ.cascoActual = read("obj_pj", "cascoActual", -1);
 	    idPJ.cascoEnInv = read("obj_pj", "cascoEnInv", -1);
@@ -378,10 +375,6 @@ function crearObjetosBasicos(argument0) {
     
 	    instance_create_depth(0, 0, 0, obj_manual);
 	    instance_create_depth(450, 08, 0, obj_tecla_A);
-		
-		instance_create_depth(0, 0, 0, obj_escudo);
-		instance_create_depth(0, 0, 0, obj_arma);
-    
 	    instance_create_depth(474, 40, 0, obj_tecla_U);
     
 	    var idF6 = instance_create_depth(546, 40, 0, obj_tecla_f6);

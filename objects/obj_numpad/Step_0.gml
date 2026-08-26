@@ -120,6 +120,7 @@ device_mouse_check_button(4, mb_left)
                                         } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "arma" && obj_inventario.posSeleccionado == obj_pj.armaEnInv) {
                                             obj_pj.armaActual = -1;
                                             obj_pj.armaEnInv = -1;
+                                            obj_pj.sprArma = -1;
                                             reproducirSonido(snd_equiparODesequiparArma, false, false);
                                         } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "flecha" && obj_inventario.posSeleccionado == obj_pj.flechaEnInv) {
                                             obj_pj.flechaActual = -1;
@@ -130,6 +131,7 @@ device_mouse_check_button(4, mb_left)
                                         } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "escudo" && obj_inventario.posSeleccionado == obj_pj.escudoEnInv) {
                                             obj_pj.escudoActual = -1;
                                             obj_pj.escudoEnInv = -1;
+                                            obj_pj.sprEscudo = -1;
                                         } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "laud" && obj_inventario.posSeleccionado == obj_pj.laudEnInv) {
                                             obj_pj.laudActual = -1;
                                             obj_pj.laudEnInv = -1;

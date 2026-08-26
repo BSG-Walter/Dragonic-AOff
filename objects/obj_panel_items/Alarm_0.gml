@@ -54,6 +54,7 @@ if (clicMantenido) {
                                 } else if (obj_inventario.tipoInv[indiceItem] == "arma" && indiceItem == obj_pj.armaEnInv) {
                                     obj_pj.armaActual = -1;
                                     obj_pj.armaEnInv = -1;
+                                    obj_pj.sprArma = -1;
                                 } else if (obj_inventario.tipoInv[indiceItem] == "flecha" && indiceItem == obj_pj.flechaEnInv) {
                                     obj_pj.flechaActual = -1;
                                     obj_pj.flechaEnInv = -1;
@@ -63,6 +64,7 @@ if (clicMantenido) {
                                 } else if (obj_inventario.tipoInv[indiceItem] == "escudo" && indiceItem == obj_pj.escudoEnInv) {
                                     obj_pj.escudoActual = -1;
                                     obj_pj.escudoEnInv = -1;
+                                    obj_pj.sprEscudo = -1;
                                 } else if (obj_inventario.tipoInv[indiceItem] == "laud" && indiceItem == obj_pj.laudEnInv) {
                                     obj_pj.laudActual = -1;
                                     obj_pj.laudEnInv = -1;

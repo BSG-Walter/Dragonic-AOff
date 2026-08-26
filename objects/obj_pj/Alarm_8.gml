@@ -1,4 +1,10 @@
-/// @description  Setea la alarm 7
+/// @description  Animación ataque con arma
 
-alarm[7] = 300;
+puedeAtacar = false;
 
+if (frameArma <= 2) {
+    frameArma++;
+    alarm[8] = 2.5;
+} else {
+    frameArma = 0;
+}

@@ -72,18 +72,19 @@ function IAAtacaConArco(argument0) {
         
 	        }
         
-	        // Evasion
+        // Evasion
         
-	        if (ataca) {
+        if (ataca) {
         
-	            graficoArma.alarm[0] = 1;
+            frameArma = 0;
+            alarm[3] = 1;
             
-	            var chancesTacticas = 0;
+            var chancesTacticas = 0;
                                     
-	            if (obj_pj.skills[1] >= 0 && obj_pj.skills[1] <= 10) {
-	                chancesTacticas = 8.25 + 0.075 * 10;
-	            } else if (obj_pj.skills[1] >= 11 && obj_pj.skills[1] <= 20) {
-	                chancesTacticas = 8.25 + 0.075 * 9;
+            if (obj_pj.skills[1] >= 0 && obj_pj.skills[1] <= 10) {
+                chancesTacticas = 8.25 + 0.075 * 10;
+            } else if (obj_pj.skills[1] >= 11 && obj_pj.skills[1] <= 20) {
+                chancesTacticas = 8.25 + 0.075 * 9;
 	            }  else if (obj_pj.skills[1] >= 21 && obj_pj.skills[1] <= 30) {
 	                chancesTacticas = 8.25 + 0.075 * 8;
 	            }  else if (obj_pj.skills[1] >= 31 && obj_pj.skills[1] <= 40) {
@@ -201,16 +202,17 @@ function IAAtacaConArco(argument0) {
         
 	        }
         
-	        // Evasion
+        // Evasion
         
-	        if (ataca) {
+        if (ataca) {
         
-	            graficoArma.alarm[0] = 1;
+            frameArma = 0;
+            alarm[3] = 1;
             
-	            var chancesTacticas = 0;
+            var chancesTacticas = 0;
                                     
-	            if (obj_pj.nivel >= 1 && obj_pj.nivel <= 4) {
-	                chancesTacticas = 8.25 + 0.075 * 10;
+            if (obj_pj.nivel >= 1 && obj_pj.nivel <= 4) {
+                chancesTacticas = 8.25 + 0.075 * 10;
 	            } else if (obj_pj.nivel >= 5 && obj_pj.nivel <= 9) {
 	                chancesTacticas = 8.25 + 0.075 * 9;
 	            }  else if (obj_pj.nivel >= 10 && obj_pj.nivel <= 14) {

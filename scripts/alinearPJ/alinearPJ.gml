@@ -34,11 +34,11 @@ function alinearPJ() {
 	frame = 0;
 
 	if (armaActual != -1) {
-	    obj_arma.frame = 0;   
+	    frameArma = 0;
 	}
-    
+
 	if (escudoActual != -1) {
-	    obj_escudo.frame = 0;    
+	    frameEscudo = 0;
 	}
 
 
