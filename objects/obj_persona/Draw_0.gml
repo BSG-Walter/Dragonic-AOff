@@ -1,4 +1,8 @@
 /// @description  Dibujo
+// Culling: no dibujar si fuera de view
+if (x < global.render_x - BOT_DRAW_CULL_MARGIN || x > global.render_x + get_render_width() + BOT_DRAW_CULL_MARGIN || y < global.render_y - BOT_DRAW_CULL_MARGIN || y > global.render_y + get_render_height() + BOT_DRAW_CULL_MARGIN) {
+    exit;
+}
 
 if (!muerto) {
     image_alpha = 1;

@@ -17,13 +17,10 @@ function elegirIAObjetivoIA(argument0) {
 		if (id == other.id || muerto) continue;
 		if (room == rm_arena) {
 			if (other.pk == pk) continue;
-		} else {
-			if (!other.pk && !pk) continue;
 		}
-			
 		var _nueva_distancia = point_distance(x, y, other.x, other.y);
 		
-		if (_nueva_distancia <= 350) {
+		if (_nueva_distancia <= 450) {
 			other.cantIAEnView++;
 			
 			if (inmovilizado) {
@@ -54,34 +51,7 @@ function elegirIAObjetivoIA(argument0) {
 		}
 	}
 	
-	// En la arena:
-	if (room == rm_arena) {
-		var pjEsEnemigo = (pk != obj_pj.pk && !obj_pj.muerto);
-		
-		// Si no hay bots enemigos en rango
-		if (IDIAdistanciaMinima == -1) {
-			return pjEsEnemigo ? -1 : -1;
-		}
-		
-		// Si hay bots inmovilizados, priorizar rematar al inmovilizado
-		if (cantInmovilizados > 0) {
-			return inmovilizados[0];
-		}
-		
-		// Si el PJ es enemigo y está inmovilizado cerca, priorizar al PJ
-		if (pjEsEnemigo && obj_pj.inmovilizado && point_distance(x, y, obj_pj.x, obj_pj.y) <= 350) {
-			return -1;
-		}
-		
-		// Si el PJ es enemigo y está más cerca que el bot enemigo más cercano
-		if (pjEsEnemigo && point_distance(x, y, obj_pj.x, obj_pj.y) < distanciaMinima) {
-			return -1;
-		}
-		
-		return IDIAdistanciaMinima;
-	}
 	
-	// Comportamiento fuera de la arena (mapa normal):
 	if (IDIAdistanciaMinima == -1 && (pk != obj_pj.pk || pk)) return -1;
 	
 	if (obj_pj.muerto || !obj_pj.inmovilizado || (pk && obj_pj.pk) || !enemigo) {

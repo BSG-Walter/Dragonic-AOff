@@ -12,6 +12,11 @@ gml_pragma("global", "init_engine_settings();");
 #macro SKILL_FACTOR max(0.5, obj_opciones.multiExp/20)
 #macro RECURSO_FACTOR max(0.5, obj_opciones.multiOro/20)
 
+// Configuración de bots
+
+#macro BOT_DRAW_CULL_MARGIN 80
+
+
 function init_engine_settings() {
     layer_force_draw_depth(true, 0);
     draw_set_colour(c_black);
@@ -52,6 +57,74 @@ function init_engine_settings() {
     global.sprEscudos[98] = spr_escudo_1;
     global.sprEscudos[99] = spr_escudo_2;
     global.sprEscudos[100] = spr_escudo_3;
+
+    global.sprRopa = array_create(256, -1);
+    global.sprRopa[33] = spr_tunica_1;
+    global.sprRopa[34] = spr_tunica_2;
+    global.sprRopa[35] = spr_tunica_3;
+    global.sprRopa[36] = spr_tunica_4;
+    global.sprRopa[37] = spr_tunica_5;
+    global.sprRopa[38] = spr_tunica_6;
+    global.sprRopa[39] = spr_tunica_7;
+    global.sprRopa[40] = spr_tunica_8;
+    global.sprRopa[43] = spr_tunica_11;
+    global.sprRopa[44] = spr_tunica_12;
+    global.sprRopa[68] = spr_ropa_24;
+    global.sprRopa[69] = spr_ropa_25;
+    global.sprRopa[70] = spr_ropa_26;
+    global.sprRopa[72] = spr_armadura_1;
+    global.sprRopa[73] = spr_armadura_2;
+    global.sprRopa[75] = spr_armadura_4;
+    global.sprRopa[76] = spr_armadura_5;
+    global.sprRopa[83] = spr_armadura_12;
+    global.sprRopa[164] = spr_armada_1;
+    global.sprRopa[165] = spr_armada_13;
+    global.sprRopa[166] = spr_armada_2;
+    global.sprRopa[167] = spr_armada_14;
+    global.sprRopa[168] = spr_armada_3;
+    global.sprRopa[169] = spr_armada_15;
+    global.sprRopa[170] = spr_legion_1;
+    global.sprRopa[171] = spr_legion_13;
+    global.sprRopa[172] = spr_legion_2;
+    global.sprRopa[173] = spr_legion_14;
+    global.sprRopa[174] = spr_legion_3;
+    global.sprRopa[175] = spr_legion_15;
+    global.sprRopa[176] = spr_armada_4;
+    global.sprRopa[177] = spr_armada_16;
+    global.sprRopa[178] = spr_armada_5;
+    global.sprRopa[179] = spr_armada_17;
+    global.sprRopa[180] = spr_armada_6;
+    global.sprRopa[181] = spr_armada_18;
+    global.sprRopa[182] = spr_legion_4;
+    global.sprRopa[183] = spr_legion_16;
+    global.sprRopa[184] = spr_legion_5;
+    global.sprRopa[185] = spr_legion_17;
+    global.sprRopa[186] = spr_legion_6;
+    global.sprRopa[187] = spr_legion_18;
+    global.sprRopa[188] = spr_armada_7;
+    global.sprRopa[189] = spr_armada_19;
+    global.sprRopa[190] = spr_armada_8;
+    global.sprRopa[191] = spr_armada_20;
+    global.sprRopa[192] = spr_armada_9;
+    global.sprRopa[193] = spr_armada_21;
+    global.sprRopa[194] = spr_legion_7;
+    global.sprRopa[195] = spr_legion_19;
+    global.sprRopa[196] = spr_legion_8;
+    global.sprRopa[197] = spr_legion_20;
+    global.sprRopa[198] = spr_legion_9;
+    global.sprRopa[199] = spr_legion_21;
+    global.sprRopa[200] = spr_armada_10;
+    global.sprRopa[201] = spr_armada_22;
+    global.sprRopa[202] = spr_armada_11;
+    global.sprRopa[203] = spr_armada_23;
+    global.sprRopa[204] = spr_armada_12;
+    global.sprRopa[205] = spr_armada_24;
+    global.sprRopa[206] = spr_legion_10;
+    global.sprRopa[207] = spr_legion_22;
+    global.sprRopa[208] = spr_legion_11;
+    global.sprRopa[209] = spr_legion_23;
+    global.sprRopa[210] = spr_legion_12;
+    global.sprRopa[211] = spr_legion_24;
 }
 
 /// @description obtenerSpriteArma(indice)
@@ -66,6 +139,14 @@ function obtenerSpriteArma(indice) {
 function obtenerSpriteEscudo(indice) {
     if (indice >= 0 && indice < array_length(global.sprEscudos)) {
         return global.sprEscudos[indice];
+    }
+    return -1;
+}
+
+/// @description obtenerSpriteRopa(indice)
+function obtenerSpriteRopa(indice) {
+    if (indice >= 0 && indice < array_length(global.sprRopa)) {
+        return global.sprRopa[indice];
     }
     return -1;
 }

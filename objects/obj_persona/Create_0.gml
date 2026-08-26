@@ -311,11 +311,11 @@ experiencia = 0;
 inmovilizado = false;
 puedeRemoverse = false;
 
-// Alarm 5, 6, 7 y 8
-
-alarm[5] = 1;
-alarm[6] = 1;
-alarm[8] = intervaloAtaque;
+// Alarm 5, 6, 7 y 8 - desfasados para evitar picos cuando N bots spawnean a la vez
+alarm[5] = 1 + irandom(45);
+alarm[6] = 1 + irandom(30);
+alarm[8] = intervaloAtaque + irandom(60);
+__lodCounter = irandom(5); // para LOD throttling en Step_0
 
 // Dice palabras mágicas
 

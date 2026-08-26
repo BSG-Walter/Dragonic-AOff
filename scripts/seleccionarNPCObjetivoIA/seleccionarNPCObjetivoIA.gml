@@ -35,7 +35,10 @@ function seleccionarNPCObjetivoIA() {
 	    NPCsEnView[19] = -1;
 
 	    with (obj_npc_basic) {
-	        if (object_index != obj_persona && hostil && distance_to_object(obj_persona) <= 250 && !inmovilizado && !paralizado) {
+	        if (object_index == obj_persona) continue;
+	        if (!hostil || inmovilizado || paralizado) continue;
+	        if (abs(x - other.x) > 250 || abs(y - other.y) > 250) continue;
+	        if (distance_to_object(other) <= 250) {
 	            other.NPCsEnView[other.contadorNPCs] = id;
 	            if (other.contadorNPCs < 19) {
 	                other.contadorNPCs++;
