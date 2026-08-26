@@ -129,14 +129,14 @@ if (obj_panel_items.mostrado) {
         
         } else if (obj_panel_items.sectorNpc) {
         
-            var indiceInv = obj_panel_items.idPadre.indiceNpc[indicePanel];
+            var indiceInv = obj_panel_items.idPadre.slots[indicePanel].indice;
             if (indiceInv != -1) {
                 draw_set_alpha(1);
                 draw_set_color(c_white);
                 if (!obj_panel_items.modoBanco) {
                     draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
                 } else {
-                    draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_panel_items.idPadre.cantNpc[indicePanel]));
+                    draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_panel_items.idPadre.slots[indicePanel].cant));
                 }
                 draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
                 draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
@@ -174,7 +174,7 @@ if (obj_panel_items.mostrado) {
 		//inventario user
 		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 152, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.slots[index].nombre));
 		//inventario npc
-		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 8, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.nombreNpc[index]));
+		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 8, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.slots[index].nombre));
 	}
     
     

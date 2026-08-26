@@ -165,3 +165,12 @@ function crearSlotInv(_indice, _cant, _equipado) {
         nombre: _datos.nombre
     };
 }
+
+/// @description crearSlotNpc(indice, cant, nombre)
+function crearSlotNpc(_indice, _cant, _nombre) {
+    return {
+        indice: _indice,
+        cant: _cant,
+        nombre: _nombre
+    };
+}

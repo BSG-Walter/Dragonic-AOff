@@ -105,13 +105,13 @@ if (clicMantenido) {
                 
                 if (sectorNpc && cant > 0) {
                     if (indiceItem != -1) {
-                        if (idPadre.indiceNpc[indiceItem] != -1) {
+                        if (idPadre.slots[indiceItem].indice != -1) {
                             if (obj_pj.oro >= precioItem * cant) {
                                 
                                 var existe = false;
                 
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.slots[i].indice == idPadre.indiceNpc[indiceItem]) {
+                                    if (obj_inventario.slots[i].indice == idPadre.slots[indiceItem].indice) {
                                         if (obj_inventario.slots[i].cant + cant <= 10000) {
                                             // Hay lugar en slot existente
                                             
@@ -129,7 +129,7 @@ if (clicMantenido) {
                                                         obj_pj.skills[16]++;
                                                         var idSubirSkills = crearTextoSubirSkill(16);
                                                         
-                                                        var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
+                                                        var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
                                                                 
                                                         var modPrecio = 1;
                                                         
@@ -183,7 +183,7 @@ if (clicMantenido) {
 											
 											obj_skills_libres.mostrado = false;
                                             
-                                            obj_inventario.slots[i] = crearSlotInv(idPadre.indiceNpc[indiceItem], cant, false);
+                                            obj_inventario.slots[i] = crearSlotInv(idPadre.slots[indiceItem].indice, cant, false);
                                             
                                             if (random(1) < 0.35 * SKILL_FACTOR) {
                                                 if (obj_pj.skills[16] < 100) {
@@ -193,7 +193,7 @@ if (clicMantenido) {
                                                         obj_pj.skills[16]++;
                                                         var idSubirSkills = crearTextoSubirSkill(16);
                                                         
-                                                        var datosItem = descripcionItem(idPadre.indiceNpc[indiceItem]);
+                                                        var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
                                                                 
                                                         var modPrecio = 1;
                                                         
@@ -266,13 +266,13 @@ if (clicMantenido) {
                             var existe = false;
                 
                                 for (var i = 0; i < 20; i++) {
-                                    if (idPadre.indiceNpc[i] == obj_inventario.slots[indiceItem].indice) {
-                                    if (idPadre.cantNpc[i] + cant <= 10000) {
+                                    if (idPadre.slots[i].indice == obj_inventario.slots[indiceItem].indice) {
+                                    if (idPadre.slots[i].cant + cant <= 10000) {
                                     
                                         // Hay lugar en slot existente
                                         
                                         existe = true;
-                                        idPadre.cantNpc[i] += cant;
+                                        idPadre.slots[i].cant += cant;
                                         valido = true;
                                         break;
                                         
@@ -283,15 +283,13 @@ if (clicMantenido) {
                             if (!existe) {
                                 for (var i = 0; i < 20; i++) {
                                 
-                                    if (idPadre.indiceNpc[i] == -1) {
+                                    if (idPadre.slots[i].indice == -1) {
                                     
                                         // Hay lugar en slot nuevo
                                         
                                         datosItem = configurarItem(obj_inventario.slots[indiceItem].indice);
                                         
-                                        idPadre.indiceNpc[i] = obj_inventario.slots[indiceItem].indice;
-                                        idPadre.cantNpc[i] = cant;
-                                        idPadre.nombreNpc[i] = datosItem.nombre;
+                                        idPadre.slots[i] = crearSlotNpc(obj_inventario.slots[indiceItem].indice, cant, datosItem.nombre);
                                         
                                         valido = true;
                                         
@@ -365,15 +363,15 @@ if (clicMantenido) {
                 
                 if (sectorNpc && cant > 0) {
                     if (indiceItem != -1) {
-						if (cant > idPadre.cantNpc[indiceItem])
-							cant = idPadre.cantNpc[indiceItem];
-                        if (idPadre.indiceNpc[indiceItem] != -1 && idPadre.cantNpc[indiceItem] >= cant) {
+						if (cant > idPadre.slots[indiceItem].cant)
+							cant = idPadre.slots[indiceItem].cant;
+                        if (idPadre.slots[indiceItem].indice != -1 && idPadre.slots[indiceItem].cant >= cant) {
                                 
                             var valido = false;
                             var existe = false;
             
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.slots[i].indice == idPadre.indiceNpc[indiceItem]) {
+                                if (obj_inventario.slots[i].indice == idPadre.slots[indiceItem].indice) {
                                     if (obj_inventario.slots[i].cant + cant <= 10000) {
                                     
                                         // Hay lugar en slot existente
@@ -394,7 +392,7 @@ if (clicMantenido) {
                                     
                                         // Hay lugar en slot nuevo
                                         
-                                        obj_inventario.slots[i] = crearSlotInv(idPadre.indiceNpc[indiceItem], cant, false);
+                                        obj_inventario.slots[i] = crearSlotInv(idPadre.slots[indiceItem].indice, cant, false);
                                         
                                         valido = true;
                                         
@@ -407,12 +405,10 @@ if (clicMantenido) {
                             
                             if (valido) {
                             
-                                if (idPadre.cantNpc[indiceItem] > cant) {
-                                    idPadre.cantNpc[indiceItem] -= cant;
+                                if (idPadre.slots[indiceItem].cant > cant) {
+                                    idPadre.slots[indiceItem].cant -= cant;
                                 } else {                            
-                                    idPadre.cantNpc[indiceItem] = 0;
-                                    idPadre.indiceNpc[indiceItem] = -1;
-                                    idPadre.nombreNpc[indiceItem] = "Vacío";                            
+                                    idPadre.slots[indiceItem] = crearSlotNpc(-1, 0, "Vacío");                            
                                 }
                             
                             }
