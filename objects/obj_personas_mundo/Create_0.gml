@@ -2,7 +2,6 @@
 /// @param Siempre 1
 
 i = 0;
-aux[0] = -1;
 totalMultiIA = obj_opciones.maxBots; // El totalMultiIA indica que puede haber hasta 5 personas en total por todo el mundo
 
 // Lista de rooms
@@ -10,46 +9,18 @@ totalMultiIA = obj_opciones.maxBots; // El totalMultiIA indica que puede haber h
 totalRooms = obj_npcs_mundo.totalRooms;
 primerRoomDeMapa = obj_npcs_mundo.primerRoomDeMapa;
 
-/*
+globalIA[0] = datosIAVacio();
 
-IAXRM[0] = aux; // Guarda los datos de las IAs de una mapa. IAXRM[0] tiene los datos de una de las IA del mapa
-vecItemsIAXRM[0] = aux; // Va a guardar todos los vectores de ítems de las IAs de un mapa. vecItemsIAXRM[0] tiene los items de una de las IAs
-cantItemsIAXRM[0] = aux; // Igual que el anterior, pero guarda cantidades
-
-IAMultiplesMundo[0] = IAXRM; // Guarda todas las IAs del mundo, con todos sus datos. Dentro de IAMultiplesMundo[0] estarían las IAs del primer mapa
-IAMultiplesMundoItems[0] = vecItemsIAXRM; 
-// IAMultiplesMundoItems Guarda todos los items de las IAs del mundo. 
-// Dentro de IAMultiplesMundoItems[0] estarían los vectores con los items de las IAs del primer mapa
-IAMultiplesMundoCantItems[0] = cantItemsIAXRM; // Igual que el anterior, pero guarda cantidades
-
-for (var j = 1; j <= totalRooms; j++) {
-    IAXRM[j] = aux;
-    vecItemsIAXRM[j] = aux;
-    cantItemsIAXRM[j] = aux;
+for (var i = 1; i < totalMultiIA; i++) {
+    globalIA[i] = datosIAVacio();
 }
-
-for (var k = 1; k < totalMultiIA; k++) {
-    IAMultiplesMundo[k] = IAXRM;
-    IAMultiplesMundoItems[k] = vecItemsIAXRM;
-    IAMultiplesMundoCantItems[k] = cantItemsIAXRM;
-}
-
-*/
-
-globalIA[0] = aux; // Guarda los datos de todas las IA del mundo. El índice 0 tiene los datos de una IA
-
-for (var i = 1; i < totalMultiIA; i++) { // Inicializa
-    globalIA[i] = aux;
-}
-
-datosIA[0] = -1;
 
 itemsGlobalIA[0] = -1;
 cantItemsGlobalIA[0] = -1;
 
-for (var i = 1; i < totalMultiIA; i++) { // Inicializa
-    itemsGlobalIA[i] = aux;
-    cantItemsGlobalIA[i] = aux;
+for (var i = 1; i < totalMultiIA; i++) {
+    itemsGlobalIA[i] = -1;
+    cantItemsGlobalIA[i] = -1;
 }
 
 direccionPJ = 0;
@@ -60,6 +31,3 @@ roomAnterior = -1;
 PJInvi = false;
 
 alarm[0] = 1
-
-/* */
-/*  */

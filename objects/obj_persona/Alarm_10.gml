@@ -23,17 +23,13 @@ if (instance_number(obj_INFO) > 0) {
 
 var i = 0;
 while (i < obj_personas_mundo.totalMultiIA) {
-    var aux = obj_personas_mundo.globalIA[i];
-    if (aux[0] != -1 && aux[14] == nombre) {
+    var _slot = obj_personas_mundo.globalIA[i];
+    if (_slot.x != -1 && _slot.nombre == nombre) {
         break;
     }
     i++;
 }
-datosIA[41] = i;
 
-var auxVacio;
-auxVacio[0] = -1;
-obj_personas_mundo.globalIA[i] = auxVacio;
+obj_personas_mundo.globalIA[i] = datosIAVacio();
 
 obj_respawn_personas.alarm[0] = random_range(obj_respawn_personas.intervaloMin, obj_respawn_personas.intervaloMax);
-

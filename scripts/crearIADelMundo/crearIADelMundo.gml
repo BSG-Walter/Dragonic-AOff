@@ -1,70 +1,22 @@
 ﻿/// @description  crearIADelMundo()
 function crearIADelMundo() {
 
-	/*
-
-	datosIA[0] = x;
-	datosIA[1] = y;
-	datosIA[2] = enemigo;
-	datosIA[3] = direccion;
-	datosIA[4] = yaHabloEnojado1;
-	datosIA[5] = yaHabloEnojado2;
-	datosIA[6] = yaHabloEnojado3;
-	datosIA[7] = genero;
-	datosIA[8] = clase;
-	datosIA[9] = nroRaza;
-	datosIA[10] = saludMax;
-	datosIA[11] = salud;
-	datosIA[12] = manaMax;
-	datosIA[13] = mana;
-	datosIA[14] = nombre;
-	datosIA[15] = danoMeleeMin;
-	datosIA[16] = danoMeleeMax;
-	datosIA[17] = evasion;
-	datosIA[18] = eqArma;
-	datosIA[19] = eqRopa;
-	datosIA[20] = eqCascoGorro;
-	datosIA[21] = eqEscudo;
-	datosIA[22] = eqFlechas;
-	datosIA[23] = pk;
-	datosIA[24] = enBarca;
-	datosIA[25] = sprCabeza;
-	datosIA[26] = inmovilizado;
-	datosIA[27] = agitando;
-	datosIA[28] = yaHablo;
-	datosIA[29] = tiempoEnView;
-	datosIA[30] = alarm[4];
-	datosIA[31] = alarm[8];
-	datosIA[32] = tiempoLejosPJ;
-	datosIA[33] = TPCerca;
-	datosIA[34] = distTPCerca;
-	datosIA[35] = TPCerca.x;
-	datosIA[36] = TPCerca.y;
-	datosIA[37] = TPCerca.xTP;
-	datosIA[38] = TPCerca.yTP;
-	datosIA[39] = TPCerca.visible;
-	datosIA[40] = room;
-	datosIA[41] = lugarEnGlobalIA;
-	datosIA[42] = alarm[7];
-	datosIA[43] = puedeCrear;
-	datosIA[44] = sigueAlOtroMapa;
-
-	*/
+	if (!instance_exists(obj_personas_mundo)) return;
 
 	for (var iAux = 0; iAux < totalMultiIA; iAux++) {
 
-	    datosIA = globalIA[iAux];
+	    var _datos = globalIA[iAux];
 
 	    var valido = true;
     
-	    if (datosIA[0] != -1) {
-	        if (datosIA[43]) {
+	    if (_datos.x != -1) {
+	        if (_datos.puedeCrear) {
 	            if (crea) {
-	                if (datosIA[40] != roomAnterior) {
+	                if (_datos.roomIA != roomAnterior) {
 	                    valido = false;
 	                }
 	            } else {
-	                if (datosIA[40] != room) {
+	                if (_datos.roomIA != room) {
 	                    valido = false;
 	                }
 	            }
@@ -79,12 +31,12 @@ function crearIADelMundo() {
         
 	        var creoEfectoLogin = false;
     
-	        if (datosIA[33] != -1 && crea) {
-	            if (datosIA[39]) {
+	        if (_datos.TPCerca != -1 && crea) {
+	            if (_datos.tpCercaVisible) {
 	                creoEfectoLogin = true;
 	            }
-	            datosIA[0] = datosIA[37];
-	            datosIA[1] = datosIA[38];
+	            _datos.x = _datos.tpCercaXTP;
+	            _datos.y = _datos.tpCercaYTP;
 	        }  
     
 	        var switchMod = -1;
@@ -92,146 +44,129 @@ function crearIADelMundo() {
 	        if (direccionPJ != -1) {
 	            switchMod = direccionPJ;
 	        } else {
-	            switchMod = datosIA[3];
+	            switchMod = _datos.direccion;
 	        }
     
 	        switch (switchMod) { // Controlo la dirección para saber si sumo/resto a la x/y
 	            case 0: // Está avanzando hacia abajo  
-	                while (datosIA[1] % 16 != 0 || datosIA[1] % 32 == 0) {
-	                    datosIA[1]++;
+	                while (_datos.y % 16 != 0 || _datos.y % 32 == 0) {
+	                    _datos.y++;
 	                }
 	                break;
 	            case 1: // Está avanzando hacia arriba  
-	                while (datosIA[1] % 16 != 0 || datosIA[1] % 32 == 0) {
-	                    datosIA[1]--;
+	                while (_datos.y % 16 != 0 || _datos.y % 32 == 0) {
+	                    _datos.y--;
 	                }
 	                break;
 	            case 2: // Está avanzando hacia la izquierda  
-	                while (datosIA[0] % 16 != 0 || datosIA[0] % 32 == 0) {
-	                    datosIA[0]--;
+	                while (_datos.x % 16 != 0 || _datos.x % 32 == 0) {
+	                    _datos.x--;
 	                }                
 	                break;
 	            case 3: // Está avanzando hacia la izquierda  
-	                while (datosIA[0] % 16 != 0 || datosIA[0] % 32 == 0) {
-	                    datosIA[0]++;
+	                while (_datos.x % 16 != 0 || _datos.x % 32 == 0) {
+	                    _datos.x++;
 	                }
 	                break;
 	        } 
         
 	        while ( // Mientras que haya algún bloqueo...
-	        instance_position(datosIA[0], datosIA[1] - 16, obj_pj) != noone ||
-	        instance_position(datosIA[0], datosIA[1] - 16, obj_bloque_basic) != noone || 
-	        instance_position(datosIA[0], datosIA[1] - 16, obj_bloque) != noone || 
-	        instance_position(datosIA[0], datosIA[1] - 16, obj_npc_basic) != noone
+	        instance_position(_datos.x, _datos.y - 16, obj_pj) != noone ||
+	        instance_position(_datos.x, _datos.y - 16, obj_bloque_basic) != noone || 
+	        instance_position(_datos.x, _datos.y - 16, obj_bloque) != noone || 
+	        instance_position(_datos.x, _datos.y - 16, obj_npc_basic) != noone
 	        ) {
             
-	            /*
 	            switch (switchMod) {
 	                case 0:
-	                    datosIA[1] -= 32;
+	                    _datos.y += 32;
 	                    break;
 	                case 1:
-	                    datosIA[1] += 32;
+	                    _datos.y -= 32;
 	                    break;
 	                case 2:
-	                    datosIA[0] += 32;
+	                    _datos.x -= 32;
 	                    break;
 	                case 3:
-	                    datosIA[0] -= 32;
-	                    break;
-	            }
-	            */
-            
-	            switch (switchMod) {
-	                case 0:
-	                    datosIA[1] += 32;
-	                    break;
-	                case 1:
-	                    datosIA[1] -= 32;
-	                    break;
-	                case 2:
-	                    datosIA[0] -= 32;
-	                    break;
-	                case 3:
-	                    datosIA[0] += 32;
+	                    _datos.x += 32;
 	                    break;
 	            }
             
 	        }
         
-	        tile1 = tile_layer_find(10000000, datosIA[0], datosIA[1]);
-	        tile2 = tile_layer_find(1000000, datosIA[0], datosIA[1]);
-	        tile3 = tile_layer_find(100000, datosIA[0], datosIA[1]);
+	        var tile1 = tile_layer_find(10000000, _datos.x, _datos.y);
+	        var tile2 = tile_layer_find(1000000, _datos.x, _datos.y);
+	        var tile3 = tile_layer_find(100000, _datos.x, _datos.y);
             
 	        if (tile1 != -1 || tile2 != -1 || tile3 != -1) { // Si hay algún tipo de suelo
-	            datosIA[24] = false;
+	            _datos.enBarca = false;
 	        } else {
         
-	            datosIA[24] = true;
+	            _datos.enBarca = true;
             
 	            if (obj_pj.nivel < 25) {
-	                datosIA[0] = -1;
+	                _datos.x = -1;
 	            }
             
 	        }
         
-	        if (datosIA[0] != -1) {
+	        if (_datos.x != -1) {
         
-	            var idIA = instance_create_depth(datosIA[0], datosIA[1], 0, obj_persona);             
-	            idIA.enemigo = datosIA[2]; 
-	            idIA.direccion = datosIA[3]; 
-	            idIA.yaHabloEnojado1 = datosIA[4]; 
-	            idIA.yaHabloEnojado2 = datosIA[5]; 
-	            idIA.yaHabloEnojado3 = datosIA[6]; 
-	            idIA.genero = datosIA[7]; 
-	            idIA.clase = datosIA[8]; 
-	            idIA.nroRaza = datosIA[9]; 
-	            idIA.saludMax = datosIA[10]; 
-	            idIA.salud = datosIA[11]; 
-	            idIA.manaMax = datosIA[12]; 
-	            idIA.mana = datosIA[13]; 
-	            idIA.nombre = datosIA[14]; 
-	            idIA.danoMeleeMin = datosIA[15]; 
-	            idIA.danoMeleeMax = datosIA[16]; 
-	            idIA.evasion = datosIA[17]; 
+	            var idIA = instance_create_depth(_datos.x, _datos.y, 0, obj_persona);             
+	            idIA.enemigo = _datos.enemigo; 
+	            idIA.direccion = _datos.direccion; 
+	            idIA.yaHabloEnojado1 = _datos.yaHabloEnojado1; 
+	            idIA.yaHabloEnojado2 = _datos.yaHabloEnojado2; 
+	            idIA.yaHabloEnojado3 = _datos.yaHabloEnojado3; 
+	            idIA.genero = _datos.genero; 
+	            idIA.clase = _datos.clase; 
+	            idIA.nroRaza = _datos.nroRaza; 
+	            idIA.saludMax = _datos.saludMax; 
+	            idIA.salud = _datos.salud; 
+	            idIA.manaMax = _datos.manaMax; 
+	            idIA.mana = _datos.mana; 
+	            idIA.nombre = _datos.nombre; 
+	            idIA.danoMeleeMin = _datos.danoMeleeMin; 
+	            idIA.danoMeleeMax = _datos.danoMeleeMax; 
+	            idIA.evasion = _datos.evasion; 
             
-	            idIA.eqArma = datosIA[18]; 
-	            idIA.eqRopa = datosIA[19]; 
-	            idIA.eqCascoGorro = datosIA[20]; 
-	            idIA.eqEscudo = datosIA[21];
-	            idIA.eqFlechas = datosIA[22];
+	            idIA.eqArma = _datos.eqArma; 
+	            idIA.eqRopa = _datos.eqRopa; 
+	            idIA.eqCascoGorro = _datos.eqCascoGorro; 
+	            idIA.eqEscudo = _datos.eqEscudo;
+	            idIA.eqFlechas = _datos.eqFlechas;
 	            idIA.sprArma = obtenerSpriteArma(idIA.eqArma);
 	            idIA.sprEscudo = obtenerSpriteEscudo(idIA.eqEscudo);
             
-	            idIA.vecItems[0] = datosIA[18]; 
-	            idIA.vecItems[1] = datosIA[19]; 
-	            idIA.vecItems[2] = datosIA[20]; 
-	            idIA.vecItems[3] = datosIA[21]; 
-	            idIA.vecItems[4] = datosIA[22]; 
+	            idIA.vecItems[0] = _datos.eqArma; 
+	            idIA.vecItems[1] = _datos.eqRopa; 
+	            idIA.vecItems[2] = _datos.eqCascoGorro; 
+	            idIA.vecItems[3] = _datos.eqEscudo; 
+	            idIA.vecItems[4] = _datos.eqFlechas; 
             
-	            idIA.pk = datosIA[23]; 
-	            idIA.rangoFaccion = datosIA[45]; 
-	            idIA.enBarca = datosIA[24];
+	            idIA.pk = _datos.pk; 
+	            idIA.rangoFaccion = _datos.rangoFaccion; 
+	            idIA.enBarca = _datos.enBarca;
             
-	            if (datosIA[24]) {
+	            if (_datos.enBarca) {
 	                idIA.sprite_index = spr_barca;
 	            }
             
-	            idIA.sprCabeza = datosIA[25];
-	            idIA.inmovilizado = datosIA[26];
-	            idIA.agitando = datosIA[27];
+	            idIA.sprCabeza = _datos.sprCabeza;
+	            idIA.inmovilizado = _datos.inmovilizado;
+	            idIA.agitando = _datos.agitando;
             
-	            if (obj_mapas_mundo.mapas[room] && datosIA[2]) {
+	            if (obj_mapas_mundo.mapas[room] && _datos.enemigo) {
 	                idIA.yaHablo = false;
 	            } else {
-	                idIA.yaHablo = datosIA[28];
+	                idIA.yaHablo = _datos.yaHablo;
 	            }            
             
-	            idIA.tiempoEnView = datosIA[29];
-	            idIA.alarm[4] = datosIA[30];
-	            idIA.alarm[7] = datosIA[42];
-	            idIA.alarm[8] = datosIA[31];
-	            idIA.tiempoLejosPJ = datosIA[32];
+	            idIA.tiempoEnView = _datos.tiempoEnView;
+	            idIA.alarm[4] = _datos.alarm4;
+	            idIA.alarm[7] = _datos.alarm7;
+	            idIA.alarm[8] = _datos.alarm8;
+	            idIA.tiempoLejosPJ = _datos.tiempoLejosPJ;
 	            idIA.TPCerca = -1;
             
 	            idIA.image_index = idIA.index[idIA.direccion, 0];
@@ -241,9 +176,7 @@ function crearIADelMundo() {
 	            idIA.vecItems = itemsGlobalIA[iAux];
 	            idIA.cantItems = cantItemsGlobalIA[iAux];
             
-	            var aux;
-	            aux[0] = -1;
-	            globalIA[datosIA[41]] = aux;
+	            globalIA[_datos.lugarEnGlobalIA] = datosIAVacio();
             
 	            with (idIA) {
 	                guardarDatosIAEnGlobalIA();   
@@ -256,17 +189,6 @@ function crearIADelMundo() {
 	            }
             
 	            actualizarCiudas();
-            
-	            // Lleno el inventario de la IA
-            
-	            /*
-            
-	            for (var i = 0; i < 20; i++) {
-	                idIA.vecItems[i] = vecItemsIA[i];
-	                idIA.cantItems[i] = cantItemsIA[i];
-	            }
-            
-	            */
                 
 	        }
         

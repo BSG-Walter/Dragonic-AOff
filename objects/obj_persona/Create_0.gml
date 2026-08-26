@@ -451,11 +451,6 @@ inmovilizados[7] = -1;
 inmovilizados[8] = -1;
 inmovilizados[9] = -1;
 
-// Lugar en el vector de IAs
-
-globalIAAux[0] = -1;
-datosIAAux[0] = -1;
-
 // Sigue al PJ al otro mapa?
 
 sigue = true;

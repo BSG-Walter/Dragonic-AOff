@@ -1,13 +1,12 @@
 /// @description  Disparo la creación de IAs en mapa anterior
 
 for (var i = 0; i < totalMultiIA; i++) {
-    IAAuxiliar = globalIA[i];
-    if (IAAuxiliar[0] != -1 && IAAuxiliar[40] == room) {
-        IAAuxiliar[43] = true;
+    var _datos = globalIA[i];
+    if (_datos.x != -1 && _datos.roomIA == room) {
+        _datos.puedeCrear = true;
     }    
-    globalIA[i] = IAAuxiliar;
+    globalIA[i] = _datos;
 }
 
 crea = false;
 crearIADelMundo();
-

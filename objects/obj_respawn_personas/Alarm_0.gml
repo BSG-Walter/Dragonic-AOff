@@ -13,13 +13,10 @@ if (random(10) > rand) {
             var puedeCrear = false;
             var i = 0;
             while (i < obj_personas_mundo.totalMultiIA) {
-                aux = obj_personas_mundo.globalIA[i];
-                if (aux[0] == -1) {
-                    obj_personas_mundo.globalIA[i] = aux;
+                var _slot = obj_personas_mundo.globalIA[i];
+                if (_slot.x == -1) {
                     puedeCrear = true;
                     break;
-                } else {  
-                    obj_personas_mundo.globalIA[i] = aux;
                 }
                 i++;
             }

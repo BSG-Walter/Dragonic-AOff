@@ -194,3 +194,55 @@ function crearHechizo(_indice, _nombre, _tipo, _mana, _energia, _skill, _efectoM
 function hechizoVacio() {
     return crearHechizo(-1, "", "", 0, 0, 0, 0, 0, "");
 }
+
+/// @description datosIAVacio()
+function datosIAVacio() {
+    return {
+        x: -1,
+        y: 0,
+        enemigo: false,
+        direccion: 0,
+        yaHabloEnojado1: false,
+        yaHabloEnojado2: false,
+        yaHabloEnojado3: false,
+        genero: 0,
+        clase: 0,
+        nroRaza: 0,
+        saludMax: 0,
+        salud: 0,
+        manaMax: 0,
+        mana: 0,
+        nombre: "",
+        danoMeleeMin: 0,
+        danoMeleeMax: 0,
+        evasion: 0,
+        eqArma: -1,
+        eqRopa: -1,
+        eqCascoGorro: -1,
+        eqEscudo: -1,
+        eqFlechas: -1,
+        pk: false,
+        enBarca: false,
+        sprCabeza: -1,
+        inmovilizado: false,
+        agitando: false,
+        yaHablo: false,
+        tiempoEnView: 0,
+        alarm4: -1,
+        alarm8: -1,
+        tiempoLejosPJ: 0,
+        TPCerca: -1,
+        distTPCerca: -1,
+        tpCercaX: -1,
+        tpCercaY: -1,
+        tpCercaXTP: -1,
+        tpCercaYTP: -1,
+        tpCercaVisible: false,
+        roomIA: -1,
+        lugarEnGlobalIA: 0,
+        alarm7: -1,
+        puedeCrear: false,
+        sigueAlOtroMapa: false,
+        rangoFaccion: -1
+    };
+}
