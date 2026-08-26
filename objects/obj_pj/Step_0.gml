@@ -415,7 +415,7 @@ _mouseDown
                                         alarm[3] = 1;
                                     }
                                 
-                                    if (obj_inventario.cantInv[flechaEnInv] > 0 && energia >= 20) {
+                                    if (obj_inventario.slots[flechaEnInv].cant > 0 && energia >= 20) {
                                     
                                         if (invisible) {
                                             invisible = false;
@@ -724,17 +724,14 @@ _mouseDown
                                         
                                         alarm[3] = 1;
                                     
-                                        if (obj_inventario.cantInv[flechaEnInv] > 1) {
+                                        if (obj_inventario.slots[flechaEnInv].cant > 1) {
                                         
-                                            obj_inventario.cantInv[flechaEnInv]--;
+                                            obj_inventario.slots[flechaEnInv].cant--;
                                             break;
                                             
-                                        } else if (obj_inventario.cantInv[flechaEnInv] > 0) {
+                                        } else if (obj_inventario.slots[flechaEnInv].cant > 0) {
                                                          
-                                            obj_inventario.cantInv[flechaEnInv] = 0;
-                                            obj_inventario.indiceInv[flechaEnInv] = -1;
-                                            obj_inventario.equipadoInv[flechaEnInv] = false;
-                                            obj_inventario.tipoInv[flechaEnInv] = "";
+                                            obj_inventario.slots[flechaEnInv] = crearSlotInv(-1, 0, false);
                                         
                                             atacaConArco = false;
                                             flechaActual = -1;

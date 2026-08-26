@@ -1,3 +1,22 @@
+function scr_partidas(){
+
+}
+
+/// @description  cargarPartida(partida)
+/// @param partida
+function cargarPartida(argument0) {
+
+	dec("partida" + string(argument0) + ".ini");
+	ini_open("partida" + string(argument0) + ".ini");
+
+	room_goto(read("room", "room", rm_79));
+
+	ini_close();
+	enc("partida" + string(argument0) + ".ini");
+
+	crearObjetosBasicos(argument0);
+}
+
 /// @description  guardarPartida(nombrePJ)
 /// @param nombrePJ
 function guardarPartida(argument0) {
@@ -285,6 +304,87 @@ function guardarPartida(argument0) {
 
 	return 0;
 
+}
 
+/// @description  hacerBackUpPartidas()
+function hacerBackUpPartidas() {
+
+	for (var i = 1; i < 10; i++) {
+	    if (file_exists("partida" + string(i) + ".ini")) {
+			
+			dec("partida" + string(i) + ".ini");
+		    ini_open("partida" + string(i) + ".ini");
+		    var nombrePJGuardado = readS("obj_pj", "nombre", "RESTAURAR_PERSONAJE"); // Si devuelve "RESTAURAR_PERSONAJE" quiere decir que falló la decodificación Base64 y no se pudo leer el nombre
+			ini_close();
+			enc("partida" + string(i) + ".ini");
+			
+			if (nombrePJGuardado != "RESTAURAR_PERSONAJE") // Solamente hace el BackUp cuando la partida está íntegra y sin fallos
+				file_copy("partida" + string(i) + ".ini", "partida" + string(i) + "_BackUp.ini")
+			
+	    }
+	}
+
+}
+
+/// @description partidaLegible(archivo, decodificar) - true si se puede leer el nombre del PJ.
+/// Con decodificar=false se lee el archivo como texto plano (sin pasar por dec).
+function partidaLegible(argument0, argument1) {
+
+    if (!file_exists(argument0)) return false;
+
+    var _nombre;
+
+    if (argument1) {
+        dec(argument0);
+        ini_open(argument0);
+        _nombre = readS("obj_pj", "nombre", "RESTAURAR_PERSONAJE");
+        ini_close();
+        enc(argument0);
+    } else {
+        ini_open(argument0);
+        _nombre = readS("obj_pj", "nombre", "RESTAURAR_PERSONAJE");
+        ini_close();
+    }
+
+    return (_nombre != "RESTAURAR_PERSONAJE");
+
+}
+
+/// @description repararPartidasGuardadas() - recupera partidas marcadas como corruptas.
+/// Un cierre abrupto entre dec() y enc() de guardarPartida deja el .ini en texto plano;
+/// al reiniciar, dec() lo vuelve ilegible. Acá se detecta ese caso y se re-encripta,
+/// y si el principal es irrecuperable se restaura desde el BackUp.
+function repararPartidasGuardadas() {
+
+    for (var i = 1; i <= 9; i++) {
+
+        var _archivo = "partida" + string(i) + ".ini";
+
+        if (!file_exists(_archivo)) continue;
+
+        // Texto plano por cierre abrupto: alcanza con re-encriptar
+        if (partidaLegible(_archivo, false)) {
+            enc(_archivo);
+            continue;
+        }
+
+        // Ya encriptada y legible: nada que hacer
+        if (partidaLegible(_archivo, true)) continue;
+
+        // Principal irrecuperable: probar el BackUp
+        var _backup = "partida" + string(i) + "_BackUp.ini";
+
+        if (!file_exists(_backup)) continue;
+
+        if (partidaLegible(_backup, false)) {
+            enc(_backup);
+            file_delete(_archivo);
+            file_copy(_backup, _archivo);
+        } else if (partidaLegible(_backup, true)) {
+            file_delete(_archivo);
+            file_copy(_backup, _archivo);
+        }
+
+    }
 
 }

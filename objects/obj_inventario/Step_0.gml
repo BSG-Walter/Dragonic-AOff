@@ -97,112 +97,33 @@ device_mouse_check_button(4, mb_left)
 							
 								dobleClic = false;
                                 
-								if (indiceInv[posItem] == -1) {
+								if (slots[posItem].indice == -1) {
 									
-									var datosItemMovido = configurarItem(seleccionado);
-                                                
-                                    indiceInv[posItem] = seleccionado;
-                                    tipoInv[posItem] = datosItemMovido[0];
-                                    cantInv[posItem] = cantInv[posSeleccionado];
-                                    generoInv[posItem] = datosItemMovido[1];
-                                    razaInv[posItem] = datosItemMovido[2];
-                                    nroSkillInv[posItem] = datosItemMovido[3];
-                                    skillRequeridoInv[posItem] = datosItemMovido[4];
-                                    clase0ValidaInv[posItem] = datosItemMovido[5];
-                                    clase1ValidaInv[posItem] = datosItemMovido[6];
-                                    clase2ValidaInv[posItem] = datosItemMovido[7];
-                                    clase3ValidaInv[posItem] = datosItemMovido[8];
-                                    clase4ValidaInv[posItem] = datosItemMovido[9];
-                                    clase5ValidaInv[posItem] = datosItemMovido[10];
-                                    clase6ValidaInv[posItem] = datosItemMovido[11];
-                                    clase7ValidaInv[posItem] = datosItemMovido[12];
-                                    clase8ValidaInv[posItem] = datosItemMovido[13];
-                                    nombreInv[posItem] = datosItemMovido[14];
-								
-									indiceInv[posSeleccionado] = -1;
-									cantInv[posSeleccionado] = 0;
-									tipoInv[posSeleccionado] = "";
-								    nombreInv[posSeleccionado] = "Vacío";
-									equipadoInv[posItem] = equipadoInv[posSeleccionado];
-								    equipadoInv[posSeleccionado] = false;
+									slots[posItem] = crearSlotInv(seleccionado, slots[posSeleccionado].cant, false);
+									slots[posSeleccionado] = crearSlotInv(-1, 0, false);
 									
 								} else {
 
-									var datosItemMovido = configurarItem(seleccionado);
-									
-									var indiceInvAux = indiceInv[posItem];
-									var tipoInvAux = tipoInv[posItem];
-									var cantInvAux = cantInv[posItem];
-									var generoInvAux = generoInv[posItem];
-									var razaInvAux = razaInv[posItem];
-									var nroSkillInvAux = nroSkillInv[posItem];
-									var skillRequeridoInvAux = skillRequeridoInv[posItem];
-									var clase0ValidaInvAux = clase0ValidaInv[posItem];
-									var clase1ValidaInvAux = clase1ValidaInv[posItem];
-									var clase2ValidaInvAux = clase2ValidaInv[posItem];
-									var clase3ValidaInvAux = clase3ValidaInv[posItem];
-									var clase4ValidaInvAux = clase4ValidaInv[posItem];
-									var clase5ValidaInvAux = clase5ValidaInv[posItem];
-									var clase6ValidaInvAux = clase6ValidaInv[posItem];
-									var clase7ValidaInvAux = clase7ValidaInv[posItem];
-									var clase8ValidaInvAux = clase8ValidaInv[posItem];
-									var nombreInvAux = nombreInv[posItem];
-									var equipadoInvAux = equipadoInv[posItem];
-									
-									indiceInv[posItem] = seleccionado;
-                                    tipoInv[posItem] = datosItemMovido[0];
-                                    cantInv[posItem] = cantInv[posSeleccionado];
-                                    generoInv[posItem] = datosItemMovido[1];
-                                    razaInv[posItem] = datosItemMovido[2];
-                                    nroSkillInv[posItem] = datosItemMovido[3];
-                                    skillRequeridoInv[posItem] = datosItemMovido[4];
-                                    clase0ValidaInv[posItem] = datosItemMovido[5];
-                                    clase1ValidaInv[posItem] = datosItemMovido[6];
-                                    clase2ValidaInv[posItem] = datosItemMovido[7];
-                                    clase3ValidaInv[posItem] = datosItemMovido[8];
-                                    clase4ValidaInv[posItem] = datosItemMovido[9];
-                                    clase5ValidaInv[posItem] = datosItemMovido[10];
-                                    clase6ValidaInv[posItem] = datosItemMovido[11];
-                                    clase7ValidaInv[posItem] = datosItemMovido[12];
-                                    clase8ValidaInv[posItem] = datosItemMovido[13];
-                                    nombreInv[posItem] = datosItemMovido[14];
-									equipadoInv[posItem] = equipadoInv[posSeleccionado];
-									
-									indiceInv[posSeleccionado] = indiceInvAux;
-									tipoInv[posSeleccionado] = tipoInvAux;
-									cantInv[posSeleccionado] = cantInvAux;
-									generoInv[posSeleccionado] = generoInvAux;
-									razaInv[posSeleccionado] = razaInvAux;
-									nroSkillInv[posSeleccionado] = nroSkillInvAux;
-									skillRequeridoInv[posSeleccionado] = skillRequeridoInvAux;
-									clase0ValidaInv[posSeleccionado] = clase0ValidaInvAux;
-									clase1ValidaInv[posSeleccionado] = clase1ValidaInvAux;
-									clase2ValidaInv[posSeleccionado] = clase2ValidaInvAux;
-									clase3ValidaInv[posSeleccionado] = clase3ValidaInvAux;
-									clase4ValidaInv[posSeleccionado] = clase4ValidaInvAux;
-									clase5ValidaInv[posSeleccionado] = clase5ValidaInvAux;
-									clase6ValidaInv[posSeleccionado] = clase6ValidaInvAux;
-									clase7ValidaInv[posSeleccionado] = clase7ValidaInvAux;
-									clase8ValidaInv[posSeleccionado] = clase8ValidaInvAux;
-									nombreInv[posSeleccionado] = nombreInvAux;
-									equipadoInv[posSeleccionado] = equipadoInvAux;
+									var _aux = slots[posItem];
+									slots[posItem] = slots[posSeleccionado];
+									slots[posSeleccionado] = _aux;
 									
 								}
 								//actualizamos el valor de la flecha actual seleccionada
-								if (tipoInv[posSeleccionado] == "flecha") obj_pj.flechaEnInv = posSeleccionado
-								if (tipoInv[posItem] == "flecha") obj_pj.flechaEnInv = posItem
+								if (slots[posSeleccionado].tipo == "flecha") obj_pj.flechaEnInv = posSeleccionado
+								if (slots[posItem].tipo == "flecha") obj_pj.flechaEnInv = posItem
 								
-                                seleccionado = indiceInv[posItem];
+                                seleccionado = slots[posItem].indice;
                                 posSeleccionado = posItem;
                                 posDobleClic = posItem;
 								obj_mover_inventario.moviendoItem = false;
 							
-							} else if (indiceInv[posItem] != -1) {
+							} else if (slots[posItem].indice != -1) {
                                 
                                 var antesSeleccionado = seleccionado;
                                 var posAntesSeleccionado = posSeleccionado;
                                 
-                                seleccionado = indiceInv[posItem];
+                                seleccionado = slots[posItem].indice;
                                 posSeleccionado = posItem;
                                 posDobleClic = posItem;
                                 alarm[2] = 15;
@@ -215,12 +136,12 @@ device_mouse_check_button(4, mb_left)
                                 // Raza
                                 
                                 if (
-                                razaInv[posItem] == -1 ||
-                                razaInv[posItem] == obj_pj.nroRaza
+                                slots[posItem].raza == -1 ||
+                                slots[posItem].raza == obj_pj.nroRaza
                                 ) {
                                     validoRaza = true;
                                 } else {
-                                    switch (razaInv[posItem]) {
+                                    switch (slots[posItem].raza) {
                                         case 5:
                                             if (obj_pj.nroRaza == 0 || obj_pj.nroRaza == 1 || obj_pj.nroRaza == 2) {
                                                 validoRaza = true;
@@ -257,8 +178,8 @@ device_mouse_check_button(4, mb_left)
                                 // Género
                                 
                                 if (
-                                generoInv[posItem] == -1 ||
-                                generoInv[posItem] == obj_pj.genero
+                                slots[posItem].genero == -1 ||
+                                slots[posItem].genero == obj_pj.genero
                                 ) {
                                     validoGenero = true;
                                 }
@@ -267,47 +188,47 @@ device_mouse_check_button(4, mb_left)
                                 
                                 switch (obj_pj.clase) {
                                     case 0:
-                                        if (clase0ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[0]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 1:
-                                        if (clase1ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[1]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 2:
-                                        if (clase2ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[2]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 3:
-                                        if (clase3ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[3]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 4:
-                                        if (clase4ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[4]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 5:
-                                        if (clase5ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[5]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 6:
-                                        if (clase6ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[6]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 7:
-                                        if (clase7ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[7]) {
                                             validoClase = true;
                                         }
                                         break;
                                     case 8:
-                                        if (clase8ValidaInv[posItem]) {
+                                        if (slots[posItem].clases[8]) {
                                             validoClase = true;
                                         }
                                         break;
@@ -315,7 +236,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                 // Skills
                                 
-                                if (obj_pj.skills[nroSkillInv[posItem]] >= skillRequeridoInv[posItem]) {
+                                if (obj_pj.skills[slots[posItem].nroSkill] >= slots[posItem].skillReq) {
                                     validoSkill = true;
                                 }
                                 
@@ -332,190 +253,190 @@ device_mouse_check_button(4, mb_left)
                                     idINFO.padre = obj_pj.id;
                                     idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
                                 } else if (!validoSkill) {
-                                    idFaltaSkill = crearTextoFaltaSkill(nroSkillInv[posItem], skillRequeridoInv[posItem]);
+                                    idFaltaSkill = crearTextoFaltaSkill(slots[posItem].nroSkill, slots[posItem].skillReq);
                                 }                
                                 
                                 if (validoRaza && validoGenero && validoSkill && validoClase) {
 									
 									obj_skills_libres.mostrado = false;
                                 
-                                    if (cantInv[posItem] >= 1) {
-                                        if (tipoInv[posItem] == "arma") {
+                                    if (slots[posItem].cant >= 1) {
+                                        if (slots[posItem].tipo == "arma") {
                                             if (obj_pj.armaEnInv != posItem) {
                                             
-                                                obj_pj.armaActual = indiceInv[posItem];
+                                                obj_pj.armaActual = slots[posItem].indice;
                                                 obj_pj.sprArma = obtenerSpriteArma(obj_pj.armaActual);
                                                 obj_pj.armaEnInv = posItem;
 
                                                 var i = 0;
 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "arma") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "arma") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
 
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 reproducirSonido(snd_equiparODesequiparArma, false, false);
 
                                             } else {
-                                                if (indiceInv[posItem] < 21 || indiceInv[posItem] > 27) {
+                                                if (slots[posItem].indice < 21 || slots[posItem].indice > 27) {
                                                     obj_pj.armaActual = -1;
                                                     obj_pj.sprArma = -1;
                                                     obj_pj.armaEnInv = -1;
-                                                    equipadoInv[posItem] = false;
+                                                    slots[posItem].equipado = false;
                                                     reproducirSonido(snd_equiparODesequiparArma, false, false);
                                                 } else {
-                                                    if (antesSeleccionado == indiceInv[posItem] && posAntesSeleccionado == posItem) {
+                                                    if (antesSeleccionado == slots[posItem].indice && posAntesSeleccionado == posItem) {
                                                         obj_pj.armaActual = -1;
                                                         obj_pj.sprArma = -1;
                                                         obj_pj.armaEnInv = -1;
-                                                        equipadoInv[posItem] = false;
+                                                        slots[posItem].equipado = false;
                                                         reproducirSonido(snd_equiparODesequiparArma, false, false);
                                                     }
                                                 }
                                             }
-                                        } else if (tipoInv[posItem] == "flecha") {
+                                        } else if (slots[posItem].tipo == "flecha") {
                                             if (obj_pj.flechaEnInv != posItem) {
                                             
-                                                obj_pj.flechaActual = indiceInv[posItem];
+                                                obj_pj.flechaActual = slots[posItem].indice;
                                                 obj_pj.flechaEnInv = posItem;
                                                 
                                                 var i = 0;
                                                 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "flecha") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "flecha") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
                                                 
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 
                                             } else {
                                                 obj_pj.flechaActual = -1;
                                                 obj_pj.flechaEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
-                                        } else if (tipoInv[posItem] == "ropa") {
+                                        } else if (slots[posItem].tipo == "ropa") {
                                             if (obj_pj.ropaEnInv != posItem) {
                                             
                                                 obj_pj.desnudo = false;
-                                                obj_pj.ropaActual = indiceInv[posItem];
+                                                obj_pj.ropaActual = slots[posItem].indice;
                                                 obj_pj.ropaEnInv = posItem;
                                                 
                                                 var i = 0;
                                                 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "ropa") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "ropa") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
                                                 
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 obj_pj.ropaIndexada = false;
                                                 
                                             } else {
                                                 obj_pj.desnudo = true;
                                                 obj_pj.ropaActual = -1;
                                                 obj_pj.ropaEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
-                                        } else if (tipoInv[posItem] == "escudo") {
+                                        } else if (slots[posItem].tipo == "escudo") {
                                             if (obj_pj.escudoEnInv != posItem) {
 
-                                                obj_pj.escudoActual = indiceInv[posItem];
+                                                obj_pj.escudoActual = slots[posItem].indice;
                                                 obj_pj.sprEscudo = obtenerSpriteEscudo(obj_pj.escudoActual);
                                                 obj_pj.escudoEnInv = posItem;
 
                                                 var i = 0;
 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "escudo") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "escudo") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
 
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
 
                                             } else {
                                                 obj_pj.escudoActual = -1;
                                                 obj_pj.sprEscudo = -1;
                                                 obj_pj.escudoEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
-                                        } else if (tipoInv[posItem] == "casco") {
+                                        } else if (slots[posItem].tipo == "casco") {
                                             if (obj_pj.cascoEnInv != posItem) {
                                             
-                                                obj_pj.cascoActual = indiceInv[posItem];
+                                                obj_pj.cascoActual = slots[posItem].indice;
                                                 obj_pj.cascoEnInv = posItem;
                                                 
                                                 var i = 0;
                                                 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "casco") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "casco") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
                                                 
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 
                                             } else {
                                                 obj_pj.cascoActual = -1;
                                                 obj_pj.cascoEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
-                                        } else if (tipoInv[posItem] == "laud") {
+                                        } else if (slots[posItem].tipo == "laud") {
                                             if (obj_pj.laudEnInv != posItem) {
                                             
-                                                obj_pj.laudActual = indiceInv[posItem];
+                                                obj_pj.laudActual = slots[posItem].indice;
                                                 obj_pj.laudEnInv = posItem;
                                                 
                                                 var i = 0;
                                                 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "laud") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "laud") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
                                                 
                                                 obj_pj.laudEquipado = true;
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 
                                             } else {
                                                 obj_pj.laudEquipado = false;
                                                 obj_pj.laudActual = -1;
                                                 obj_pj.laudEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
-                                        } else if (tipoInv[posItem] == "trabajo") {
+                                        } else if (slots[posItem].tipo == "trabajo") {
                                             if (obj_pj.trabajoEnInv != posItem) {
                                             
-                                                obj_pj.trabajoActual = indiceInv[posItem];
+                                                obj_pj.trabajoActual = slots[posItem].indice;
                                                 obj_pj.trabajoEnInv = posItem;
                                                 
                                                 var i = 0;
                                                 
                                                 repeat (maximoInv) {
-                                                    if (tipoInv[i] == "trabajo") {
-                                                        equipadoInv[i] = false;
+                                                    if (slots[i].tipo == "trabajo") {
+                                                        slots[i].equipado = false;
                                                     }
                                                     i++;
                                                 }
                                                 
                                                 obj_pj.trabajoEquipado = true;
-                                                equipadoInv[posItem] = true;
+                                                slots[posItem].equipado = true;
                                                 
                                             } else {
                                                 obj_pj.trabajoEquipado = false;
                                                 obj_pj.trabajoActual = -1;
                                                 obj_pj.trabajoEnInv = -1;
-                                                equipadoInv[posItem] = false;
+                                                slots[posItem].equipado = false;
                                             }
                                         }
                                     } else {
@@ -596,10 +517,10 @@ device_mouse_check_button(4, mb_left)
                             
                             // TRABAJO CON EL ITEM
                 
-                            if (indiceInv[posItem] != -1) {
-                                if (tipoInv[posItem] == "barca" || tipoInv[posItem] == "runa") {
+                            if (slots[posItem].indice != -1) {
+                                if (slots[posItem].tipo == "barca" || slots[posItem].tipo == "runa") {
 									obj_skills_libres.mostrado = false;
-                                    seleccionado = indiceInv[posItem];
+                                    seleccionado = slots[posItem].indice;
                                     posSeleccionado = posItem;
                                 } else {
                                     seleccionado = -1;
@@ -695,17 +616,17 @@ device_mouse_check_button(4, mb_left)
                             
                             // TRABAJO CON EL ITEM
                             
-                            if (indiceInv[posItem] != -1) {
+                            if (slots[posItem].indice != -1) {
                             
                                 if (posItem == posDobleClic) {
                                                     
                                     deviceDC = device;
                                     alarm[5] = 60;
                                 
-                                    seleccionado = indiceInv[posItem];
+                                    seleccionado = slots[posItem].indice;
                                     posSeleccionado = posItem;
                                     
-                                    if (cantInv[posItem] >= 1) {
+                                    if (slots[posItem].cant >= 1) {
                                         if (obj_pj.puedeMoverse && !obj_flecha_abajo.apretada && !obj_flecha_arriba.apretada && !obj_flecha_izq.apretada && !obj_flecha_der.apretada) {
                                         
                                             valido = true;
@@ -722,12 +643,12 @@ device_mouse_check_button(4, mb_left)
                                             ) {
                                                 var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                                 idItemTirado.superpone = true;
-                                                idItemTirado.indice = indiceInv[posItem];
+                                                idItemTirado.indice = slots[posItem].indice;
                                                 idItemTirado.cantidad = 1;
-                                                idItemTirado.tipo = tipoInv[posItem];
+                                                idItemTirado.tipo = slots[posItem].tipo;
                                             } else if (position_meeting(obj_pj.x, obj_pj.y - 16, obj_item)) {
                                                 var idItemTirado = instance_position(obj_pj.x, obj_pj.y - 16, obj_item);
-                                                if (idItemTirado.indice == indiceInv[posItem] && idItemTirado.cantidad < 10000) {
+                                                if (idItemTirado.indice == slots[posItem].indice && idItemTirado.cantidad < 10000) {
                                                     idItemTirado.cantidad++;
                                                 } else {
                                                     valido = false;
@@ -735,11 +656,11 @@ device_mouse_check_button(4, mb_left)
                                             }
                                             
                                             if (valido) {
-                                                if (cantInv[posItem] > 1) {
-                                                    cantInv[posItem]--;
+                                                if (slots[posItem].cant > 1) {
+                                                    slots[posItem].cant--;
                                                 } else {
                                                 
-                                                    if (indiceInv[posItem] == seleccionado) {
+                                                    if (slots[posItem].indice == seleccionado) {
                                                         seleccionado = -1;
                                                     }
                                                     
@@ -747,42 +668,42 @@ device_mouse_check_button(4, mb_left)
                                                         posSeleccionado = -1;
                                                     }
                                                     
-                                                    if (tipoInv[posItem] == "ropa" && posItem == obj_pj.ropaEnInv) {
+                                                    if (slots[posItem].tipo == "ropa" && posItem == obj_pj.ropaEnInv) {
                                                         obj_pj.desnudo = true;
                                                         obj_pj.ropaActual = -1;
                                                         obj_pj.ropaEnInv = -1;
                                                         obj_pj.ropaIndexada = false;
-                                                    } else if (tipoInv[posItem] == "arma" && posItem == obj_pj.armaEnInv) {
+                                                    } else if (slots[posItem].tipo == "arma" && posItem == obj_pj.armaEnInv) {
                                                         obj_pj.armaActual = -1;
                                                         obj_pj.armaEnInv = -1;
                                                         obj_pj.sprArma = -1;
                                                         reproducirSonido(snd_equiparODesequiparArma, false, false);
-                                                    } else if (tipoInv[posItem] == "flecha" && posItem == obj_pj.flechaEnInv) {
+                                                    } else if (slots[posItem].tipo == "flecha" && posItem == obj_pj.flechaEnInv) {
                                                         obj_pj.flechaActual = -1;
                                                         obj_pj.flechaEnInv = -1;
-                                                    } else if (tipoInv[posItem] == "casco" && posItem == obj_pj.cascoEnInv) {
+                                                    } else if (slots[posItem].tipo == "casco" && posItem == obj_pj.cascoEnInv) {
                                                         obj_pj.cascoActual = -1;
                                                         obj_pj.cascoEnInv = -1;
-                                                    } else if (tipoInv[posItem] == "escudo" && posItem == obj_pj.escudoEnInv) {
+                                                    } else if (slots[posItem].tipo == "escudo" && posItem == obj_pj.escudoEnInv) {
                                                         obj_pj.escudoActual = -1;
                                                         obj_pj.escudoEnInv = -1;
                                                         obj_pj.sprEscudo = -1;
-                                                    } else if (tipoInv[posItem] == "laud" && posItem == obj_pj.laudEnInv) {
+                                                    } else if (slots[posItem].tipo == "laud" && posItem == obj_pj.laudEnInv) {
                                                         obj_pj.laudActual = -1;
                                                         obj_pj.laudEnInv = -1;
                                                         obj_pj.laudEquipado = false;
-                                                    } else if (tipoInv[posItem] == "trabajo" && posItem == obj_pj.trabajoEnInv) {
+                                                    } else if (slots[posItem].tipo == "trabajo" && posItem == obj_pj.trabajoEnInv) {
                                                         obj_pj.trabajoActual = -1;
                                                         obj_pj.trabajoEnInv = -1;
                                                         obj_pj.trabajoEquipado = false;
                                                         obj_panel_trabajos.mostrado = false;
                                                     }
                                                 
-                                                    cantInv[posItem] = 0;
-                                                    indiceInv[posItem] = -1;
-                                                    tipoInv[posItem] = "";
-                                                    equipadoInv[posItem] = false;
-                                                    nombreInv[posItem] = "Vacío";
+                                                    slots[posItem].cant = 0;
+                                                    slots[posItem].indice = -1;
+                                                    slots[posItem].tipo = "";
+                                                    slots[posItem].equipado = false;
+                                                    slots[posItem].nombre = "Vacío";
                                                     
                                                 }
                                             }

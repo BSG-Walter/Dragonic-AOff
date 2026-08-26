@@ -32,27 +32,27 @@ if (clicMantenido) {
                     var materialesAcumulados = 0;
                 
                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                        if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                            materialesAcumulados += obj_inventario.cantInv[i];
+                        if (obj_inventario.slots[i].indice == indiceMaterial) {
+                            materialesAcumulados += obj_inventario.slots[i].cant;
                         }    
                     }
                     
                     var datosItem = datosTrabajo(listaItems[indiceItem]);
                     
-                    if (materialesAcumulados >= datosItem[2]) {
+                    if (materialesAcumulados >= datosItem.consume1) {
             
-                        var totalMeterialesNecesarios = datosItem[2];
+                        var totalMeterialesNecesarios = datosItem.consume1;
                         var valido = false;
                         var existe = false;
                     
                         for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                            if (obj_inventario.indiceInv[i] == listaItems[indiceItem]) {
-                                if (obj_inventario.cantInv[i] + 1 <= 10000) {
+                            if (obj_inventario.slots[i].indice == listaItems[indiceItem]) {
+                                if (obj_inventario.slots[i].cant + 1 <= 10000) {
                                 
                                     // Hay lugar en slot existente
                                     
                                     existe = true;
-                                    obj_inventario.cantInv[i]++;
+                                    obj_inventario.slots[i].cant++;
                                     valido = true;
                                     break;
                                     
@@ -62,29 +62,11 @@ if (clicMantenido) {
                         
                         if (!existe) {
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == -1) {
+                                if (obj_inventario.slots[i].indice == -1) {
                                 
                                     // Hay lugar en slot nuevo
                                     
-                                    datosItem = configurarItem(listaItems[indiceItem]);
-                                    
-                                    obj_inventario.indiceInv[i] = listaItems[indiceItem];
-                                    obj_inventario.tipoInv[i] = datosItem[0];
-                                    obj_inventario.cantInv[i] = 1;
-                                    obj_inventario.generoInv[i] = datosItem[1];
-                                    obj_inventario.razaInv[i] = datosItem[2];
-                                    obj_inventario.nroSkillInv[i] = datosItem[3];
-                                    obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                    obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                    obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                    obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                    obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                    obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                    obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                    obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                    obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                    obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                    obj_inventario.nombreInv[i] = datosItem[14];
+                                    obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);
                                     
                                     valido = true;
                                     
@@ -106,19 +88,19 @@ if (clicMantenido) {
                             }
                         
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                                    if (obj_inventario.cantInv[i] > totalMeterialesNecesarios) {
+                                if (obj_inventario.slots[i].indice == indiceMaterial) {
+                                    if (obj_inventario.slots[i].cant > totalMeterialesNecesarios) {
                                     
-                                        obj_inventario.cantInv[i] -= totalMeterialesNecesarios;
+                                        obj_inventario.slots[i].cant -= totalMeterialesNecesarios;
                                         totalMeterialesNecesarios = 0;
                                         break;
                                         
-                                    } else if (obj_inventario.cantInv[i] == totalMeterialesNecesarios) {
+                                    } else if (obj_inventario.slots[i].cant == totalMeterialesNecesarios) {
                                         
-                                        obj_inventario.cantInv[i] -= totalMeterialesNecesarios;
+                                        obj_inventario.slots[i].cant -= totalMeterialesNecesarios;
                                         totalMeterialesNecesarios = 0;
                                     
-                                        if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                        if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                             obj_inventario.seleccionado = -1;
                                         }
                                         
@@ -126,19 +108,15 @@ if (clicMantenido) {
                                             obj_inventario.posSeleccionado = -1;
                                         }
                                     
-                                        obj_inventario.cantInv[i] = 0;
-                                        obj_inventario.indiceInv[i] = -1;
-                                        obj_inventario.tipoInv[i] = "";
-                                        obj_inventario.equipadoInv[i] = false;
-                                        obj_inventario.nombreInv[i] = "Vacío";              
+                                        obj_inventario.slots[i] = crearSlotInv(-1, 0, false);              
                                         
                                         break;
                                         
                                     } else {
                                     
-                                        totalMeterialesNecesarios -= obj_inventario.cantInv[i];
+                                        totalMeterialesNecesarios -= obj_inventario.slots[i].cant;
                                     
-                                        if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                        if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                             obj_inventario.seleccionado = -1;
                                         }
                                         
@@ -146,11 +124,7 @@ if (clicMantenido) {
                                             obj_inventario.posSeleccionado = -1;
                                         }
                                     
-                                        obj_inventario.cantInv[i] = 0;
-                                        obj_inventario.indiceInv[i] = -1;
-                                        obj_inventario.tipoInv[i] = "";
-                                        obj_inventario.equipadoInv[i] = false;
-                                        obj_inventario.nombreInv[i] = "Vacío";  
+                                        obj_inventario.slots[i] = crearSlotInv(-1, 0, false);  
                                         
                                     }
                                 }    
@@ -179,16 +153,16 @@ if (clicMantenido) {
                     var lingotesOAcumulados = 0;
                 
                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                        if (obj_inventario.indiceInv[i] == 151 || obj_inventario.indiceInv[i] == 152 || obj_inventario.indiceInv[i] == 153) {
-                            switch (obj_inventario.indiceInv[i]) {
+                        if (obj_inventario.slots[i].indice == 151 || obj_inventario.slots[i].indice == 152 || obj_inventario.slots[i].indice == 153) {
+                            switch (obj_inventario.slots[i].indice) {
                                 case 151:                    
-                                    lingotesHAcumulados += obj_inventario.cantInv[i];
+                                    lingotesHAcumulados += obj_inventario.slots[i].cant;
                                     break;
                                 case 152:                    
-                                    lingotesPAcumulados += obj_inventario.cantInv[i];
+                                    lingotesPAcumulados += obj_inventario.slots[i].cant;
                                     break;
                                 case 153:                    
-                                    lingotesOAcumulados += obj_inventario.cantInv[i];
+                                    lingotesOAcumulados += obj_inventario.slots[i].cant;
                                     break;
                             }
                         }    
@@ -197,15 +171,15 @@ if (clicMantenido) {
                     var datosItem = datosTrabajo(listaItems[indiceItem]);
                     
                     if (
-                    lingotesHAcumulados >= datosItem[2] && 
-                    lingotesPAcumulados >= datosItem[3] && 
-                    lingotesOAcumulados >= datosItem[4]
+                    lingotesHAcumulados >= datosItem.consume1 && 
+                    lingotesPAcumulados >= datosItem.consume2 && 
+                    lingotesOAcumulados >= datosItem.consume3
                     ) {
             
                         var totalMaterialesNecesarios;
-                        totalMaterialesNecesarios[0] = datosItem[2];
-                        totalMaterialesNecesarios[1] = datosItem[3];
-                        totalMaterialesNecesarios[2] = datosItem[4];
+                        totalMaterialesNecesarios[0] = datosItem.consume1;
+                        totalMaterialesNecesarios[1] = datosItem.consume2;
+                        totalMaterialesNecesarios[2] = datosItem.consume3;
                         
                         var iAux = 0;
                         var indiceMaterial = 151;
@@ -213,13 +187,13 @@ if (clicMantenido) {
                         var existe = false;
                     
                         for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                            if (obj_inventario.indiceInv[i] == listaItems[indiceItem]) {
-                                if (obj_inventario.cantInv[i] + 1 <= 10000) {
+                            if (obj_inventario.slots[i].indice == listaItems[indiceItem]) {
+                                if (obj_inventario.slots[i].cant + 1 <= 10000) {
                                 
                                     // Hay lugar en slot existente
                                     
                                     existe = true;
-                                    obj_inventario.cantInv[i]++;
+                                    obj_inventario.slots[i].cant++;
                                     valido = true;
                                     break;
                                     
@@ -229,29 +203,11 @@ if (clicMantenido) {
                         
                         if (!existe) {
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == -1) {
+                                if (obj_inventario.slots[i].indice == -1) {
                                 
                                     // Hay lugar en slot nuevo
                                     
-                                    datosItem = configurarItem(listaItems[indiceItem]);
-                                    
-                                    obj_inventario.indiceInv[i] = listaItems[indiceItem];
-                                    obj_inventario.tipoInv[i] = datosItem[0];
-                                    obj_inventario.cantInv[i] = 1;
-                                    obj_inventario.generoInv[i] = datosItem[1];
-                                    obj_inventario.razaInv[i] = datosItem[2];
-                                    obj_inventario.nroSkillInv[i] = datosItem[3];
-                                    obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                    obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                    obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                    obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                    obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                    obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                    obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                    obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                    obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                    obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                    obj_inventario.nombreInv[i] = datosItem[14];
+                                    obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);
                                     
                                     valido = true;
                                     
@@ -275,19 +231,19 @@ if (clicMantenido) {
                             repeat (3) {
                             
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                                        if (obj_inventario.cantInv[i] > totalMaterialesNecesarios[iAux]) {
+                                    if (obj_inventario.slots[i].indice == indiceMaterial) {
+                                        if (obj_inventario.slots[i].cant > totalMaterialesNecesarios[iAux]) {
                                         
-                                            obj_inventario.cantInv[i] -= totalMaterialesNecesarios[iAux];
+                                            obj_inventario.slots[i].cant -= totalMaterialesNecesarios[iAux];
                                             totalMaterialesNecesarios[iAux] = 0;
                                             break;
                                             
-                                        } else if (obj_inventario.cantInv[i] == totalMaterialesNecesarios[iAux]) {
+                                        } else if (obj_inventario.slots[i].cant == totalMaterialesNecesarios[iAux]) {
                                             
-                                            obj_inventario.cantInv[i] -= totalMaterialesNecesarios[iAux];
+                                            obj_inventario.slots[i].cant -= totalMaterialesNecesarios[iAux];
                                             totalMaterialesNecesarios[iAux] = 0;
                                         
-                                            if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                            if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                 obj_inventario.seleccionado = -1;
                                             }
                                             
@@ -295,19 +251,15 @@ if (clicMantenido) {
                                                 obj_inventario.posSeleccionado = -1;
                                             }
                                         
-                                            obj_inventario.cantInv[i] = 0;
-                                            obj_inventario.indiceInv[i] = -1;
-                                            obj_inventario.tipoInv[i] = "";
-                                            obj_inventario.equipadoInv[i] = false;
-                                            obj_inventario.nombreInv[i] = "Vacío";              
+                                            obj_inventario.slots[i] = crearSlotInv(-1, 0, false);              
                                             
                                             break;
                                             
                                         } else {
                                         
-                                            totalMaterialesNecesarios[iAux] -= obj_inventario.cantInv[i];
+                                            totalMaterialesNecesarios[iAux] -= obj_inventario.slots[i].cant;
                                         
-                                            if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                            if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                 obj_inventario.seleccionado = -1;
                                             }
                                             
@@ -315,11 +267,7 @@ if (clicMantenido) {
                                                 obj_inventario.posSeleccionado = -1;
                                             }
                                         
-                                            obj_inventario.cantInv[i] = 0;
-                                            obj_inventario.indiceInv[i] = -1;
-                                            obj_inventario.tipoInv[i] = "";
-                                            obj_inventario.equipadoInv[i] = false;
-                                            obj_inventario.nombreInv[i] = "Vacío";  
+                                            obj_inventario.slots[i] = crearSlotInv(-1, 0, false);  
                                             
                                         }
                                     }    

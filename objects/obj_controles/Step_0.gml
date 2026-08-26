@@ -60,7 +60,7 @@ if (_inventario_visible){
 		if (_pos_seleccionado < 0) _pos_seleccionado = 19
 		if (_pos_seleccionado > 19) _pos_seleccionado = 0
 		obj_inventario.posSeleccionado = _pos_seleccionado
-		obj_inventario.seleccionado = obj_inventario.indiceInv[_pos_seleccionado];
+		obj_inventario.seleccionado = obj_inventario.slots[_pos_seleccionado].indice;
 	}
 //Hechizos
 }else{

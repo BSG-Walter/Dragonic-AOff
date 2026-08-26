@@ -3,7 +3,7 @@
 if (mostrado) {
     
     if (posicionItem != -1) {
-        if (!obj_inventario.equipadoInv[posicionItem]) {
+        if (!obj_inventario.slots[posicionItem].equipado) {
             mostrado = false;
             posicionItem = -1;
         }
@@ -104,7 +104,7 @@ device_mouse_check_button(4, mb_left)
                         if (listaItems[indiceItem] != -1) {
                         
                             var datosItem = descripcionItem(listaItems[indiceItem]);
-                            descItem = datosItem[0];
+                            descItem = datosItem.desc;
                             
                             datosItem = datosTrabajo(listaItems[indiceItem]);
                             
@@ -113,24 +113,24 @@ device_mouse_check_button(4, mb_left)
                             listaItems[indiceItem] == 29 || listaItems[indiceItem] == 31 || listaItems[indiceItem] == 32 || listaItems[indiceItem] == 217 || listaItems[indiceItem] == 140 || listaItems[indiceItem] == 144 || listaItems[indiceItem] == 227
                             ) {
                                 // Carpintería
-                                elementosItem = "Leña: " + string(datosItem[2]);
+                                elementosItem = "Leña: " + string(datosItem.consume1);
                             } else if (
                             listaItems[indiceItem] == 41 || listaItems[indiceItem] == 42 || listaItems[indiceItem] == 43 || listaItems[indiceItem] == 44 || listaItems[indiceItem] == 45 || 
                             listaItems[indiceItem] == 61 || listaItems[indiceItem] == 66 || listaItems[indiceItem] == 67 || listaItems[indiceItem] == 68 || listaItems[indiceItem] == 69 || 
                             listaItems[indiceItem] == 70 || listaItems[indiceItem] == 97
                             ) {
                                 // Sastrería
-                                elementosItem = "Pieles de lobo: " + string(datosItem[2]);
+                                elementosItem = "Pieles de lobo: " + string(datosItem.consume1);
                             } else {
                                 // Herrería
-                                if (datosItem[2] > 0) {
-                                    elementosItem = "Hierro: " + string(datosItem[2]) + " ";
+                                if (datosItem.consume1 > 0) {
+                                    elementosItem = "Hierro: " + string(datosItem.consume1) + " ";
                                 }
-                                if (datosItem[3] > 0) {
-                                    elementosItem += "Plata: " + string(datosItem[3]) + " ";
+                                if (datosItem.consume2 > 0) {
+                                    elementosItem += "Plata: " + string(datosItem.consume2) + " ";
                                 }
-                                if (datosItem[4] > 0) {
-                                    elementosItem += "Oro: " + string(datosItem[4]);
+                                if (datosItem.consume3 > 0) {
+                                    elementosItem += "Oro: " + string(datosItem.consume3);
                                 }
                             }
                                           
@@ -144,12 +144,12 @@ device_mouse_check_button(4, mb_left)
                             // Raza
                             
                             if (
-                            datosItem[2] == -1 ||
-                            datosItem[2] == obj_pj.nroRaza
+                            datosItem.raza == -1 ||
+                            datosItem.raza == obj_pj.nroRaza
                             ) {
                                 validoRaza = true;
                             } else {
-                                switch (datosItem[2]) {
+                                switch (datosItem.raza) {
                                     case 5:
                                         if (obj_pj.nroRaza == 0 || obj_pj.nroRaza == 1 || obj_pj.nroRaza == 2) {
                                             validoRaza = true;
@@ -186,8 +186,8 @@ device_mouse_check_button(4, mb_left)
                             // Género
                             
                             if (
-                            datosItem[1] == -1 ||
-                            datosItem[1] == obj_pj.genero
+                            datosItem.genero == -1 ||
+                            datosItem.genero == obj_pj.genero
                             ) {
                                 validoGenero = true;
                             }
@@ -196,47 +196,47 @@ device_mouse_check_button(4, mb_left)
                             
                             switch (obj_pj.clase) {
                                 case 0:
-                                    if (datosItem[5]) {
+                                    if (datosItem.clases[0]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 1:
-                                    if (datosItem[6]) {
+                                    if (datosItem.clases[1]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 2:
-                                    if (datosItem[7]) {
+                                    if (datosItem.clases[2]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 3:
-                                    if (datosItem[8]) {
+                                    if (datosItem.clases[3]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 4:
-                                    if (datosItem[9]) {
+                                    if (datosItem.clases[4]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 5:
-                                    if (datosItem[10]) {
+                                    if (datosItem.clases[5]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 6:
-                                    if (datosItem[11]) {
+                                    if (datosItem.clases[6]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 7:
-                                    if (datosItem[12]) {
+                                    if (datosItem.clases[7]) {
                                         validoClase = true;
                                     }
                                     break;
                                 case 8:
-                                    if (datosItem[13]) {
+                                    if (datosItem.clases[8]) {
                                         validoClase = true;
                                     }
                                     break;
@@ -244,7 +244,7 @@ device_mouse_check_button(4, mb_left)
                             
                             // Skills
                             
-                            if (obj_pj.skills[datosItem[3]] >= datosItem[4]) {
+                            if (obj_pj.skills[datosItem.nroSkill] >= datosItem.skillReq) {
                                 validoSkill = true;
                             }
                             
@@ -299,22 +299,22 @@ device_mouse_check_button(4, mb_left)
                             var materialesAcumulados = 0;
                         
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                                    materialesAcumulados += obj_inventario.cantInv[i];
+                                if (obj_inventario.slots[i].indice == indiceMaterial) {
+                                    materialesAcumulados += obj_inventario.slots[i].cant;
                                 }    
                             }
                             
                             var datosItem = datosTrabajo(listaItems[indiceItem]);
                             
-                            if (materialesAcumulados >= datosItem[2]) {
+                            if (materialesAcumulados >= datosItem.consume1) {
                     
-                                var totalMeterialesNecesarios = datosItem[2];
+                                var totalMeterialesNecesarios = datosItem.consume1;
                                 var valido = false;
                                 var existe = false;
                             
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.indiceInv[i] == listaItems[indiceItem]) {
-                                        if (obj_inventario.cantInv[i] + 1 <= 10000) {
+                                    if (obj_inventario.slots[i].indice == listaItems[indiceItem]) {
+                                        if (obj_inventario.slots[i].cant + 1 <= 10000) {
                                         
                                             // Hay lugar en slot existente
                                             
@@ -325,7 +325,7 @@ device_mouse_check_button(4, mb_left)
                                             }
                                             
                                             existe = true;
-                                            obj_inventario.cantInv[i]++;
+                                            obj_inventario.slots[i].cant++;
                                             valido = true;
                                             break;
                                             
@@ -335,7 +335,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                 if (!existe) {
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                        if (obj_inventario.indiceInv[i] == -1) {
+                                        if (obj_inventario.slots[i].indice == -1) {
                                         
                                             // Hay lugar en slot nuevo
                                             
@@ -345,25 +345,7 @@ device_mouse_check_button(4, mb_left)
                                                 alarm[1] = 60;
                                             }
                                             
-                                            datosItem = configurarItem(listaItems[indiceItem]);
-                                            
-                                            obj_inventario.indiceInv[i] = listaItems[indiceItem];
-                                            obj_inventario.tipoInv[i] = datosItem[0];
-                                            obj_inventario.cantInv[i] = 1;
-                                            obj_inventario.generoInv[i] = datosItem[1];
-                                            obj_inventario.razaInv[i] = datosItem[2];
-                                            obj_inventario.nroSkillInv[i] = datosItem[3];
-                                            obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                            obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                            obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                            obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                            obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                            obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                            obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                            obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                            obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                            obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                            obj_inventario.nombreInv[i] = datosItem[14];
+                                            obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);
                                             
                                             valido = true;
                                             
@@ -385,19 +367,19 @@ device_mouse_check_button(4, mb_left)
                                     }
                                 
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                        if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                                            if (obj_inventario.cantInv[i] > totalMeterialesNecesarios) {
+                                        if (obj_inventario.slots[i].indice == indiceMaterial) {
+                                            if (obj_inventario.slots[i].cant > totalMeterialesNecesarios) {
                                             
-                                                obj_inventario.cantInv[i] -= totalMeterialesNecesarios;
+                                                obj_inventario.slots[i].cant -= totalMeterialesNecesarios;
                                                 totalMeterialesNecesarios = 0;
                                                 break;
                                                 
-                                            } else if (obj_inventario.cantInv[i] == totalMeterialesNecesarios) {
+                                            } else if (obj_inventario.slots[i].cant == totalMeterialesNecesarios) {
                                                 
-                                                obj_inventario.cantInv[i] -= totalMeterialesNecesarios;
+                                                obj_inventario.slots[i].cant -= totalMeterialesNecesarios;
                                                 totalMeterialesNecesarios = 0;
                                             
-                                                if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                                if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                     obj_inventario.seleccionado = -1;
                                                 }
                                                 
@@ -405,19 +387,15 @@ device_mouse_check_button(4, mb_left)
                                                     obj_inventario.posSeleccionado = -1;
                                                 }
                                             
-                                                obj_inventario.cantInv[i] = 0;
-                                                obj_inventario.indiceInv[i] = -1;
-                                                obj_inventario.tipoInv[i] = "";
-                                                obj_inventario.equipadoInv[i] = false;
-                                                obj_inventario.nombreInv[i] = "Vacío";              
+                                                obj_inventario.slots[i] = crearSlotInv(-1, 0, false);              
                                                 
                                                 break;
                                                 
                                             } else {
                                             
-                                                totalMeterialesNecesarios -= obj_inventario.cantInv[i];
+                                                totalMeterialesNecesarios -= obj_inventario.slots[i].cant;
                                             
-                                                if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                                if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                     obj_inventario.seleccionado = -1;
                                                 }
                                                 
@@ -425,11 +403,7 @@ device_mouse_check_button(4, mb_left)
                                                     obj_inventario.posSeleccionado = -1;
                                                 }
                                             
-                                                obj_inventario.cantInv[i] = 0;
-                                                obj_inventario.indiceInv[i] = -1;
-                                                obj_inventario.tipoInv[i] = "";
-                                                obj_inventario.equipadoInv[i] = false;
-                                                obj_inventario.nombreInv[i] = "Vacío";  
+                                                obj_inventario.slots[i] = crearSlotInv(-1, 0, false);  
                                                 
                                             }
                                         }    
@@ -458,16 +432,16 @@ device_mouse_check_button(4, mb_left)
                             var lingotesOAcumulados = 0;
                         
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == 151 || obj_inventario.indiceInv[i] == 152 || obj_inventario.indiceInv[i] == 153) {
-                                    switch (obj_inventario.indiceInv[i]) {
+                                if (obj_inventario.slots[i].indice == 151 || obj_inventario.slots[i].indice == 152 || obj_inventario.slots[i].indice == 153) {
+                                    switch (obj_inventario.slots[i].indice) {
                                         case 151:                    
-                                            lingotesHAcumulados += obj_inventario.cantInv[i];
+                                            lingotesHAcumulados += obj_inventario.slots[i].cant;
                                             break;
                                         case 152:                    
-                                            lingotesPAcumulados += obj_inventario.cantInv[i];
+                                            lingotesPAcumulados += obj_inventario.slots[i].cant;
                                             break;
                                         case 153:                    
-                                            lingotesOAcumulados += obj_inventario.cantInv[i];
+                                            lingotesOAcumulados += obj_inventario.slots[i].cant;
                                             break;
                                     }
                                 }    
@@ -476,15 +450,15 @@ device_mouse_check_button(4, mb_left)
                             var datosItem = datosTrabajo(listaItems[indiceItem]);
                             
                             if (
-                            lingotesHAcumulados >= datosItem[2] && 
-                            lingotesPAcumulados >= datosItem[3] && 
-                            lingotesOAcumulados >= datosItem[4]
+                            lingotesHAcumulados >= datosItem.consume1 && 
+                            lingotesPAcumulados >= datosItem.consume2 && 
+                            lingotesOAcumulados >= datosItem.consume3
                             ) {
                     
                                 var totalMaterialesNecesarios;
-                                totalMaterialesNecesarios[0] = datosItem[2];
-                                totalMaterialesNecesarios[1] = datosItem[3];
-                                totalMaterialesNecesarios[2] = datosItem[4];
+                                totalMaterialesNecesarios[0] = datosItem.consume1;
+                                totalMaterialesNecesarios[1] = datosItem.consume2;
+                                totalMaterialesNecesarios[2] = datosItem.consume3;
                                 
                                 var iAux = 0;
                                 var indiceMaterial = 151;
@@ -492,8 +466,8 @@ device_mouse_check_button(4, mb_left)
                                 var existe = false;
                             
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.indiceInv[i] == listaItems[indiceItem]) {
-                                        if (obj_inventario.cantInv[i] + 1 <= 10000) {
+                                    if (obj_inventario.slots[i].indice == listaItems[indiceItem]) {
+                                        if (obj_inventario.slots[i].cant + 1 <= 10000) {
                                         
                                             // Hay lugar en slot existente
                                             
@@ -504,7 +478,7 @@ device_mouse_check_button(4, mb_left)
                                             }
                                             
                                             existe = true;
-                                            obj_inventario.cantInv[i]++;
+                                            obj_inventario.slots[i].cant++;
                                             valido = true;
                                             break;
                                             
@@ -514,7 +488,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                 if (!existe) {
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                        if (obj_inventario.indiceInv[i] == -1) {
+                                        if (obj_inventario.slots[i].indice == -1) {
                                         
                                             // Hay lugar en slot nuevo
                                             
@@ -524,25 +498,7 @@ device_mouse_check_button(4, mb_left)
                                                 alarm[1] = 60;
                                             }
                                             
-                                            datosItem = configurarItem(listaItems[indiceItem]);
-                                            
-                                            obj_inventario.indiceInv[i] = listaItems[indiceItem];
-                                            obj_inventario.tipoInv[i] = datosItem[0];
-                                            obj_inventario.cantInv[i] = 1;
-                                            obj_inventario.generoInv[i] = datosItem[1];
-                                            obj_inventario.razaInv[i] = datosItem[2];
-                                            obj_inventario.nroSkillInv[i] = datosItem[3];
-                                            obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                            obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                            obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                            obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                            obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                            obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                            obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                            obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                            obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                            obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                            obj_inventario.nombreInv[i] = datosItem[14];
+                                            obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);
                                             
                                             valido = true;
                                             
@@ -566,19 +522,19 @@ device_mouse_check_button(4, mb_left)
                                     repeat (3) {
                                     
                                         for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                            if (obj_inventario.indiceInv[i] == indiceMaterial) {
-                                                if (obj_inventario.cantInv[i] > totalMaterialesNecesarios[iAux]) {
+                                            if (obj_inventario.slots[i].indice == indiceMaterial) {
+                                                if (obj_inventario.slots[i].cant > totalMaterialesNecesarios[iAux]) {
                                                 
-                                                    obj_inventario.cantInv[i] -= totalMaterialesNecesarios[iAux];
+                                                    obj_inventario.slots[i].cant -= totalMaterialesNecesarios[iAux];
                                                     totalMaterialesNecesarios[iAux] = 0;
                                                     break;
                                                     
-                                                } else if (obj_inventario.cantInv[i] == totalMaterialesNecesarios[iAux]) {
+                                                } else if (obj_inventario.slots[i].cant == totalMaterialesNecesarios[iAux]) {
                                                     
-                                                    obj_inventario.cantInv[i] -= totalMaterialesNecesarios[iAux];
+                                                    obj_inventario.slots[i].cant -= totalMaterialesNecesarios[iAux];
                                                     totalMaterialesNecesarios[iAux] = 0;
                                                 
-                                                    if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                                    if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                         obj_inventario.seleccionado = -1;
                                                     }
                                                     
@@ -586,19 +542,15 @@ device_mouse_check_button(4, mb_left)
                                                         obj_inventario.posSeleccionado = -1;
                                                     }
                                                 
-                                                    obj_inventario.cantInv[i] = 0;
-                                                    obj_inventario.indiceInv[i] = -1;
-                                                    obj_inventario.tipoInv[i] = "";
-                                                    obj_inventario.equipadoInv[i] = false;
-                                                    obj_inventario.nombreInv[i] = "Vacío";              
+                                                    obj_inventario.slots[i] = crearSlotInv(-1, 0, false);              
                                                     
                                                     break;
                                                     
                                                 } else {
                                                 
-                                                    totalMaterialesNecesarios[iAux] -= obj_inventario.cantInv[i];
+                                                    totalMaterialesNecesarios[iAux] -= obj_inventario.slots[i].cant;
                                                 
-                                                    if (obj_inventario.indiceInv[i] == obj_inventario.seleccionado) {
+                                                    if (obj_inventario.slots[i].indice == obj_inventario.seleccionado) {
                                                         obj_inventario.seleccionado = -1;
                                                     }
                                                     
@@ -606,11 +558,7 @@ device_mouse_check_button(4, mb_left)
                                                         obj_inventario.posSeleccionado = -1;
                                                     }
                                                 
-                                                    obj_inventario.cantInv[i] = 0;
-                                                    obj_inventario.indiceInv[i] = -1;
-                                                    obj_inventario.tipoInv[i] = "";
-                                                    obj_inventario.equipadoInv[i] = false;
-                                                    obj_inventario.nombreInv[i] = "Vacío";  
+                                                    obj_inventario.slots[i] = crearSlotInv(-1, 0, false);  
                                                     
                                                 }
                                             }    

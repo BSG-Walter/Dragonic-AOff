@@ -1,30 +1,10 @@
-/// @description  cargarInventario()
+﻿/// @description  cargarInventario()
 function cargarInventario() {
 
 	var maximoInv = 20;
 
-	var i = 0;
-
-	repeat(maximoInv) {
-	    obj_inventario.indiceInv[i] = -1;
-	    obj_inventario.tipoInv[i] = "";
-	    obj_inventario.cantInv[i] = 0;
-	    obj_inventario.equipadoInv[i] = false;
-	    obj_inventario.generoInv[i] = -1;
-	    obj_inventario.razaInv[i] = -1;
-	    obj_inventario.nroSkillInv[i] = 0;
-	    obj_inventario.skillRequeridoInv[i] = 0;
-	    obj_inventario.clase0ValidaInv[i] = true; 
-	    obj_inventario.clase1ValidaInv[i] = true; 
-	    obj_inventario.clase2ValidaInv[i] = true; 
-	    obj_inventario.clase3ValidaInv[i] = true; 
-	    obj_inventario.clase4ValidaInv[i] = true; 
-	    obj_inventario.clase5ValidaInv[i] = true; 
-	    obj_inventario.clase6ValidaInv[i] = true; 
-	    obj_inventario.clase7ValidaInv[i] = true; 
-	    obj_inventario.clase8ValidaInv[i] = true; 
-	    obj_inventario.nombreInv[i] = "Vacío";
-	    i++;
+	for (var i = 0; i < maximoInv; i++) {
+	    obj_inventario.slots[i] = crearSlotInv(-1, 0, false);
 	}
 
 	var item = 0;
@@ -98,48 +78,11 @@ function cargarInventario() {
 
 	// Cargo el inventario
 
-	var datosItem;
-
 	for (var i = 0; i < nroIndices; i++) {
     
 	    item = vecIndices[i];
-
-	    datosItem[0] = "";
-	    datosItem[1] = -1;
-	    datosItem[2] = -1;
-	    datosItem[3] = 0;
-	    datosItem[4] = 0;
-	    datosItem[5] = true; 
-	    datosItem[6] = true; 
-	    datosItem[7] = true; 
-	    datosItem[8] = true; 
-	    datosItem[9] = true; 
-	    datosItem[10] = true; 
-	    datosItem[11] = true; 
-	    datosItem[12] = true; 
-	    datosItem[13] = true; 
-	    datosItem[14] = "Vacío";
     
-	    datosItem = configurarItem(item);
-    
-	    obj_inventario.indiceInv[i] = item;
-	    obj_inventario.tipoInv[i] = datosItem[0];
-	    obj_inventario.cantInv[i] = vecCant[i];
-	    obj_inventario.equipadoInv[i] = vecEquipado[i];
-	    obj_inventario.generoInv[i] = datosItem[1];
-	    obj_inventario.razaInv[i] = datosItem[2];
-	    obj_inventario.nroSkillInv[i] = datosItem[3];
-	    obj_inventario.skillRequeridoInv[i] = datosItem[4];
-	    obj_inventario.clase0ValidaInv[i] = datosItem[5]; 
-	    obj_inventario.clase1ValidaInv[i] = datosItem[6]; 
-	    obj_inventario.clase2ValidaInv[i] = datosItem[7]; 
-	    obj_inventario.clase3ValidaInv[i] = datosItem[8]; 
-	    obj_inventario.clase4ValidaInv[i] = datosItem[9]; 
-	    obj_inventario.clase5ValidaInv[i] = datosItem[10]; 
-	    obj_inventario.clase6ValidaInv[i] = datosItem[11]; 
-	    obj_inventario.clase7ValidaInv[i] = datosItem[12]; 
-	    obj_inventario.clase8ValidaInv[i] = datosItem[13];
-	    obj_inventario.nombreInv[i] = datosItem[14];
+	    obj_inventario.slots[i] = crearSlotInv(item, vecCant[i], vecEquipado[i]);
 
 	}
 

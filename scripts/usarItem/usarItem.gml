@@ -5,22 +5,22 @@ with(obj_inventario){
 	if (seleccionado != -1) {
 
 	    for (var i = 0; i < maximoInv; i++) {
-	        if (seleccionado == indiceInv[i]) {
+	        if (seleccionado == slots[i].indice) {
 	            break;
 	        }
 	    }
     
-	    if (tipoInv[i] == "arma") {
+	    if (slots[i].tipo == "arma") {
 	        if (obj_pj.armaActual >= 21 && obj_pj.armaActual <= 27) {
 	            if (obj_pj.puedeAtacar && obj_pj.energia >= 20 && obj_pj.flechaEnInv != -1) {
 	                obj_pj.atacaConArco = true;
 	            }
 	        }
-	    } else if (tipoInv[i] == "comida") {
+	    } else if (slots[i].tipo == "comida") {
     
 	        var suma = 0;
         
-	        switch (indiceInv[i]) {
+	        switch (slots[i].indice) {
 	            case 101:
 	                suma = 10;
 	                break;
@@ -76,24 +76,18 @@ with(obj_inventario){
 	            obj_pj.hambre = obj_pj.hambreMax;
 	        }
         
-	        if (cantInv[i] > 1) {
-	            cantInv[i]--;
+	        if (slots[i].cant > 1) {
+	            slots[i].cant--;
 	        } else {
-	            indiceInv[i] = -1;
-	            tipoInv[i] = "";
-	            cantInv[i] = 0;
-	            equipadoInv[i] = false;
-	            generoInv[i] = -1;
-	            razaInv[i] = -1;
+	            slots[i] = crearSlotInv(-1, 0, false);
 	            seleccionado = -1;
-	            nombreInv[i] = "Vacío";
 	        }
         
-	    } else if (tipoInv[i] == "bebida") {
+	    } else if (slots[i].tipo == "bebida") {
     
 	        var suma = 0;
         
-	        switch (indiceInv[i]) {
+	        switch (slots[i].indice) {
 	            case 116:
 	                suma = 30;
 	                break;
@@ -116,42 +110,30 @@ with(obj_inventario){
         
 	        reproducirSonido(snd_tomarBebida, false, false);
         
-	        if (cantInv[i] > 1) {
-	            cantInv[i]--;
+	        if (slots[i].cant > 1) {
+	            slots[i].cant--;
 	        } else {
-	            indiceInv[i] = -1;
-	            tipoInv[i] = "";
-	            cantInv[i] = 0;
-	            equipadoInv[i] = false;
-	            generoInv[i] = -1;
-	            razaInv[i] = -1;
+	            slots[i] = crearSlotInv(-1, 0, false);
 	            seleccionado = -1;
-	            nombreInv[i] = "Vacío";
 	        }
         
-	    } else if (tipoInv[i] == "hechizo") {
+	    } else if (slots[i].tipo == "hechizo") {
         
 	        var valido = false;
-	        valido = agregarHechizo(indiceInv[i]);
+	        valido = agregarHechizo(slots[i].indice);
     
 	        if (valido) {
-	            if (cantInv[i] > 1) {
-	                cantInv[i]--;
+	            if (slots[i].cant > 1) {
+	                slots[i].cant--;
 	            } else {
-	                indiceInv[i] = -1;
-	                tipoInv[i] = "";
-	                cantInv[i] = 0;
-	                equipadoInv[i] = false;
-	                generoInv[i] = -1;
-	                razaInv[i] = -1;
+	                slots[i] = crearSlotInv(-1, 0, false);
 	                seleccionado = -1;
-	                nombreInv[i] = "Vacío";
 	            }
 	        }
         
-	    } else if (tipoInv[i] == "pocion") {
+	    } else if (slots[i].tipo == "pocion") {
         
-	        if (indiceInv[i] == 141) {
+	        if (slots[i].indice == 141) {
             
 	            var sumaSalud = floor(15 * obj_pj.saludMax / 100);
         
@@ -161,7 +143,7 @@ with(obj_inventario){
 	                obj_pj.salud = obj_pj.saludMax;
 	            }
             
-	        } else if (indiceInv[i] == 142) {
+	        } else if (slots[i].indice == 142) {
         
 	            if (obj_pj.manaMax > 0) {
 	                var sumaMana = floor(15 * obj_pj.manaMax / 100);
@@ -173,22 +155,22 @@ with(obj_inventario){
 	                }
 	            }
             
-	        } else if (indiceInv[i] == 143) {
+	        } else if (slots[i].indice == 143) {
         
 	            obj_pj.envenenado = false;
 	            obj_pj.veneno = 0;
         
-	        } else if (indiceInv[i] == 218) {
+	        } else if (slots[i].indice == 218) {
 				if (obj_pj.dopaAgilidad < obj_pj.maximoDopa)
 					obj_pj.dopaAgilidad++
 				obj_pj.tiempoDopa = 0
 				alarm[7] = 1
-			} else if (indiceInv[i] == 219) {
+			} else if (slots[i].indice == 219) {
 				if (obj_pj.dopaFuerza < obj_pj.maximoDopa)
 					obj_pj.dopaFuerza++
 				obj_pj.tiempoDopa = 0
 				alarm[7] = 1
-			} else if (indiceInv[i] == 220) {
+			} else if (slots[i].indice == 220) {
 				if (claseGuerrera()) {
 					if (obj_pj.inmovilizado) {
 					
@@ -203,18 +185,12 @@ with(obj_inventario){
 					
 				        reproducirSonido(snd_tomarPocion, false, false);
         
-				        if (cantInv[i] > 1) {
-				            cantInv[i]--;
-				        } else {
-				            indiceInv[i] = -1;
-				            tipoInv[i] = "";
-				            cantInv[i] = 0;
-				            equipadoInv[i] = false;
-				            generoInv[i] = -1;
-				            razaInv[i] = -1;
-				            seleccionado = -1;
-				            nombreInv[i] = "Vacío";
-				        }
+				    if (slots[i].cant > 1) {
+					    slots[i].cant--;
+				    } else {
+					    slots[i] = crearSlotInv(-1, 0, false);
+					    seleccionado = -1;
+				    }
 					
 					} else {
 						var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
@@ -226,7 +202,7 @@ with(obj_inventario){
 	                idINFO.padre = obj_pj.id;
 	                idINFO.texto = "¡Tu clase no puede usar este ítem!"; 
 				}
-			} else if (indiceInv[i] == 221) {
+			} else if (slots[i].indice == 221) {
 				if (claseGuerrera()) {
 				
 					obj_pj.salud -= floor(obj_pj.salud * 0.9);                   
@@ -244,17 +220,11 @@ with(obj_inventario){
 					
 				    reproducirSonido(snd_tomarPocion, false, false);
         
-				    if (cantInv[i] > 1) {
-				        cantInv[i]--;
+				    if (slots[i].cant > 1) {
+				        slots[i].cant--;
 				    } else {
-				        indiceInv[i] = -1;
-				        tipoInv[i] = "";
-				        cantInv[i] = 0;
-				        equipadoInv[i] = false;
-				        generoInv[i] = -1;
-				        razaInv[i] = -1;
+				        slots[i] = crearSlotInv(-1, 0, false);
 				        seleccionado = -1;
-				        nombreInv[i] = "Vacío";
 				    }
 					
 				} else {
@@ -264,24 +234,18 @@ with(obj_inventario){
 				}
 			}
         
-			if (indiceInv[i] == 141 || indiceInv[i] == 142 || indiceInv[i] == 143 || indiceInv[i] == 218 || indiceInv[i] == 219) {
+			if (slots[i].indice == 141 || slots[i].indice == 142 || slots[i].indice == 143 || slots[i].indice == 218 || slots[i].indice == 219) {
 		        reproducirSonido(snd_tomarPocion, false, false);
         
-		        if (cantInv[i] > 1) {
-		            cantInv[i]--;
+		        if (slots[i].cant > 1) {
+		            slots[i].cant--;
 		        } else {
-		            indiceInv[i] = -1;
-		            tipoInv[i] = "";
-		            cantInv[i] = 0;
-		            equipadoInv[i] = false;
-		            generoInv[i] = -1;
-		            razaInv[i] = -1;
+		            slots[i] = crearSlotInv(-1, 0, false);
 		            seleccionado = -1;
-		            nombreInv[i] = "Vacío";
 		        }
 			}
         
-	    } else if (tipoInv[i] == "barca") {
+	    } else if (slots[i].tipo == "barca") {
     
 			obj_skills_libres.mostrado = false;
 	
@@ -429,7 +393,7 @@ with(obj_inventario){
         
 	        }
         
-	    } else if (tipoInv[i] == "runa") {
+	    } else if (slots[i].tipo == "runa") {
         
 	        var idINFO = 0;
     
@@ -460,16 +424,16 @@ with(obj_inventario){
 	            idINFO.texto = "¡No podés usar la runa en movimiento!";
 	        }
         
-	    } else if (tipoInv[i] == "trabajo") {
+	    } else if (slots[i].tipo == "trabajo") {
 		
 			obj_skills_libres.mostrado = false;
-	        if (indiceInv[i] == 157 || indiceInv[i] == 158 || indiceInv[i] == 159) {
+	        if (slots[i].indice == 157 || slots[i].indice == 158 || slots[i].indice == 159) {
         
 	            if (obj_panel_trabajos.mostrado) {
 	                obj_panel_trabajos.mostrado = false;
 	            } else {
             
-	                switch (indiceInv[i]) {
+	                switch (slots[i].indice) {
 	                    case 157:
 	                        obj_panel_trabajos.modo = 0;
 	                        break;

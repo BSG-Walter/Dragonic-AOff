@@ -9,12 +9,12 @@ if (touchId != nuevoTouch && nuevoTouch > -1) {  //detectamos un nuevo tap en el
     if (obj_inventario.seleccionado != -1) {
             
         for (var i = 0; i < obj_inventario.maximoInv; i++) {
-            if (obj_inventario.seleccionado == obj_inventario.indiceInv[i]) {
+            if (obj_inventario.seleccionado == obj_inventario.slots[i].indice) {
                 break;
             }
         }
                 
-        if (obj_inventario.tipoInv[i] == "barca" || obj_inventario.tipoInv[i] == "runa") {
+        if (obj_inventario.slots[i].tipo == "barca" || obj_inventario.slots[i].tipo == "runa") {
             barcaORunaSeleccionada = true;
         }
                 

@@ -17,6 +17,8 @@ datosPJ[7] = aux;
 datosPJ[8] = aux;
 datosPJ[9] = aux;
 
+repararPartidasGuardadas();
+
 cargarPJs(1);
 cargarPJs(2);
 cargarPJs(3);

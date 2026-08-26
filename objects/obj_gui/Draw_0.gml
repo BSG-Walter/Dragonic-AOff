@@ -112,14 +112,14 @@ if (obj_panel_items.mostrado) {
     
         if (obj_panel_items.sectorPj) {
     
-            var indiceInv = obj_inventario.indiceInv[indicePanel];
+            var indiceInv = obj_inventario.slots[indicePanel].indice;
             if (indiceInv != -1) {
                 draw_set_alpha(1);
                 draw_set_color(c_white);
                 if (!obj_panel_items.modoBanco) {
                     draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Precio: " + string(obj_panel_items.precioItem));
                 } else {
-                    draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_inventario.cantInv[indicePanel])); 
+                    draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 12, "Cantidad: " + string(obj_inventario.slots[indicePanel].cant)); 
                 }
                 draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 20, string(obj_panel_items.validoItem));
                 draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 47, global.render_y + render_height * 0.5 - modPanelItemsY + 28, obj_panel_items.descItem);
@@ -172,7 +172,7 @@ if (obj_panel_items.mostrado) {
 	
 	for (var index = 0; index < 20; index++){
 		//inventario user
-		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 152, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.nombreInv[index]));
+		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 152, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.slots[index].nombre));
 		//inventario npc
 		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 8, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.nombreNpc[index]));
 	}
@@ -472,10 +472,10 @@ obj_inventario.tiraDeA1
             }
             
             draw_set_color(c_black);
-            draw_text(global.render_x+ render_width / 2, global.render_y + render_height - 30, string(obj_inventario.cantInv[i])); 
+            draw_text(global.render_x+ render_width / 2, global.render_y + render_height - 30, string(obj_inventario.slots[i].cant)); 
             draw_set_color(c_white);
-            draw_text(global.render_x+ render_width / 2 - 1, global.render_y + render_height - 31, string(obj_inventario.cantInv[i])); 
-            ultimaCantItemTirado = obj_inventario.cantInv[i];    
+            draw_text(global.render_x+ render_width / 2 - 1, global.render_y + render_height - 31, string(obj_inventario.slots[i].cant)); 
+            ultimaCantItemTirado = obj_inventario.slots[i].cant;    
             
         }
     } else if (!itemTiradoVisible && obj_tecla_T.teclaApretada) {

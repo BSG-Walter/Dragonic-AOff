@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"cargarPartida",
+  "%Name":"scr_partidas",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"cargarPartida",
+  "name":"scr_partidas",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

@@ -101,11 +101,8 @@ function muertePJ() {
 	obj_inventario.seleccionado = -1;
 	obj_inventario.posSeleccionado = -1;
 
-	var i = 0;
-
-	repeat(obj_inventario.maximoInv) {
-	    obj_inventario.equipadoInv[i] = false;
-	    i++;
+	for (var i = 0; i < obj_inventario.maximoInv; i++) {
+	    obj_inventario.slots[i].equipado = false;
 	}
 
 	// Hechizos

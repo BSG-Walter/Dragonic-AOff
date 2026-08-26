@@ -4,11 +4,13 @@
 /// @param  posicion
 function dibujarItemInv(argument0, argument1, argument2) {
 
-	if (indiceInv[argument0] != -1) {
-	    draw_sprite(spr_items, indiceInv[argument0], global.inventario_x + 136 + argument2, global.inventario_y + 40 + argument1);
-	    draw_text(global.inventario_x + 152 + argument2, global.inventario_y + 28 + argument1, string_hash_to_newline(string(cantInv[argument0])));
+	var _slot = slots[argument0];
+
+	if (_slot.indice != -1) {
+	    draw_sprite(spr_items, _slot.indice, global.inventario_x + 136 + argument2, global.inventario_y + 40 + argument1);
+	    draw_text(global.inventario_x + 152 + argument2, global.inventario_y + 28 + argument1, string_hash_to_newline(string(_slot.cant)));
     
-	    if (equipadoInv[argument0]) {
+	    if (_slot.equipado) {
 	        draw_sprite(spr_cruz_equipado, 0, global.inventario_x + 136 + argument2, global.inventario_y + 40 + argument1);
 	    }
     
@@ -27,7 +29,5 @@ function dibujarItemInv(argument0, argument1, argument2) {
 	        draw_set_halign(fa_right);
 	    }
 	}
-
-
 
 }

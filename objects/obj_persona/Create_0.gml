@@ -315,7 +315,6 @@ puedeRemoverse = false;
 alarm[5] = 1 + irandom(45);
 alarm[6] = 1 + irandom(30);
 alarm[8] = intervaloAtaque + irandom(60);
-__lodCounter = irandom(5); // para LOD throttling en Step_0
 
 // Dice palabras mágicas
 

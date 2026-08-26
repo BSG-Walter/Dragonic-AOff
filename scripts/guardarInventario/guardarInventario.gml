@@ -2,9 +2,9 @@
 function guardarInventario() {
     
 	for (var i = 0; i < 20; i++) {
-	    write("obj_inventario", "indiceInv[" + string(i) + "]", obj_inventario.indiceInv[i]);
-	    write("obj_inventario", "cantInv[" + string(i) + "]", obj_inventario.cantInv[i]);
-	    write("obj_inventario", "equipadoInv[" + string(i) + "]", obj_inventario.equipadoInv[i]);
+	    write("obj_inventario", "slots[" + string(i) + "].indice", obj_inventario.slots[i].indice);
+	    write("obj_inventario", "slots[" + string(i) + "].cant", obj_inventario.slots[i].cant);
+	    write("obj_inventario", "slots[" + string(i) + "].equipado", obj_inventario.slots[i].equipado);
 	}
 
 

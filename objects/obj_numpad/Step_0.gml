@@ -75,10 +75,10 @@ device_mouse_check_button(4, mb_left)
 						
                         var cant = floor(real(cantidadS));
 						
-						if (cant > obj_inventario.cantInv[obj_inventario.posSeleccionado])
-							cant = obj_inventario.cantInv[obj_inventario.posSeleccionado];
+						if (cant > obj_inventario.slots[obj_inventario.posSeleccionado].cant)
+							cant = obj_inventario.slots[obj_inventario.posSeleccionado].cant;
 						
-                        if (!place_meeting(obj_pj.x, obj_pj.y, obj_tile_invalido) && obj_inventario.posSeleccionado != -1 && cant > 0 && obj_inventario.cantInv[obj_inventario.posSeleccionado] >= cant) {
+                        if (!place_meeting(obj_pj.x, obj_pj.y, obj_tile_invalido) && obj_inventario.posSeleccionado != -1 && cant > 0 && obj_inventario.slots[obj_inventario.posSeleccionado].cant >= cant) {
                             
                                 var valido = true;
                                 
@@ -90,12 +90,12 @@ device_mouse_check_button(4, mb_left)
                                 ) {
                                     var idItemTirado = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
                                     idItemTirado.superpone = true;
-                                    idItemTirado.indice = obj_inventario.indiceInv[obj_inventario.posSeleccionado];
+                                    idItemTirado.indice = obj_inventario.slots[obj_inventario.posSeleccionado].indice;
                                     idItemTirado.cantidad = cant;
-                                    idItemTirado.tipo = obj_inventario.tipoInv[obj_inventario.posSeleccionado];
+                                    idItemTirado.tipo = obj_inventario.slots[obj_inventario.posSeleccionado].tipo;
                                 } else if (position_meeting(obj_pj.x, obj_pj.y - 16, obj_item)) {
                                     var idItemTirado = instance_position(obj_pj.x, obj_pj.y - 16, obj_item);
-                                    if (idItemTirado.indice == obj_inventario.indiceInv[obj_inventario.posSeleccionado] && idItemTirado.cantidad + cant <= 10000) {
+                                    if (idItemTirado.indice == obj_inventario.slots[obj_inventario.posSeleccionado].indice && idItemTirado.cantidad + cant <= 10000) {
                                         idItemTirado.cantidad += cant;
                                     } else {
                                         valido = false;
@@ -104,50 +104,46 @@ device_mouse_check_button(4, mb_left)
                                 
                                 if (valido) {
                                 
-                                    if (obj_inventario.cantInv[obj_inventario.posSeleccionado] > cant) {
-                                        obj_inventario.cantInv[obj_inventario.posSeleccionado] -= cant;
+                                    if (obj_inventario.slots[obj_inventario.posSeleccionado].cant > cant) {
+                                        obj_inventario.slots[obj_inventario.posSeleccionado].cant -= cant;
                                     } else {
                                     
-                                        if (obj_inventario.indiceInv[obj_inventario.posSeleccionado] == obj_inventario.seleccionado) {
+                                        if (obj_inventario.slots[obj_inventario.posSeleccionado].indice == obj_inventario.seleccionado) {
                                             obj_inventario.seleccionado = -1;
                                         }
                                         
-                                        if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "ropa" && obj_inventario.posSeleccionado == obj_pj.ropaEnInv) {
+                                        if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "ropa" && obj_inventario.posSeleccionado == obj_pj.ropaEnInv) {
                                             obj_pj.desnudo = true;
                                             obj_pj.ropaActual = -1;
                                             obj_pj.ropaEnInv = -1;
                                             obj_pj.ropaIndexada = false;
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "arma" && obj_inventario.posSeleccionado == obj_pj.armaEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "arma" && obj_inventario.posSeleccionado == obj_pj.armaEnInv) {
                                             obj_pj.armaActual = -1;
                                             obj_pj.armaEnInv = -1;
                                             obj_pj.sprArma = -1;
                                             reproducirSonido(snd_equiparODesequiparArma, false, false);
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "flecha" && obj_inventario.posSeleccionado == obj_pj.flechaEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "flecha" && obj_inventario.posSeleccionado == obj_pj.flechaEnInv) {
                                             obj_pj.flechaActual = -1;
                                             obj_pj.flechaEnInv = -1;
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "casco" && obj_inventario.posSeleccionado == obj_pj.cascoEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "casco" && obj_inventario.posSeleccionado == obj_pj.cascoEnInv) {
                                             obj_pj.cascoActual = -1;
                                             obj_pj.cascoEnInv = -1;
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "escudo" && obj_inventario.posSeleccionado == obj_pj.escudoEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "escudo" && obj_inventario.posSeleccionado == obj_pj.escudoEnInv) {
                                             obj_pj.escudoActual = -1;
                                             obj_pj.escudoEnInv = -1;
                                             obj_pj.sprEscudo = -1;
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "laud" && obj_inventario.posSeleccionado == obj_pj.laudEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "laud" && obj_inventario.posSeleccionado == obj_pj.laudEnInv) {
                                             obj_pj.laudActual = -1;
                                             obj_pj.laudEnInv = -1;
                                             obj_pj.laudEquipado = false;
-                                        } else if (obj_inventario.tipoInv[obj_inventario.posSeleccionado] == "trabajo" && obj_inventario.posSeleccionado == obj_pj.trabajoEnInv) {
+                                        } else if (obj_inventario.slots[obj_inventario.posSeleccionado].tipo == "trabajo" && obj_inventario.posSeleccionado == obj_pj.trabajoEnInv) {
                                             obj_pj.trabajoActual = -1;
                                             obj_pj.trabajoEnInv = -1;
                                             obj_pj.trabajoEquipado = false;
                                             obj_panel_trabajos.mostrado = false;
                                         }
                                     
-                                        obj_inventario.cantInv[obj_inventario.posSeleccionado] = 0;
-                                        obj_inventario.indiceInv[obj_inventario.posSeleccionado] = -1;
-                                        obj_inventario.tipoInv[obj_inventario.posSeleccionado] = "";
-                                        obj_inventario.equipadoInv[obj_inventario.posSeleccionado] = false;
-                                        obj_inventario.nombreInv[obj_inventario.posSeleccionado] = "Vacío";
+                                        obj_inventario.slots[obj_inventario.posSeleccionado] = crearSlotInv(-1, 0, false);
                                         
                                         obj_inventario.posSeleccionado = -1;
                                         

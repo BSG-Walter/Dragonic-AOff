@@ -26,17 +26,11 @@ function subirNivelMaxGM() {
 
 	oro = oroMax;
 	
-	obj_inventario.indiceInv[14]="163"
-	obj_inventario.cantInv[14]="100"
-	obj_inventario.indiceInv[15]="146"
-	obj_inventario.cantInv[15]="10000"
-	obj_inventario.indiceInv[16]="28"
-	obj_inventario.cantInv[16]="10000"
-	obj_inventario.indiceInv[17]="151"
-	obj_inventario.cantInv[17]="10000"
-	obj_inventario.indiceInv[18]="152"
-	obj_inventario.cantInv[18]="10000"
-	obj_inventario.indiceInv[19]="153"
-	obj_inventario.cantInv[19]="10000"
+	obj_inventario.slots[14] = crearSlotInv(163, 100, false);
+	obj_inventario.slots[15] = crearSlotInv(146, 10000, false);
+	obj_inventario.slots[16] = crearSlotInv(28, 10000, false);
+	obj_inventario.slots[17] = crearSlotInv(151, 10000, false);
+	obj_inventario.slots[18] = crearSlotInv(152, 10000, false);
+	obj_inventario.slots[19] = crearSlotInv(153, 10000, false);
 
 }

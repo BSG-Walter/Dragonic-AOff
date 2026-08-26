@@ -35,14 +35,14 @@ if (trabajando) {
         
         for (var i = 0; i < obj_inventario.maximoInv; i++) {
         
-            if (obj_inventario.indiceInv[i] == 146) {
+            if (obj_inventario.slots[i].indice == 146) {
             
-                if (obj_inventario.cantInv[i] + cantidadMadera <= 10000) {
+                if (obj_inventario.slots[i].cant + cantidadMadera <= 10000) {
                 
                     // Hay lugar en slot existente
                     
                     existe = true;
-                    obj_inventario.cantInv[i] += cantidadMadera;
+                    obj_inventario.slots[i].cant += cantidadMadera;
                     
                     if (skills[5] < skillsNaturales[nivel]) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
@@ -65,30 +65,14 @@ if (trabajando) {
             var hayLugar = false;
         
             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                if (obj_inventario.indiceInv[i] == -1) {
+                if (obj_inventario.slots[i].indice == -1) {
                 
                     // Hay lugar en slot nuevo
                     
                     hayLugar = true;
                     datosItem = configurarItem(146);
                     
-                    obj_inventario.indiceInv[i] = 146;
-                    obj_inventario.tipoInv[i] = datosItem[0];
-                    obj_inventario.cantInv[i] = cantidadMadera;
-                    obj_inventario.generoInv[i] = datosItem[1];
-                    obj_inventario.razaInv[i] = datosItem[2];
-                    obj_inventario.nroSkillInv[i] = datosItem[3];
-                    obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                    obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                    obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                    obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                    obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                    obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                    obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                    obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                    obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                    obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                    obj_inventario.nombreInv[i] = datosItem[14];
+                    obj_inventario.slots[i] = crearSlotInv(146, cantidadMadera, false);
                     
                     if (skills[5] < skillsNaturales[nivel]) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
@@ -150,14 +134,14 @@ if (trabajando) {
         
         for (var i = 0; i < obj_inventario.maximoInv; i++) {
         
-            if (obj_inventario.indiceInv[i] == indiceMineral) {
+            if (obj_inventario.slots[i].indice == indiceMineral) {
             
-                if (obj_inventario.cantInv[i] + cantidadMinerales <= 10000) {
+                if (obj_inventario.slots[i].cant + cantidadMinerales <= 10000) {
                 
                     // Hay lugar en slot existente
                     
                     existe = true;
-                    obj_inventario.cantInv[i] += cantidadMinerales;
+                    obj_inventario.slots[i].cant += cantidadMinerales;
                     
                     if (skills[8] < skillsNaturales[nivel]) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
@@ -180,30 +164,14 @@ if (trabajando) {
             var hayLugar = false;
         
             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                if (obj_inventario.indiceInv[i] == -1) {
+                if (obj_inventario.slots[i].indice == -1) {
                 
                     // Hay lugar en slot nuevo
                     
                     hayLugar = true;
                     datosItem = configurarItem(indiceMineral);
                     
-                    obj_inventario.indiceInv[i] = indiceMineral;
-                    obj_inventario.tipoInv[i] = datosItem[0];
-                    obj_inventario.cantInv[i] = cantidadMinerales;
-                    obj_inventario.generoInv[i] = datosItem[1];
-                    obj_inventario.razaInv[i] = datosItem[2];
-                    obj_inventario.nroSkillInv[i] = datosItem[3];
-                    obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                    obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                    obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                    obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                    obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                    obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                    obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                    obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                    obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                    obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                    obj_inventario.nombreInv[i] = datosItem[14];
+                    obj_inventario.slots[i] = crearSlotInv(indiceMineral, cantidadMinerales, false);
                     
                     if (skills[8] < skillsNaturales[nivel]) {
                         if (random(1) < 0.35 * SKILL_FACTOR) {
@@ -257,26 +225,22 @@ if (trabajando) {
         
             for (var i = 0; i < obj_inventario.maximoInv; i++) {
             
-                if (obj_inventario.indiceInv[i] == indiceLingote) {
+                if (obj_inventario.slots[i].indice == indiceLingote) {
                 
-                    if (obj_inventario.cantInv[i] + 1 <= 10000) {
+                    if (obj_inventario.slots[i].cant + 1 <= 10000) {
                     
                         // Hay lugar en slot existente
                         
                         if (obj_inventario.posSeleccionado != -1) {
-                            if (obj_inventario.cantInv[obj_inventario.posSeleccionado] > cantidadConsumida) {
-                                obj_inventario.cantInv[obj_inventario.posSeleccionado] -= cantidadConsumida;
+                            if (obj_inventario.slots[obj_inventario.posSeleccionado].cant > cantidadConsumida) {
+                                obj_inventario.slots[obj_inventario.posSeleccionado].cant -= cantidadConsumida;
                                 existe = true;
-                                obj_inventario.cantInv[i]++;                        
+                                obj_inventario.slots[i].cant++;                        
                                 break;
-                            } else if (obj_inventario.cantInv[obj_inventario.posSeleccionado] = cantidadConsumida) {
-                                obj_inventario.cantInv[obj_inventario.posSeleccionado] = 0;
-                                obj_inventario.indiceInv[obj_inventario.posSeleccionado] = -1;
-                                obj_inventario.tipoInv[obj_inventario.posSeleccionado] = "";
-                                obj_inventario.equipadoInv[obj_inventario.posSeleccionado] = false;
-                                obj_inventario.nombreInv[obj_inventario.posSeleccionado] = "Vacío";
+                            } else if (obj_inventario.slots[obj_inventario.posSeleccionado].cant = cantidadConsumida) {
+                                obj_inventario.slots[obj_inventario.posSeleccionado] = crearSlotInv(-1, 0, false);
                                 existe = true;
-                                obj_inventario.cantInv[i]++;                        
+                                obj_inventario.slots[i].cant++;                        
                                 break;
                             }
                         }
@@ -292,22 +256,18 @@ if (trabajando) {
                 var hayLugar = false;
             
                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                    if (obj_inventario.indiceInv[i] == -1) {
+                    if (obj_inventario.slots[i].indice == -1) {
                     
                         // Hay lugar en slot nuevo
                         
                         var valido = false;
                         
                         if (obj_inventario.posSeleccionado != -1) {
-                            if (obj_inventario.cantInv[obj_inventario.posSeleccionado] > cantidadConsumida) {
-                                obj_inventario.cantInv[obj_inventario.posSeleccionado] -= cantidadConsumida;
+                            if (obj_inventario.slots[obj_inventario.posSeleccionado].cant > cantidadConsumida) {
+                                obj_inventario.slots[obj_inventario.posSeleccionado].cant -= cantidadConsumida;
                                 valido = true;
-                            } else if (obj_inventario.cantInv[obj_inventario.posSeleccionado] = cantidadConsumida) {
-                                obj_inventario.cantInv[obj_inventario.posSeleccionado] = 0;
-                                obj_inventario.indiceInv[obj_inventario.posSeleccionado] = -1;
-                                obj_inventario.tipoInv[obj_inventario.posSeleccionado] = "";
-                                obj_inventario.equipadoInv[obj_inventario.posSeleccionado] = false;
-                                obj_inventario.nombreInv[obj_inventario.posSeleccionado] = "Vacío";
+                            } else if (obj_inventario.slots[obj_inventario.posSeleccionado].cant = cantidadConsumida) {
+                                obj_inventario.slots[obj_inventario.posSeleccionado] = crearSlotInv(-1, 0, false);
                                 valido = true;
                             }
                         }
@@ -317,23 +277,7 @@ if (trabajando) {
                             hayLugar = true;
                             datosItem = configurarItem(indiceLingote);
                             
-                            obj_inventario.indiceInv[i] = indiceLingote;
-                            obj_inventario.tipoInv[i] = datosItem[0];
-                            obj_inventario.cantInv[i] = 1;
-                            obj_inventario.generoInv[i] = datosItem[1];
-                            obj_inventario.razaInv[i] = datosItem[2];
-                            obj_inventario.nroSkillInv[i] = datosItem[3];
-                            obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                            obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                            obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                            obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                            obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                            obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                            obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                            obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                            obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                            obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                            obj_inventario.nombreInv[i] = datosItem[14];
+                            obj_inventario.slots[i] = crearSlotInv(indiceLingote, 1, false);
                             
                             break;
                             
@@ -526,13 +470,13 @@ if (trabajando) {
                             
                             if (cantidadPeces[iAux] > 0) {
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.indiceInv[i] == indicePez) {
-                                        if (obj_inventario.cantInv[i] + cantidadPeces[iAux] <= 10000) {
+                                    if (obj_inventario.slots[i].indice == indicePez) {
+                                        if (obj_inventario.slots[i].cant + cantidadPeces[iAux] <= 10000) {
                                         
                                             // Hay lugar en slot existente
                                             
                                             existe = true;
-                                            obj_inventario.cantInv[i] += cantidadPeces[iAux];
+                                            obj_inventario.slots[i].cant += cantidadPeces[iAux];
                                             
                                             break;
                                             
@@ -545,30 +489,14 @@ if (trabajando) {
                                     var hayLugar = false;
                                 
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                        if (obj_inventario.indiceInv[i] == -1) {
+                                        if (obj_inventario.slots[i].indice == -1) {
                                         
                                             // Hay lugar en slot nuevo
                                             
                                             hayLugar = true;
                                             datosItem = configurarItem(indicePez);
                                             
-                                            obj_inventario.indiceInv[i] = indicePez;
-                                            obj_inventario.tipoInv[i] = datosItem[0];
-                                            obj_inventario.cantInv[i] = cantidadPeces[iAux];
-                                            obj_inventario.generoInv[i] = datosItem[1];
-                                            obj_inventario.razaInv[i] = datosItem[2];
-                                            obj_inventario.nroSkillInv[i] = datosItem[3];
-                                            obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                            obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                            obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                            obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                            obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                            obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                            obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                            obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                            obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                            obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                            obj_inventario.nombreInv[i] = datosItem[14];
+                                            obj_inventario.slots[i] = crearSlotInv(indicePez, cantidadPeces[iAux], false);
                                             
                                             break;
                                             

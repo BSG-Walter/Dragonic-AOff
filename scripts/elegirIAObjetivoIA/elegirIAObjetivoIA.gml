@@ -15,9 +15,13 @@ function elegirIAObjetivoIA(argument0) {
 	with (obj_persona) {
 		// Ignorar al propio bot, bots muertos y aliados
 		if (id == other.id || muerto) continue;
+		
 		if (room == rm_arena) {
 			if (other.pk == pk) continue;
+		} else {
+			if (!other.pk && !pk) continue;
 		}
+		
 		var _nueva_distancia = point_distance(x, y, other.x, other.y);
 		
 		if (_nueva_distancia <= 450) {

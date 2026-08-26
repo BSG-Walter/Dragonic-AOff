@@ -21,10 +21,10 @@ if (clicMantenido) {
                 
                 if (sectorPj && cant > 0) {
                     if (indiceItem != -1) {
-						if (cant > obj_inventario.cantInv[indiceItem])
-							cant = obj_inventario.cantInv[indiceItem]
-						var indiceItemAVender = obj_inventario.indiceInv[indiceItem];
-                        if (indiceItemAVender != -1 && obj_inventario.cantInv[indiceItem] >= cant && itemVendible(indiceItemAVender)) {
+						if (cant > obj_inventario.slots[indiceItem].cant)
+							cant = obj_inventario.slots[indiceItem].cant
+						var indiceItemAVender = obj_inventario.slots[indiceItem].indice;
+                        if (indiceItemAVender != -1 && obj_inventario.slots[indiceItem].cant >= cant && itemVendible(indiceItemAVender)) {
                         
                             if (obj_pj.oro + precioItem * cant <= obj_pj.oroMax) {
                                 obj_pj.oro += precioItem * cant;
@@ -34,11 +34,11 @@ if (clicMantenido) {
 												
 							obj_skills_libres.mostrado = false;
                         
-                            if (obj_inventario.cantInv[indiceItem] > cant) {
-                                obj_inventario.cantInv[indiceItem] -= cant;
+                            if (obj_inventario.slots[indiceItem].cant > cant) {
+                                obj_inventario.slots[indiceItem].cant -= cant;
                             } else {
                             
-                                if (obj_inventario.indiceInv[indiceItem] == obj_inventario.seleccionado) {
+                                    if (obj_inventario.slots[indiceItem].indice == obj_inventario.seleccionado) {
                                     obj_inventario.seleccionado = -1;
                                 }
                                 
@@ -46,41 +46,37 @@ if (clicMantenido) {
                                     obj_inventario.posSeleccionado = -1;
                                 }
                                 
-                                if (obj_inventario.tipoInv[indiceItem] == "ropa" && indiceItem == obj_pj.ropaEnInv) {
+                                if (obj_inventario.slots[indiceItem].tipo == "ropa" && indiceItem == obj_pj.ropaEnInv) {
                                     obj_pj.desnudo = true;
                                     obj_pj.ropaActual = -1;
                                     obj_pj.ropaEnInv = -1;
                                     obj_pj.ropaIndexada = false;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "arma" && indiceItem == obj_pj.armaEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "arma" && indiceItem == obj_pj.armaEnInv) {
                                     obj_pj.armaActual = -1;
                                     obj_pj.armaEnInv = -1;
                                     obj_pj.sprArma = -1;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "flecha" && indiceItem == obj_pj.flechaEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "flecha" && indiceItem == obj_pj.flechaEnInv) {
                                     obj_pj.flechaActual = -1;
                                     obj_pj.flechaEnInv = -1;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "casco" && indiceItem == obj_pj.cascoEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "casco" && indiceItem == obj_pj.cascoEnInv) {
                                     obj_pj.cascoActual = -1;
                                     obj_pj.cascoEnInv = -1;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "escudo" && indiceItem == obj_pj.escudoEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "escudo" && indiceItem == obj_pj.escudoEnInv) {
                                     obj_pj.escudoActual = -1;
                                     obj_pj.escudoEnInv = -1;
                                     obj_pj.sprEscudo = -1;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "laud" && indiceItem == obj_pj.laudEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "laud" && indiceItem == obj_pj.laudEnInv) {
                                     obj_pj.laudActual = -1;
                                     obj_pj.laudEnInv = -1;
                                     obj_pj.laudEquipado = false;
-                                } else if (obj_inventario.tipoInv[indiceItem] == "trabajo" && indiceItem == obj_pj.trabajoEnInv) {
+                                } else if (obj_inventario.slots[indiceItem].tipo == "trabajo" && indiceItem == obj_pj.trabajoEnInv) {
                                     obj_pj.trabajoActual = -1;
                                     obj_pj.trabajoEnInv = -1;
                                     obj_pj.trabajoEquipado = false;
                                     obj_panel_trabajos.mostrado = false;
                                 }
                                 
-                                obj_inventario.cantInv[indiceItem] = 0;
-                                obj_inventario.indiceInv[indiceItem] = -1;
-                                obj_inventario.tipoInv[indiceItem] = "";
-                                obj_inventario.equipadoInv[indiceItem] = false;
-                                obj_inventario.nombreInv[indiceItem] = "Vacío";
+                                obj_inventario.slots[indiceItem] = crearSlotInv(-1, 0, false);
                                 
                             }
                         
@@ -115,14 +111,14 @@ if (clicMantenido) {
                                 var existe = false;
                 
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                    if (obj_inventario.indiceInv[i] == idPadre.indiceNpc[indiceItem]) {
-                                        if (obj_inventario.cantInv[i] + cant <= 10000) {
+                                    if (obj_inventario.slots[i].indice == idPadre.indiceNpc[indiceItem]) {
+                                        if (obj_inventario.slots[i].cant + cant <= 10000) {
                                             // Hay lugar en slot existente
                                             
                                             existe = true;
                                             obj_pj.oro -= precioItem * cant;
-                                            obj_inventario.cantInv[i] += cant;
-												
+                                            obj_inventario.slots[i].cant += cant;
+											
 											obj_skills_libres.mostrado = false;
                                             
                                             if (random(1) < 0.35 * SKILL_FACTOR) {
@@ -161,7 +157,7 @@ if (clicMantenido) {
                                                             modPrecio = 2;
                                                         }
                                                         
-                                                        precioItem = floor((datosItem[1] * 2) / modPrecio);
+                                                        precioItem = floor((datosItem.precio * 2) / modPrecio);
                                                         
                                                         if (precioItem <= 0) {
                                                             precioItem = 1;
@@ -179,33 +175,15 @@ if (clicMantenido) {
                                 if (!existe) {
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
                                     
-                                        if (obj_inventario.indiceInv[i] == -1) {
+                                        if (obj_inventario.slots[i].indice == -1) {
                                         
                                             // Hay lugar en slot nuevo
                                             
                                             obj_pj.oro -= precioItem * cant;
-												
+											
 											obj_skills_libres.mostrado = false;
                                             
-                                            datosItem = configurarItem(idPadre.indiceNpc[indiceItem]);
-                                            
-                                            obj_inventario.indiceInv[i] = idPadre.indiceNpc[indiceItem];
-                                            obj_inventario.tipoInv[i] = datosItem[0];
-                                            obj_inventario.cantInv[i] = cant;
-                                            obj_inventario.generoInv[i] = datosItem[1];
-                                            obj_inventario.razaInv[i] = datosItem[2];
-                                            obj_inventario.nroSkillInv[i] = datosItem[3];
-                                            obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                            obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                            obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                            obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                            obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                            obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                            obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                            obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                            obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                            obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                            obj_inventario.nombreInv[i] = datosItem[14];
+                                            obj_inventario.slots[i] = crearSlotInv(idPadre.indiceNpc[indiceItem], cant, false);
                                             
                                             if (random(1) < 0.35 * SKILL_FACTOR) {
                                                 if (obj_pj.skills[16] < 100) {
@@ -243,7 +221,7 @@ if (clicMantenido) {
                                                             modPrecio = 2;
                                                         }
                                                         
-                                                        precioItem = floor((datosItem[1] * 2) / modPrecio);
+                                                        precioItem = floor((datosItem.precio * 2) / modPrecio);
                                                         
                                                         if (precioItem <= 0) {
                                                             precioItem = 1;
@@ -280,15 +258,15 @@ if (clicMantenido) {
                 
                 if (sectorPj && cant > 0) {
                     if (indiceItem != -1) {
-						if (cant > obj_inventario.cantInv[indiceItem])
-							cant = obj_inventario.cantInv[indiceItem];
-                        if (obj_inventario.indiceInv[indiceItem] != -1 && obj_inventario.cantInv[indiceItem] >= cant) {
+						if (cant > obj_inventario.slots[indiceItem].cant)
+							cant = obj_inventario.slots[indiceItem].cant;
+                        if (obj_inventario.slots[indiceItem].indice != -1 && obj_inventario.slots[indiceItem].cant >= cant) {
                         
                             var valido = false;
                             var existe = false;
                 
-                            for (var i = 0; i < 20; i++) {
-                                if (idPadre.indiceNpc[i] == obj_inventario.indiceInv[indiceItem]) {
+                                for (var i = 0; i < 20; i++) {
+                                    if (idPadre.indiceNpc[i] == obj_inventario.slots[indiceItem].indice) {
                                     if (idPadre.cantNpc[i] + cant <= 10000) {
                                     
                                         // Hay lugar en slot existente
@@ -309,11 +287,11 @@ if (clicMantenido) {
                                     
                                         // Hay lugar en slot nuevo
                                         
-                                        datosItem = configurarItem(obj_inventario.indiceInv[indiceItem]);
+                                        datosItem = configurarItem(obj_inventario.slots[indiceItem].indice);
                                         
-                                        idPadre.indiceNpc[i] = obj_inventario.indiceInv[indiceItem];
+                                        idPadre.indiceNpc[i] = obj_inventario.slots[indiceItem].indice;
                                         idPadre.cantNpc[i] = cant;
-                                        idPadre.nombreNpc[i] = datosItem[14];
+                                        idPadre.nombreNpc[i] = datosItem.nombre;
                                         
                                         valido = true;
                                         
@@ -326,11 +304,11 @@ if (clicMantenido) {
                         
                             if (valido) {
                                 
-                                if (obj_inventario.cantInv[indiceItem] > cant) {
-                                    obj_inventario.cantInv[indiceItem] -= cant;
+                                if (obj_inventario.slots[indiceItem].cant > cant) {
+                                    obj_inventario.slots[indiceItem].cant -= cant;
                                 } else {
                                 
-                                    if (obj_inventario.indiceInv[indiceItem] == obj_inventario.seleccionado) {
+                                if (obj_inventario.slots[indiceItem].indice == obj_inventario.seleccionado) {
                                         obj_inventario.seleccionado = -1;
                                     }
                                     
@@ -338,39 +316,35 @@ if (clicMantenido) {
                                         obj_inventario.posSeleccionado = -1;
                                     }
                                     
-                                    if (obj_inventario.tipoInv[indiceItem] == "ropa" && indiceItem == obj_pj.ropaEnInv) {
+                                    if (obj_inventario.slots[indiceItem].tipo == "ropa" && indiceItem == obj_pj.ropaEnInv) {
                                         obj_pj.desnudo = true;
                                         obj_pj.ropaActual = -1;
                                         obj_pj.ropaEnInv = -1;
                                         obj_pj.ropaIndexada = false;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "arma" && indiceItem == obj_pj.armaEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "arma" && indiceItem == obj_pj.armaEnInv) {
                                         obj_pj.armaActual = -1;
                                         obj_pj.armaEnInv = -1;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "flecha" && indiceItem == obj_pj.flechaEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "flecha" && indiceItem == obj_pj.flechaEnInv) {
                                         obj_pj.flechaActual = -1;
                                         obj_pj.flechaEnInv = -1;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "casco" && indiceItem == obj_pj.cascoEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "casco" && indiceItem == obj_pj.cascoEnInv) {
                                         obj_pj.cascoActual = -1;
                                         obj_pj.cascoEnInv = -1;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "escudo" && indiceItem == obj_pj.escudoEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "escudo" && indiceItem == obj_pj.escudoEnInv) {
                                         obj_pj.escudoActual = -1;
                                         obj_pj.escudoEnInv = -1;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "laud" && indiceItem == obj_pj.laudEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "laud" && indiceItem == obj_pj.laudEnInv) {
                                         obj_pj.laudActual = -1;
                                         obj_pj.laudEnInv = -1;
                                         obj_pj.laudEquipado = false;
-                                    } else if (obj_inventario.tipoInv[indiceItem] == "trabajo" && indiceItem == obj_pj.trabajoEnInv) {
+                                    } else if (obj_inventario.slots[indiceItem].tipo == "trabajo" && indiceItem == obj_pj.trabajoEnInv) {
                                         obj_pj.trabajoActual = -1;
                                         obj_pj.trabajoEnInv = -1;
                                         obj_pj.trabajoEquipado = false;
                                         obj_panel_trabajos.mostrado = false;
                                     }
                                     
-                                    obj_inventario.cantInv[indiceItem] = 0;
-                                    obj_inventario.indiceInv[indiceItem] = -1;
-                                    obj_inventario.tipoInv[indiceItem] = "";
-                                    obj_inventario.equipadoInv[indiceItem] = false;
-                                    obj_inventario.nombreInv[indiceItem] = "Vacío";
+                                    obj_inventario.slots[indiceItem] = crearSlotInv(-1, 0, false);
                                     
                                 }
                             
@@ -399,13 +373,13 @@ if (clicMantenido) {
                             var existe = false;
             
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
-                                if (obj_inventario.indiceInv[i] == idPadre.indiceNpc[indiceItem]) {
-                                    if (obj_inventario.cantInv[i] + cant <= 10000) {
+                                if (obj_inventario.slots[i].indice == idPadre.indiceNpc[indiceItem]) {
+                                    if (obj_inventario.slots[i].cant + cant <= 10000) {
                                     
                                         // Hay lugar en slot existente
                                         
                                         existe = true;
-                                        obj_inventario.cantInv[i] += cant;
+                                        obj_inventario.slots[i].cant += cant;
                                         valido = true;
                                         break;
                                         
@@ -416,29 +390,11 @@ if (clicMantenido) {
                             if (!existe) {
                                 for (var i = 0; i < obj_inventario.maximoInv; i++) {
                                 
-                                    if (obj_inventario.indiceInv[i] == -1) {
+                                    if (obj_inventario.slots[i].indice == -1) {
                                     
                                         // Hay lugar en slot nuevo
                                         
-                                        datosItem = configurarItem(idPadre.indiceNpc[indiceItem]);
-                                        
-                                        obj_inventario.indiceInv[i] = idPadre.indiceNpc[indiceItem];
-                                        obj_inventario.tipoInv[i] = datosItem[0];
-                                        obj_inventario.cantInv[i] = cant;
-                                        obj_inventario.generoInv[i] = datosItem[1];
-                                        obj_inventario.razaInv[i] = datosItem[2];
-                                        obj_inventario.nroSkillInv[i] = datosItem[3];
-                                        obj_inventario.skillRequeridoInv[i] = datosItem[4];
-                                        obj_inventario.clase0ValidaInv[i] = datosItem[5];
-                                        obj_inventario.clase1ValidaInv[i] = datosItem[6];
-                                        obj_inventario.clase2ValidaInv[i] = datosItem[7];
-                                        obj_inventario.clase3ValidaInv[i] = datosItem[8];
-                                        obj_inventario.clase4ValidaInv[i] = datosItem[9];
-                                        obj_inventario.clase5ValidaInv[i] = datosItem[10];
-                                        obj_inventario.clase6ValidaInv[i] = datosItem[11];
-                                        obj_inventario.clase7ValidaInv[i] = datosItem[12];
-                                        obj_inventario.clase8ValidaInv[i] = datosItem[13];
-                                        obj_inventario.nombreInv[i] = datosItem[14];
+                                        obj_inventario.slots[i] = crearSlotInv(idPadre.indiceNpc[indiceItem], cant, false);
                                         
                                         valido = true;
                                         
@@ -473,4 +429,3 @@ if (clicMantenido) {
         
     }
 }
-

@@ -46,10 +46,10 @@ if (!navega) {
         
             for (var i = 0; i < obj_inventario.maximoInv; i++) {
                 if (
-                (obj_inventario.tipoInv[i] == "ropa") &&
-                (obj_inventario.equipadoInv[i])
+                (obj_inventario.slots[i].tipo == "ropa") &&
+                (obj_inventario.slots[i].equipado)
                 ) {
-                    indiceRopa = obj_inventario.indiceInv[i];
+                    indiceRopa = obj_inventario.slots[i].indice;
                     break;
                 }
             }

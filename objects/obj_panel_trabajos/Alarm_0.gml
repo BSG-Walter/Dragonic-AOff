@@ -1,4 +1,4 @@
-/// @description  Lista de ítems
+﻿/// @description  Lista de ítems
 
 obj_panel_items.mostrado = false;
 mostrado = true;
@@ -65,33 +65,15 @@ for (var i = 0; i < nroIndices; i++) {
     
     item = vecIndices[i];
 
-    datosItem[0] = "";
-    datosItem[1] = -1;
-    datosItem[2] = -1;
-    datosItem[3] = 0;
-    datosItem[4] = 0;
-    datosItem[5] = true; 
-    datosItem[6] = true; 
-    datosItem[7] = true; 
-    datosItem[8] = true; 
-    datosItem[9] = true; 
-    datosItem[10] = true; 
-    datosItem[11] = true; 
-    datosItem[12] = true; 
-    datosItem[13] = true; 
-    datosItem[14] = "Vacío";
-    
     var datosItem = datosTrabajo(item);
     
-    if (obj_pj.skills[datosItem[0]] >= datosItem[1]) {
+    if (obj_pj.skills[datosItem.nroSkill] >= datosItem.skillReq) {
         datosItem = configurarItem(item);
         listaItems[i] = item;
-        nombreItems[i] = datosItem[14];
+        nombreItems[i] = datosItem.nombre;
     }
 
 }
-
-
 
 
 

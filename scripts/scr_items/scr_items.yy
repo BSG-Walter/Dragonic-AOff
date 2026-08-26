@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"guardarPartida",
+  "%Name":"scr_items",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"guardarPartida",
+  "name":"scr_items",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Dragonic AOff",
+    "path":"Dragonic AOff.yyp",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

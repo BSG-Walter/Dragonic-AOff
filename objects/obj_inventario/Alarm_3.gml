@@ -1,15 +1,17 @@
 ﻿/// @description  Hago que los items se caigan al morir
 
-if (indiceInv[indiceTirarItems] != 144 && indiceInv[indiceTirarItems] != 145 && (indiceInv[indiceTirarItems] < 164 || indiceInv[indiceTirarItems] > 211)) {
+var _slot = slots[indiceTirarItems];
 
-    if (indiceInv[indiceTirarItems] != -1) {
+if (_slot.indice != 144 && _slot.indice != 145 && (_slot.indice < 164 || _slot.indice > 211)) {
+
+    if (_slot.indice != -1) {
         var idItem = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_item);
-        idItem.indice = indiceInv[indiceTirarItems];
-        idItem.cantidad = cantInv[indiceTirarItems];
-        idItem.tipo = tipoInv[indiceTirarItems];
+        idItem.indice = _slot.indice;
+        idItem.cantidad = _slot.cant;
+        idItem.tipo = _slot.tipo;
     }
 
-    if (indiceInv[indiceTirarItems] == seleccionado) {
+    if (_slot.indice == seleccionado) {
         seleccionado = -1;
     }
     
@@ -17,11 +19,7 @@ if (indiceInv[indiceTirarItems] != 144 && indiceInv[indiceTirarItems] != 145 && 
         posSeleccionado = -1;
     }
     
-    cantInv[indiceTirarItems] = 0;
-    indiceInv[indiceTirarItems] = -1;
-    tipoInv[indiceTirarItems] = "";
-    equipadoInv[indiceTirarItems] = false;
-    nombreInv[indiceTirarItems] = "Vacío";
+    slots[indiceTirarItems] = crearSlotInv(-1, 0, false);
     
 }
 
@@ -33,5 +31,3 @@ if (indiceTirarItems == 19) {
     indiceTirarItems++;
     alarm[3] = 1;
 }
-
-

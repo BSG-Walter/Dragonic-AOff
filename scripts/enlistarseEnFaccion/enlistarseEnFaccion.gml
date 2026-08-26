@@ -1,4 +1,4 @@
-/// @description  enlistarseEnFaccion()
+﻿/// @description  enlistarseEnFaccion()
 function enlistarseEnFaccion() {
 
 	var mensaje = "";
@@ -12,7 +12,7 @@ function enlistarseEnFaccion() {
 	var indiceItem = -1;
 
 	for (var i = 0; i < obj_inventario.maximoInv; i++) {           
-	    if (obj_inventario.indiceInv[i] == -1) {
+	    if (obj_inventario.slots[i].indice == -1) {
 	        posInv = i;
 	        break;
 	    }                 
@@ -113,26 +113,8 @@ function enlistarseEnFaccion() {
 	if (posInv != -1) {
 
 	    // Carga ítem
-    
-	    datosItem = configurarItem(indiceItem);
-    
-	    obj_inventario.indiceInv[posInv] = indiceItem;
-	    obj_inventario.tipoInv[posInv] = datosItem[0];
-	    obj_inventario.cantInv[posInv] = 1;
-	    obj_inventario.generoInv[posInv] = datosItem[1];
-	    obj_inventario.razaInv[posInv] = datosItem[2];
-	    obj_inventario.nroSkillInv[posInv] = datosItem[3];
-	    obj_inventario.skillRequeridoInv[posInv] = datosItem[4];
-	    obj_inventario.clase0ValidaInv[posInv] = datosItem[5];
-	    obj_inventario.clase1ValidaInv[posInv] = datosItem[6];
-	    obj_inventario.clase2ValidaInv[posInv] = datosItem[7];
-	    obj_inventario.clase3ValidaInv[posInv] = datosItem[8];
-	    obj_inventario.clase4ValidaInv[posInv] = datosItem[9];
-	    obj_inventario.clase5ValidaInv[posInv] = datosItem[10];
-	    obj_inventario.clase6ValidaInv[posInv] = datosItem[11];
-	    obj_inventario.clase7ValidaInv[posInv] = datosItem[12];
-	    obj_inventario.clase8ValidaInv[posInv] = datosItem[13];
-	    obj_inventario.nombreInv[posInv] = datosItem[14];
+	    
+	    obj_inventario.slots[posInv] = crearSlotInv(indiceItem, 1, false);
     
 	}
 
