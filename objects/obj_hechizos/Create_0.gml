@@ -40,37 +40,21 @@ posSeleccionado = -1;
 var i = 0;
 
 repeat(maximoHechizos) {
-    indiceHechizos[i] = -1;
-    nombreHechizos[i] = "";
-    tipoHechizos[i] = "";
-    manaHechizos[i] = 0;
-    energiaHechizos[i] = 0;
-    skillHechizos[i] = 0;
-    efectoMinHechizos[i] = 0;
-    efectoMaxHechizos[i] = 0;
-    palabrasMagicasHechizos[i] = "";
+    hechizos[i] = hechizoVacio();
     i++;
 }
 
 // Dardo mágico para magos
 
 if (obj_pj.clase == 7) {
-    indiceHechizos[0] = 5;
-	nombreHechizos[0] = "Dardo Mágico";
-	manaHechizos[0] = 10;
-	energiaHechizos[0] = 1;
-	skillHechizos[0] = 5;
-	tipoHechizos[0] = "negro";
-	efectoMinHechizos[0] = 4;
-	efectoMaxHechizos[0] = 6;
-	palabrasMagicasHechizos[0] = "OHL VOR PEK";
+    hechizos[0] = crearHechizo(5, "Dardo Mágico", "negro", 10, 1, 5, 4, 6, "OHL VOR PEK");
 }
 
 // Seleccionar el primer hechizo disponible por defecto
 var i = 0;
 repeat(maximoHechizos) {
-    if (indiceHechizos[i] != -1) {
-        seleccionado = indiceHechizos[i];
+    if (hechizos[i].indice != -1) {
+        seleccionado = hechizos[i].indice;
         posSeleccionado = i;
         break;
     }

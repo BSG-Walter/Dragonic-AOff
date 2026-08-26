@@ -91,12 +91,12 @@ device_mouse_check_button(4, mb_left)
                         
                         // TRABAJO CON EL HECHIZO
                         
-                        if (indiceHechizos[posItem] != -1) {
-                            if (indiceHechizos[posItem] == seleccionado) {
+                        if (hechizos[posItem].indice != -1) {
+                            if (hechizos[posItem].indice == seleccionado) {
                                 seleccionado = -1;
                                 obj_pj.atacaConHechizo = false;
                             } else {
-                                seleccionado = indiceHechizos[posItem];
+                                seleccionado = hechizos[posItem].indice;
                                 posDobleClic = posItem;
                                 alarm[0] = 15;
                             }
@@ -178,37 +178,11 @@ device_mouse_check_button(4, mb_left)
                         
                         // TRABAJO CON EL HECHIZO
                         
-                        if (indiceHechizos[posHechizoAMover] != -1) {
+                        if (hechizos[posHechizoAMover].indice != -1) {
                         
-                            var indiceHechizosAux = indiceHechizos[posItem];
-                            var nombreHechizosAux = nombreHechizos[posItem];
-                            var tipoHechizosAux = tipoHechizos[posItem];
-                            var manaHechizosAux = manaHechizos[posItem];
-                            var energiaHechizosAux = energiaHechizos[posItem];
-                            var skillHechizosAux = skillHechizos[posItem];
-                            var efectoMinHechizosAux = efectoMinHechizos[posItem];
-                            var efectoMaxHechizosAux = efectoMaxHechizos[posItem];
-                            var palabrasMagicasHechizosAux = palabrasMagicasHechizos[posItem];
-                        
-                            indiceHechizos[posItem] = indiceHechizos[posHechizoAMover];
-                            nombreHechizos[posItem] = nombreHechizos[posHechizoAMover];
-                            tipoHechizos[posItem] = tipoHechizos[posHechizoAMover];
-                            manaHechizos[posItem] = manaHechizos[posHechizoAMover];
-                            energiaHechizos[posItem] = energiaHechizos[posHechizoAMover];
-                            skillHechizos[posItem] = skillHechizos[posHechizoAMover];
-                            efectoMinHechizos[posItem] = efectoMinHechizos[posHechizoAMover];
-                            efectoMaxHechizos[posItem] = efectoMaxHechizos[posHechizoAMover];
-                            palabrasMagicasHechizos[posItem] = palabrasMagicasHechizos[posHechizoAMover];
-                        
-                            indiceHechizos[posHechizoAMover] = indiceHechizosAux;
-                            nombreHechizos[posHechizoAMover] = nombreHechizosAux;
-                            tipoHechizos[posHechizoAMover] = tipoHechizosAux;
-                            manaHechizos[posHechizoAMover] = manaHechizosAux;
-                            energiaHechizos[posHechizoAMover] = energiaHechizosAux;
-                            skillHechizos[posHechizoAMover] = skillHechizosAux;
-                            efectoMinHechizos[posHechizoAMover] = efectoMinHechizosAux;
-                            efectoMaxHechizos[posHechizoAMover] = efectoMaxHechizosAux;
-                            palabrasMagicasHechizos[posHechizoAMover] = palabrasMagicasHechizosAux;
+                            var _aux = hechizos[posItem];
+                            hechizos[posItem] = hechizos[posHechizoAMover];
+                            hechizos[posHechizoAMover] = _aux;
                             
                         }
                         
@@ -289,7 +263,7 @@ device_mouse_check_button(4, mb_left)
                             
                             seleccionado = -1;
                             
-                            if (indiceHechizos[posItem] != -1) {
+                            if (hechizos[posItem].indice != -1) {
                                 if (posItem == posDobleClic) {
                                     moviendoHechizo = true;
                                     posHechizoAMover = posItem;

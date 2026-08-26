@@ -5,7 +5,7 @@ function agregarHechizo(argument0) {
 	var yaExiste = false;
 
 	for (var i = 0; i < obj_hechizos.maximoHechizos; i++) {
-	    if (obj_hechizos.indiceHechizos[i] == argument0 - 120) {
+	    if (obj_hechizos.hechizos[i].indice == argument0 - 120) {
 	        yaExiste = true;
 	        break;
 	    }
@@ -14,7 +14,7 @@ function agregarHechizo(argument0) {
 	if (!yaExiste) {
 
 	    for (var i = 0; i < obj_hechizos.maximoHechizos; i++) {
-	        if (obj_hechizos.indiceHechizos[i] == -1) {
+	        if (obj_hechizos.hechizos[i].indice == -1) {
 	            break;
 	        }
 	    }
@@ -46,224 +46,64 @@ function agregarHechizo(argument0) {
     
 	    switch (argument0) {
 	        case 120:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Curar Veneno";
-	            obj_hechizos.manaHechizos[i] = 12;
-	            obj_hechizos.energiaHechizos[i] = 1;
-	            obj_hechizos.skillHechizos[i] = 10;
-	            obj_hechizos.tipoHechizos[i] = "curar veneno";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "NIHIL VED";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Curar Veneno", "curar veneno", 12, 1, 10, 0, 0, "NIHIL VED");
 	            break;
 	        case 121:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Curar Heridas Leves";
-	            obj_hechizos.manaHechizos[i] = 10;
-	            obj_hechizos.energiaHechizos[i] = 5;
-	            obj_hechizos.skillHechizos[i] = 15;
-	            obj_hechizos.tipoHechizos[i] = "curacion";
-	            obj_hechizos.efectoMinHechizos[i] = 1;
-	            obj_hechizos.efectoMaxHechizos[i] = 5;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "CORP SANC";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Curar Heridas Leves", "curacion", 10, 5, 15, 1, 5, "CORP SANC");
 	            break;
 	        case 122:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Curar Heridas Graves";
-	            obj_hechizos.manaHechizos[i] = 40;
-	            obj_hechizos.energiaHechizos[i] = 21;
-	            obj_hechizos.skillHechizos[i] = 38;
-	            obj_hechizos.tipoHechizos[i] = "curacion";
-	            obj_hechizos.efectoMinHechizos[i] = 12;
-	            obj_hechizos.efectoMaxHechizos[i] = 35;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "EN CORP SANCTIS";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Curar Heridas Graves", "curacion", 40, 21, 38, 12, 35, "EN CORP SANCTIS");
 	            break;
 	        case 123:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Remover Parálisis";
-	            obj_hechizos.manaHechizos[i] = 300;
-	            obj_hechizos.energiaHechizos[i] = 44;
-	            obj_hechizos.skillHechizos[i] = 45;
-	            obj_hechizos.tipoHechizos[i] = "remover";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "AN HOAX VORP";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Remover Parálisis", "remover", 300, 44, 45, 0, 0, "AN HOAX VORP");
 	            break;
 	        case 124:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invisibilidad";
-	            obj_hechizos.manaHechizos[i] = 500;
-	            obj_hechizos.energiaHechizos[i] = 72;
-	            obj_hechizos.skillHechizos[i] = 87;
-	            obj_hechizos.tipoHechizos[i] = "invisibilidad";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invisibilidad", "invisibilidad", 500, 72, 87, 0, 0, "");
 	            break;
 	        case 125:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Dardo Mágico";
-	            obj_hechizos.manaHechizos[i] = 10;
-	            obj_hechizos.energiaHechizos[i] = 1;
-	            obj_hechizos.skillHechizos[i] = 5;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 4;
-	            obj_hechizos.efectoMaxHechizos[i] = 6;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "OHL VOR PEK";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Dardo Mágico", "negro", 10, 1, 5, 4, 6, "OHL VOR PEK");
 	            break;
 	        case 126:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Flecha Mágica";
-	            obj_hechizos.manaHechizos[i] = 20;
-	            obj_hechizos.energiaHechizos[i] = 2;
-	            obj_hechizos.skillHechizos[i] = 12;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 6;
-	            obj_hechizos.efectoMaxHechizos[i] = 12;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "VAX PER";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Flecha Mágica", "negro", 20, 2, 12, 6, 12, "VAX PER");
 	            break;
 	        case 127:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Flecha Eléctrica";
-	            obj_hechizos.manaHechizos[i] = 40;
-	            obj_hechizos.energiaHechizos[i] = 5;
-	            obj_hechizos.skillHechizos[i] = 22;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 12;
-	            obj_hechizos.efectoMaxHechizos[i] = 20;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "SUN VAP";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Flecha Eléctrica", "negro", 40, 5, 22, 12, 20, "SUN VAP");
 	            break;
 	        case 128:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Misil Mágico";
-	            obj_hechizos.manaHechizos[i] = 45;
-	            obj_hechizos.energiaHechizos[i] = 6;
-	            obj_hechizos.skillHechizos[i] = 38;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 25;
-	            obj_hechizos.efectoMaxHechizos[i] = 35;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "VAX IN TAR";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Misil Mágico", "negro", 45, 6, 38, 25, 35, "VAX IN TAR");
 	            break;
 	        case 129:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Tormenta de Fuego";
-	            obj_hechizos.manaHechizos[i] = 210;
-	            obj_hechizos.energiaHechizos[i] = 44;
-	            obj_hechizos.skillHechizos[i] = 60;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 40;
-	            obj_hechizos.efectoMaxHechizos[i] = 60;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "EN VAX ON TAR";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Tormenta de Fuego", "negro", 210, 44, 60, 40, 60, "EN VAX ON TAR");
 	            break;
 	        case 130:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Descarga Eléctrica";
-	            obj_hechizos.manaHechizos[i] = 460;
-	            obj_hechizos.energiaHechizos[i] = 72;
-	            obj_hechizos.skillHechizos[i] = 85;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 63;
-	            obj_hechizos.efectoMaxHechizos[i] = 85;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "T'HY KOOOL";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Descarga Eléctrica", "negro", 460, 72, 85, 63, 85, "T'HY KOOOL");
 	            break;
 	        case 131:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Apocalipsis";
-	            obj_hechizos.manaHechizos[i] = 1000;
-	            obj_hechizos.energiaHechizos[i] = 145;
-	            obj_hechizos.skillHechizos[i] = 100;
-	            obj_hechizos.tipoHechizos[i] = "negro";
-	            obj_hechizos.efectoMinHechizos[i] = 87;
-	            obj_hechizos.efectoMaxHechizos[i] = 98;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Rahma Nañarak O'al";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Apocalipsis", "negro", 1000, 145, 100, 87, 98, "Rahma Nañarak O'al");
 	            break;
 	        case 132:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Paralizar";
-	            obj_hechizos.manaHechizos[i] = 450;
-	            obj_hechizos.energiaHechizos[i] = 88;
-	            obj_hechizos.skillHechizos[i] = 60;
-	            obj_hechizos.tipoHechizos[i] = "paralisis";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "HOAX VORP";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Paralizar", "paralisis", 450, 88, 60, 0, 0, "HOAX VORP");
 	            break;
 	        case 133:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Inmovilizar";
-	            obj_hechizos.manaHechizos[i] = 300;
-	            obj_hechizos.energiaHechizos[i] = 44;
-	            obj_hechizos.skillHechizos[i] = 60;
-	            obj_hechizos.tipoHechizos[i] = "paralisis";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Är Prop s'uo";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Inmovilizar", "paralisis", 300, 44, 60, 0, 0, "Är Prop s'uo");
 	            break;
 	        case 134:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Llamado a la Naturaleza";
-	            obj_hechizos.manaHechizos[i] = 120;
-	            obj_hechizos.energiaHechizos[i] = 16;
-	            obj_hechizos.skillHechizos[i] = 25;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Nature et worg";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Llamado a la Naturaleza", "invocacion", 120, 16, 25, 0, 0, "Nature et worg");
 	            break;
 	        case 135:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invocar Zombies";
-	            obj_hechizos.manaHechizos[i] = 220;
-	            obj_hechizos.energiaHechizos[i] = 31;
-	            obj_hechizos.skillHechizos[i] = 35;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "MoÎ cámus";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invocar Zombies", "invocacion", 220, 31, 35, 0, 0, "MoÎ cámus");
 	            break;
 	        case 136:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invocar Elemental de Agua";
-	            obj_hechizos.manaHechizos[i] = 950;
-	            obj_hechizos.energiaHechizos[i] = 131;
-	            obj_hechizos.skillHechizos[i] = 87;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Wata Mantra'rax";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invocar Elemental de Agua", "invocacion", 950, 131, 87, 0, 0, "Wata Mantra'rax");
 	            break;
 	        case 137:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invocar Elemental de Tierra";
-	            obj_hechizos.manaHechizos[i] = 950;
-	            obj_hechizos.energiaHechizos[i] = 165;
-	            obj_hechizos.skillHechizos[i] = 95;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Mu Mantra'rax";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invocar Elemental de Tierra", "invocacion", 950, 165, 95, 0, 0, "Mu Mantra'rax");
 	            break;
 	        case 138:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invocar Elemental de Fuego";
-	            obj_hechizos.manaHechizos[i] = 900;
-	            obj_hechizos.energiaHechizos[i] = 165;
-	            obj_hechizos.skillHechizos[i] = 100;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Evarg Icrem Oth";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invocar Elemental de Fuego", "invocacion", 900, 165, 100, 0, 0, "Evarg Icrem Oth");
 	            break;
 	        case 139:
-	            obj_hechizos.indiceHechizos[i] = argument0 - 120;
-	            obj_hechizos.nombreHechizos[i] = "Invocar Mascotas";
-	            obj_hechizos.manaHechizos[i] = 1000;
-	            obj_hechizos.energiaHechizos[i] = 165;
-	            obj_hechizos.skillHechizos[i] = 87;
-	            obj_hechizos.tipoHechizos[i] = "invocacion";
-	            obj_hechizos.efectoMinHechizos[i] = 0;
-	            obj_hechizos.efectoMaxHechizos[i] = 0;
-	            obj_hechizos.palabrasMagicasHechizos[i] = "Tsälo Kai'Tor";
+	            obj_hechizos.hechizos[i] = crearHechizo(argument0 - 120, "Invocar Mascotas", "invocacion", 1000, 165, 87, 0, 0, "Tsälo Kai'Tor");
 	            break;
 	    }
     

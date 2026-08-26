@@ -3,7 +3,7 @@
 if (seleccionado != -1) {
 
     for (var i = 0; i < maximoHechizos; i++) {
-        if (seleccionado == indiceHechizos[i]) {
+        if (seleccionado == hechizos[i].indice) {
             break;
         }
     }

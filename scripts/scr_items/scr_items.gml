@@ -174,3 +174,23 @@ function crearSlotNpc(_indice, _cant, _nombre) {
         nombre: _nombre
     };
 }
+
+/// @description crearHechizo(indice, nombre, tipo, mana, energia, skill, efectoMin, efectoMax, palabrasMagicas)
+function crearHechizo(_indice, _nombre, _tipo, _mana, _energia, _skill, _efectoMin, _efectoMax, _palabrasMagicas) {
+    return {
+        indice: _indice,
+        nombre: _nombre,
+        tipo: _tipo,
+        mana: _mana,
+        energia: _energia,
+        skill: _skill,
+        efectoMin: _efectoMin,
+        efectoMax: _efectoMax,
+        palabrasMagicas: _palabrasMagicas
+    };
+}
+
+/// @description hechizoVacio()
+function hechizoVacio() {
+    return crearHechizo(-1, "", "", 0, 0, 0, 0, 0, "");
+}

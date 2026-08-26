@@ -24,14 +24,14 @@ if (visible) {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_middle);
 		
-		draw_text_ext(global.inventario_x + _x_offset, global.inventario_y + _y_offset, string_hash_to_newline(nombreHechizos[_hechizo_index]), 9, 64);
+		draw_text_ext(global.inventario_x + _x_offset, global.inventario_y + _y_offset, string_hash_to_newline(hechizos[_hechizo_index].nombre), 9, 64);
 		                    
         draw_set_valign(fa_top);
         draw_set_halign(fa_left);
                     
         if (!moviendoHechizo) {
                     
-            if (obj_pj.skills[0] < skillHechizos[_hechizo_index]) {
+            if (obj_pj.skills[0] < hechizos[_hechizo_index].skill) {
                     draw_sprite(spr_hechizo_invalido, 0, global.inventario_x + _x_offset, global.inventario_y + _y_offset);
             }
 			

@@ -7,83 +7,33 @@ function cargarInventario() {
 	    obj_inventario.slots[i] = crearSlotInv(-1, 0, false);
 	}
 
-	var item = 0;
 	var nroIndices = 20;
-	var vecIndices;
-	var vecCant;
-	var vecEquipado;
 
-	vecIndices[0] = read("obj_inventario", "indiceInv[0]", -1);
-	vecIndices[1] = read("obj_inventario", "indiceInv[1]", -1);
-	vecIndices[2] = read("obj_inventario", "indiceInv[2]", -1);
-	vecIndices[3] = read("obj_inventario", "indiceInv[3]", -1);
-	vecIndices[4] = read("obj_inventario", "indiceInv[4]", -1);
-	vecIndices[5] = read("obj_inventario", "indiceInv[5]", -1);
-	vecIndices[6] = read("obj_inventario", "indiceInv[6]", -1);
-	vecIndices[7] = read("obj_inventario", "indiceInv[7]", -1);
-	vecIndices[8] = read("obj_inventario", "indiceInv[8]", -1);
-	vecIndices[9] = read("obj_inventario", "indiceInv[9]", -1);
-	vecIndices[10] = read("obj_inventario", "indiceInv[10]", -1);
-	vecIndices[11] = read("obj_inventario", "indiceInv[11]", -1);
-	vecIndices[12] = read("obj_inventario", "indiceInv[12]", -1);
-	vecIndices[13] = read("obj_inventario", "indiceInv[13]", -1);
-	vecIndices[14] = read("obj_inventario", "indiceInv[14]", -1);
-	vecIndices[15] = read("obj_inventario", "indiceInv[15]", -1);
-	vecIndices[16] = read("obj_inventario", "indiceInv[16]", -1);
-	vecIndices[17] = read("obj_inventario", "indiceInv[17]", -1);
-	vecIndices[18] = read("obj_inventario", "indiceInv[18]", -1);
-	vecIndices[19] = read("obj_inventario", "indiceInv[19]", -1);
+	// Detectar formato: si slots[0].indice existe, es formato nuevo
+	var _esFormatoNuevo = (read("obj_inventario", "slots[0].indice", -999) != -999);
 
-	vecCant[0] = read("obj_inventario", "cantInv[0]", -1);
-	vecCant[1] = read("obj_inventario", "cantInv[1]", -1);
-	vecCant[2] = read("obj_inventario", "cantInv[2]", -1);
-	vecCant[3] = read("obj_inventario", "cantInv[3]", -1);
-	vecCant[4] = read("obj_inventario", "cantInv[4]", -1);
-	vecCant[5] = read("obj_inventario", "cantInv[5]", -1);
-	vecCant[6] = read("obj_inventario", "cantInv[6]", -1);
-	vecCant[7] = read("obj_inventario", "cantInv[7]", -1);
-	vecCant[8] = read("obj_inventario", "cantInv[8]", -1);
-	vecCant[9] = read("obj_inventario", "cantInv[9]", -1);
-	vecCant[10] = read("obj_inventario", "cantInv[10]", -1);
-	vecCant[11] = read("obj_inventario", "cantInv[11]", -1);
-	vecCant[12] = read("obj_inventario", "cantInv[12]", -1);
-	vecCant[13] = read("obj_inventario", "cantInv[13]", -1);
-	vecCant[14] = read("obj_inventario", "cantInv[14]", -1);
-	vecCant[15] = read("obj_inventario", "cantInv[15]", -1);
-	vecCant[16] = read("obj_inventario", "cantInv[16]", -1);
-	vecCant[17] = read("obj_inventario", "cantInv[17]", -1);
-	vecCant[18] = read("obj_inventario", "cantInv[18]", -1);
-	vecCant[19] = read("obj_inventario", "cantInv[19]", -1);
-
-	vecEquipado[0] = read("obj_inventario", "equipadoInv[0]", -1);
-	vecEquipado[1] = read("obj_inventario", "equipadoInv[1]", -1);
-	vecEquipado[2] = read("obj_inventario", "equipadoInv[2]", -1);
-	vecEquipado[3] = read("obj_inventario", "equipadoInv[3]", -1);
-	vecEquipado[4] = read("obj_inventario", "equipadoInv[4]", -1);
-	vecEquipado[5] = read("obj_inventario", "equipadoInv[5]", -1);
-	vecEquipado[6] = read("obj_inventario", "equipadoInv[6]", -1);
-	vecEquipado[7] = read("obj_inventario", "equipadoInv[7]", -1);
-	vecEquipado[8] = read("obj_inventario", "equipadoInv[8]", -1);
-	vecEquipado[9] = read("obj_inventario", "equipadoInv[9]", -1);
-	vecEquipado[10] = read("obj_inventario", "equipadoInv[10]", -1);
-	vecEquipado[11] = read("obj_inventario", "equipadoInv[11]", -1);
-	vecEquipado[12] = read("obj_inventario", "equipadoInv[12]", -1);
-	vecEquipado[13] = read("obj_inventario", "equipadoInv[13]", -1);
-	vecEquipado[14] = read("obj_inventario", "equipadoInv[14]", -1);
-	vecEquipado[15] = read("obj_inventario", "equipadoInv[15]", -1);
-	vecEquipado[16] = read("obj_inventario", "equipadoInv[16]", -1);
-	vecEquipado[17] = read("obj_inventario", "equipadoInv[17]", -1);
-	vecEquipado[18] = read("obj_inventario", "equipadoInv[18]", -1);
-	vecEquipado[19] = read("obj_inventario", "equipadoInv[19]", -1);
-
-	// Cargo el inventario
-
-	for (var i = 0; i < nroIndices; i++) {
-    
-	    item = vecIndices[i];
-    
-	    obj_inventario.slots[i] = crearSlotInv(item, vecCant[i], vecEquipado[i]);
-
+	if (_esFormatoNuevo) {
+		for (var i = 0; i < nroIndices; i++) {
+			var _idx = read("obj_inventario", "slots[" + string(i) + "].indice", -1);
+			var _cant = read("obj_inventario", "slots[" + string(i) + "].cant", 0);
+			var _eq = read("obj_inventario", "slots[" + string(i) + "].equipado", false);
+			obj_inventario.slots[i] = crearSlotInv(_idx, _cant, _eq);
+		}
+	} else {
+		// Formato viejo: leer de indiceInv/cantInv/equipadoInv
+		for (var i = 0; i < nroIndices; i++) {
+			var _idx = read("obj_inventario", "indiceInv[" + string(i) + "]", -1);
+			var _cant = read("obj_inventario", "cantInv[" + string(i) + "]", 0);
+			var _eq = read("obj_inventario", "equipadoInv[" + string(i) + "]", false);
+			obj_inventario.slots[i] = crearSlotInv(_idx, _cant, _eq);
+		}
+		// Migrar: escribir formato nuevo y borrar claves viejas
+		guardarInventario();
+		for (var i = 0; i < nroIndices; i++) {
+			ini_key_delete("obj_inventario", "indiceInv[" + string(i) + "]");
+			ini_key_delete("obj_inventario", "cantInv[" + string(i) + "]");
+			ini_key_delete("obj_inventario", "equipadoInv[" + string(i) + "]");
+		}
 	}
 
 	obj_pj.desnudo = read("obj_pj", "desnudo", false);

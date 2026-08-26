@@ -4,7 +4,7 @@ function lanzar(){
 	if (obj_hechizos.seleccionado != -1) {
 
 	    for (var i = 0; i < obj_hechizos.maximoHechizos; i++) {
-	        if (obj_hechizos.seleccionado == obj_hechizos.indiceHechizos[i]) {
+	        if (obj_hechizos.seleccionado == obj_hechizos.hechizos[i].indice) {
 	            break;
 	        }
 	    }

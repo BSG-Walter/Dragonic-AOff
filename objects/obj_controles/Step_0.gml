@@ -86,7 +86,7 @@ if (_inventario_visible){
 		if (_seleccionado > 19) _seleccionado = 0
 		indicar_panel_hechizos(_seleccionado < 10)
 		obj_hechizos.posSeleccionado = _seleccionado
-		obj_hechizos.seleccionado = obj_hechizos.indiceHechizos[_seleccionado]
+		obj_hechizos.seleccionado = obj_hechizos.hechizos[_seleccionado].indice
 	}
 }
 

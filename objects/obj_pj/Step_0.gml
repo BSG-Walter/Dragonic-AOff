@@ -765,19 +765,19 @@ _mouseDown
                             
                                 for (var i = 0; i < obj_hechizos.maximoHechizos; i++) {
                                 
-                                    if (obj_hechizos.indiceHechizos[i] == obj_hechizos.seleccionado) {
+                                    if (obj_hechizos.hechizos[i].indice == obj_hechizos.seleccionado) {
                                         
                                         var idINFO = 0;
                                         var valido = true;
                                         
                                         if (clase == 7) {
                                             if (
-                                            obj_hechizos.indiceHechizos[i] == 9 || 
-                                            obj_hechizos.indiceHechizos[i] == 13 || 
-                                            obj_hechizos.indiceHechizos[i] == 10 ||
-                                            obj_hechizos.indiceHechizos[i] == 4 ||
-                                            obj_hechizos.indiceHechizos[i] == 11 ||
-                                            obj_hechizos.indiceHechizos[i] == 16
+                                            obj_hechizos.hechizos[i].indice == 9 || 
+                                            obj_hechizos.hechizos[i].indice == 13 || 
+                                            obj_hechizos.hechizos[i].indice == 10 ||
+                                            obj_hechizos.hechizos[i].indice == 4 ||
+                                            obj_hechizos.hechizos[i].indice == 11 ||
+                                            obj_hechizos.hechizos[i].indice == 16
                                             ) {
                                                 if (armaActual != 18 && armaActual != 19 && armaActual != 20) {
                                                     valido = false;
@@ -789,13 +789,13 @@ _mouseDown
                                         }
                                         
                                         if (valido) {
-                                            if (obj_hechizos.indiceHechizos[i] == 17 || obj_hechizos.indiceHechizos[i] == 18 || obj_hechizos.indiceHechizos[i] == 19) {
+                                            if (obj_hechizos.hechizos[i].indice == 17 || obj_hechizos.hechizos[i].indice == 18 || obj_hechizos.hechizos[i].indice == 19) {
                                                 if (clase != 5) {
                                                     valido = false;
                                                     idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
                                                     idINFO.texto = "¡Este hechizo es solo para Druidas!";
-                                                } else if (obj_hechizos.indiceHechizos[i] == 17 || obj_hechizos.indiceHechizos[i] == 18) {
+                                                } else if (obj_hechizos.hechizos[i].indice == 17 || obj_hechizos.hechizos[i].indice == 18) {
 													if (armaActual != 227) {
 	                                                    valido = false;
 	                                                    idINFO = instance_create_depth(x, y, 0, obj_INFO);
@@ -809,12 +809,12 @@ _mouseDown
                                         if (valido) {
                                             if (clase == 7) {
                                                 if (
-                                                obj_hechizos.indiceHechizos[i] == 4 ||
-                                                obj_hechizos.indiceHechizos[i] == 9 ||
-                                                obj_hechizos.indiceHechizos[i] == 10 ||
-                                                obj_hechizos.indiceHechizos[i] == 11 ||
-                                                obj_hechizos.indiceHechizos[i] == 13 ||
-                                                obj_hechizos.indiceHechizos[i] == 16
+                                                obj_hechizos.hechizos[i].indice == 4 ||
+                                                obj_hechizos.hechizos[i].indice == 9 ||
+                                                obj_hechizos.hechizos[i].indice == 10 ||
+                                                obj_hechizos.hechizos[i].indice == 11 ||
+                                                obj_hechizos.hechizos[i].indice == 13 ||
+                                                obj_hechizos.hechizos[i].indice == 16
                                                 ) {
                                                     if (armaActual != 18 && armaActual != 19 && armaActual != 20) {
                                                         valido = false;
@@ -827,29 +827,29 @@ _mouseDown
                                         }
                                     
                                         if (valido) {
-                                            if (skills[0] < obj_hechizos.skillHechizos[i]) {
+                                            if (skills[0] < obj_hechizos.hechizos[i].skill) {
                                                 idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                 idINFO.padre = id;
-                                                idINFO.texto = "¡Magia menor a " + string(obj_hechizos.skillHechizos[i]) + "!";
+                                                idINFO.texto = "¡Magia menor a " + string(obj_hechizos.hechizos[i].skill) + "!";
                                                 valido = false;
-                                            } else if (mana < obj_hechizos.manaHechizos[i]) {
-                                                if (obj_hechizos.tipoHechizos[i] != "invocacion") {
+                                            } else if (mana < obj_hechizos.hechizos[i].mana) {
+                                                if (obj_hechizos.hechizos[i].tipo != "invocacion") {
                                                     idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                     idINFO.padre = id;
-                                                    idINFO.texto = "¡Maná menor a " + string(obj_hechizos.manaHechizos[i]) + "!";
+                                                    idINFO.texto = "¡Maná menor a " + string(obj_hechizos.hechizos[i].mana) + "!";
                                                     valido = false;
                                                 }
-                                            } else if (energia < obj_hechizos.energiaHechizos[i]) {
+                                            } else if (energia < obj_hechizos.hechizos[i].energia) {
                                                 idINFO = instance_create_depth(x, y, 0, obj_INFO);
                                                 idINFO.padre = id;
-                                                idINFO.texto = "¡Energía menor a " + string(obj_hechizos.energiaHechizos[i]) + "!";
+                                                idINFO.texto = "¡Energía menor a " + string(obj_hechizos.hechizos[i].energia) + "!";
                                                 valido = false;
                                             }
                                         }
                                     
-                                        if (valido && (mana >= obj_hechizos.manaHechizos[i] || obj_hechizos.tipoHechizos[i] == "invocacion") && energia >= obj_hechizos.energiaHechizos[i] && skills[0] >= obj_hechizos.skillHechizos[i]) {
+                                        if (valido && (mana >= obj_hechizos.hechizos[i].mana || obj_hechizos.hechizos[i].tipo == "invocacion") && energia >= obj_hechizos.hechizos[i].energia && skills[0] >= obj_hechizos.hechizos[i].skill) {
                                                                     
-                                            if (obj_hechizos.tipoHechizos[i] == "negro") {
+                                            if (obj_hechizos.hechizos[i].tipo == "negro") {
                                             
                                                 if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_npc_basic)) {
                             
@@ -893,9 +893,9 @@ _mouseDown
                                                     
                                                         if (valido) {
                                                                                             
-                                                            if (obj_hechizos.palabrasMagicasHechizos[i] != "") {
+                                                            if (obj_hechizos.hechizos[i].palabrasMagicas != "") {
                                                                 dicePalabrasMagicas = true;
-                                                                palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                                palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                                 alarm[6] = 180;
                                                             }
                                                         
@@ -921,12 +921,12 @@ _mouseDown
                                                             alarm[1] = intervaloHechizo;
                                                             
                                                             atacaConHechizo = true;
-                                                            energia -= obj_hechizos.energiaHechizos[i];
-                                                            mana -= obj_hechizos.manaHechizos[i];
+                                                            energia -= obj_hechizos.hechizos[i].energia;
+                                                            mana -= obj_hechizos.hechizos[i].mana;
                                                             
                                                             var idEfectoHechizo = 0;
                                                             
-                                                            switch (obj_hechizos.indiceHechizos[i]) {
+                                                            switch (obj_hechizos.hechizos[i].indice) {
                                                                 case 5:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
                                                                     idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_dardo_magico);
@@ -960,9 +960,9 @@ _mouseDown
                                                             idEfectoHechizo.padre = idNPC;
                                                             
                                                             if (idNPC.object_index == obj_persona) {
-                                                                var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), true, idNPC);
+                                                                var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.hechizos[i].efectoMin, obj_hechizos.hechizos[i].efectoMax), true, idNPC);
                                                             } else {
-                                                                var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
+                                                                var dano = calcularDanoMagicoPJ(random_range(obj_hechizos.hechizos[i].efectoMin, obj_hechizos.hechizos[i].efectoMax), false, -1);
                                                             }
                                                             
                                                             idDano = crearTextoDano(idNPC.x, idNPC.y, 0, -1);
@@ -1048,13 +1048,13 @@ _mouseDown
                                                     }
                                                 }
                                             
-                                            } else if (obj_hechizos.tipoHechizos[i] == "curacion") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "curacion") {
                                             
                                                 if (position_meeting(device_mouse_x(device), device_mouse_y(device) , self)) {
                                                 
-                                                    if (obj_hechizos.palabrasMagicasHechizos[i] != "") {
+                                                    if (obj_hechizos.hechizos[i].palabrasMagicas != "") {
                                                         dicePalabrasMagicas = true;
-                                                        palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                        palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                         alarm[6] = 180;
                                                     }
                                                     
@@ -1080,12 +1080,12 @@ _mouseDown
                                                     alarm[1] = intervaloHechizo;
                                                     
                                                     atacaConHechizo = true;
-                                                    energia -= obj_hechizos.energiaHechizos[i];
-                                                    mana -= obj_hechizos.manaHechizos[i];
+                                                    energia -= obj_hechizos.hechizos[i].energia;
+                                                    mana -= obj_hechizos.hechizos[i].mana;
                                                     
                                                     var idEfectoHechizo = 0;
                                                     
-                                                    switch (obj_hechizos.indiceHechizos[i]) {
+                                                    switch (obj_hechizos.hechizos[i].indice) {
                                                         case 1:
                                                             reproducirSonido(snd_curarHeridasLeves, false, false);
                                                             idEfectoHechizo = instance_create_depth(x, y, 0, obj_curar_heridas_leves);
@@ -1098,7 +1098,7 @@ _mouseDown
                                                     
                                                     idEfectoHechizo.padre = id;
                                                     
-                                                    var cura = calcularDanoMagicoPJ(random_range(obj_hechizos.efectoMinHechizos[i], obj_hechizos.efectoMaxHechizos[i]), false, -1);
+                                                    var cura = calcularDanoMagicoPJ(random_range(obj_hechizos.hechizos[i].efectoMin, obj_hechizos.hechizos[i].efectoMax), false, -1);
                                                     idCura = crearTextoDano(x, y - 40, cura, id);
                                         
                                                     
@@ -1123,7 +1123,7 @@ _mouseDown
                                                     
                                                 }
                                             
-                                            } else if (obj_hechizos.tipoHechizos[i] == "paralisis") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "paralisis") {
                                         
                                                 if (position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_npc_basic)) {
                             
@@ -1174,9 +1174,9 @@ _mouseDown
                                                         
                                                         if (valido) {
                                                         
-                                                            if (obj_hechizos.palabrasMagicasHechizos[i] != "") {
+                                                            if (obj_hechizos.hechizos[i].palabrasMagicas != "") {
                                                                 dicePalabrasMagicas = true;
-                                                                palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                                palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                                 alarm[6] = 180;
                                                             }
                                                         
@@ -1202,12 +1202,12 @@ _mouseDown
                                                             alarm[1] = intervaloHechizo;
                                                             
                                                             atacaConHechizo = true;
-                                                            energia -= obj_hechizos.energiaHechizos[i];
-                                                            mana -= obj_hechizos.manaHechizos[i];
+                                                            energia -= obj_hechizos.hechizos[i].energia;
+                                                            mana -= obj_hechizos.hechizos[i].mana;
                                                             
                                                             var idEfectoHechizo = 0;
                                                             
-                                                            switch (obj_hechizos.indiceHechizos[i]) {
+                                                            switch (obj_hechizos.hechizos[i].indice) {
                                                                 case 12:
                                                                     reproducirSonido(snd_dardoMagico, false, false);
                                                                     idEfectoHechizo = instance_create_depth(idNPC.x, idNPC.y, 0, obj_paralizar);
@@ -1222,7 +1222,7 @@ _mouseDown
                                                             
                                                             if (idNPC.object_index != obj_persona) {
                                                                 idNPC.inicioParalisis = current_time
-                                                                if (obj_hechizos.indiceHechizos[i] == 12) {
+                                                                if (obj_hechizos.hechizos[i].indice == 12) {
                                                                     idNPC.paralizado = true;
                                                                     idNPC.inmovilizado = false;
                                                                     idNPC.alarm[4] = 7200; // 2 Minutos
@@ -1271,7 +1271,7 @@ _mouseDown
                                                     }
                                                 }
                                                 
-                                            } else if (obj_hechizos.tipoHechizos[i] == "invisibilidad") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "invisibilidad") {
                                             
                                                 if (position_meeting(device_mouse_x(device), device_mouse_y(device) , self)) {
                                                 
@@ -1290,8 +1290,8 @@ _mouseDown
                                                     alarm[1] = intervaloHechizo;
                                                     
                                                     atacaConHechizo = true;
-                                                    energia -= obj_hechizos.energiaHechizos[i];
-                                                    mana -= obj_hechizos.manaHechizos[i];
+                                                    energia -= obj_hechizos.hechizos[i].energia;
+                                                    mana -= obj_hechizos.hechizos[i].mana;
                                                     
                                                     reproducirSonido(snd_dardoMagico, false, false);
 													
@@ -1318,13 +1318,13 @@ _mouseDown
                                                     }
                                                 }
                                                 
-                                            } else if (obj_hechizos.tipoHechizos[i] == "curar veneno") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "curar veneno") {
                                             
                                                 if (position_meeting(device_mouse_x(device), device_mouse_y(device) , self)) {
                                                 
-                                                    if (obj_hechizos.palabrasMagicasHechizos[i] != "") {
+                                                    if (obj_hechizos.hechizos[i].palabrasMagicas != "") {
                                                         dicePalabrasMagicas = true;
-                                                        palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                        palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                         alarm[6] = 180;
                                                     }
                                                     
@@ -1350,8 +1350,8 @@ _mouseDown
                                                     alarm[1] = intervaloHechizo;
                                                     
                                                     atacaConHechizo = true;
-                                                    energia -= obj_hechizos.energiaHechizos[i];
-                                                    mana -= obj_hechizos.manaHechizos[i];
+                                                    energia -= obj_hechizos.hechizos[i].energia;
+                                                    mana -= obj_hechizos.hechizos[i].mana;
                                                     
                                                     var idEfectoHechizo = instance_create_depth(x, y, 0, obj_curar_veneno);
                                                     idEfectoHechizo.padre = id;
@@ -1372,14 +1372,14 @@ _mouseDown
                                                     }
                                                 }
                                             
-                                            } else if (obj_hechizos.tipoHechizos[i] == "remover") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "remover") {
                                             
                                                 if (inmovilizado) {
                                                     if (position_meeting(device_mouse_x(device), device_mouse_y(device) , self)) {
                                                     
-                                                        if (obj_hechizos.palabrasMagicasHechizos[i] != "") {
+                                                        if (obj_hechizos.hechizos[i].palabrasMagicas != "") {
                                                             dicePalabrasMagicas = true;
-                                                            palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                            palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                             alarm[6] = 180;
                                                         }
                                                         
@@ -1405,8 +1405,8 @@ _mouseDown
                                                         alarm[1] = intervaloHechizo;
                                                         
                                                         atacaConHechizo = true;
-                                                        energia -= obj_hechizos.energiaHechizos[i];
-                                                        mana -= obj_hechizos.manaHechizos[i];
+                                                        energia -= obj_hechizos.hechizos[i].energia;
+                                                        mana -= obj_hechizos.hechizos[i].mana;
                                                         
                                                         reproducirSonido(snd_dardoMagico, false, false);
                                                         
@@ -1430,10 +1430,10 @@ _mouseDown
                                                     }
                                                 }
                                             
-                                            } else if (obj_hechizos.tipoHechizos[i] == "invocacion") {
+                                            } else if (obj_hechizos.hechizos[i].tipo == "invocacion") {
                                                 
                                                 if (obj_pj.puedeMoverse) {
-                                                    if (obj_hechizos.indiceHechizos[i] == 19) {
+                                                    if (obj_hechizos.hechizos[i].indice == 19) {
                                                     
                                                         // Invocar mascotas
                                                     
@@ -1457,7 +1457,7 @@ _mouseDown
                                                                     reproducirSonido(snd_logueo, false, false);
                                                                 
                                                                     dicePalabrasMagicas = true;
-                                                                    palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                                    palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                                     alarm[6] = 180;
                                                                 
                                                                      if (invisible) {
@@ -1482,7 +1482,7 @@ _mouseDown
                                                                     alarm[1] = intervaloHechizo;
                                                                     
                                                                     atacaConHechizo = true;
-                                                                    energia -= obj_hechizos.energiaHechizos[i];
+                                                                    energia -= obj_hechizos.hechizos[i].energia;
                                                                 
                                                                 }
                                                         
@@ -1500,21 +1500,21 @@ _mouseDown
                                                                 
                                                         if (!position_meeting(device_mouse_x(device), device_mouse_y(device) , obj_area_flechas)) {
                                                     
-                                                            if (obj_hechizos.indiceHechizos[i] == 14) {
+                                                            if (obj_hechizos.hechizos[i].indice == 14) {
                                                                 // Llamado a la Naturaleza
-                                                                var res = invocarCriatura(obj_hechizos.manaHechizos[i], obj_npc_lobo_invocado, 3, device);
-                                                            } else if (obj_hechizos.indiceHechizos[i] == 15) {
+                                                                var res = invocarCriatura(obj_hechizos.hechizos[i].mana, obj_npc_lobo_invocado, 3, device);
+                                                            } else if (obj_hechizos.hechizos[i].indice == 15) {
                                                                 // Invocar Zombies
-                                                                var res = invocarCriatura(obj_hechizos.manaHechizos[i], obj_npc_zombie_invocado, 3, device);
-                                                            } else if (obj_hechizos.indiceHechizos[i] == 16) {
+                                                                var res = invocarCriatura(obj_hechizos.hechizos[i].mana, obj_npc_zombie_invocado, 3, device);
+                                                            } else if (obj_hechizos.hechizos[i].indice == 16) {
                                                                 // Invocar Elemental de Agua
-                                                                var res = invocarCriatura(obj_hechizos.manaHechizos[i], obj_npc_ele_agua_invocado, 1, device);
-                                                            } else if (obj_hechizos.indiceHechizos[i] == 17) {
+                                                                var res = invocarCriatura(obj_hechizos.hechizos[i].mana, obj_npc_ele_agua_invocado, 1, device);
+                                                            } else if (obj_hechizos.hechizos[i].indice == 17) {
                                                                 // Invocar Elemental de Tierra
-                                                                var res = invocarCriatura(obj_hechizos.manaHechizos[i], obj_npc_ele_tierra_invocado, 1, device);
-                                                            } else if (obj_hechizos.indiceHechizos[i] == 18) {
+                                                                var res = invocarCriatura(obj_hechizos.hechizos[i].mana, obj_npc_ele_tierra_invocado, 1, device);
+                                                            } else if (obj_hechizos.hechizos[i].indice == 18) {
                                                                 // Invocar Elemental de Fuego
-                                                                var res = invocarCriatura(obj_hechizos.manaHechizos[i], obj_npc_ele_fuego_invocado, 1, device);
+                                                                var res = invocarCriatura(obj_hechizos.hechizos[i].mana, obj_npc_ele_fuego_invocado, 1, device);
                                                             }
                                                             
                                                             if (res) { // Tiene maná e invocó en tierra
@@ -1522,7 +1522,7 @@ _mouseDown
                                                                 reproducirSonido(snd_logueo, false, false);
                                                                                          
                                                                 dicePalabrasMagicas = true;
-                                                                palabrasMagicas = obj_hechizos.palabrasMagicasHechizos[i];
+                                                                palabrasMagicas = obj_hechizos.hechizos[i].palabrasMagicas;
                                                                 alarm[6] = 180;
                                                             
                                                                  if (invisible) {
@@ -1547,7 +1547,7 @@ _mouseDown
                                                                 alarm[1] = intervaloHechizo;
                                                                 
                                                                 atacaConHechizo = true;
-                                                                energia -= obj_hechizos.energiaHechizos[i];
+                                                                energia -= obj_hechizos.hechizos[i].energia;
                                                                 
                                                             }
                                                         
