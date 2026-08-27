@@ -32,9 +32,8 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             break;
     }
     
-    var esEnemigo = (room == rm_arena) ? (pk != idIA.pk) : (pk || idIA.pk);
-    
     if (ataca) {
+        var esEnemigo = (room == rm_arena) ? (pk != idIA.pk) : (pk || idIA.pk);
         ataca = esEnemigo;
     }
     
