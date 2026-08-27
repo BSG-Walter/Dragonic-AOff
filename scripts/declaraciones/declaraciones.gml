@@ -16,6 +16,20 @@ gml_pragma("global", "init_engine_settings();");
 
 #macro BOT_DRAW_CULL_MARGIN 80
 
+// Tile layers
+#macro TILE_LAYER_GRASS 10000000
+#macro TILE_LAYER_COAST 1000000
+#macro TILE_LAYER_FLOORS 100000
+
+// Timers
+#macro SECOND 60
+
+// Slots de inventario y hechizos
+#macro MAX_SLOTS 20
+
+// Índice base de hechizos (120–139)
+#macro SPELL_INDEX_BASE 120
+
 
 function init_engine_settings() {
     layer_force_draw_depth(true, 0);

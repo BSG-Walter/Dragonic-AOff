@@ -1,6 +1,6 @@
-/// @description  Desaparece
+﻿/// @description  Desaparece
 
-alarm[8] = 600;
+alarm[8] = SECOND * 10;
 
 
 

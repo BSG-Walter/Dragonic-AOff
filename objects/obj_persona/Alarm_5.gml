@@ -1,4 +1,4 @@
-/// @description  Movimiento random
+﻿/// @description  Movimiento random
 
 if (!muerto && !inmovilizado) {
 
@@ -200,7 +200,7 @@ if (!muerto && !inmovilizado) {
                         xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
                         yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
                         
-                        alarm[5] = 60 * random_range(1.5, 2);
+                        alarm[5] = SECOND * random_range(1.5, 2);
             
                     } else {
                     
@@ -218,7 +218,7 @@ if (!muerto && !inmovilizado) {
                             yObjetivo = obj_pj.y + 32;
                         }
             
-                        alarm[5] = 60 * random_range(5, 6);
+                        alarm[5] = SECOND * random_range(5, 6);
                     
                     }
                                 
@@ -231,7 +231,7 @@ if (!muerto && !inmovilizado) {
                 xObjetivo = floor(random_range(global.render_x + 64, global.render_x + get_render_width() - 64));
                 yObjetivo = floor(random_range(global.render_y + 64, global.render_y + get_render_height() - 64));
                 
-                alarm[5] = 60 * random_range(3, 4);
+                alarm[5] = SECOND * random_range(3, 4);
                 
             }
             
@@ -300,7 +300,7 @@ if (!muerto && !inmovilizado) {
                     xObjetivo = floor(random_range(x - 128, x + 128));
                     yObjetivo = floor(random_range(y - 128, y + 128));
                     
-                    alarm[5] = 60 * random_range(1.5, 2);
+                    alarm[5] = SECOND * random_range(1.5, 2);
         
                 } else {
                 
@@ -318,7 +318,7 @@ if (!muerto && !inmovilizado) {
                         yObjetivo = IAObj.y + 32;
                     }
         
-                    alarm[5] = 60 * random_range(5, 6);
+                    alarm[5] = SECOND * random_range(5, 6);
                 
                 }
                 

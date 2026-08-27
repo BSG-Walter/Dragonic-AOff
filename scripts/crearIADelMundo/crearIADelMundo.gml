@@ -94,9 +94,9 @@ function crearIADelMundo() {
             
 	        }
         
-	        var tile1 = tile_layer_find(10000000, _datos.x, _datos.y);
-	        var tile2 = tile_layer_find(1000000, _datos.x, _datos.y);
-	        var tile3 = tile_layer_find(100000, _datos.x, _datos.y);
+	        var tile1 = tile_layer_find(TILE_LAYER_GRASS, _datos.x, _datos.y);
+	        var tile2 = tile_layer_find(TILE_LAYER_COAST, _datos.x, _datos.y);
+	        var tile3 = tile_layer_find(TILE_LAYER_FLOORS, _datos.x, _datos.y);
             
 	        if (tile1 != -1 || tile2 != -1 || tile3 != -1) { // Si hay algún tipo de suelo
 	            _datos.enBarca = false;

@@ -7,7 +7,7 @@ if (obj_pj.tiempoDopa < obj_pj.tiempoDopaMax) {
         idINFO.padre = obj_pj.id;
         idINFO.texto = "Te estás volviendo débil...";
 	}
-	alarm[7] = 60
+	alarm[7] = SECOND
 } else {
 	obj_pj.tiempoDopa = obj_pj.tiempoDopaMax
 	obj_pj.dopaFuerza = 0

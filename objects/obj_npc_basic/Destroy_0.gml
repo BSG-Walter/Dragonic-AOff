@@ -51,7 +51,7 @@ if (roomInicial == room && salud <= 0) {
     
         xNuevo = multX * floor(random_range(2, room_width / multX - 32));
         yNuevo = multY * floor(random_range(1, room_height / multY - 32));
-        var tile = tile_layer_find(10000000, xNuevo, yNuevo);
+        var tile = tile_layer_find(TILE_LAYER_GRASS, xNuevo, yNuevo);
     
     } until (
     xNuevo % 16 == 0 &&

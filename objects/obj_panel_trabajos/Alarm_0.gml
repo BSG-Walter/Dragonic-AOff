@@ -4,7 +4,7 @@ obj_panel_items.mostrado = false;
 mostrado = true;
 posicionItem = obj_inventario.posSeleccionado;
 
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < MAX_SLOTS; i++) {
     listaItems[i] = -1;
     nombreItems[i] = "Vacío";
 }

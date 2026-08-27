@@ -321,7 +321,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             existe = true;
@@ -342,7 +342,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);
@@ -474,7 +474,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             existe = true;
@@ -495,7 +495,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             obj_inventario.slots[i] = crearSlotInv(listaItems[indiceItem], 1, false);

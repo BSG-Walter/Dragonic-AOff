@@ -58,7 +58,7 @@ device_mouse_check_button(4, mb_left)
                         idINFO.texto = "Trabajando";
                         idINFO.padre = obj_pj.id;
                         
-                        obj_pj.alarm[11] = 60;
+                        obj_pj.alarm[11] = SECOND;
                         
                     }
                 }   

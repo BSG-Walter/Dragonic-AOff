@@ -1,4 +1,4 @@
-/// @description  Control mouse
+﻿/// @description  Control mouse
 
 var device = -1;
 
@@ -27,7 +27,7 @@ device_mouse_check_button(4, mb_left)
                         
                     if (
                     device_mouse_x(device) >= global.inventario_x + 121 &&
-                    device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                    device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                     device_mouse_y(device) >= global.inventario_y + 8 &&
                     device_mouse_y(device) <= global.inventario_y + 7 + 64
                     ) {
@@ -46,7 +46,7 @@ device_mouse_check_button(4, mb_left)
                         var posX = device_mouse_x(device);
                         var posY = device_mouse_y(device);
                         
-                        posX = posX - global.inventario_x - 120;
+                        posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                         posY = posY - global.inventario_y - 7;
                         
                         var posItem = 0;
@@ -121,7 +121,7 @@ device_mouse_check_button(4, mb_left)
                         
                     if (
                     device_mouse_x(device) >= global.inventario_x + 121 &&
-                    device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                    device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                     device_mouse_y(device) >= global.inventario_y + 8 &&
                     device_mouse_y(device) <= global.inventario_y + 7 + 64
                     ) {
@@ -135,7 +135,7 @@ device_mouse_check_button(4, mb_left)
                         var posX = device_mouse_x(device);
                         var posY = device_mouse_y(device);
                         
-                        posX = posX - global.inventario_x - 120;
+                        posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                         posY = posY - global.inventario_y - 7;
                         
                         var posItem = 0;
@@ -208,7 +208,7 @@ device_mouse_check_button(4, mb_left)
                             
                         if (
                         device_mouse_x(device) >= global.inventario_x + 121 &&
-                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                         device_mouse_y(device) >= global.inventario_y + 8 &&
                         device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
@@ -218,7 +218,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - global.inventario_x - 120;
+                            posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                             posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;

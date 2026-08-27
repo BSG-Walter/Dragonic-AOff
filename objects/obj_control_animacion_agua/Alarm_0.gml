@@ -1,4 +1,4 @@
-/// @description  Cambiar dirección
+﻿/// @description  Cambiar dirección
 
 if (obj_opciones.opcionAnimacionAgua) {
 
@@ -10,7 +10,7 @@ if (obj_opciones.opcionAnimacionAgua) {
         direccionY = -1;
     }
     
-    alarm[0] = 600;
+    alarm[0] = SECOND * 10;
     
 }
 

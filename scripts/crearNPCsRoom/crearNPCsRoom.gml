@@ -770,9 +770,9 @@ function crearNPCsRoom(argument0) {
                 
 	                    xNuevo = multX * floor(random_range(2, room_width / multX - 32));
 	                    yNuevo = multY * floor(random_range(1, room_height / multY - 32));
-	                    var tile1 = tile_layer_find(10000000, xNuevo, yNuevo);
-	                    var tile2 = tile_layer_find(1000000, xNuevo, yNuevo);
-	                    var tile3 = tile_layer_find(100000, xNuevo, yNuevo);
+	                    var tile1 = tile_layer_find(TILE_LAYER_GRASS, xNuevo, yNuevo);
+	                    var tile2 = tile_layer_find(TILE_LAYER_COAST, xNuevo, yNuevo);
+	                    var tile3 = tile_layer_find(TILE_LAYER_FLOORS, xNuevo, yNuevo);
                 
 	                } until (
 	                xNuevo % 16 == 0 &&
@@ -802,7 +802,7 @@ function crearNPCsRoom(argument0) {
                 
 	                    xNuevo = multX * floor(random_range(2, room_width / multX - 32));
 	                    yNuevo = multY * floor(random_range(1, room_height / multY - 32));
-	                    var tile = tile_layer_find(10000000, xNuevo, yNuevo);
+	                    var tile = tile_layer_find(TILE_LAYER_GRASS, xNuevo, yNuevo);
                 
 	                } until (
 	                xNuevo % 16 == 0 &&

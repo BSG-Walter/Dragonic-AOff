@@ -1,4 +1,4 @@
-/// @description  corregirPosNPCEnTelep()
+﻿/// @description  corregirPosNPCEnTelep()
 function corregirPosNPCEnTelep() {
 
 	if (place_meeting(x, y, obj_telep)) {
@@ -9,7 +9,7 @@ function corregirPosNPCEnTelep() {
     
 	            x = 16 * floor(random_range(2, room_width / 16 - 32));
 	            y = 16 * floor(random_range(1, room_height / 16 - 32));
-	            var tileAux = tile_layer_find(10000000, x, y);
+	            var tileAux = tile_layer_find(TILE_LAYER_GRASS, x, y);
         
 	        } until (
 	        x % 16 == 0 &&
@@ -30,9 +30,9 @@ function corregirPosNPCEnTelep() {
     
 	            x = 16 * floor(random_range(2, room_width / 16 - 32));
 	            y = 16 * floor(random_range(1, room_height / 16 - 32));
-	            var tileAux1 = tile_layer_find(10000000, x, y);
-	            var tileAux2 = tile_layer_find(1000000, x, y);
-	            var tileAux3 = tile_layer_find(100000, x, y);
+	            var tileAux1 = tile_layer_find(TILE_LAYER_GRASS, x, y);
+	            var tileAux2 = tile_layer_find(TILE_LAYER_COAST, x, y);
+	            var tileAux3 = tile_layer_find(TILE_LAYER_FLOORS, x, y);
         
 	        } until (
 	        x % 16 == 0 &&

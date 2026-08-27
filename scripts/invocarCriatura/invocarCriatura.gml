@@ -33,9 +33,9 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	    posYMouse++;
 	}
     
-	var tilePasto = tile_layer_find(10000000, posXMouse, posYMouse); // Pasto
-	var tileCosta = tile_layer_find(1000000, posXMouse, posYMouse); // Costa
-	var tilePisosYPuentes = tile_layer_find(100000, posXMouse, posYMouse); // Pisos y puentes
+	var tilePasto = tile_layer_find(TILE_LAYER_GRASS, posXMouse, posYMouse); // Pasto
+	var tileCosta = tile_layer_find(TILE_LAYER_COAST, posXMouse, posYMouse); // Costa
+	var tilePisosYPuentes = tile_layer_find(TILE_LAYER_FLOORS, posXMouse, posYMouse); // Pisos y puentes
 
 	if (tilePasto != -1 || tileCosta != -1 || tilePisosYPuentes != -1) { // Si hay algún tipo de suelo...
 

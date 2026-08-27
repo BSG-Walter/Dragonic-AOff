@@ -219,7 +219,7 @@ device_mouse_check_button(4, mb_left)
                             
                                 if (obj_inventario.slots[indiceItem].indice == 144) {
                                     validoItem = "Podés usar este ítem (Ver manual para mas info.)";
-                                } else if (obj_inventario.slots[indiceItem].indice >= 120 && obj_inventario.slots[indiceItem].indice <= 139) {
+                                } else if (obj_inventario.slots[indiceItem].indice >= SPELL_INDEX_BASE && obj_inventario.slots[indiceItem].indice <= SPELL_INDEX_BASE + 19) {
                                     validoItem = "Podés aprender este hechizo (Ver manual para mas info.)";
                                 } else {
                                     validoItem = "Podés usar este ítem";
@@ -412,7 +412,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                     if (idPadre.slots[indiceItem].indice == 144) {
                                         validoItem = "Podés usar este ítem (Ver manual para mas info.)";
-                                    } else if (idPadre.slots[indiceItem].indice >= 120 && idPadre.slots[indiceItem].indice <= 139) {
+                                    } else if (idPadre.slots[indiceItem].indice >= SPELL_INDEX_BASE && idPadre.slots[indiceItem].indice <= SPELL_INDEX_BASE + 19) {
                                         validoItem = "Podés aprender este hechizo (Ver manual para mas info.)";
                                     } else {
                                         validoItem = "Podés usar este ítem";
@@ -527,7 +527,7 @@ device_mouse_check_button(4, mb_left)
                                 clicMantenido = true;
                                 deviceMantenido = device;
                                 if (alarm[1] == -1) {
-                                    alarm[1] = 60;
+                                    alarm[1] = SECOND;
                                 }
                             
                                 if (obj_pj.oro + precioItem * cant <= obj_pj.oroMax) {
@@ -622,7 +622,7 @@ device_mouse_check_button(4, mb_left)
                                                 clicMantenido = true;
                                                 deviceMantenido = device;
                                                 if (alarm[1] == -1) {
-                                                    alarm[1] = 60;
+                                                    alarm[1] = SECOND;
                                                 }
                                                 
                                                 existe = true;
@@ -692,7 +692,7 @@ device_mouse_check_button(4, mb_left)
                                         clicMantenido = true;
                                         deviceMantenido = device;
                                         if (alarm[1] == -1) {
-                                            alarm[1] = 60;
+                                            alarm[1] = SECOND;
                                         }
                                         
                                         obj_pj.oro -= precioItem * cant;
@@ -914,7 +914,7 @@ device_mouse_check_button(4, mb_left)
                             
                                 if (obj_inventario.slots[indiceItem].indice == 144) {
                                     validoItem = "Podés usar este ítem (Ver manual para mas info.)";
-                                } else if (obj_inventario.slots[indiceItem].indice >= 120 && obj_inventario.slots[indiceItem].indice <= 139) {
+                                } else if (obj_inventario.slots[indiceItem].indice >= SPELL_INDEX_BASE && obj_inventario.slots[indiceItem].indice <= SPELL_INDEX_BASE + 19) {
                                     validoItem = "Podés aprender este hechizo (Ver manual para mas info.)";
                                 } else {
                                     validoItem = "Podés usar este ítem";
@@ -1074,7 +1074,7 @@ device_mouse_check_button(4, mb_left)
                             
                                 if (idPadre.slots[indiceItem].indice == 144) {
                                     validoItem = "Podés usar este ítem (Ver manual para mas info.)";
-                                } else if (idPadre.slots[indiceItem].indice >= 120 && idPadre.slots[indiceItem].indice <= 139) {
+                                } else if (idPadre.slots[indiceItem].indice >= SPELL_INDEX_BASE && idPadre.slots[indiceItem].indice <= SPELL_INDEX_BASE + 19) {
                                     validoItem = "Podés aprender este hechizo (Ver manual para mas info.)";
                                 } else {
                                     validoItem = "Podés usar este ítem";
@@ -1187,7 +1187,7 @@ device_mouse_check_button(4, mb_left)
                                 var valido = false;
                                 var existe = false;
                     
-                                for (var i = 0; i < 20; i++) {
+                                for (var i = 0; i < MAX_SLOTS; i++) {
                                     if (idPadre.slots[i].indice == obj_inventario.slots[indiceItem].indice) {
                                         if (idPadre.slots[i].cant + cant <= 10000) {
                                         
@@ -1196,7 +1196,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             existe = true;
@@ -1209,7 +1209,7 @@ device_mouse_check_button(4, mb_left)
                                 }
                                 
                                 if (!existe) {
-                                    for (var i = 0; i < 20; i++) {
+                                    for (var i = 0; i < MAX_SLOTS; i++) {
                                     
                                         if (idPadre.slots[i].indice == -1) {
                                         
@@ -1218,7 +1218,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             datosItem = configurarItem(obj_inventario.slots[indiceItem].indice);
@@ -1313,7 +1313,7 @@ device_mouse_check_button(4, mb_left)
                                             clicMantenido = true;
                                             deviceMantenido = device;
                                             if (alarm[1] == -1) {
-                                                alarm[1] = 60;
+                                                alarm[1] = SECOND;
                                             }
                                             
                                             existe = true;
@@ -1335,7 +1335,7 @@ device_mouse_check_button(4, mb_left)
                                         clicMantenido = true;
                                         deviceMantenido = device;
                                         if (alarm[1] == -1) {
-                                            alarm[1] = 60;
+                                            alarm[1] = SECOND;
                                         }
                                         
                                         obj_inventario.slots[i] = crearSlotInv(idPadre.slots[indiceItem].indice, cant, false);

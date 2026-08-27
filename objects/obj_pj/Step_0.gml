@@ -1614,7 +1614,7 @@ _mouseDown
                         } else if (
                         (puedeMoverse) &&
                         (trabajoActual == 155 || trabajoActual == 156) &&
-                        tile_layer_find(10000000, device_mouse_x(device), device_mouse_y(device) ) == -1
+                        tile_layer_find(TILE_LAYER_GRASS, device_mouse_x(device), device_mouse_y(device) ) == -1
                         ) {
                         
                             // Hay agua... trabajo

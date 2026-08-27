@@ -246,7 +246,7 @@ if (target == -1 || target == obj_pj) {
                         obj_pj.inmovilizado = true;
 						
 						if (claseGuerrera())
-							obj_control_inmo_pj.alarm[0] = 600; // 10 Segundos
+							obj_control_inmo_pj.alarm[0] = SECOND * 10; // 10 Segundos
 						else
 							obj_control_inmo_pj.alarm[0] = 1800; // 30 Segundos
                         

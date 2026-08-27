@@ -18,5 +18,5 @@ if (esPolo() && !estaAbrigado() && obj_pj.salud > 0) {
     }
 }
 
-alarm[8] = 60
+alarm[8] = SECOND
 	

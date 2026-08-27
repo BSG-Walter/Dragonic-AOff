@@ -9,7 +9,7 @@ dobleClic = false;
 
 // Inventario
 
-for (var i = 0; i < 20; i++) {
+for (var i = 0; i < MAX_SLOTS; i++) {
     slots[i] = crearSlotNpc(-1, 0, "Vacío");
 }
 

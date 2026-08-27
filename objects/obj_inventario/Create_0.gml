@@ -130,4 +130,4 @@ repeat(maximoInv) {
 
 tileInvalido = false;
 depth = -16000001
-alarm[8] = 60;
+alarm[8] = SECOND;

@@ -265,7 +265,7 @@ if (clicMantenido) {
                             var valido = false;
                             var existe = false;
                 
-                                for (var i = 0; i < 20; i++) {
+                                for (var i = 0; i < MAX_SLOTS; i++) {
                                     if (idPadre.slots[i].indice == obj_inventario.slots[indiceItem].indice) {
                                     if (idPadre.slots[i].cant + cant <= 10000) {
                                     
@@ -281,7 +281,7 @@ if (clicMantenido) {
                             }
                             
                             if (!existe) {
-                                for (var i = 0; i < 20; i++) {
+                                for (var i = 0; i < MAX_SLOTS; i++) {
                                 
                                     if (idPadre.slots[i].indice == -1) {
                                     

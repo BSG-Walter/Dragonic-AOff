@@ -35,7 +35,7 @@ device_mouse_check_button(4, mb_left)
                             
                         if (
                         device_mouse_x(device) >= global.inventario_x + 121 &&
-                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                         device_mouse_y(device) >= global.inventario_y + 8 &&
                         device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
@@ -54,7 +54,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - global.inventario_x - 120;
+                            posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                             posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
@@ -466,7 +466,7 @@ device_mouse_check_button(4, mb_left)
                             
                         if (
                         device_mouse_x(device) >= global.inventario_x + 121 &&
-                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                         device_mouse_y(device) >= global.inventario_y + 8 &&
                         device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
@@ -478,7 +478,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - global.inventario_x - 120;
+                            posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                             posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
@@ -565,7 +565,7 @@ device_mouse_check_button(4, mb_left)
                             
                         if (
                         device_mouse_x(device) >= global.inventario_x + 121 &&
-                        device_mouse_x(device) <= global.inventario_x + 120 + 320 &&
+                        device_mouse_x(device) <= global.inventario_x + INVENTARIO_WIDTH + 320 &&
                         device_mouse_y(device) >= global.inventario_y + 8 &&
                         device_mouse_y(device) <= global.inventario_y + 7 + 64
                         ) {
@@ -577,7 +577,7 @@ device_mouse_check_button(4, mb_left)
                             var posX = device_mouse_x(device);
                             var posY = device_mouse_y(device);
                             
-                            posX = posX - global.inventario_x - 120;
+                            posX = posX - global.inventario_x - INVENTARIO_WIDTH;
                             posY = posY - global.inventario_y - 7;
                             
                             var posItem = 0;
@@ -621,7 +621,7 @@ device_mouse_check_button(4, mb_left)
                                 if (posItem == posDobleClic) {
                                                     
                                     deviceDC = device;
-                                    alarm[5] = 60;
+                                    alarm[5] = SECOND;
                                 
                                     seleccionado = slots[posItem].indice;
                                     posSeleccionado = posItem;
@@ -635,7 +635,7 @@ device_mouse_check_button(4, mb_left)
                                                 tiraDeA1 = true;
                                             }
                                             
-                                            alarm[1] = 120;
+                                            alarm[1] = SECOND * 2;
                                         
                                             if (
                                             !position_meeting(obj_pj.x, obj_pj.y - 16, obj_item) &&

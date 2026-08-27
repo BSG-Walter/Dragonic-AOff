@@ -85,7 +85,7 @@ device_mouse_check_button(4, mb_left)
         if (device_mouse_check_button(deviceMantener, mb_left) && position_meeting(device_mouse_x(deviceMantener), device_mouse_y(deviceMantener), self)) {
         
             if (alarm[2] == -1) {
-                alarm[2] = 60;
+                alarm[2] = SECOND;
             }
         
             obj_control_devices.devicesL[deviceMantener] = true;

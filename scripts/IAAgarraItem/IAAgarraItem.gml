@@ -1,4 +1,4 @@
-/// @description  IAAgarraItem(idIA)
+﻿/// @description  IAAgarraItem(idIA)
 /// @param idIA
 function IAAgarraItem(argument0) {
 
@@ -13,7 +13,7 @@ function IAAgarraItem(argument0) {
 
 	    var existe = false;
 
-	    for (var i = 0; i < 20; i++) {
+	    for (var i = 0; i < MAX_SLOTS; i++) {
     
 	        if (argument0.inventario[i].indice == indice) {
         
@@ -41,7 +41,7 @@ function IAAgarraItem(argument0) {
     
 	        var agrego = false;
         
-	        for (var i = 0; i < 20; i++) {
+	        for (var i = 0; i < MAX_SLOTS; i++) {
         
 	            if (argument0.inventario[i].indice == -1) {
             

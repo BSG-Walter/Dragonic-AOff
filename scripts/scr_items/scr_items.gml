@@ -1,4 +1,4 @@
-function scr_items(){
+﻿function scr_items(){
 
 }
 
@@ -185,8 +185,8 @@ function crearSlotIA(_indice, _cant) {
 
 /// @description inventarioIAVacio() — 20 slots vacíos
 function inventarioIAVacio() {
-    var _inv = array_create(20);
-    for (var i = 0; i < 20; i++) {
+    var _inv = array_create(MAX_SLOTS);
+    for (var i = 0; i < MAX_SLOTS; i++) {
         _inv[i] = crearSlotIA(-1, 0);
     }
     return _inv;

@@ -367,7 +367,7 @@ with (obj_npc_basic) {
 // Navegando?
 
 if (obj_pj.nivel >= 25 && !is_special_room()) {
-    if (tile_layer_find(10000000, x, y) == -1 && tile_layer_find(1000000, x, y) == -1 && tile_layer_find(100000, x, y) == -1 && tile_layer_find(10000, x, y) == -1) {
+    if (tile_layer_find(TILE_LAYER_GRASS, x, y) == -1 && tile_layer_find(TILE_LAYER_COAST, x, y) == -1 && tile_layer_find(TILE_LAYER_FLOORS, x, y) == -1 && tile_layer_find(10000, x, y) == -1) {
         // Hay agua debajo de la IA
         enBarca = true;
     }

@@ -1,10 +1,10 @@
-/// @description  IAAgarraIndiceItemForzado(indiceItem)
+﻿/// @description  IAAgarraIndiceItemForzado(indiceItem)
 /// @param indiceItem
 function IAAgarraIndiceItemForzado(argument0){
 
 	var existe = false;
 
-	    for (var i = 0; i < 20; i++) {
+	    for (var i = 0; i < MAX_SLOTS; i++) {
     
 	        if (inventario[i].indice == argument0) {
         
@@ -27,7 +27,7 @@ function IAAgarraIndiceItemForzado(argument0){
     
 	        var agrego = false;
         
-	        for (var i = 0; i < 20; i++) {
+	        for (var i = 0; i < MAX_SLOTS; i++) {
         
 	            if (inventario[i].indice == -1) {
             
