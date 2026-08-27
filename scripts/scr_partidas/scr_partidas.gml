@@ -2,6 +2,25 @@ function scr_partidas(){
 
 }
 
+/// @description slotPJ(nombre, nroRaza, sprCabeza, pk, imgRopa, imgArma, imgEscudo, imgCasco)
+function slotPJ(_nombre, _nroRaza, _sprCabeza, _pk, _imgRopa, _imgArma, _imgEscudo, _imgCasco) {
+    return {
+        nombre: _nombre,
+        nroRaza: _nroRaza,
+        sprCabeza: _sprCabeza,
+        pk: _pk,
+        imgRopa: _imgRopa,
+        imgArma: _imgArma,
+        imgEscudo: _imgEscudo,
+        imgCasco: _imgCasco
+    };
+}
+
+/// @description slotPVacio()
+function slotPVacio() {
+    return slotPJ("RESTAURAR_PERSONAJE", 0, -1, false, -1, -1, -1, -1);
+}
+
 /// @description  cargarPartida(partida)
 /// @param partida
 function cargarPartida(argument0) {

@@ -487,16 +487,7 @@ function cargarPJs(argument0) {
 	        imgRopa = spr_muerto;
 	    }
     
-	    // Guardo los datos
-    
-	    datosPJ[argument0, 1] = nombre;
-	    datosPJ[argument0, 2] = nroRaza;
-	    datosPJ[argument0, 3] = sprCabeza;
-	    datosPJ[argument0, 4] = pk;
-	    datosPJ[argument0, 5] = imgRopa;
-	    datosPJ[argument0, 6] = imgArma;
-	    datosPJ[argument0, 7] = imgEscudo;
-	    datosPJ[argument0, 8] = imgCasco;
+	    datosPJ[argument0] = slotPJ(nombre, nroRaza, sprCabeza, pk, imgRopa, imgArma, imgEscudo, imgCasco);
     
 	    ini_close(); 
 	    enc("partida" + string(argument0) + ".ini");

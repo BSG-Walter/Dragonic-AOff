@@ -7,7 +7,7 @@ if (elegible || !obj_control_seleccionarPJ.modoTorneo) {
 	with(obj_importar_exportar) event_user(0)
 	if (file_exists("partida" + string(numPj) + ".ini")){
 	with (obj_restaurar_PJ) instance_destroy();
-	if (obj_control_seleccionarPJ.datosPJ[numPj, 1] == "RESTAURAR_PERSONAJE")
+	if (obj_control_seleccionarPJ.datosPJ[numPj].nombre == "RESTAURAR_PERSONAJE")
 		instance_create_depth(x, y + 111, 0, obj_restaurar_PJ);
 	}
 } else {

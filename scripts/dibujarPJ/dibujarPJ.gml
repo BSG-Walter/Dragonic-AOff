@@ -46,72 +46,61 @@ function dibujarPJ(argument0) {
 	            break;            
 	    }    
     
-	    /*
+	    var _pj = datosPJ[argument0];
     
-	    datosPJ[argument0, 1] = nombre;
-	    datosPJ[argument0, 2] = nroRaza;
-	    datosPJ[argument0, 3] = sprCabeza;
-	    datosPJ[argument0, 4] = pk;
-	    datosPJ[argument0, 5] = imgRopa;
-	    datosPJ[argument0, 6] = imgArma;
-	    datosPJ[argument0, 7] = imgEscudo;
-	    datosPJ[argument0, 8] = imgCasco;
-    
-	    */
-    
-	    if (datosPJ[argument0, 5] == spr_muerto) {
+	    if (_pj.imgRopa == spr_muerto) {
 	        draw_set_alpha(0.5);
 	    }
-	    draw_sprite(datosPJ[argument0, 5], 0, X, Y);
+	    draw_sprite(_pj.imgRopa, 0, X, Y);
 	    draw_set_alpha(1);
             
-	    if (datosPJ[argument0, 2] < 3) {
-	        if (datosPJ[argument0, 3] == spr_cabeza_muerto) {
+	    if (_pj.nroRaza < 3) {
+	        if (_pj.sprCabeza == spr_cabeza_muerto) {
 	            draw_set_alpha(0.5);
 	            draw_sprite(spr_cabeza_muerto, 0, X, Y - 27); 
 	            draw_set_alpha(1);
 	        } else {
-	            draw_sprite(datosPJ[argument0, 3], 0, X, Y - 36); 
+	            draw_sprite(_pj.sprCabeza, 0, X, Y - 36); 
 	        }
-	        if (datosPJ[argument0, 8] != -1) {
-	            draw_sprite(datosPJ[argument0, 8], 0, X, Y - 36);  
+	        if (_pj.imgCasco != -1) {
+	            draw_sprite(_pj.imgCasco, 0, X, Y - 36);  
 	        }
-	        if (datosPJ[argument0, 6] != -1) {
-	            draw_sprite(datosPJ[argument0, 6], 0, X, Y);   
+	        if (_pj.imgArma != -1) {
+	            draw_sprite(_pj.imgArma, 0, X, Y);   
 	        }                              
 	    } else {
-	        if (datosPJ[argument0, 3] == spr_cabeza_muerto) {
+	        if (_pj.sprCabeza == spr_cabeza_muerto) {
 	            draw_set_alpha(0.5);
 	            draw_sprite(spr_cabeza_muerto, 0, X, Y - 27); 
 	            draw_set_alpha(1);
 	        } else {
-	            draw_sprite(datosPJ[argument0, 3], 0, X, Y - 28); 
+	            draw_sprite(_pj.sprCabeza, 0, X, Y - 28); 
 	        }
-	        if (datosPJ[argument0, 8] != -1) {
-	            draw_sprite(datosPJ[argument0, 8], 0, X, Y - 28);  
+	        if (_pj.imgCasco != -1) {
+	            draw_sprite(_pj.imgCasco, 0, X, Y - 28);  
 	        }
-	        if (datosPJ[argument0, 6] != -1) {
-	            draw_sprite(datosPJ[argument0, 6], 0, X, Y + 4); 
+	        if (_pj.imgArma != -1) {
+	            draw_sprite(_pj.imgArma, 0, X, Y + 4); 
 	        }                                     
 	    }  
     
-	    if (datosPJ[argument0, 7] != -1) {
-	        draw_sprite(datosPJ[argument0, 7], 0, X, Y);
+	    if (_pj.imgEscudo != -1) {
+	        draw_sprite(_pj.imgEscudo, 0, X, Y);
 	    }     
     
 	    draw_set_halign(fa_center);
 	    draw_set_font(fnt_Vedrana_8_bold);    
 	    draw_set_color(c_black);
-	    draw_text(X + 1, Y + 1, string_hash_to_newline(datosPJ[argument0, 1]));
+	    draw_text(X + 1, Y + 1, string_hash_to_newline(_pj.nombre));
     
-	    if (!datosPJ[argument0, 4]) {
+	    if (!_pj.pk) {
 	        var color = make_color_rgb(65, 134, 175);
 	    } else {
 	        var color = make_color_rgb(199, 16, 26);
 	    }    
     
 	    draw_set_color(color);
-	    draw_text(X, Y + 2, string_hash_to_newline(datosPJ[argument0, 1]));
+	    draw_text(X, Y + 2, string_hash_to_newline(_pj.nombre));
 
 	}
 

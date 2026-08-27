@@ -4,18 +4,9 @@ modoTorneo = obj_control_notificacion_torneos.recibioNotificacion;
 
 elegido = -1;
 
-aux[0] = -1;
-
-datosPJ[0] = aux;
-datosPJ[1] = aux;
-datosPJ[2] = aux;
-datosPJ[3] = aux;
-datosPJ[4] = aux;
-datosPJ[5] = aux;
-datosPJ[6] = aux;
-datosPJ[7] = aux;
-datosPJ[8] = aux;
-datosPJ[9] = aux;
+for (var i = 0; i <= 9; i++) {
+    datosPJ[i] = slotPVacio();
+}
 
 repararPartidasGuardadas();
 

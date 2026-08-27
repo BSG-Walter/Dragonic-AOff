@@ -4,8 +4,8 @@ if (obj_control_seleccionarPJ.elegido != -1) {
     if (file_exists("partida" + string(obj_control_seleccionarPJ.elegido) + ".ini")) {
         if (obj_seleccionarPJ_borrar.confirmado) {
             obj_seleccionarPJ_borrar.alarm[0] = -1;
-			if (file_exists("herrero-" + obj_control_seleccionarPJ.datosPJ[obj_control_seleccionarPJ.elegido, 1] + ".ini"))
-				file_delete("herrero-" + obj_control_seleccionarPJ.datosPJ[obj_control_seleccionarPJ.elegido, 1] + ".ini");
+			if (file_exists("herrero-" + obj_control_seleccionarPJ.datosPJ[obj_control_seleccionarPJ.elegido].nombre + ".ini"))
+				file_delete("herrero-" + obj_control_seleccionarPJ.datosPJ[obj_control_seleccionarPJ.elegido].nombre + ".ini");
             if (file_exists("partida" + string(obj_control_seleccionarPJ.elegido) + "_BackUp.ini")) {
 				file_delete("partida" + string(obj_control_seleccionarPJ.elegido) + "_BackUp.ini");
             }
