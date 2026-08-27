@@ -30,12 +30,12 @@ if (!siguiendo && !inmovilizado && !paralizado) {
             
             if (y > target.y) {
             
-                bloqueo = place_meeting(x, y - 32, obj_bloqueo_agua);
+                bloqueo = place_meeting(x, y - TILE_SIZE, obj_bloqueo_agua);
                 
                 if (
-                !place_meeting(x, y - 32, obj_pj) && 
-                !place_meeting(x, y - 32, obj_npc_basic) && 
-                !place_meeting(x, y - 32, obj_bloque_basic) && !place_meeting(x, y - 32, obj_telep) &&             
+                !place_meeting(x, y - TILE_SIZE, obj_pj) && 
+                !place_meeting(x, y - TILE_SIZE, obj_npc_basic) && 
+                !place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && !place_meeting(x, y - TILE_SIZE, obj_telep) &&             
                 !bloqueo
                 ) {
                     alarm[1] = 1;
@@ -47,12 +47,12 @@ if (!siguiendo && !inmovilizado && !paralizado) {
                 
             } else if (y < target.y) {
             
-                bloqueo = place_meeting(x, y + 32, obj_bloqueo_agua);
+                bloqueo = place_meeting(x, y + TILE_SIZE, obj_bloqueo_agua);
             
                 if (
-                !place_meeting(x, y + 32, obj_pj) && 
-                !place_meeting(x, y + 32, obj_npc_basic) && 
-                !place_meeting(x, y + 32, obj_bloque_basic) && !place_meeting(x, y + 32, obj_telep) &&         
+                !place_meeting(x, y + TILE_SIZE, obj_pj) && 
+                !place_meeting(x, y + TILE_SIZE, obj_npc_basic) && 
+                !place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && !place_meeting(x, y + TILE_SIZE, obj_telep) &&         
                 !bloqueo
                 ) {
                     alarm[1] = 1;
@@ -64,12 +64,12 @@ if (!siguiendo && !inmovilizado && !paralizado) {
                 
             } else if (x > target.x) {
             
-                bloqueo = place_meeting(x - 32, y, obj_bloqueo_agua);
+                bloqueo = place_meeting(x - TILE_SIZE, y, obj_bloqueo_agua);
             
                 if (
-                !place_meeting(x - 32, y, obj_pj) && 
-                !place_meeting(x - 32, y, obj_npc_basic) && 
-                !place_meeting(x - 32, y, obj_bloque_basic) && !place_meeting(x - 32, y, obj_telep) &&   
+                !place_meeting(x - TILE_SIZE, y, obj_pj) && 
+                !place_meeting(x - TILE_SIZE, y, obj_npc_basic) && 
+                !place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && !place_meeting(x - TILE_SIZE, y, obj_telep) &&   
                 !bloqueo
                 ) {
                     alarm[1] = 1;
@@ -81,12 +81,12 @@ if (!siguiendo && !inmovilizado && !paralizado) {
             
             } else if (x < target.x) {
             
-                bloqueo = place_meeting(x + 32, y, obj_bloqueo_agua);
+                bloqueo = place_meeting(x + TILE_SIZE, y, obj_bloqueo_agua);
             
                 if (
-                !place_meeting(x + 32, y, obj_pj) && 
-                !place_meeting(x + 32, y, obj_npc_basic) && 
-                !place_meeting(x + 32, y, obj_bloque_basic) && !place_meeting(x + 32, y, obj_telep) &&   
+                !place_meeting(x + TILE_SIZE, y, obj_pj) && 
+                !place_meeting(x + TILE_SIZE, y, obj_npc_basic) && 
+                !place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && !place_meeting(x + TILE_SIZE, y, obj_telep) &&   
                 !bloqueo
                 ) {
                     alarm[1] = 1;

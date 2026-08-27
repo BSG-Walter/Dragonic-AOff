@@ -50,16 +50,16 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
         // Derecha
         
         if (!navega) {
-            bloqueo = place_meeting(x + 32, y, obj_bloqueo_agua);
+            bloqueo = place_meeting(x + TILE_SIZE, y, obj_bloqueo_agua);
             sndPaso = snd_paso;
         } else {
-            bloqueo = place_meeting(x + 32, y, obj_bloqueo_tierra);
+            bloqueo = place_meeting(x + TILE_SIZE, y, obj_bloqueo_tierra);
             sndPaso = snd_barca;
         }
     
         if (
-        !place_meeting(x + 32, y, obj_bloque_basic) && 
-        !place_meeting(x + 32, y, obj_npc_basic) && 
+        !place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && 
+        !place_meeting(x + TILE_SIZE, y, obj_npc_basic) && 
         !bloqueo
         ) {
             xInicio = x;
@@ -78,16 +78,16 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
         // Izquierda
     
         if (!navega) {
-            bloqueo = place_meeting(x - 32, y, obj_bloqueo_agua);
+            bloqueo = place_meeting(x - TILE_SIZE, y, obj_bloqueo_agua);
             sndPaso = snd_paso;
         } else {
-            bloqueo = place_meeting(x - 32, y, obj_bloqueo_tierra);
+            bloqueo = place_meeting(x - TILE_SIZE, y, obj_bloqueo_tierra);
             sndPaso = snd_barca;
         }
     
         if (
-        !place_meeting(x - 32, y, obj_bloque_basic) && 
-        !place_meeting(x - 32, y, obj_npc_basic) && 
+        !place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && 
+        !place_meeting(x - TILE_SIZE, y, obj_npc_basic) && 
         !bloqueo
         ) {
             xInicio = x;
@@ -106,16 +106,16 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
         // Arriba
         
         if (!navega) {
-            bloqueo = place_meeting(x, y - 32, obj_bloqueo_agua);
+            bloqueo = place_meeting(x, y - TILE_SIZE, obj_bloqueo_agua);
             sndPaso = snd_paso;
         } else {
-            bloqueo = place_meeting(x, y - 32, obj_bloqueo_tierra);
+            bloqueo = place_meeting(x, y - TILE_SIZE, obj_bloqueo_tierra);
             sndPaso = snd_barca;
         }
     
         if (
-        !place_meeting(x, y - 32, obj_bloque_basic) && 
-        !place_meeting(x, y - 32, obj_npc_basic) && 
+        !place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && 
+        !place_meeting(x, y - TILE_SIZE, obj_npc_basic) && 
         !bloqueo
         ) {
             yInicio = y;
@@ -134,16 +134,16 @@ if (pasos == 0 && puedeMoverse && !inmovilizado && !meditando) {
         // Abajo
     
         if (!navega) {
-            bloqueo = place_meeting(x, y + 32, obj_bloqueo_agua);
+            bloqueo = place_meeting(x, y + TILE_SIZE, obj_bloqueo_agua);
             sndPaso = snd_paso;
         } else {
-            bloqueo = place_meeting(x, y + 32, obj_bloqueo_tierra);
+            bloqueo = place_meeting(x, y + TILE_SIZE, obj_bloqueo_tierra);
             sndPaso = snd_barca;
         }
     
         if (
-        !place_meeting(x, y + 32, obj_bloque_basic) && 
-        !place_meeting(x, y + 32, obj_npc_basic) && 
+        !place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && 
+        !place_meeting(x, y + TILE_SIZE, obj_npc_basic) && 
         !bloqueo
         ) {
             yInicio = y;
@@ -230,7 +230,7 @@ if (!obj_opciones.opcionTechos) {
 
     if (
     (place_meeting(x, y, obj_techo_basic)) ||
-    (place_meeting(x, y - 32, obj_techo_basic))
+    (place_meeting(x, y - TILE_SIZE, obj_techo_basic))
     ) {
         with (obj_techo_basic) {
             visible = false;
@@ -245,7 +245,7 @@ if (!obj_opciones.opcionTechos) {
 
     if (
     (place_meeting(x, y, obj_techo_basic)) ||
-    (place_meeting(x, y - 32, obj_techo_basic))
+    (place_meeting(x, y - TILE_SIZE, obj_techo_basic))
     ) {
     
         with (obj_techo_basic) {

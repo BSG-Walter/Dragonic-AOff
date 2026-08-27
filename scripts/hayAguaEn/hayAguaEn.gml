@@ -1,4 +1,4 @@
-/// @description  hayAguaEn(x, y)
+﻿/// @description  hayAguaEn(x, y)
 /// @param x
 /// @param y
 function hayAguaEn(argument0, argument1) {
@@ -24,8 +24,8 @@ function hayAguaEn(argument0, argument1) {
 			ds_grid_destroy(global.__agua_grid);
 		}
 		
-		var gw = max(1, room_width div 32);
-		var gh = max(1, room_height div 32);
+		var gw = max(1, room_width div TILE_SIZE);
+		var gh = max(1, room_height div TILE_SIZE);
 		global.__agua_gw = gw;
 		global.__agua_gh = gh;
 		global.__agua_grid = ds_grid_create(gw, gh);
@@ -68,10 +68,10 @@ function hayAguaEn(argument0, argument1) {
 							if (x1 > x2) { var tmp = x1; x1 = x2; x2 = tmp; }
 							if (y1 > y2) { var tmp = y1; y1 = y2; y2 = tmp; }
 							
-							var gx1 = clamp(x1 div 32, 0, gw - 1);
-							var gy1 = clamp(y1 div 32, 0, gh - 1);
-							var gx2 = clamp((x2 - 1) div 32, 0, gw - 1);
-							var gy2 = clamp((y2 - 1) div 32, 0, gh - 1);
+							var gx1 = clamp(x1 div TILE_SIZE, 0, gw - 1);
+							var gy1 = clamp(y1 div TILE_SIZE, 0, gh - 1);
+							var gx2 = clamp((x2 - 1) div TILE_SIZE, 0, gw - 1);
+							var gy2 = clamp((y2 - 1) div TILE_SIZE, 0, gh - 1);
 							
 							ds_grid_set_region(global.__agua_grid, gx1, gy1, gx2, gy2, 0);
 						} else if (el_type == layerelementtype_sprite) {
@@ -81,10 +81,10 @@ function hayAguaEn(argument0, argument1) {
 							var sw = (spr != -1) ? sprite_get_width(spr) * layer_sprite_get_xscale(el) : 32;
 							var sh = (spr != -1) ? sprite_get_height(spr) * layer_sprite_get_yscale(el) : 32;
 							
-							var gx1 = clamp(sx div 32, 0, gw - 1);
-							var gy1 = clamp(sy div 32, 0, gh - 1);
-							var gx2 = clamp((sx + sw - 1) div 32, 0, gw - 1);
-							var gy2 = clamp((sy + sh - 1) div 32, 0, gh - 1);
+							var gx1 = clamp(sx div TILE_SIZE, 0, gw - 1);
+							var gy1 = clamp(sy div TILE_SIZE, 0, gh - 1);
+							var gx2 = clamp((sx + sw - 1) div TILE_SIZE, 0, gw - 1);
+							var gy2 = clamp((sy + sh - 1) div TILE_SIZE, 0, gh - 1);
 							
 							ds_grid_set_region(global.__agua_grid, gx1, gy1, gx2, gy2, 0);
 						}
@@ -98,8 +98,8 @@ function hayAguaEn(argument0, argument1) {
 		return false;
 	}
 	
-	var gx = xPos div 32;
-	var gy = yPos div 32;
+	var gx = xPos div TILE_SIZE;
+	var gy = yPos div TILE_SIZE;
 	
 	if (gx < 0 || gx >= global.__agua_gw || gy < 0 || gy >= global.__agua_gh) {
 		return false;

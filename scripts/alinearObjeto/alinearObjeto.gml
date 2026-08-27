@@ -1,11 +1,11 @@
-/// @description  alinearObjeto()
+﻿/// @description  alinearObjeto()
 function alinearObjeto() {
 
-	while (y % 16 != 0 || y % 32 == 0) {
+	while (y % 16 != 0 || y % TILE_SIZE == 0) {
 	    y--;
 	}
 
-	while (x % 16 != 0 || x % 32 == 0) {
+	while (x % 16 != 0 || x % TILE_SIZE == 0) {
 	    x++;
 	}
 

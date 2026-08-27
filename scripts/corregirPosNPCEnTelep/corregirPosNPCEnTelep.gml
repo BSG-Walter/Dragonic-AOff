@@ -14,8 +14,8 @@ function corregirPosNPCEnTelep() {
 	        } until (
 	        x % 16 == 0 &&
 	        y % 16 == 0 &&
-	        x % 32 != 0 &&
-	        y % 32 != 0 &&
+	        x % TILE_SIZE != 0 &&
+	        y % TILE_SIZE != 0 &&
 	        tileAux != -1 && 
 	        !place_meeting(x, y, obj_pj) &&
 	        !place_meeting(x, y, obj_bloque_basic) && 
@@ -37,8 +37,8 @@ function corregirPosNPCEnTelep() {
 	        } until (
 	        x % 16 == 0 &&
 	        y % 16 == 0 &&
-	        x % 32 != 0 &&
-	        y % 32 != 0 &&
+	        x % TILE_SIZE != 0 &&
+	        y % TILE_SIZE != 0 &&
 	        tileAux1 == -1 && tileAux2 == -1 && tileAux3 == -1 && 
 	        !place_meeting(x, y, obj_pj) &&
 	        !place_meeting(x, y, obj_bloque_basic) && 

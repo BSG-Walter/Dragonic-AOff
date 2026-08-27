@@ -13,22 +13,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     ////////////////////////////////////////////////////////////////////////////////
     // Si hay lugar arriba a la izquierda...
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - 32 * i, y - 32 * i); // Pasto
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x - 32 * i, y - 32 * i); // Costa
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - 32 * i, y - 32 * i); // Pisos y puentes
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - TILE_SIZE * i, y - TILE_SIZE * i); // Pasto
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, y - TILE_SIZE * i); // Costa
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - TILE_SIZE * i, y - TILE_SIZE * i); // Pisos y puentes
     
     if (
-    !place_meeting(x - 32 * i, y - 32 * i, obj_pj) && 
-    !place_meeting(x - 32 * i, y - 32 * i, obj_bloque_basic) && 
-    !place_meeting(x - 32 * i, y - 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x - 32 * i, y - 32 * i, obj_npc_basic) &&
-    !place_meeting(x - 32 * i, y - 32 * i, obj_oro) &&
-    !place_meeting(x - 32 * i, y - 32 * i, obj_item) &&
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x - TILE_SIZE * i, y - TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x -= 32 * i;
-        y -= 32 * i;
+        x -= TILE_SIZE * i;
+        y -= TILE_SIZE * i;
         break;
         
     }
@@ -37,22 +37,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x - 32 * iAux) + 32, y - 32 * i);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, (x - 32 * iAux) + 32, y - 32 * i);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x - 32 * iAux) + 32, y - 32 * i);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, (x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
         
             if (
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_pj) && 
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_bloque_basic) && 
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_bloqueo_agua) && 
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_npc_basic) &&
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_oro) &&
-            !place_meeting((x - 32 * iAux) + 32, y - 32 * i, obj_item) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_pj) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_bloque_basic) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_bloqueo_agua) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_npc_basic) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_oro) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x = (x - 32 * iAux) + 32;
-                y -= 32 * i;
+                x = (x - TILE_SIZE * iAux) + 32;
+                y -= TILE_SIZE * i;
                 banderaBreak = true;
                 break;
                 
@@ -66,22 +66,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, x - 32 * i, (y - 32 * iAux) + 32);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, x - 32 * i, (y - 32 * iAux) + 32);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - 32 * i, (y - 32 * iAux) + 32);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
         
             if (
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_pj) && 
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_bloque_basic) && 
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_bloqueo_agua) && 
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_npc_basic) && 
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_oro) &&
-            !place_meeting(x - 32 * i, (y - 32 * iAux) + 32, obj_item) &&
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_pj) && 
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloque_basic) && 
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloqueo_agua) && 
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_npc_basic) && 
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_oro) &&
+            !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x -= 32 * i;
-                y = (y - 32 * iAux) + 32;
+                x -= TILE_SIZE * i;
+                y = (y - TILE_SIZE * iAux) + 32;
                 banderaBreak = true;
                 break;
                 
@@ -100,21 +100,21 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     ////////////////////////////////////////////////////////////////////////////////
     // Si hay lugar arriba...
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x, y - 32 * i);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x, y - 32 * i);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x, y - 32 * i);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x, y - TILE_SIZE * i);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x, y - TILE_SIZE * i);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x, y - TILE_SIZE * i);
     
     if (
-    !place_meeting(x, y - 32 * i, obj_pj) && 
-    !place_meeting(x, y - 32 * i, obj_bloque_basic) && 
-    !place_meeting(x, y - 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x, y - 32 * i, obj_npc_basic) &&
-    !place_meeting(x, y - 32 * i, obj_oro) &&
-    !place_meeting(x, y - 32 * i, obj_item) &&
+    !place_meeting(x, y - TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x, y - TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x, y - TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x, y - TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x, y - TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x, y - TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        y -= 32 * i;
+        y -= TILE_SIZE * i;
         break;
         
     }
@@ -128,22 +128,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
         for (var iAux = 1; iAux <= i; iAux++) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x + 32 * iAux) + 32, y - 32 * i);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, (x + 32 * iAux) + 32, y - 32 * i);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x + 32 * iAux) + 32, y - 32 * i);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x + TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, (x + TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x + TILE_SIZE * iAux) + TILE_SIZE, y - TILE_SIZE * i);
         
             if (
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_pj) && 
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_bloque_basic) && 
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_bloqueo_agua) && 
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_npc_basic) &&
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_oro) &&
-            !place_meeting((x + 32 * iAux) - 32, y - 32 * i, obj_item) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_pj) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_bloque_basic) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_bloqueo_agua) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_npc_basic) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_oro) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y - TILE_SIZE * i, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x = (x + 32 * iAux) - 32;
-                y -= 32 * i;
+                x = (x + TILE_SIZE * iAux) - 32;
+                y -= TILE_SIZE * i;
                 banderaBreak = true;
                 break;
                 
@@ -157,22 +157,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
     }
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + 32 * i, y - 32 * i);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x + 32 * i, y - 32 * i);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + 32 * i, y - 32 * i);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + TILE_SIZE * i, y - TILE_SIZE * i);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, y - TILE_SIZE * i);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + TILE_SIZE * i, y - TILE_SIZE * i);
     
     if (
-    !place_meeting(x + 32 * i, y - 32 * i, obj_pj) && 
-    !place_meeting(x + 32 * i, y - 32 * i, obj_bloque_basic) && 
-    !place_meeting(x + 32 * i, y - 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x + 32 * i, y - 32 * i, obj_npc_basic) &&
-    !place_meeting(x + 32 * i, y - 32 * i, obj_oro) &&
-    !place_meeting(x + 32 * i, y - 32 * i, obj_item) &&
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x + TILE_SIZE * i, y - TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x += 32 * i;
-        y -= 32 * i;
+        x += TILE_SIZE * i;
+        y -= TILE_SIZE * i;
         break;
         
     }
@@ -181,22 +181,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, x + 32 * i, (y - 32 * iAux) + 32);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, x + 32 * i, (y - 32 * iAux) + 32);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + 32 * i, (y - 32 * iAux) + 32);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
         
             if (
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_pj) && 
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_bloque_basic) && 
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_bloqueo_agua) && 
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_npc_basic) && 
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_oro) &&
-            !place_meeting(x + 32 * i, (y - 32 * iAux) + 32, obj_item) &&
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_pj) && 
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloque_basic) && 
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloqueo_agua) && 
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_npc_basic) && 
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_oro) &&
+            !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x += 32 * i;
-                y = (y - 32 * iAux) + 32;
+                x += TILE_SIZE * i;
+                y = (y - TILE_SIZE * iAux) + 32;
                 banderaBreak = true;
                 break;
                 
@@ -215,21 +215,21 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     ////////////////////////////////////////////////////////////////////////////////
     // Si hay lugar a la derecha...
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + 32 * i, y);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x + 32 * i, y);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + 32 * i, y);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + TILE_SIZE * i, y);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, y);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + TILE_SIZE * i, y);
     
     if (
-    !place_meeting(x + 32 * i, y, obj_pj) && 
-    !place_meeting(x + 32 * i, y, obj_bloque_basic) && 
-    !place_meeting(x + 32 * i, y, obj_bloqueo_agua) && 
-    !place_meeting(x + 32 * i, y, obj_npc_basic) &&
-    !place_meeting(x + 32 * i, y, obj_oro) &&
-    !place_meeting(x + 32 * i, y, obj_item) &&
+    !place_meeting(x + TILE_SIZE * i, y, obj_pj) && 
+    !place_meeting(x + TILE_SIZE * i, y, obj_bloque_basic) && 
+    !place_meeting(x + TILE_SIZE * i, y, obj_bloqueo_agua) && 
+    !place_meeting(x + TILE_SIZE * i, y, obj_npc_basic) &&
+    !place_meeting(x + TILE_SIZE * i, y, obj_oro) &&
+    !place_meeting(x + TILE_SIZE * i, y, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x += 32 * i;
+        x += TILE_SIZE * i;
         break;
         
     }
@@ -243,22 +243,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
         for (var iAux = 1; iAux <= i; iAux++) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, x + 32 * i, (y + 32 * iAux) + 32);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, x + 32 * i, (y + 32 * iAux) + 32);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + 32 * i, (y + 32 * iAux) + 32);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, x + TILE_SIZE * i, (y + TILE_SIZE * iAux) + 32);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y + TILE_SIZE * iAux) + 32);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + TILE_SIZE * i, (y + TILE_SIZE * iAux) + 32);
         
             if (
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_pj) && 
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_bloque_basic) && 
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_bloqueo_agua) && 
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_npc_basic) && 
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_oro) &&
-            !place_meeting(x + 32 * i, (y + 32 * iAux) - 32, obj_item) &&
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_pj) && 
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloque_basic) && 
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloqueo_agua) && 
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_npc_basic) && 
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_oro) &&
+            !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x += 32 * i;
-                y = (y + 32 * iAux) - 32;
+                x += TILE_SIZE * i;
+                y = (y + TILE_SIZE * iAux) - 32;
                 banderaBreak = true;
                 break;
                 
@@ -272,22 +272,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
     }
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + 32 * i, y + 32 * i);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x + 32 * i, y + 32 * i);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + 32 * i, y + 32 * i);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x + TILE_SIZE * i, y + TILE_SIZE * i);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, y + TILE_SIZE * i);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x + TILE_SIZE * i, y + TILE_SIZE * i);
     
     if (
-    !place_meeting(x + 32 * i, y + 32 * i, obj_pj) && 
-    !place_meeting(x + 32 * i, y + 32 * i, obj_bloque_basic) && 
-    !place_meeting(x + 32 * i, y + 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x + 32 * i, y + 32 * i, obj_npc_basic) &&
-    !place_meeting(x + 32 * i, y + 32 * i, obj_oro) &&
-    !place_meeting(x + 32 * i, y + 32 * i, obj_item) &&
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x + TILE_SIZE * i, y + TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x += 32 * i;
-        y += 32 * i;
+        x += TILE_SIZE * i;
+        y += TILE_SIZE * i;
         break;
         
     }
@@ -296,22 +296,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x + 32 * iAux) + 32, y + 32 * i);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, (x + 32 * iAux) + 32, y + 32 * i);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x + 32 * iAux) + 32, y + 32 * i);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x + TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, (x + TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x + TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
         
             if (
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_pj) && 
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_bloque_basic) && 
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_bloqueo_agua) && 
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_npc_basic) &&
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_oro) &&
-            !place_meeting((x + 32 * iAux) - 32, y + 32 * i, obj_item) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_pj) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_bloque_basic) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_bloqueo_agua) && 
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_npc_basic) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_oro) &&
+            !place_meeting((x + TILE_SIZE * iAux) - TILE_SIZE, y + TILE_SIZE * i, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x = (x + 32 * iAux) - 32;
-                y += 32 * i;
+                x = (x + TILE_SIZE * iAux) - 32;
+                y += TILE_SIZE * i;
                 banderaBreak = true;
                 break;
                 
@@ -330,21 +330,21 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     ////////////////////////////////////////////////////////////////////////////////
     // Si hay lugar abajo...
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x, y + 32 * i);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x, y + 32 * i);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x, y + 32 * i);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x, y + TILE_SIZE * i);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x, y + TILE_SIZE * i);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x, y + TILE_SIZE * i);
     
     if (
-    !place_meeting(x, y + 32 * i, obj_pj) && 
-    !place_meeting(x, y + 32 * i, obj_bloque_basic) && 
-    !place_meeting(x, y + 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x, y + 32 * i, obj_npc_basic) &&
-    !place_meeting(x, y + 32 * i, obj_oro) &&
-    !place_meeting(x, y + 32 * i, obj_item) &&
+    !place_meeting(x, y + TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x, y + TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x, y + TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x, y + TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x, y + TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x, y + TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        y += 32 * i;
+        y += TILE_SIZE * i;
         break;
         
     }
@@ -358,22 +358,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     
         for (var iAux = 1; iAux <= i; iAux++) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x - 32 * iAux) + 32, y + 32 * i);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, (x - 32 * iAux) + 32, y + 32 * i);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x - 32 * iAux) + 32, y + 32 * i);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, (x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, (x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, (x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i);
         
             if (
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_pj) && 
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_bloque_basic) && 
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_bloqueo_agua) && 
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_npc_basic) &&
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_oro) &&
-            !place_meeting((x - 32 * iAux) + 32, y + 32 * i, obj_item) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_pj) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_bloque_basic) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_bloqueo_agua) && 
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_npc_basic) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_oro) &&
+            !place_meeting((x - TILE_SIZE * iAux) + TILE_SIZE, y + TILE_SIZE * i, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x = (x - 32 * iAux) + 32;
-                y += 32 * i;
+                x = (x - TILE_SIZE * iAux) + 32;
+                y += TILE_SIZE * i;
                 banderaBreak = true;
                 break;
                 
@@ -387,22 +387,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
     }
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - 32 * i, y + 32 * i);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x - 32 * i, y + 32 * i);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - 32 * i, y + 32 * i);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - TILE_SIZE * i, y + TILE_SIZE * i);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, y + TILE_SIZE * i);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - TILE_SIZE * i, y + TILE_SIZE * i);
     
     if (
-    !place_meeting(x - 32 * i, y + 32 * i, obj_pj) && 
-    !place_meeting(x - 32 * i, y + 32 * i, obj_bloque_basic) && 
-    !place_meeting(x - 32 * i, y + 32 * i, obj_bloqueo_agua) && 
-    !place_meeting(x - 32 * i, y + 32 * i, obj_npc_basic) &&
-    !place_meeting(x - 32 * i, y + 32 * i, obj_oro) &&
-    !place_meeting(x - 32 * i, y + 32 * i, obj_item) &&
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_pj) && 
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_bloque_basic) && 
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_bloqueo_agua) && 
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_npc_basic) &&
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_oro) &&
+    !place_meeting(x - TILE_SIZE * i, y + TILE_SIZE * i, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x -= 32 * i;
-        y += 32 * i;
+        x -= TILE_SIZE * i;
+        y += TILE_SIZE * i;
         break;
         
     }
@@ -411,22 +411,22 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile1 = tile_layer_find(TILE_LAYER_GRASS, x - 32 * i, (y + 32 * iAux) - 32);
-            tile2 = tile_layer_find(TILE_LAYER_COAST, x - 32 * i, (y + 32 * iAux) - 32);
-            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - 32 * i, (y + 32 * iAux) - 32);
+            tile1 = tile_layer_find(TILE_LAYER_GRASS, x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - 32);
+            tile2 = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - 32);
+            tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - 32);
         
             if (
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_pj) && 
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_bloque_basic) && 
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_bloqueo_agua) && 
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_npc_basic) && 
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_oro) &&
-            !place_meeting(x - 32 * i, (y + 32 * iAux) - 32, obj_item) &&
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_pj) && 
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloque_basic) && 
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloqueo_agua) && 
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_npc_basic) && 
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_oro) &&
+            !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_item) &&
             (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
             ) {
                 
-                x -= 32 * i;
-                y = (y + 32 * iAux) - 32;
+                x -= TILE_SIZE * i;
+                y = (y + TILE_SIZE * iAux) - 32;
                 banderaBreak = true;
                 break;
                 
@@ -445,21 +445,21 @@ while (place_meeting(x, y, obj_pj) || place_meeting(x, y, obj_bloque_basic) || p
     ////////////////////////////////////////////////////////////////////////////////
     // Si hay lugar a la izquierda...
     
-    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - 32 * i, y);
-    tile2 = tile_layer_find(TILE_LAYER_COAST, x - 32 * i, y);
-    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - 32 * i, y);
+    tile1 = tile_layer_find(TILE_LAYER_GRASS, x - TILE_SIZE * i, y);
+    tile2 = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, y);
+    tile3 = tile_layer_find(TILE_LAYER_FLOORS, x - TILE_SIZE * i, y);
     
     if (
-    !place_meeting(x - 32 * i, y, obj_pj) && 
-    !place_meeting(x - 32 * i, y, obj_bloque_basic) && 
-    !place_meeting(x - 32 * i, y, obj_bloqueo_agua) && 
-    !place_meeting(x - 32 * i, y, obj_npc_basic) &&
-    !place_meeting(x - 32 * i, y, obj_oro) &&
-    !place_meeting(x - 32 * i, y, obj_item) &&
+    !place_meeting(x - TILE_SIZE * i, y, obj_pj) && 
+    !place_meeting(x - TILE_SIZE * i, y, obj_bloque_basic) && 
+    !place_meeting(x - TILE_SIZE * i, y, obj_bloqueo_agua) && 
+    !place_meeting(x - TILE_SIZE * i, y, obj_npc_basic) &&
+    !place_meeting(x - TILE_SIZE * i, y, obj_oro) &&
+    !place_meeting(x - TILE_SIZE * i, y, obj_item) &&
     (tile1 != -1 || tile2 != -1 || tile3 != -1) // Si hay algún tipo de suelo...
     ) {
         
-        x -= 32 * i;
+        x -= TILE_SIZE * i;
         break;
         
     }

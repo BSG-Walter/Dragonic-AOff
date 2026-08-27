@@ -29,8 +29,8 @@ function usarRuna() {
 	                } until (
 	                xNuevo % 16 == 0 &&
 	                yNuevo % 16 == 0 &&
-	                xNuevo % 32 != 0 &&
-	                yNuevo % 32 != 0 &&
+	                xNuevo % TILE_SIZE != 0 &&
+	                yNuevo % TILE_SIZE != 0 &&
 	                tile != -1 && 
 	                instance_position(xNuevo, yNuevo - 16, obj_pj) == noone &&
 	                instance_position(xNuevo, yNuevo - 16, obj_bloque_basic) == noone && 

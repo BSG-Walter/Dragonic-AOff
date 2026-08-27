@@ -1,4 +1,4 @@
-/// @description  actualizarIAs()
+﻿/// @description  actualizarIAs()
 function actualizarIAs() {
 
 	if (is_ingame_room()) {  
@@ -71,22 +71,22 @@ function actualizarIAs() {
             
 	                switch (direccion) { // Controlo la dirección para saber si sumo/resto a la x/y
 	                    case 0: // Está avanzando hacia abajo  
-	                        while (y % 16 != 0 || y % 32 == 0) {
+	                        while (y % 16 != 0 || y % TILE_SIZE == 0) {
 	                            y++;
 	                        }
 	                        break;
 	                    case 1: // Está avanzando hacia arriba  
-	                        while (y % 16 != 0 || y % 32 == 0) {
+	                        while (y % 16 != 0 || y % TILE_SIZE == 0) {
 	                            y--;
 	                        }
 	                        break;
 	                    case 2: // Está avanzando hacia la izquierda  
-	                        while (x % 16 != 0 || x % 32 == 0) {
+	                        while (x % 16 != 0 || x % TILE_SIZE == 0) {
 	                            x--;
 	                        }
 	                        break;
 	                    case 3: // Está avanzando hacia la derecha  
-	                        while (x % 16 != 0 || x % 32 == 0) {
+	                        while (x % 16 != 0 || x % TILE_SIZE == 0) {
 	                            x++;
 	                        }
 	                        break;

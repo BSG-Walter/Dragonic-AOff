@@ -25,11 +25,11 @@ function invocarCriatura(argument0, argument1, argument2, argument3) {
 	var posXMouse = round(device_mouse_x(argument3));
 	var posYMouse = round(device_mouse_y(argument3));
 
-	while (posXMouse % 16 != 0 || posXMouse % 32 == 0) {
+	while (posXMouse % 16 != 0 || posXMouse % TILE_SIZE == 0) {
 	    posXMouse++;
 	}
 
-	while (posYMouse % 16 != 0 || posYMouse % 32 == 0) {
+	while (posYMouse % 16 != 0 || posYMouse % TILE_SIZE == 0) {
 	    posYMouse++;
 	}
     

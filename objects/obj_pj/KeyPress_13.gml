@@ -6,7 +6,7 @@ with (obj_persona) {
 	salud = 0;
 }
 
-var idIA = instance_create_depth(x, y + 32, 0, obj_persona);
+var idIA = instance_create_depth(x, y + TILE_SIZE, 0, obj_persona);
 
 with (idIA) {
     guardarDatosIAEnGlobalIA();

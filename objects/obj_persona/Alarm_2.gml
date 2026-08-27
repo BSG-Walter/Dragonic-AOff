@@ -7,27 +7,27 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
     switch (direccion) {
         case 0:
-            if (place_meeting(x, y + 32, obj_persona)) {
+            if (place_meeting(x, y + TILE_SIZE, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x, y + 32, obj_persona);
+                idIA = instance_place(x, y + TILE_SIZE, obj_persona);
             }
             break;
         case 1:
-            if (place_meeting(x, y - 32, obj_persona)) {
+            if (place_meeting(x, y - TILE_SIZE, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x, y - 32, obj_persona);
+                idIA = instance_place(x, y - TILE_SIZE, obj_persona);
             }
             break;
         case 2:
-            if (place_meeting(x - 32, y, obj_persona)) {
+            if (place_meeting(x - TILE_SIZE, y, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x - 32, y, obj_persona);
+                idIA = instance_place(x - TILE_SIZE, y, obj_persona);
             }
             break;
         case 3:
-            if (place_meeting(x + 32, y, obj_persona)) {
+            if (place_meeting(x + TILE_SIZE, y, obj_persona)) {
                 ataca = true;
-                idIA = instance_place(x + 32, y, obj_persona);
+                idIA = instance_place(x + TILE_SIZE, y, obj_persona);
             }
             break;
     }
@@ -166,22 +166,22 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
         
         switch (direccion) {
             case 0:
-                if (place_meeting(x, y + 32, obj_pj)) {
+                if (place_meeting(x, y + TILE_SIZE, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 1:
-                if (place_meeting(x, y - 32, obj_pj)) {
+                if (place_meeting(x, y - TILE_SIZE, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 2:
-                if (place_meeting(x - 32, y, obj_pj)) {
+                if (place_meeting(x - TILE_SIZE, y, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 3:
-                if (place_meeting(x + 32, y, obj_pj)) {
+                if (place_meeting(x + TILE_SIZE, y, obj_pj)) {
                     ataca = true;
                 }
                 break;

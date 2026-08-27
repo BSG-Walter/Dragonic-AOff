@@ -5,7 +5,7 @@ if (indice == 0) {
     idBloqueo.tipo = tipo;
     idBloqueo.image_yscale = 2;
 } else {
-    var idBloqueo = instance_create_depth(x - 16, y - 32, 0, obj_bloqueo_minas);
+    var idBloqueo = instance_create_depth(x - 16, y - TILE_SIZE, 0, obj_bloqueo_minas);
     idBloqueo.tipo = tipo;
 }
 

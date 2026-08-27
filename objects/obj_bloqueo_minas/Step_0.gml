@@ -28,10 +28,10 @@ device_mouse_check_button(4, mb_left)
                 if (obj_pj.trabajoActual == 154) {
                     if (obj_pj.trabajoEnInv != -1) {
                         if (
-                        place_meeting(x - 32, y, obj_pj) ||
-                        place_meeting(x + 32, y, obj_pj) ||
-                        place_meeting(x, y - 32, obj_pj) ||
-                        place_meeting(x, y + 32, obj_pj)
+                        place_meeting(x - TILE_SIZE, y, obj_pj) ||
+                        place_meeting(x + TILE_SIZE, y, obj_pj) ||
+                        place_meeting(x, y - TILE_SIZE, obj_pj) ||
+                        place_meeting(x, y + TILE_SIZE, obj_pj)
                         ) {
                         
                             obj_pj.trabajaTala = false;

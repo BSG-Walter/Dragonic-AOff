@@ -39,10 +39,10 @@ device_mouse_check_button(4, mb_left)
             if (obj_pj.puedeMoverse && !obj_flecha_abajo.apretada && !obj_flecha_arriba.apretada && !obj_flecha_izq.apretada && !obj_flecha_der.apretada) {
                 if (obj_inventario.seleccionado == 148 || obj_inventario.seleccionado == 149 || obj_inventario.seleccionado == 150) {
                     if (
-                    place_meeting(x - 32, y, obj_pj) ||
-                    place_meeting(x + 32, y, obj_pj) ||
-                    place_meeting(x, y - 32, obj_pj) ||
-                    place_meeting(x, y + 32, obj_pj)
+                    place_meeting(x - TILE_SIZE, y, obj_pj) ||
+                    place_meeting(x + TILE_SIZE, y, obj_pj) ||
+                    place_meeting(x, y - TILE_SIZE, obj_pj) ||
+                    place_meeting(x, y + TILE_SIZE, obj_pj)
                     ) {
                     
                         activo = true;

@@ -34,33 +34,33 @@ with(obj_pj){
                         
 	                    switch (direccion) {
 	                        case 0:
-	                            if (place_meeting(x, y + 32, obj_npc_basic)) {
+	                            if (place_meeting(x, y + TILE_SIZE, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x, y + 32, obj_npc_basic);
+	                                idNPC = instance_place(x, y + TILE_SIZE, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 1:
-	                            if (place_meeting(x, y - 32, obj_npc_basic)) {
+	                            if (place_meeting(x, y - TILE_SIZE, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x, y - 32, obj_npc_basic);
+	                                idNPC = instance_place(x, y - TILE_SIZE, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 2:
-	                            if (place_meeting(x - 32, y, obj_npc_basic)) {
+	                            if (place_meeting(x - TILE_SIZE, y, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x - 32, y, obj_npc_basic);
+	                                idNPC = instance_place(x - TILE_SIZE, y, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 3:
-	                            if (place_meeting(x + 32, y, obj_npc_basic)) {
+	                            if (place_meeting(x + TILE_SIZE, y, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x + 32, y, obj_npc_basic);
+	                                idNPC = instance_place(x + TILE_SIZE, y, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
@@ -379,33 +379,33 @@ with(obj_pj){
                         
 	                    switch (direccion) {
 	                        case 0:
-	                            if (place_meeting(x, y + 32, obj_npc_basic)) {
+	                            if (place_meeting(x, y + TILE_SIZE, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x, y + 32, obj_npc_basic);
+	                                idNPC = instance_place(x, y + TILE_SIZE, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 1:
-	                            if (place_meeting(x, y - 32, obj_npc_basic)) {
+	                            if (place_meeting(x, y - TILE_SIZE, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x, y - 32, obj_npc_basic);
+	                                idNPC = instance_place(x, y - TILE_SIZE, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 2:
-	                            if (place_meeting(x - 32, y, obj_npc_basic)) {
+	                            if (place_meeting(x - TILE_SIZE, y, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x - 32, y, obj_npc_basic);
+	                                idNPC = instance_place(x - TILE_SIZE, y, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }
 	                            break;
 	                        case 3:
-	                            if (place_meeting(x + 32, y, obj_npc_basic)) {
+	                            if (place_meeting(x + TILE_SIZE, y, obj_npc_basic)) {
                                 
-	                                idNPC = instance_place(x + 32, y, obj_npc_basic);
+	                                idNPC = instance_place(x + TILE_SIZE, y, obj_npc_basic);
 	                                acerto = true;
                                     
 	                            }

@@ -25,31 +25,31 @@ if (!muerto && !inmovilizado) {
         if (
         (lukea) &&
         (
-        !(place_meeting(x + 32, y, obj_bloque_basic) && direccion == 3) &&
-        !(place_meeting(x - 32, y, obj_bloque_basic) && direccion == 2) &&
-        !(place_meeting(x, y + 32, obj_bloque_basic) && direccion == 0) &&
-        !(place_meeting(x, y - 32, obj_bloque_basic) && direccion == 1)
+        !(place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && direccion == 3) &&
+        !(place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && direccion == 2) &&
+        !(place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && direccion == 0) &&
+        !(place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && direccion == 1)
         ) 
         &&
         (
-        !(place_meeting(x + 32, y, obj_telep) && direccion == 3) &&
-        !(place_meeting(x - 32, y, obj_telep) && direccion == 2) &&
-        !(place_meeting(x, y + 32, obj_telep) && direccion == 0) &&
-        !(place_meeting(x, y - 32, obj_telep) && direccion == 1)
+        !(place_meeting(x + TILE_SIZE, y, obj_telep) && direccion == 3) &&
+        !(place_meeting(x - TILE_SIZE, y, obj_telep) && direccion == 2) &&
+        !(place_meeting(x, y + TILE_SIZE, obj_telep) && direccion == 0) &&
+        !(place_meeting(x, y - TILE_SIZE, obj_telep) && direccion == 1)
         ) 
         &&
         (
-        !(place_meeting(x + 32, y, obj_npc_basic) && direccion == 3) &&
-        !(place_meeting(x - 32, y, obj_npc_basic) && direccion == 2) &&
-        !(place_meeting(x, y + 32, obj_npc_basic) && direccion == 0) &&
-        !(place_meeting(x, y - 32, obj_npc_basic) && direccion == 1)
+        !(place_meeting(x + TILE_SIZE, y, obj_npc_basic) && direccion == 3) &&
+        !(place_meeting(x - TILE_SIZE, y, obj_npc_basic) && direccion == 2) &&
+        !(place_meeting(x, y + TILE_SIZE, obj_npc_basic) && direccion == 0) &&
+        !(place_meeting(x, y - TILE_SIZE, obj_npc_basic) && direccion == 1)
         )
         &&
         (
-        !(place_meeting(x + 32, y, obj_pj) && direccion == 3) &&
-        !(place_meeting(x - 32, y, obj_pj) && direccion == 2) &&
-        !(place_meeting(x, y + 32, obj_pj) && direccion == 0) &&
-        !(place_meeting(x, y - 32, obj_pj) && direccion == 1)
+        !(place_meeting(x + TILE_SIZE, y, obj_pj) && direccion == 3) &&
+        !(place_meeting(x - TILE_SIZE, y, obj_pj) && direccion == 2) &&
+        !(place_meeting(x, y + TILE_SIZE, obj_pj) && direccion == 0) &&
+        !(place_meeting(x, y - TILE_SIZE, obj_pj) && direccion == 1)
         )
         ) {
         
@@ -58,10 +58,10 @@ if (!muerto && !inmovilizado) {
             if (!navega) {
                 
                 if (
-                (place_meeting(x + 32, y, obj_bloqueo_agua) && direccion == 3) ||
-                (place_meeting(x - 32, y, obj_bloqueo_agua) && direccion == 2) ||
-                (place_meeting(x, y + 32, obj_bloqueo_agua) && direccion == 0) ||
-                (place_meeting(x, y - 32, obj_bloqueo_agua) && direccion == 1)
+                (place_meeting(x + TILE_SIZE, y, obj_bloqueo_agua) && direccion == 3) ||
+                (place_meeting(x - TILE_SIZE, y, obj_bloqueo_agua) && direccion == 2) ||
+                (place_meeting(x, y + TILE_SIZE, obj_bloqueo_agua) && direccion == 0) ||
+                (place_meeting(x, y - TILE_SIZE, obj_bloqueo_agua) && direccion == 1)
                 )
                 {
                     validoNavegacion = false;
@@ -97,31 +97,31 @@ if (!muerto && !inmovilizado) {
         
             if (
             (
-            (place_meeting(x + 32, y, obj_bloque_basic) && direccion == 3) ||
-            (place_meeting(x - 32, y, obj_bloque_basic) && direccion == 2) ||
-            (place_meeting(x, y + 32, obj_bloque_basic) && direccion == 0) ||
-            (place_meeting(x, y - 32, obj_bloque_basic) && direccion == 1)
+            (place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && direccion == 3) ||
+            (place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && direccion == 2) ||
+            (place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && direccion == 0) ||
+            (place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && direccion == 1)
             ) 
             ||
             (
-            (place_meeting(x + 32, y, obj_telep) && direccion == 3) ||
-            (place_meeting(x - 32, y, obj_telep) && direccion == 2) ||
-            (place_meeting(x, y + 32, obj_telep) && direccion == 0) ||
-            (place_meeting(x, y - 32, obj_telep) && direccion == 1)
+            (place_meeting(x + TILE_SIZE, y, obj_telep) && direccion == 3) ||
+            (place_meeting(x - TILE_SIZE, y, obj_telep) && direccion == 2) ||
+            (place_meeting(x, y + TILE_SIZE, obj_telep) && direccion == 0) ||
+            (place_meeting(x, y - TILE_SIZE, obj_telep) && direccion == 1)
             ) 
             ||
             (
-            (place_meeting(x + 32, y, obj_npc_basic) && direccion == 3) ||
-            (place_meeting(x - 32, y, obj_npc_basic) && direccion == 2) ||
-            (place_meeting(x, y + 32, obj_npc_basic) && direccion == 0) ||
-            (place_meeting(x, y - 32, obj_npc_basic) && direccion == 1)
+            (place_meeting(x + TILE_SIZE, y, obj_npc_basic) && direccion == 3) ||
+            (place_meeting(x - TILE_SIZE, y, obj_npc_basic) && direccion == 2) ||
+            (place_meeting(x, y + TILE_SIZE, obj_npc_basic) && direccion == 0) ||
+            (place_meeting(x, y - TILE_SIZE, obj_npc_basic) && direccion == 1)
             )
             ||
             (
-            (place_meeting(x + 32, y, obj_pj) && direccion == 3) ||
-            (place_meeting(x - 32, y, obj_pj) && direccion == 2) ||
-            (place_meeting(x, y + 32, obj_pj) && direccion == 0) ||
-            (place_meeting(x, y - 32, obj_pj) && direccion == 1)
+            (place_meeting(x + TILE_SIZE, y, obj_pj) && direccion == 3) ||
+            (place_meeting(x - TILE_SIZE, y, obj_pj) && direccion == 2) ||
+            (place_meeting(x, y + TILE_SIZE, obj_pj) && direccion == 0) ||
+            (place_meeting(x, y - TILE_SIZE, obj_pj) && direccion == 1)
             )
             ) {
             
@@ -164,34 +164,34 @@ if (!muerto && !inmovilizado) {
                 // Dentro de view
             
                 if (
-                !place_meeting(x + 32, y, obj_pj) &&
-                !place_meeting(x - 32, y, obj_pj) &&
-                !place_meeting(x, y + 32, obj_pj) &&
-                !place_meeting(x, y - 32, obj_pj)
+                !place_meeting(x + TILE_SIZE, y, obj_pj) &&
+                !place_meeting(x - TILE_SIZE, y, obj_pj) &&
+                !place_meeting(x, y + TILE_SIZE, obj_pj) &&
+                !place_meeting(x, y - TILE_SIZE, obj_pj)
                 ) {
                 
                     // Si el enemigo no está al lado del PJ...
                 
                     if (
                     (
-                    (place_meeting(x + 32, y, obj_bloque_basic) && direccion == 3) ||
-                    (place_meeting(x - 32, y, obj_bloque_basic) && direccion == 2) ||
-                    (place_meeting(x, y + 32, obj_bloque_basic) && direccion == 0) ||
-                    (place_meeting(x, y - 32, obj_bloque_basic) && direccion == 1)
+                    (place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && direccion == 3) ||
+                    (place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && direccion == 2) ||
+                    (place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && direccion == 0) ||
+                    (place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && direccion == 1)
                     ) 
                     ||
                     (
-                    (place_meeting(x + 32, y, obj_telep) && direccion == 3) ||
-                    (place_meeting(x - 32, y, obj_telep) && direccion == 2) ||
-                    (place_meeting(x, y + 32, obj_telep) && direccion == 0) ||
-                    (place_meeting(x, y - 32, obj_telep) && direccion == 1)
+                    (place_meeting(x + TILE_SIZE, y, obj_telep) && direccion == 3) ||
+                    (place_meeting(x - TILE_SIZE, y, obj_telep) && direccion == 2) ||
+                    (place_meeting(x, y + TILE_SIZE, obj_telep) && direccion == 0) ||
+                    (place_meeting(x, y - TILE_SIZE, obj_telep) && direccion == 1)
                     ) 
                     ||
                     (
-                    (place_meeting(x + 32, y, obj_npc_basic) && direccion == 3) ||
-                    (place_meeting(x - 32, y, obj_npc_basic) && direccion == 2) ||
-                    (place_meeting(x, y + 32, obj_npc_basic) && direccion == 0) ||
-                    (place_meeting(x, y - 32, obj_npc_basic) && direccion == 1)
+                    (place_meeting(x + TILE_SIZE, y, obj_npc_basic) && direccion == 3) ||
+                    (place_meeting(x - TILE_SIZE, y, obj_npc_basic) && direccion == 2) ||
+                    (place_meeting(x, y + TILE_SIZE, obj_npc_basic) && direccion == 0) ||
+                    (place_meeting(x, y - TILE_SIZE, obj_npc_basic) && direccion == 1)
                     ) 
                     ) {
                     
@@ -204,16 +204,16 @@ if (!muerto && !inmovilizado) {
             
                     } else {
                     
-                        if (!place_meeting(obj_pj.x + 32, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x + 32, obj_pj.y, obj_npc_basic)) {
+                        if (!place_meeting(obj_pj.x + TILE_SIZE, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x + TILE_SIZE, obj_pj.y, obj_npc_basic)) {
                             xObjetivo = obj_pj.x + 32;
                             yObjetivo = obj_pj.y;
-                        } else if (!place_meeting(obj_pj.x - 32, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x - 32, obj_pj.y, obj_npc_basic)) {
+                        } else if (!place_meeting(obj_pj.x - TILE_SIZE, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x - TILE_SIZE, obj_pj.y, obj_npc_basic)) {
                             xObjetivo = obj_pj.x - 32;
                             yObjetivo = obj_pj.y;
-                        } else if (!place_meeting(obj_pj.x, obj_pj.y - 32, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y - 32, obj_npc_basic)) {
+                        } else if (!place_meeting(obj_pj.x, obj_pj.y - TILE_SIZE, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y - TILE_SIZE, obj_npc_basic)) {
                             xObjetivo = obj_pj.x;
                             yObjetivo = obj_pj.y - 32;
-                        } else if (!place_meeting(obj_pj.x, obj_pj.y + 32, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y + 32, obj_npc_basic)) {
+                        } else if (!place_meeting(obj_pj.x, obj_pj.y + TILE_SIZE, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y + TILE_SIZE, obj_npc_basic)) {
                             xObjetivo = obj_pj.x;
                             yObjetivo = obj_pj.y + 32;
                         }
@@ -264,34 +264,34 @@ if (!muerto && !inmovilizado) {
         if (clase == 0 && esRivalIA && (!enemigo || obj_pj.muerto) && cantidadIARivalCerca() == 1 && IAObj.inmovilizado) {
         
             if (
-            !place_meeting(x + 32, y, IAObj) &&
-            !place_meeting(x - 32, y, IAObj) &&
-            !place_meeting(x, y + 32, IAObj) &&
-            !place_meeting(x, y - 32, IAObj)
+            !place_meeting(x + TILE_SIZE, y, IAObj) &&
+            !place_meeting(x - TILE_SIZE, y, IAObj) &&
+            !place_meeting(x, y + TILE_SIZE, IAObj) &&
+            !place_meeting(x, y - TILE_SIZE, IAObj)
             ) {
             
                 // Si el enemigo no está al lado del PJ...
             
                 if (
                 (
-                (place_meeting(x + 32, y, obj_bloque_basic) && direccion == 3) ||
-                (place_meeting(x - 32, y, obj_bloque_basic) && direccion == 2) ||
-                (place_meeting(x, y + 32, obj_bloque_basic) && direccion == 0) ||
-                (place_meeting(x, y - 32, obj_bloque_basic) && direccion == 1)
+                (place_meeting(x + TILE_SIZE, y, obj_bloque_basic) && direccion == 3) ||
+                (place_meeting(x - TILE_SIZE, y, obj_bloque_basic) && direccion == 2) ||
+                (place_meeting(x, y + TILE_SIZE, obj_bloque_basic) && direccion == 0) ||
+                (place_meeting(x, y - TILE_SIZE, obj_bloque_basic) && direccion == 1)
                 ) 
                 ||
                 (
-                (place_meeting(x + 32, y, obj_telep) && direccion == 3) ||
-                (place_meeting(x - 32, y, obj_telep) && direccion == 2) ||
-                (place_meeting(x, y + 32, obj_telep) && direccion == 0) ||
-                (place_meeting(x, y - 32, obj_telep) && direccion == 1)
+                (place_meeting(x + TILE_SIZE, y, obj_telep) && direccion == 3) ||
+                (place_meeting(x - TILE_SIZE, y, obj_telep) && direccion == 2) ||
+                (place_meeting(x, y + TILE_SIZE, obj_telep) && direccion == 0) ||
+                (place_meeting(x, y - TILE_SIZE, obj_telep) && direccion == 1)
                 ) 
                 ||
                 (
-                (place_meeting(x + 32, y, obj_pj) && direccion == 3) ||
-                (place_meeting(x - 32, y, obj_pj) && direccion == 2) ||
-                (place_meeting(x, y + 32, obj_pj) && direccion == 0) ||
-                (place_meeting(x, y - 32, obj_pj) && direccion == 1)
+                (place_meeting(x + TILE_SIZE, y, obj_pj) && direccion == 3) ||
+                (place_meeting(x - TILE_SIZE, y, obj_pj) && direccion == 2) ||
+                (place_meeting(x, y + TILE_SIZE, obj_pj) && direccion == 0) ||
+                (place_meeting(x, y - TILE_SIZE, obj_pj) && direccion == 1)
                 ) 
                 ) {
                 
@@ -304,16 +304,16 @@ if (!muerto && !inmovilizado) {
         
                 } else {
                 
-                    if (!place_meeting(IAObj.x + 32, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x + 32, IAObj.y, obj_pj)) {
+                    if (!place_meeting(IAObj.x + TILE_SIZE, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x + TILE_SIZE, IAObj.y, obj_pj)) {
                         xObjetivo = IAObj.x + 32;
                         yObjetivo = IAObj.y;
-                    } else if (!place_meeting(IAObj.x - 32, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x - 32, IAObj.y, obj_pj)) {
+                    } else if (!place_meeting(IAObj.x - TILE_SIZE, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x - TILE_SIZE, IAObj.y, obj_pj)) {
                         xObjetivo = IAObj.x - 32;
                         yObjetivo = IAObj.y;
-                    } else if (!place_meeting(IAObj.x, IAObj.y - 32, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y - 32, obj_pj)) {
+                    } else if (!place_meeting(IAObj.x, IAObj.y - TILE_SIZE, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y - TILE_SIZE, obj_pj)) {
                         xObjetivo = IAObj.x;
                         yObjetivo = IAObj.y - 32;
-                    } else if (!place_meeting(IAObj.x, IAObj.y + 32, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y + 32, obj_pj)) {
+                    } else if (!place_meeting(IAObj.x, IAObj.y + TILE_SIZE, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y + TILE_SIZE, obj_pj)) {
                         xObjetivo = IAObj.x;
                         yObjetivo = IAObj.y + 32;
                     }

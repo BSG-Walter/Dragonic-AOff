@@ -29,10 +29,10 @@ device_mouse_check_button(4, mb_left)
             obj_control_devices.devicesL[device] = true;
             
             if (
-            place_meeting(x - 32, y, obj_pj) ||
-            place_meeting(x + 32, y, obj_pj) ||
-            place_meeting(x, y - 32, obj_pj) ||
-            place_meeting(x, y + 32, obj_pj)
+            place_meeting(x - TILE_SIZE, y, obj_pj) ||
+            place_meeting(x + TILE_SIZE, y, obj_pj) ||
+            place_meeting(x, y - TILE_SIZE, obj_pj) ||
+            place_meeting(x, y + TILE_SIZE, obj_pj)
             ) {
                         
                             obj_pj.trabajaMineria = false;

@@ -33,11 +33,11 @@ function invocarGuardarMascotas(argument0) {
 	    var posXMouse = round(device_mouse_x(argument0));
 	    var posYMouse = round(device_mouse_y(argument0));
     
-	    while (posXMouse % 16 != 0 || posXMouse % 32 == 0) {
+	    while (posXMouse % 16 != 0 || posXMouse % TILE_SIZE == 0) {
 	        posXMouse++;
 	    }
     
-	    while (posYMouse % 16 != 0 || posYMouse % 32 == 0) {
+	    while (posYMouse % 16 != 0 || posYMouse % TILE_SIZE == 0) {
 	        posYMouse++;
 	    }
     

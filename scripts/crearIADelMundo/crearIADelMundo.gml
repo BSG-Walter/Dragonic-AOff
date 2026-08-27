@@ -49,22 +49,22 @@ function crearIADelMundo() {
     
 	        switch (switchMod) { // Controlo la dirección para saber si sumo/resto a la x/y
 	            case 0: // Está avanzando hacia abajo  
-	                while (_datos.y % 16 != 0 || _datos.y % 32 == 0) {
+	                while (_datos.y % 16 != 0 || _datos.y % TILE_SIZE == 0) {
 	                    _datos.y++;
 	                }
 	                break;
 	            case 1: // Está avanzando hacia arriba  
-	                while (_datos.y % 16 != 0 || _datos.y % 32 == 0) {
+	                while (_datos.y % 16 != 0 || _datos.y % TILE_SIZE == 0) {
 	                    _datos.y--;
 	                }
 	                break;
 	            case 2: // Está avanzando hacia la izquierda  
-	                while (_datos.x % 16 != 0 || _datos.x % 32 == 0) {
+	                while (_datos.x % 16 != 0 || _datos.x % TILE_SIZE == 0) {
 	                    _datos.x--;
 	                }                
 	                break;
 	            case 3: // Está avanzando hacia la izquierda  
-	                while (_datos.x % 16 != 0 || _datos.x % 32 == 0) {
+	                while (_datos.x % 16 != 0 || _datos.x % TILE_SIZE == 0) {
 	                    _datos.x++;
 	                }
 	                break;

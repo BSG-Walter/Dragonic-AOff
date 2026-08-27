@@ -10,22 +10,22 @@ if (obj_pj.invisible) {
             
         switch (direccion) {
             case 0:
-                if (place_meeting(x, y + 32, obj_pj)) {
+                if (place_meeting(x, y + TILE_SIZE, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 1:
-                if (place_meeting(x, y - 32, obj_pj)) {
+                if (place_meeting(x, y - TILE_SIZE, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 2:
-                if (place_meeting(x - 32, y, obj_pj)) {
+                if (place_meeting(x - TILE_SIZE, y, obj_pj)) {
                     ataca = true;
                 }
                 break;
             case 3:
-                if (place_meeting(x + 32, y, obj_pj)) {
+                if (place_meeting(x + TILE_SIZE, y, obj_pj)) {
                     ataca = true;
                 }
                 break;

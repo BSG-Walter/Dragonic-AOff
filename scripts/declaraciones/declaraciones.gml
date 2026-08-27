@@ -16,6 +16,9 @@ gml_pragma("global", "init_engine_settings();");
 
 #macro BOT_DRAW_CULL_MARGIN 80
 
+// Tile grid
+#macro TILE_SIZE 32
+
 // Tile layers
 #macro TILE_LAYER_GRASS 10000000
 #macro TILE_LAYER_COAST 1000000
