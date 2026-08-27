@@ -205,17 +205,17 @@ if (!muerto && !inmovilizado) {
                     } else {
                     
                         if (!place_meeting(obj_pj.x + TILE_SIZE, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x + TILE_SIZE, obj_pj.y, obj_npc_basic)) {
-                            xObjetivo = obj_pj.x + 32;
+                            xObjetivo = obj_pj.x + TILE_SIZE;
                             yObjetivo = obj_pj.y;
                         } else if (!place_meeting(obj_pj.x - TILE_SIZE, obj_pj.y, obj_bloque_basic) && !place_meeting(obj_pj.x - TILE_SIZE, obj_pj.y, obj_npc_basic)) {
-                            xObjetivo = obj_pj.x - 32;
+                            xObjetivo = obj_pj.x - TILE_SIZE;
                             yObjetivo = obj_pj.y;
                         } else if (!place_meeting(obj_pj.x, obj_pj.y - TILE_SIZE, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y - TILE_SIZE, obj_npc_basic)) {
                             xObjetivo = obj_pj.x;
-                            yObjetivo = obj_pj.y - 32;
+                            yObjetivo = obj_pj.y - TILE_SIZE;
                         } else if (!place_meeting(obj_pj.x, obj_pj.y + TILE_SIZE, obj_bloque_basic) && !place_meeting(obj_pj.x, obj_pj.y + TILE_SIZE, obj_npc_basic)) {
                             xObjetivo = obj_pj.x;
-                            yObjetivo = obj_pj.y + 32;
+                            yObjetivo = obj_pj.y + TILE_SIZE;
                         }
             
                         alarm[5] = SECOND * random_range(5, 6);
@@ -305,17 +305,17 @@ if (!muerto && !inmovilizado) {
                 } else {
                 
                     if (!place_meeting(IAObj.x + TILE_SIZE, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x + TILE_SIZE, IAObj.y, obj_pj)) {
-                        xObjetivo = IAObj.x + 32;
+                        xObjetivo = IAObj.x + TILE_SIZE;
                         yObjetivo = IAObj.y;
                     } else if (!place_meeting(IAObj.x - TILE_SIZE, IAObj.y, obj_bloque_basic) && !place_meeting(IAObj.x - TILE_SIZE, IAObj.y, obj_pj)) {
-                        xObjetivo = IAObj.x - 32;
+                        xObjetivo = IAObj.x - TILE_SIZE;
                         yObjetivo = IAObj.y;
                     } else if (!place_meeting(IAObj.x, IAObj.y - TILE_SIZE, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y - TILE_SIZE, obj_pj)) {
                         xObjetivo = IAObj.x;
-                        yObjetivo = IAObj.y - 32;
+                        yObjetivo = IAObj.y - TILE_SIZE;
                     } else if (!place_meeting(IAObj.x, IAObj.y + TILE_SIZE, obj_bloque_basic) && !place_meeting(IAObj.x, IAObj.y + TILE_SIZE, obj_pj)) {
                         xObjetivo = IAObj.x;
-                        yObjetivo = IAObj.y + 32;
+                        yObjetivo = IAObj.y + TILE_SIZE;
                     }
         
                     alarm[5] = SECOND * random_range(5, 6);

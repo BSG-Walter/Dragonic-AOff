@@ -10,7 +10,7 @@ if (!noSetearAlarm) {
     
     if (ocupado) {
         var found = false;
-        var dirs = [[0,-32],[32,0],[0,32],[-32,0],[32,-32],[32,32],[-32,32],[-32,-32]];
+        var dirs = [[0,-TILE_SIZE],[TILE_SIZE,0],[0,TILE_SIZE],[-TILE_SIZE,0],[TILE_SIZE,-TILE_SIZE],[TILE_SIZE,TILE_SIZE],[-TILE_SIZE,TILE_SIZE],[-TILE_SIZE,-TILE_SIZE]];
         for (var d = 0; d < 8; d++) {
             var nx = x + dirs[d][0];
             var ny = y + dirs[d][1];

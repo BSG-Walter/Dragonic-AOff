@@ -110,7 +110,7 @@ if (puedeMoverse) {
 
     switch (direccion) {
         case 0:
-            if ((yInicio - y) / 32 != round((yInicio - y) / 32)) {
+            if ((yInicio - y) / TILE_SIZE != round((yInicio - y) / TILE_SIZE)) {
                 y += spd;
             } else {
                 if (moviendose || puedeMoverse) {
@@ -121,7 +121,7 @@ if (puedeMoverse) {
             }
             break;
         case 1:
-            if ((y - yInicio) / 32 != round((y - yInicio) / 32)) {
+            if ((y - yInicio) / TILE_SIZE != round((y - yInicio) / TILE_SIZE)) {
                 y -= spd;
             } else {
                 if (moviendose || puedeMoverse) {
@@ -132,7 +132,7 @@ if (puedeMoverse) {
             }
             break;
         case 2:
-            if ((xInicio - x) / 32 != round((xInicio - x) / 32)) {
+            if ((xInicio - x) / TILE_SIZE != round((xInicio - x) / TILE_SIZE)) {
                 x -= spd;
             } else {
                 if (moviendose || puedeMoverse) {
@@ -143,7 +143,7 @@ if (puedeMoverse) {
             }
             break;
         case 3:
-            if ((x - xInicio) / 32 != round((x - xInicio) / 32)) {
+            if ((x - xInicio) / TILE_SIZE != round((x - xInicio) / TILE_SIZE)) {
                 x += spd;
             } else {
                 if (moviendose || puedeMoverse) {

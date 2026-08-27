@@ -79,16 +79,16 @@ function crearIADelMundo() {
             
 	            switch (switchMod) {
 	                case 0:
-	                    _datos.y += 32;
+	                    _datos.y += TILE_SIZE;
 	                    break;
 	                case 1:
-	                    _datos.y -= 32;
+	                    _datos.y -= TILE_SIZE;
 	                    break;
 	                case 2:
-	                    _datos.x -= 32;
+	                    _datos.x -= TILE_SIZE;
 	                    break;
 	                case 3:
-	                    _datos.x += 32;
+	                    _datos.x += TILE_SIZE;
 	                    break;
 	            }
             

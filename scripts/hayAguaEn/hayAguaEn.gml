@@ -78,8 +78,8 @@ function hayAguaEn(argument0, argument1) {
 							var sx = layer_sprite_get_x(el);
 							var sy = layer_sprite_get_y(el);
 							var spr = layer_sprite_get_sprite(el);
-							var sw = (spr != -1) ? sprite_get_width(spr) * layer_sprite_get_xscale(el) : 32;
-							var sh = (spr != -1) ? sprite_get_height(spr) * layer_sprite_get_yscale(el) : 32;
+							var sw = (spr != -1) ? sprite_get_width(spr) * layer_sprite_get_xscale(el) : TILE_SIZE;
+							var sh = (spr != -1) ? sprite_get_height(spr) * layer_sprite_get_yscale(el) : TILE_SIZE;
 							
 							var gx1 = clamp(sx div TILE_SIZE, 0, gw - 1);
 							var gy1 = clamp(sy div TILE_SIZE, 0, gh - 1);

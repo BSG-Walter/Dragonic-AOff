@@ -778,7 +778,7 @@ if (pasos > 0) {
                         } else {
                             ordenMovimientos = 1; 
                         }
-                        if (xObjetivo >= x - 32 && xObjetivo <= x + 32) {
+                        if (xObjetivo >= x - TILE_SIZE && xObjetivo <= x + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -787,7 +787,7 @@ if (pasos > 0) {
                                 xObjetivo = x;
                             }
                         }
-                        if (yObjetivo >= y - 32 && yObjetivo <= y + 32) {
+                        if (yObjetivo >= y - TILE_SIZE && yObjetivo <= y + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -827,7 +827,7 @@ if (pasos > 0) {
                         } else {
                             ordenMovimientos = 1; 
                         }
-                        if (xObjetivo >= x - 32 && xObjetivo <= x + 32) {
+                        if (xObjetivo >= x - TILE_SIZE && xObjetivo <= x + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -836,7 +836,7 @@ if (pasos > 0) {
                                 xObjetivo = x;
                             }
                         }
-                        if (yObjetivo >= y - 32 && yObjetivo <= y + 32) {
+                        if (yObjetivo >= y - TILE_SIZE && yObjetivo <= y + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -876,7 +876,7 @@ if (pasos > 0) {
                         } else {
                             ordenMovimientos = 1; 
                         }
-                        if (xObjetivo >= x - 32 && xObjetivo <= x + 32) {
+                        if (xObjetivo >= x - TILE_SIZE && xObjetivo <= x + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -885,7 +885,7 @@ if (pasos > 0) {
                                 xObjetivo = x;
                             }
                         }
-                        if (yObjetivo >= y - 32 && yObjetivo <= y + 32) {
+                        if (yObjetivo >= y - TILE_SIZE && yObjetivo <= y + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -924,7 +924,7 @@ if (pasos > 0) {
                         } else {
                             ordenMovimientos = 1; 
                         }
-                        if (xObjetivo >= x - 32 && xObjetivo <= x + 32) {
+                        if (xObjetivo >= x - TILE_SIZE && xObjetivo <= x + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;
@@ -933,7 +933,7 @@ if (pasos > 0) {
                                 xObjetivo = x;
                             }
                         }
-                        if (yObjetivo >= y - 32 && yObjetivo <= y + 32) {
+                        if (yObjetivo >= y - TILE_SIZE && yObjetivo <= y + TILE_SIZE) {
                             if (agitando) {
                                 if (!obj_pj.inmovilizado) {
                                     alarm[5] = 1;

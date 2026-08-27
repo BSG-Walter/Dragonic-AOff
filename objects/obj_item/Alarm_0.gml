@@ -17,7 +17,7 @@ if (!noSetearAlarm) {
         if (ocupado) {
             var found = false;
             // 8 vecinos a 32px
-            var dirs = [[0,-32],[32,0],[0,32],[-32,0],[32,-32],[32,32],[-32,32],[-32,-32]];
+            var dirs = [[0,-TILE_SIZE],[TILE_SIZE,0],[0,TILE_SIZE],[-TILE_SIZE,0],[TILE_SIZE,-TILE_SIZE],[TILE_SIZE,TILE_SIZE],[-TILE_SIZE,TILE_SIZE],[-TILE_SIZE,-TILE_SIZE]];
             for (var d = 0; d < 8; d++) {
                 var nx = x + dirs[d][0];
                 var ny = y + dirs[d][1];
@@ -28,9 +28,9 @@ if (!noSetearAlarm) {
                     x = nx; y = ny; found = true; break;
                 }
             }
-            // si no hay lugar a 32, probar a 64 (4 direcciones)
+            // si no hay lugar a TILE_SIZE, probar a 64 (4 direcciones)
             if (!found) {
-                var dirs64 = [[0,-64],[64,0],[0,64],[-64,0]];
+                var dirs64 = [[0,TILE_SIZE*-2],[TILE_SIZE*2,0],[0,TILE_SIZE*2],[TILE_SIZE*-2,0]];
                 for (var d = 0; d < 4; d++) {
                     var nx = x + dirs64[d][0];
                     var ny = y + dirs64[d][1];

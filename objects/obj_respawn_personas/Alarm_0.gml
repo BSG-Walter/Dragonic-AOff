@@ -34,8 +34,8 @@ if (random(10) > rand) {
 				var limite_intentos = 1000
                 do {
                 
-                    xNuevo = multX * floor(random_range(2, room_width / multX - 32));
-                    yNuevo = multY * floor(random_range(1, room_height / multY - 32));
+                    xNuevo = multX * floor(random_range(2, room_width / multX - TILE_SIZE));
+                    yNuevo = multY * floor(random_range(1, room_height / multY - TILE_SIZE));
                     
                     var tile = tile_layer_find(TILE_LAYER_GRASS, xNuevo, yNuevo);
                     

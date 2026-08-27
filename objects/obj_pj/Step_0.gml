@@ -373,7 +373,7 @@ _mouseDown
             !atacaConArco && 
             !atacaConHechizo &&
             (device_mouse_x(device) >= global.render_x&& device_mouse_x(device) <= global.render_x+ 56) &&
-            (device_mouse_y(device) >= global.render_y && device_mouse_y(device) <= global.render_y + 32)
+            (device_mouse_y(device) >= global.render_y && device_mouse_y(device) <= global.render_y + TILE_SIZE)
             ) {
             
                 if (obj_gui.panelActivo) {
@@ -1625,7 +1625,7 @@ _mouseDown
                                     var valido = false;
 									
 									if (navega) {
-										if (distance_to_point(device_mouse_x(device), device_mouse_y(device)) <= 32)
+										if (distance_to_point(device_mouse_x(device), device_mouse_y(device)) <= TILE_SIZE)
 											valido = true
 									} else {
 		                                if (position_meeting(device_mouse_x(device), device_mouse_y(device), obj_bloqueo_agua)) {
@@ -1634,20 +1634,20 @@ _mouseDown
 			                            if (!valido)
 			                                valido = hayAguaEn(x, y);
 			                            if (!valido)
-			                                valido = hayAguaEn(x - 32, y);
+			                                valido = hayAguaEn(x - TILE_SIZE, y);
 			                            if (!valido)
-			                                valido = hayAguaEn(x - 32, y);
+			                                valido = hayAguaEn(x - TILE_SIZE, y);
 			                            if (!valido)
-			                                valido = hayAguaEn(x, y - 32);
+			                                valido = hayAguaEn(x, y - TILE_SIZE);
 			                            if (!valido)
-			                                valido = hayAguaEn(x - 32, y + 32);
+			                                valido = hayAguaEn(x - TILE_SIZE, y + TILE_SIZE);
 									}
                                 
                                     if (valido) {
                                     
                                         if (
-                                        (device_mouse_x(device) <= x + 32 && device_mouse_x(device) >= x - 32) &&
-                                        (device_mouse_y(device)  <= y + 32 && device_mouse_y(device)  >= y - 32)
+                                        (device_mouse_x(device) <= x + TILE_SIZE && device_mouse_x(device) >= x - TILE_SIZE) &&
+                                        (device_mouse_y(device)  <= y + TILE_SIZE && device_mouse_y(device)  >= y - TILE_SIZE)
                                         ) {
                                         
                                             posPescaX = x;

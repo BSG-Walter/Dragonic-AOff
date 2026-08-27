@@ -42,7 +42,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             tile == -1
             ) {
                 
-                x = (x - TILE_SIZE * iAux) + 32;
+                x = (x - TILE_SIZE * iAux) + TILE_SIZE;
                 y -= TILE_SIZE * i;
                 banderaBreak = true;
                 break;
@@ -57,7 +57,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE);
         
             if (
             !place_meeting(x - TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloque_basic) && 
@@ -67,7 +67,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             ) {
                 
                 x -= TILE_SIZE * i;
-                y = (y - TILE_SIZE * iAux) + 32;
+                y = (y - TILE_SIZE * iAux) + TILE_SIZE;
                 banderaBreak = true;
                 break;
                 
@@ -118,7 +118,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             tile == -1
             ) {
                 
-                x = (x + TILE_SIZE * iAux) - 32;
+                x = (x + TILE_SIZE * iAux) - TILE_SIZE;
                 y -= TILE_SIZE * i;
                 banderaBreak = true;
                 break;
@@ -152,7 +152,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + 32);
+            tile = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE);
         
             if (
             !place_meeting(x + TILE_SIZE * i, (y - TILE_SIZE * iAux) + TILE_SIZE, obj_bloque_basic) && 
@@ -162,7 +162,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             ) {
                 
                 x += TILE_SIZE * i;
-                y = (y - TILE_SIZE * iAux) + 32;
+                y = (y - TILE_SIZE * iAux) + TILE_SIZE;
                 banderaBreak = true;
                 break;
                 
@@ -204,7 +204,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
         
         for (var iAux = 1; iAux <= i; iAux++) {
         
-            tile = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y + TILE_SIZE * iAux) + 32);
+            tile = tile_layer_find(TILE_LAYER_COAST, x + TILE_SIZE * i, (y + TILE_SIZE * iAux) + TILE_SIZE);
         
             if (
             !place_meeting(x + TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloque_basic) && 
@@ -214,7 +214,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             ) {
                 
                 x += TILE_SIZE * i;
-                y = (y + TILE_SIZE * iAux) - 32;
+                y = (y + TILE_SIZE * iAux) - TILE_SIZE;
                 banderaBreak = true;
                 break;
                 
@@ -256,7 +256,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             tile == -1
             ) {
                 
-                x = (x + TILE_SIZE * iAux) - 32;
+                x = (x + TILE_SIZE * iAux) - TILE_SIZE;
                 y += TILE_SIZE * i;
                 banderaBreak = true;
                 break;
@@ -308,7 +308,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             tile == -1
             ) {
                 
-                x = (x - TILE_SIZE * iAux) + 32;
+                x = (x - TILE_SIZE * iAux) + TILE_SIZE;
                 y += TILE_SIZE * i;
                 banderaBreak = true;
                 break;
@@ -342,7 +342,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
         
         for (var iAux = i; iAux >= i - 1; iAux--) {
         
-            tile = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - 32);
+            tile = tile_layer_find(TILE_LAYER_COAST, x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE);
         
             if (
             !place_meeting(x - TILE_SIZE * i, (y + TILE_SIZE * iAux) - TILE_SIZE, obj_bloque_basic) && 
@@ -352,7 +352,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
             ) {
                 
                 x -= TILE_SIZE * i;
-                y = (y + TILE_SIZE * iAux) - 32;
+                y = (y + TILE_SIZE * iAux) - TILE_SIZE;
                 banderaBreak = true;
                 break;
                 
@@ -391,7 +391,7 @@ while (place_meeting(x, y, obj_bloque_basic) || place_meeting(x, y, obj_npc_basi
     
     i++;
     
-    if (i * 32 > get_render_width() * 0.75) {
+    if (i * TILE_SIZE > get_render_width() * 0.75) {
         instance_destroy();
     }
 
