@@ -212,6 +212,23 @@ function hechizoVacio() {
     return crearHechizo(-1, "", "", 0, 0, 0, 0, 0, "");
 }
 
+/// @description itemMundo(_x, _y, _indice, _tipo, _cantidad, _valor)
+function itemMundo(_x, _y, _indice, _tipo, _cantidad, _valor) {
+    return {
+        x: _x,
+        y: _y,
+        indice: _indice,
+        tipo: _tipo,
+        cantidad: _cantidad,
+        valor: _valor
+    };
+}
+
+/// @description itemMundoVacio()
+function itemMundoVacio() {
+    return itemMundo(-1, -1, -1, "", -1, -1);
+}
+
 /// @description datosIAVacio()
 function datosIAVacio() {
     return {

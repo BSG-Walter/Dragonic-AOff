@@ -6,29 +6,20 @@ function actualizarItemsXRM(argument0) {
 
 	    with (argument0) {
                     
-	        // Lo guardo y lo destruyo
-        
-	        var datosItem;
-        
-	        datosItem[0] = -1;
-	        datosItem[1] = -1;
-	        datosItem[2] = -1;
-	        datosItem[3] = "";
-	        datosItem[4] = -1;
-	        datosItem[5] = -1;
+	        var _datosItem = itemMundoVacio();
                 
-	        datosItem[0] = x;
-	        datosItem[1] = y;
+	        _datosItem.x = x;
+	        _datosItem.y = y;
         
 	        if (object_index == obj_item) {
-	            datosItem[2] = indice;
-	            datosItem[3] = tipo;
-	            datosItem[4] = cantidad;
+	            _datosItem.indice = indice;
+	            _datosItem.tipo = tipo;
+	            _datosItem.cantidad = cantidad;
 	        } else if (object_index == obj_oro) {
-	            datosItem[5] = valor;
+	            _datosItem.valor = valor;
 	        }
         
-	        obj_items_mundo.ItemsXRM[room, obj_items_mundo.i] = datosItem;
+	        obj_items_mundo.ItemsXRM[room, obj_items_mundo.i] = _datosItem;
         
 	        instance_destroy();
                     

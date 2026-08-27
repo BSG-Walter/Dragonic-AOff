@@ -6,23 +6,9 @@ with (obj_item_basic) {
 
 // Vacía vectores con items de todo el mundo
 
-var datosItemABorrar;
-
-for (var j = obj_npcs_mundo.primerRoomDeMapa; j <= obj_npcs_mundo.totalRooms; j++) { // Room
-    for (var k = 0; k < array_length(obj_items_mundo.ItemsXRM[j]); k++) { // Item
-        datosItemABorrar = obj_items_mundo.ItemsXRM[j, k];
-        if (datosItemABorrar[0] != -1) {
-        
-            // Borro
-            
-            datosItemABorrar[0] = -1;
-            datosItemABorrar[1] = -1;
-            datosItemABorrar[2] = -1;
-            datosItemABorrar[3] = "";
-            datosItemABorrar[4] = -1;
-            datosItemABorrar[5] = -1;
-            
-        }
+for (var j = obj_npcs_mundo.primerRoomDeMapa; j <= obj_npcs_mundo.totalRooms; j++) {
+    for (var k = 0; k < array_length(obj_items_mundo.ItemsXRM[j]); k++) {
+        obj_items_mundo.ItemsXRM[j, k] = itemMundoVacio();
     }
 }
 

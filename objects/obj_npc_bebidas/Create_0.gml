@@ -13,11 +13,8 @@ for (var i = 0; i < 20; i++) {
     slots[i] = crearSlotNpc(-1, 0, "Vacío");
 }
 
-nroIndices = 4;
-vecIndices[0] = 116;
-vecIndices[1] = 117;
-vecIndices[2] = 118;
-vecIndices[3] = 119;
+vecIndices = [116, 117, 118, 119];
+nroIndices = array_length(vecIndices);
 
 for (var i = 0; i < nroIndices; i++) {
     item = vecIndices[i];
