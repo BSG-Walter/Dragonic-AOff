@@ -13,18 +13,12 @@ function elegirIAObjetivoIA(argument0) {
 	}
 	
 	with (obj_persona) {
-		// Ignorar al propio bot, bots muertos y aliados
-		if (id == other.id || muerto) continue;
-		
-		if (room == rm_arena) {
-			if (other.pk == pk) continue;
-		} else {
-			if (!other.pk && !pk) continue;
-		}
+
+		if (!esRivalIA(pk, other.pk)) continue;
 		
 		var _nueva_distancia = point_distance(x, y, other.x, other.y);
 		
-		if (_nueva_distancia <= 450) {
+		if (_nueva_distancia <= 350) {
 			other.cantIAEnView++;
 			
 			if (inmovilizado) {
@@ -89,4 +83,39 @@ function elegirIAObjetivoIA(argument0) {
 	        return -1;
 	    }
 	}
+}
+
+function contarBandosIA() {
+    static pks = 0;
+    static ciudas = 0;
+	contarBandosIA.pks = 0;
+	contarBandosIA.ciudas = 0;
+	
+	with(obj_persona){
+		if muerto continue;
+		if (pk) {
+			contarBandosIA.pks = contarBandosIA.pks+1;
+		}else{
+			contarBandosIA.ciudas = contarBandosIA.ciudas+1;
+		}
+	}
+	show_debug_message("ciudas: " + string(contarBandosIA.ciudas) + " pks: " + string(contarBandosIA.pks)); 
+    return { pks: contarBandosIA.pks, ciudas: contarBandosIA.ciudas };
+}
+
+function esRivalIA(_miPK, _otroPK) {
+
+	//en arena solo nos importa si son pk y ciuda
+	if (room == rm_arena) return _miPK != _otroPK;
+
+	//si son pk y ciuda, siempre son enemigos
+	if (_miPK != _otroPK) return true;
+	
+	//si son ciudas no se atacan
+	if (!_miPK == !_otroPK) return false;
+
+	// mismo bando pk: los pks ahora tienen codigo, solo se atacan entre ellos si no queda ningún ciuda
+	var _bandos = contarBandosIA();
+	return _bandos.ciudas == 0;
+
 }

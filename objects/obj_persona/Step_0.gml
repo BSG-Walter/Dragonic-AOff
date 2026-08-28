@@ -1,4 +1,4 @@
-﻿/// @description  Control general
+/// @description  Control general
 
 detectarBugGrilla();
 var idIAAux = IAObj
@@ -74,9 +74,14 @@ if (
             if (rand < 0 || rand > 4) {
                 rand = 0;
             }
-            
-            var esEnemigoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk != pk) : (idIAAux != -1 && (pk || idIAAux.pk));
-            var esAliadoIAAux = (room == rm_arena) ? (idIAAux != -1 && idIAAux.pk == pk) : (idIAAux != -1 && (!pk && !idIAAux.pk));
+			var esEnemigoIAAux, esAliadoIAAux;
+            if (idIAAux == -1){
+				esEnemigoIAAux = false;
+				esAliadoIAAux = false;
+			}else{
+				esEnemigoIAAux = esRivalIA(pk, idIAAux.pk);
+				esAliadoIAAux = !esEnemigoIAAux;
+			}
             
             if ((enemigo && !obj_pj.muerto) || esEnemigoIAAux) {
                 if (obj_pj.invisible && idIAAux == -1 && !obj_mapas_mundo.mapas[room]) {

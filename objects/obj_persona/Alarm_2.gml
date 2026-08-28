@@ -1,4 +1,4 @@
-﻿/// @description  Ataque
+/// @description  Ataque
 
 if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     
@@ -33,7 +33,7 @@ if (!muerto && clase == 0 && !obj_mapas_mundo.mapas[room]) {
     }
     
     if (ataca) {
-        var esEnemigo = (room == rm_arena) ? (pk != idIA.pk) : (pk || idIA.pk);
+		var esEnemigo = esRivalIA(pk, idIA.pk);
         ataca = esEnemigo;
     }
     

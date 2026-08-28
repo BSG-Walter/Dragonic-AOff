@@ -1,4 +1,4 @@
-﻿/// @description  Estado inicial
+/// @description  Estado inicial
 oro = 0;
 dropeaItem = false;
 indItem = 0;
@@ -213,26 +213,14 @@ mana = manaMax;
 
 // Criminal / Ciudadano
 
-if (random(10) > 7.5) {
-    pk = true;
-} else {
-    pk = false;
+if (obj_pj.nivel <= 12) {
+	setPk(false);
+}else{
+	setPk(random(10) > 7.5) ;
 }
 
 if (obj_pj.nivel <= 12) {
     pk = false;
-}
-
-rangoFaccion = 0;
-
-if (random(10) > 8.5) {
-	if (obj_pj.nivel >= 30) {
-		rangoFaccion = 1;
-	} else if (obj_pj.nivel >= 35) {
-		rangoFaccion = choose(1, 2);
-	} else if (obj_pj.nivel >= 40) {
-		rangoFaccion = choose(1, 2, 3);
-	}
 }
 
 // Nombre
@@ -240,7 +228,7 @@ if (random(10) > 8.5) {
 nombre = elegirNombreIA();
 
 //forzamos si es pk o no segun el boton apretado en la arena
-if (room == rm_arena) pk = obj_agregar_bot.spawnear_pk;
+if (room == rm_arena) setPk(obj_agregar_bot.spawnear_pk);
 
 
 // Gráfico
@@ -421,6 +409,23 @@ sigue = true;
 cantIAEnView = 0
 IAObj = elegirIAObjetivoIA(true);
 dibujarIA();
+
+function setPk(_pk){
+	
+	pk = _pk;
+
+	rangoFaccion = 0;
+
+	if (random(10) > 8.5) {
+		if (obj_pj.nivel >= 30) {
+			rangoFaccion = 1;
+		} else if (obj_pj.nivel >= 35) {
+			rangoFaccion = choose(1, 2);
+		} else if (obj_pj.nivel >= 40) {
+			rangoFaccion = choose(1, 2, 3);
+		}
+	}
+}
 
 /* */
 /*  */
