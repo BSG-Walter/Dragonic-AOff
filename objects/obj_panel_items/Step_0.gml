@@ -584,15 +584,7 @@ device_mouse_check_button(4, mb_left)
                                     
                                 }
                             
-                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                    if (obj_pj.skills[16] < 100) {
-                                        if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                            obj_skills_libres.mostrado = false;
-                                            obj_pj.skills[16]++;
-                                            var idSubirSkills = crearTextoSubirSkill(16);
-                                        }
-                                    }
-                                }
+                                intentarSubirSkillNatural(16, 0.35);
                                 
                             }
                         }
@@ -631,15 +623,8 @@ device_mouse_check_button(4, mb_left)
 												
 												obj_skills_libres.mostrado = false;
                                                 
-                                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                    if (obj_pj.skills[16] < 100) {
-                                                        if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                                        
-                                                            obj_skills_libres.mostrado = false;
-                                                            obj_pj.skills[16]++;
-                                                            var idSubirSkills = crearTextoSubirSkill(16);
-                                                            
-                                                            var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
+                                                if (intentarSubirSkillNatural(16, 0.35) > 0) {
+                                                        var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
                                                                     
                                                             var modPrecio = 1;
                                                             
@@ -672,10 +657,7 @@ device_mouse_check_button(4, mb_left)
                                                             if (precioItem <= 0) {
                                                                 precioItem = 1;
                                                             }
-                                                            
-                                                        }
                                                     }
-                                                }
                                                 
                                                 break;
                                             }
@@ -701,15 +683,8 @@ device_mouse_check_button(4, mb_left)
                                         
                                         obj_inventario.slots[i] = crearSlotInv(idPadre.slots[indiceItem].indice, cant, false);
                                                 
-                                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                    if (obj_pj.skills[16] < 100) {
-                                                        if (obj_pj.skills[16] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                                        
-                                                            obj_skills_libres.mostrado = false;
-                                                            obj_pj.skills[16]++;
-                                                            var idSubirSkills = crearTextoSubirSkill(16);
-                                                            
-                                                            var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
+                                                if (intentarSubirSkillNatural(16, 0.35) > 0) {
+                                                        var datosItem = descripcionItem(idPadre.slots[indiceItem].indice);
                                                                     
                                                             var modPrecio = 1;
                                                             
@@ -742,10 +717,7 @@ device_mouse_check_button(4, mb_left)
                                                             if (precioItem <= 0) {
                                                                 precioItem = 1;
                                                             }
-                                                            
-                                                        }
                                                     }
-                                                }
                                                 
                                                 break;
                                                 

@@ -3,7 +3,7 @@
 if (instance_exists(padre)) {
 
     if (padre == obj_pj.id || padre.object_index == obj_persona) {
-        if (padre.dicePalabrasMagicas && padre.palabrasMagicas != "") {
+        if (padre.dicePalabrasMagicas && padre.palabrasMagicas != "" && !esSubidaSkill) {
             instance_destroy();
         }
     }

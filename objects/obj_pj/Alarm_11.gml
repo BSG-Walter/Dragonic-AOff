@@ -45,11 +45,7 @@ if (trabajando) {
                     obj_inventario.slots[i].cant += cantidadMadera;
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                            obj_skills_libres.mostrado = false;
-                            skills[5]++;
-                            var idSubirSkills = crearTextoSubirSkill(5);
-                        }
+                        intentarSubirSkillNatural(5, 0.35);
                     }
                     
                     break;
@@ -75,11 +71,7 @@ if (trabajando) {
                     obj_inventario.slots[i] = crearSlotInv(146, cantidadMadera, false);
                     
                     if (skills[5] < skillsNaturales[nivel]) {
-                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                            obj_skills_libres.mostrado = false;
-                            skills[5]++;
-                            var idSubirSkills = crearTextoSubirSkill(5);
-                        }
+                        intentarSubirSkillNatural(5, 0.35);
                     }
                     
                     break;
@@ -144,11 +136,7 @@ if (trabajando) {
                     obj_inventario.slots[i].cant += cantidadMinerales;
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                            obj_skills_libres.mostrado = false;
-                            skills[8]++;
-                            var idSubirSkills = crearTextoSubirSkill(8);
-                        }
+                        intentarSubirSkillNatural(8, 0.35);
                     }
                     
                     break;
@@ -174,11 +162,7 @@ if (trabajando) {
                     obj_inventario.slots[i] = crearSlotInv(indiceMineral, cantidadMinerales, false);
                     
                     if (skills[8] < skillsNaturales[nivel]) {
-                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                            obj_skills_libres.mostrado = false;
-                            skills[8]++;
-                            var idSubirSkills = crearTextoSubirSkill(8);
-                        }
+                        intentarSubirSkillNatural(8, 0.35);
                     }
                     
                     break;
@@ -534,11 +518,7 @@ if (trabajando) {
                             reproducirSonido(snd_pescar, false, false);
                         
                             if (skills[7] < skillsNaturales[nivel]) {
-                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                    obj_skills_libres.mostrado = false;
-                                    skills[7]++;
-                                    var idSubirSkills = crearTextoSubirSkill(7);
-                                }
+                                intentarSubirSkillNatural(7, 0.35);
                             }
                             
                             if (trabajoActual == 155) {

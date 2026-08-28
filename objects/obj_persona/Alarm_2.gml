@@ -237,11 +237,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
                 reproducirSonido(snd_defensaEscudo, false, false);
                     
                 if (obj_pj.skills[6] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                    if (random(1) < 0.5 * SKILL_FACTOR) {
-                        obj_skills_libres.mostrado = false;
-                        obj_pj.skills[6]++;
-                        var idSubirSkills = crearTextoSubirSkill(6);
-                    }
+                    intentarSubirSkillNatural(6, 0.5);
                 }
                 
             }
@@ -298,11 +294,7 @@ if (!muerto && enemigo && clase == 0 && !obj_mapas_mundo.mapas[room]) {
             idINFO.color = c_red;
             
             if (obj_pj.skills[1] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                if (random(1) < 0.5 * SKILL_FACTOR) {
-                    obj_skills_libres.mostrado = false;
-                    obj_pj.skills[1]++;
-                    var idSubirSkills = crearTextoSubirSkill(1);
-                }
+                intentarSubirSkillNatural(1, 0.5);
             }
             
         }

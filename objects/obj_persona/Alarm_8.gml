@@ -587,15 +587,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                 
                                 // Skill
                                 
-                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                    if (obj_pj.skills[17] < 100) {
-                                        if (obj_pj.skills[17] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                            obj_skills_libres.mostrado = false;
-                                            obj_pj.skills[17]++;
-                                            var idSubirSkills = crearTextoSubirSkill(17);
-                                        }
-                                    }
-                                }
+                                intentarSubirSkillNatural(17, 0.35);
                                 
                             }
                         

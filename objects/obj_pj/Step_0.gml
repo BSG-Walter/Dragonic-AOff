@@ -534,11 +534,7 @@ _mouseDown
 														
 														if (obj_pj.flechaActual != 217) {
 	                                                        if (skills[12] < skillsNaturales[nivel]) {
-	                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
-	                                                                obj_skills_libres.mostrado = false;
-	                                                                skills[12]++;
-	                                                                var idSubirSkills = crearTextoSubirSkill(12);
-	                                                            }
+	                                                            intentarSubirSkillNatural(12, 0.35);
 	                                                        }
 														}
                                                     
@@ -637,11 +633,7 @@ _mouseDown
 		                                                        } else {
 																	
 																	if (obj_pj.skills[12] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-			                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
-			                                                                obj_skills_libres.mostrado = false;
-			                                                                obj_pj.skills[12]++;
-			                                                                var idSubirSkills = crearTextoSubirSkill(12);
-			                                                            }
+			                                                            intentarSubirSkillNatural(12, 0.35);
 			                                                        }
 																
 		                                                            reproducirSonido(snd_flechaAcertada, false, false);
@@ -910,11 +902,7 @@ _mouseDown
                                                             }
                                                         
                                                             if (skills[0] < skillsNaturales[nivel]) {
-                                                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                                    obj_skills_libres.mostrado = false;
-                                                                    skills[0]++;
-                                                                    var idSubirSkills = crearTextoSubirSkill(0);
-                                                                }
+                                                                intentarSubirSkillNatural(0, 0.35);
                                                             }
                                                         
                                                             puedeAtacar = false;
@@ -1069,11 +1057,7 @@ _mouseDown
                                                     }
                                             
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                            obj_skills_libres.mostrado = false;
-                                                            skills[0]++;
-                                                            var idSubirSkills = crearTextoSubirSkill(0);
-                                                        }
+                                                        intentarSubirSkillNatural(0, 0.35);
                                                     }
                                                 
                                                     puedeAtacar = false;
@@ -1191,11 +1175,7 @@ _mouseDown
                                                             }
                                                         
                                                             if (skills[0] < skillsNaturales[nivel]) {
-                                                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                                    obj_skills_libres.mostrado = false;
-                                                                    skills[0]++;
-                                                                    var idSubirSkills = crearTextoSubirSkill(0);
-                                                                }
+                                                                intentarSubirSkillNatural(0, 0.35);
                                                             }
                                                         
                                                             puedeAtacar = false;
@@ -1279,11 +1259,7 @@ _mouseDown
                                                     palabrasMagicas = "";
                                                 
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                            obj_skills_libres.mostrado = false;
-                                                            skills[0]++;
-                                                            var idSubirSkills = crearTextoSubirSkill(0);
-                                                        }
+                                                        intentarSubirSkillNatural(0, 0.35);
                                                     }
                                                 
                                                     puedeAtacar = false;
@@ -1339,11 +1315,7 @@ _mouseDown
                                                     }
                                             
                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                            obj_skills_libres.mostrado = false;
-                                                            skills[0]++;
-                                                            var idSubirSkills = crearTextoSubirSkill(0);
-                                                        }
+                                                        intentarSubirSkillNatural(0, 0.35);
                                                     }
                                                 
                                                     puedeAtacar = false;
@@ -1394,11 +1366,7 @@ _mouseDown
                                                         }
                                                 
                                                         if (skills[0] < skillsNaturales[nivel]) {
-                                                            if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                                obj_skills_libres.mostrado = false;
-                                                                skills[0]++;
-                                                                var idSubirSkills = crearTextoSubirSkill(0);
-                                                            }
+                                                            intentarSubirSkillNatural(0, 0.35);
                                                         }
                                                     
                                                         puedeAtacar = false;
@@ -1471,11 +1439,7 @@ _mouseDown
                                                                     }
                                                             
                                                                     if (skills[0] < skillsNaturales[nivel]) {
-                                                                        if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                                            obj_skills_libres.mostrado = false;
-                                                                            skills[0]++;
-                                                                            var idSubirSkills = crearTextoSubirSkill(0);
-                                                                        }
+                                                                        intentarSubirSkillNatural(0, 0.35);
                                                                     }
                                                                 
                                                                     puedeAtacar = false;
@@ -1536,11 +1500,7 @@ _mouseDown
                                                                 }
                                                         
                                                                 if (skills[0] < skillsNaturales[nivel]) {
-                                                                    if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                                        obj_skills_libres.mostrado = false;
-                                                                        skills[0]++;
-                                                                        var idSubirSkills = crearTextoSubirSkill(0);
-                                                                    }
+                                                                    intentarSubirSkillNatural(0, 0.35);
                                                                 }
                                                             
                                                                 puedeAtacar = false;

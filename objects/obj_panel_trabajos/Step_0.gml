@@ -357,14 +357,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                 if (valido) {
                                 
-                                    if (modo == 2 || random(1) < 0.35 * SKILL_FACTOR) {
-                                        if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                            obj_skills_libres.mostrado = false;
-                                            obj_pj.skills[indiceSkill]++;
-                                            var idSubirSkills = crearTextoSubirSkill(indiceSkill);
-                                            alarm[0] = 1;
-                                        }
-                                    }
+                                    if (modo == 2) { intentarSubirSkillNatural(indiceSkill, 1.0); } else { intentarSubirSkillNatural(indiceSkill, 0.35); }
                                 
                                     for (var i = 0; i < obj_inventario.maximoInv; i++) {
                                         if (obj_inventario.slots[i].indice == indiceMaterial) {
@@ -510,14 +503,7 @@ device_mouse_check_button(4, mb_left)
                                 
                                 if (valido) {
                                 
-                                    if (random(1) < 0.55 * SKILL_FACTOR) {
-                                        if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                            obj_skills_libres.mostrado = false;
-                                            obj_pj.skills[10]++;
-                                            var idSubirSkills = crearTextoSubirSkill(10);
-                                            alarm[0] = 1;
-                                        }
-                                    }
+                                    intentarSubirSkillNatural(10, 0.55); alarm[0] = 1;
                                     
                                     repeat (3) {
                                     

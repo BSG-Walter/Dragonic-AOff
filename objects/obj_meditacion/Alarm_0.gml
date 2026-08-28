@@ -9,11 +9,7 @@ if (obj_pj.mana + manaIncrementada <= obj_pj.manaMax) {
 }
 
 if (obj_pj.skills[3] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-    if (random(1) < 0.35 * SKILL_FACTOR) {
-        obj_skills_libres.mostrado = false;
-        obj_pj.skills[3]++;
-        var idSubirSkills = crearTextoSubirSkill(3);
-    }
+    intentarSubirSkillNatural(3, 0.35);
 }
 
 alarm[0] = 25;

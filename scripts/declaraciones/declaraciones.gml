@@ -7,10 +7,9 @@ gml_pragma("global", "init_engine_settings();");
 #macro INVENTARIO_WIDTH 120
 #macro INVENTARIO_HEIGHT 80
 #macro MAX_MULTITOUCH 5
-// SKILL_FACTOR y RECURSO_FACTOR: escala la prob. base de subir skills de forma natural/Escala los recursos de recoleccion.
-// Base x20 = 1.0. x10 = 0.5 (mitad, mínimo), x40 = 2.0 (doble), x200 = 10.0, sin tope superior.
-#macro SKILL_FACTOR max(0.5, obj_opciones.multiExp/20)
-#macro RECURSO_FACTOR max(0.5, obj_opciones.multiOro/20)
+// SKILL_FACTOR y RECURSO_FACTOR: escala con multiExp/multiOro. Base 20x (multi=1) = 1.0, 10x (0.5) = 0.5 mínimo, 100x (5) = 5.0.
+#macro SKILL_FACTOR max(0.5, obj_opciones.multiExp)
+#macro RECURSO_FACTOR max(0.5, obj_opciones.multiOro)
 
 // Configuración de bots
 

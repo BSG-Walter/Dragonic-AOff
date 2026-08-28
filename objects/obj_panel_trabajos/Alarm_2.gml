@@ -77,15 +77,8 @@ if (clicMantenido) {
                         }
                         
                         if (valido) {
-                        
-                            if (modo == 2 || random(1) < 0.35 * SKILL_FACTOR) {
-                                if (obj_pj.skills[indiceSkill] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                    obj_skills_libres.mostrado = false;
-                                    obj_pj.skills[indiceSkill]++;
-                                    var idSubirSkills = crearTextoSubirSkill(indiceSkill);
-                                    alarm[0] = 1;
-                                }
-                            }
+                         
+                            if (intentarSubirSkillNatural(indiceSkill, modo == 2 ? 1.0 : 0.35) > 0) alarm[0] = 1;
                         
                             for (var i = 0; i < obj_inventario.maximoInv; i++) {
                                 if (obj_inventario.slots[i].indice == indiceMaterial) {
@@ -218,15 +211,8 @@ if (clicMantenido) {
                         }
                         
                         if (valido) {
-                        
-                            if (random(1) < 0.55 * SKILL_FACTOR) {
-                                if (obj_pj.skills[10] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                    obj_skills_libres.mostrado = false;
-                                    obj_pj.skills[10]++;
-                                    var idSubirSkills = crearTextoSubirSkill(10);
-                                    alarm[0] = 1;
-                                }
-                            }
+                         
+                            if (intentarSubirSkillNatural(10, 0.55) > 0) alarm[0] = 1;
                             
                             repeat (3) {
                             

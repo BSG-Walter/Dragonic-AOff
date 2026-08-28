@@ -316,11 +316,7 @@ device_mouse_check_button(4, mb_left)
                                             }
                                             
                                             if (obj_pj.skills[11] < obj_pj.skillsNaturales[obj_pj.nivel]) {
-                                                if (random(1) < 0.35 * SKILL_FACTOR) {
-                                                    obj_skills_libres.mostrado = false;
-                                                    obj_pj.skills[11]++;
-                                                    var idSubirSkills = crearTextoSubirSkill(11);
-                                                }
+                                                intentarSubirSkillNatural(11, 0.35);
                                             }
                                             
                                         } else {

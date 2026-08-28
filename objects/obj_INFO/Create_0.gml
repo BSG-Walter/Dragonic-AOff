@@ -11,6 +11,7 @@ limite = 12;
 tiempo = -1;
 velocidadFade = 0.0085;
 esDano = false;
+esSubidaSkill = false;
 desfaseY = 57;
 
 // Manejo de posición del mensaje
