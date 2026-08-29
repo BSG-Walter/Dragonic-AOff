@@ -831,6 +831,7 @@
     {"id":{"name":"reiniciarArrayItemsRM","path":"scripts/reiniciarArrayItemsRM/reiniciarArrayItemsRM.yy",},},
     {"id":{"name":"reproducirPaso","path":"scripts/reproducirPaso/reproducirPaso.yy",},},
     {"id":{"name":"reproducirSonido","path":"scripts/reproducirSonido/reproducirSonido.yy",},},
+    {"id":{"name":"scr_ataqueDistancia","path":"scripts/scr_ataqueDistancia/scr_ataqueDistancia.yy",},},
     {"id":{"name":"scr_items","path":"scripts/scr_items/scr_items.yy",},},
     {"id":{"name":"scr_partidas","path":"scripts/scr_partidas/scr_partidas.yy",},},
     {"id":{"name":"seleccionarNPCObjetivoIA","path":"scripts/seleccionarNPCObjetivoIA/seleccionarNPCObjetivoIA.yy",},},

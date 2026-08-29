@@ -24,3 +24,7 @@ joy_izquierda = gp_padl
 joy_derecha = gp_padr
 
 joy_swap = gp_shoulderl
+
+joy_disparoRango = gp_shoulderr
+joy_disparoRangoRT = gp_shoulderrb
+joy_aimClick = gp_stickr

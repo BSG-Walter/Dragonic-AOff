@@ -419,6 +419,12 @@ else
 ultimaTecla = 0;
 direccion = 0;
 
+// Retícula para apuntado con mando (stick derecho)
+aimX = x;
+aimY = y;
+aimActive = false;
+aimDir = direccion;
+
 // Gráfico
 
 index[0, 0] = 0;

@@ -6,6 +6,40 @@ obj_pj.downKey = keyboard_check(key_down) || obj_flecha_abajo.apretada || (gamep
 obj_pj.leftKey = keyboard_check(key_left) || obj_flecha_izq.apretada || (gamepad_axis_value(0,gp_axislh) < -0.4)
 obj_pj.rightKey = keyboard_check(key_right) || obj_flecha_der.apretada || (gamepad_axis_value(0,gp_axislh) > 0.4)
 
+var _aimH = gamepad_axis_value(0, gp_axisrh);
+var _aimV = gamepad_axis_value(0, gp_axisrv);
+if (abs(_aimH) > AIM_DEADZONE || abs(_aimV) > AIM_DEADZONE) {
+    if (!obj_pj.aimActive) {
+        obj_pj.aimX = obj_pj.x;
+        obj_pj.aimY = obj_pj.y;
+        obj_pj.aimActive = true;
+    }
+    obj_pj.aimX += _aimH * AIM_SENSITIVITY;
+    obj_pj.aimY += _aimV * AIM_SENSITIVITY;
+    var _minX = global.render_x + AIM_RETICLE_CLAMP_MARGIN;
+    var _maxX = global.render_x + get_render_width() - AIM_RETICLE_CLAMP_MARGIN;
+    var _minY = global.render_y + AIM_RETICLE_CLAMP_MARGIN;
+    var _maxY = global.render_y + get_render_height() - AIM_RETICLE_CLAMP_MARGIN;
+    obj_pj.aimX = clamp(obj_pj.aimX, _minX, _maxX);
+    obj_pj.aimY = clamp(obj_pj.aimY, _minY, _maxY);
+    var _distAim = point_distance(obj_pj.x, obj_pj.y, obj_pj.aimX, obj_pj.aimY);
+    if (_distAim > AIM_RETICLE_MAX_DIST) {
+        var _dirAim = point_direction(obj_pj.x, obj_pj.y, obj_pj.aimX, obj_pj.aimY);
+        obj_pj.aimX = obj_pj.x + lengthdir_x(AIM_RETICLE_MAX_DIST, _dirAim);
+        obj_pj.aimY = obj_pj.y + lengthdir_y(AIM_RETICLE_MAX_DIST, _dirAim);
+    }
+    var _aAng = point_direction(obj_pj.x, obj_pj.y, obj_pj.aimX, obj_pj.aimY);
+    if (_aAng >= 315 || _aAng < 45) {
+        obj_pj.aimDir = 3;
+    } else if (_aAng >= 45 && _aAng < 135) {
+        obj_pj.aimDir = 1;
+    } else if (_aAng >= 135 && _aAng < 225) {
+        obj_pj.aimDir = 2;
+    } else {
+        obj_pj.aimDir = 0;
+    }
+}
+
 if (obj_pj.muerto) exit;
 
 //Acciones
@@ -17,7 +51,7 @@ if (keyboard_check_pressed(key_atacar) || gamepad_button_check_pressed(0, joy_at
 	pjAtacar();
 }
 
-if (keyboard_check_pressed(key_usar) || gamepad_button_check_pressed(0, joy_usar)){
+if (keyboard_check_pressed(key_usar) || gamepad_button_check_pressed(0, joy_usar) || mouse_check_button_pressed(mb_right)){
 	usarItem();
 }
 
@@ -87,6 +121,42 @@ if (_inventario_visible){
 		indicar_panel_hechizos(_seleccionado < 10)
 		obj_hechizos.posSeleccionado = _seleccionado
 		obj_hechizos.seleccionado = obj_hechizos.hechizos[_seleccionado].indice
+	}
+}
+
+//apuntado
+if (gamepad_button_check_pressed(0, joy_disparoRango) || gamepad_button_check_pressed(0, joy_disparoRangoRT) || gamepad_button_check_pressed(0, joy_aimClick)) {
+	with (obj_pj){
+	    if (!aimActive) {
+	        switch (direccion) {
+	            case 0:
+	                aimX = x;
+	                aimY = y + TILE_SIZE * 3;
+	                break;
+	            case 1:
+	                aimX = x;
+	                aimY = y - TILE_SIZE * 3;
+	                break;
+	            case 2:
+	                aimX = x - TILE_SIZE * 3;
+	                aimY = y;
+	                break;
+	            case 3:
+	                aimX = x + TILE_SIZE * 3;
+	                aimY = y;
+	                break;
+	        }
+	        aimX = clamp(aimX, global.render_x + AIM_RETICLE_CLAMP_MARGIN, global.render_x + get_render_width() - AIM_RETICLE_CLAMP_MARGIN);
+	        aimY = clamp(aimY, global.render_y + AIM_RETICLE_CLAMP_MARGIN, global.render_y + get_render_height() - AIM_RETICLE_CLAMP_MARGIN);
+	        aimActive = true;
+	    }
+	    if (_inventario_visible) {
+			//arco
+			with (obj_pj) ataqueArco(aimX, aimY);
+	    } else {
+			//hechizo
+			with (obj_pj) lanzarHechizo(aimX, aimY);
+	    }
 	}
 }
 
