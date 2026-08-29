@@ -117,6 +117,8 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                                                 other.yaTiroHechizo = true;
                                                 alarm[4] = 7200;
                                                 inmovilizado = true;
+                                                inicioParalisis = current_time;
+                                                duracionParalisis = 120;
                                                 other.mana -= 300;                
                                                 var idEfectoHechizo = -1;
                                                 idEfectoHechizo = instance_create_depth(x, y, 0, obj_inmovilizar);
@@ -279,7 +281,7 @@ if (!muerto && !obj_mapas_mundo.mapas[room]) {
                     palabrasMagicas = "Är Prop s'uo";;
                     alarm[9] = 180;
                     
-                    idIA.inmovilizado = true;                   
+                    idIA.inmovilizado = true;
                     idIA.alarm[4] = 1800; // 30 Segundos 
                     idIA.alarm[7] = 170;
                     
