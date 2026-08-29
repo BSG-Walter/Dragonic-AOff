@@ -1,5 +1,6 @@
 ﻿/// @description  Estado inicial
 
+depth = -50000;
 audio_pause_all();
 
 wViewInicio = get_render_width();
@@ -257,7 +258,7 @@ if (!roomDesconocida) {
         }
     }
     
-    instance_create_depth(global.render_x + 326 + j * 14.75, global.render_y + 95 + i * 17.25, 0, obj_borde_mapa);
+    instance_create_depth(global.render_x + 326 + j * 14.75, global.render_y + 95 + i * 17.25, -75000, obj_borde_mapa);
     nombreMapaPausa = obtenerNombreMapa(room, i, j);
 
 } else {

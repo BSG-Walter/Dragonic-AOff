@@ -1,7 +1,7 @@
 /// @description  Estado inicial
 
 image_speed = 0;
-
+depth = -16000003;
 desc = "";
 tiempo = 300;
 alarm[0] = 2;
