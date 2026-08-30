@@ -623,13 +623,7 @@ if ((aimActive || atacaConArco || atacaConHechizo) && !muerto) {
                 break;
         }
     }
-    draw_set_alpha(0.85);
-    draw_set_color(c_red);
-    draw_line(_retX - 8, _retY, _retX + 8, _retY);
-    draw_line(_retX, _retY - 8, _retX, _retY + 8);
-    draw_circle(_retX, _retY, 6, true);
-    draw_set_alpha(0.35);
-    draw_line(x, y - 16, _retX, _retY);
+	draw_sprite(spr_aim,0,aimX,aimY);
     draw_set_alpha(0.85);
     var _tgt = instance_position(_retX, _retY, obj_npc_basic);
     if (_tgt != noone && _tgt.hostil) {

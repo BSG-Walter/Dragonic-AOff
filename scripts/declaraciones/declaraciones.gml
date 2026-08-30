@@ -35,7 +35,7 @@ gml_pragma("global", "init_engine_settings();");
 // Apuntado con mando (stick derecho)
 #macro AIM_DEADZONE 0.25
 #macro AIM_SENSITIVITY 6
-#macro AIM_RETICLE_MAX_DIST 200
+#macro AIM_RETICLE_MAX_DIST 350
 #macro AIM_RETICLE_CLAMP_MARGIN 8
 
 

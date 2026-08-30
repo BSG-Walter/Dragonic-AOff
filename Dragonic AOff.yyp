@@ -928,6 +928,7 @@
     {"id":{"name":"bck_seleccionarPj","path":"sprites/bck_seleccionarPj/bck_seleccionarPj.yy",},},
     {"id":{"name":"bck_teclado","path":"sprites/bck_teclado/bck_teclado.yy",},},
     {"id":{"name":"spr_agregar_bot","path":"sprites/spr_agregar_bot/spr_agregar_bot.yy",},},
+    {"id":{"name":"spr_aim","path":"sprites/spr_aim/spr_aim.yy",},},
     {"id":{"name":"spr_altar","path":"sprites/spr_altar/spr_altar.yy",},},
     {"id":{"name":"spr_apocalipsis","path":"sprites/spr_apocalipsis/spr_apocalipsis.yy",},},
     {"id":{"name":"spr_arbol_1","path":"sprites/spr_arbol_1/spr_arbol_1.yy",},},

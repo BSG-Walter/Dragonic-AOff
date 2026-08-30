@@ -821,6 +821,7 @@
     {"name":"bck_seleccionarPj","order":3,"path":"sprites/bck_seleccionarPj/bck_seleccionarPj.yy",},
     {"name":"bck_teclado","order":6,"path":"sprites/bck_teclado/bck_teclado.yy",},
     {"name":"spr_agregar_bot","order":37,"path":"sprites/spr_agregar_bot/spr_agregar_bot.yy",},
+    {"name":"spr_aim","order":16,"path":"sprites/spr_aim/spr_aim.yy",},
     {"name":"spr_altar","order":11,"path":"sprites/spr_altar/spr_altar.yy",},
     {"name":"spr_apocalipsis","order":9,"path":"sprites/spr_apocalipsis/spr_apocalipsis.yy",},
     {"name":"spr_arbol_10","order":9,"path":"sprites/spr_arbol_10/spr_arbol_10.yy",},
