@@ -124,8 +124,18 @@ if (_inventario_visible){
 	}
 }
 
+// R3 resetea mira al centro (sobre el PJ)
+if (gamepad_button_check_pressed(0, joy_aimClick)) {
+    with (obj_pj) {
+        aimX = clamp(x, global.render_x + AIM_RETICLE_CLAMP_MARGIN, global.render_x + get_render_width() - AIM_RETICLE_CLAMP_MARGIN);
+        aimY = clamp(y - 16, global.render_y + AIM_RETICLE_CLAMP_MARGIN, global.render_y + get_render_height() - AIM_RETICLE_CLAMP_MARGIN);
+        aimActive = true;
+        aimDir = direccion;
+    }
+}
+
 //apuntado
-if (gamepad_button_check_pressed(0, joy_disparoRango) || gamepad_button_check_pressed(0, joy_disparoRangoRT) || gamepad_button_check_pressed(0, joy_aimClick)) {
+if (gamepad_button_check_pressed(0, joy_disparoRango) || gamepad_button_check_pressed(0, joy_disparoRangoRT)) {
 	with (obj_pj){
 	    if (!aimActive) {
 	        switch (direccion) {
