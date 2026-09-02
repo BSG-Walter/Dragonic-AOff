@@ -40,30 +40,6 @@ if (abs(_aimH) > AIM_DEADZONE || abs(_aimV) > AIM_DEADZONE) {
     }
 }
 
-if (obj_pj.muerto) exit;
-
-//Acciones
-if (keyboard_check_pressed(key_agarrar)){
-	tirarItem()
-}
-
-if (keyboard_check_pressed(key_atacar) || gamepad_button_check_pressed(0, joy_atacar)){
-	pjAtacar();
-}
-
-if (keyboard_check_pressed(key_usar) || gamepad_button_check_pressed(0, joy_usar) || mouse_check_button_pressed(mb_right)){
-	usarItem();
-}
-
-if (keyboard_check_pressed(key_meditar) || gamepad_button_check_pressed(0, joy_meditar)){
-	meditar();
-}
-
-if (keyboard_check_pressed(key_agarrar) || gamepad_button_check_pressed(0, joy_agarrar)){
-	agarrar();
-}
-
-//swap inventario/hechizos
 var _inventario_visible = obj_tecla_hechizos.visible
 
 if (gamepad_button_check_pressed(0, joy_swap)){
@@ -124,7 +100,30 @@ if (_inventario_visible){
 	}
 }
 
-// R3 resetea mira al centro (sobre el PJ)
+if (keyboard_check_pressed(key_usar) || gamepad_button_check_pressed(0, joy_usar) || mouse_check_button_pressed(mb_right)){
+	usarItem();
+}
+
+if (obj_pj.muerto) exit;
+
+//Acciones
+if (keyboard_check_pressed(key_agarrar)){
+	tirarItem()
+}
+
+if (keyboard_check_pressed(key_atacar) || gamepad_button_check_pressed(0, joy_atacar)){
+	pjAtacar();
+}
+
+if (keyboard_check_pressed(key_meditar) || gamepad_button_check_pressed(0, joy_meditar)){
+	meditar();
+}
+
+if (keyboard_check_pressed(key_agarrar) || gamepad_button_check_pressed(0, joy_agarrar)){
+	agarrar();
+}
+
+// R3 recentra mira
 if (gamepad_button_check_pressed(0, joy_aimClick)) {
     with (obj_pj) {
         aimX = clamp(x, global.render_x + AIM_RETICLE_CLAMP_MARGIN, global.render_x + get_render_width() - AIM_RETICLE_CLAMP_MARGIN);

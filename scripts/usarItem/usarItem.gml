@@ -9,6 +9,10 @@ with(obj_inventario){
 	            break;
 	        }
 	    }
+
+	    if (obj_pj.muerto && slots[i].tipo != "barca" && slots[i].tipo != "runa") {
+	        exit;
+	    }
     
 	    if (slots[i].tipo == "arma") {
 	        if (obj_pj.armaActual >= 21 && obj_pj.armaActual <= 27) {

@@ -27,4 +27,4 @@ joy_swap = gp_shoulderl
 
 joy_disparoRango = gp_shoulderr
 joy_disparoRangoRT = gp_shoulderrb
-joy_aimClick = gp_stickr // R3 resetea mira al centro
+joy_aimClick = gp_stickr
