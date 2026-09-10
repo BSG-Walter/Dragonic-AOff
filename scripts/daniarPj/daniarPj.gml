@@ -16,7 +16,7 @@ function daniarPj(danoTotal, envenena){
 		    if (random(10) > 8) {
 				obj_pj.envenenado = true;
 			    obj_pj.veneno = veneno;
-			    obj_pj.alarm[8] = 1;
+			    obj_pj.alarm[7] = 300;
 			    var idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 			    idINFO.padre = obj_pj.id;
 			    idINFO.texto = "¡Envenenado!";
