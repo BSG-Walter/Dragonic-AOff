@@ -2,13 +2,17 @@
 
 poteando = false;
 
+var _umbralHp = BOT_POT_HP_THRESHOLD_BASE + gradoIA * BOT_POT_HP_THRESHOLD_SCALE;
+var _pctHp = gradoIA * BOT_POT_HP_PCT_SCALE;
+var _pctMana = gradoIA * BOT_POT_MANA_PCT_SCALE;
+
 if (!muerto) {
 
-    if (salud < saludMax) {
+    if (salud < floor(saludMax * _umbralHp)) {
     
         poteando = true;
     
-        var sumaSalud = floor(10 * saludMax / 100);
+        var sumaSalud = floor(_pctHp * saludMax / 100);
     
         if (salud + sumaSalud <= saludMax) {
             salud += sumaSalud;
@@ -22,7 +26,7 @@ if (!muerto) {
     
         poteando = true;
     
-        var sumaMana = floor(15 * manaMax / 100);
+        var sumaMana = floor(_pctMana * manaMax / 100);
     
         if (mana + sumaMana <= manaMax) {
             mana += sumaMana;
@@ -37,9 +41,9 @@ if (!muerto) {
 }
 
 if (!poteando) {
-    alarm[6] = floor(100 / gradoIA);
+    alarm[6] = floor(BOT_POT_INTERVAL_IDLE / gradoIA);
 } else {
-    alarm[6] = floor(15 / gradoIA);
+    alarm[6] = floor(BOT_POT_INTERVAL / gradoIA);
 }
 
 

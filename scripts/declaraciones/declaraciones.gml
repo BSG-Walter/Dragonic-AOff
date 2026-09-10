@@ -15,6 +15,14 @@ gml_pragma("global", "init_engine_settings();");
 
 #macro BOT_DRAW_CULL_MARGIN 80
 
+// Poteo de bots: escala continuo con gradoIA (mayor gradoIA = poteo más eficaz)
+#macro BOT_POT_HP_THRESHOLD_BASE 0.35
+#macro BOT_POT_HP_THRESHOLD_SCALE 0.5
+#macro BOT_POT_HP_PCT_SCALE 10
+#macro BOT_POT_MANA_PCT_SCALE 20
+#macro BOT_POT_INTERVAL_IDLE 100
+#macro BOT_POT_INTERVAL 25
+
 // Tile grid
 #macro TILE_SIZE 32
 
