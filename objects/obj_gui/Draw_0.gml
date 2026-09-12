@@ -174,7 +174,9 @@ if (obj_panel_items.mostrado) {
 		//inventario user
 		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 152, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_inventario.slots[index].nombre));
 		//inventario npc
+		draw_set_color(colorUsoItem(obj_panel_items.idPadre.slots[index].indice));
 		draw_text(global.render_x+ render_width * 0.5 - modPanelItemsX + 8, global.render_y + render_height * 0.5 - modPanelItemsY + 46 + (index * 8), string(obj_panel_items.idPadre.slots[index].nombre));
+		draw_set_color(c_white);
 	}
     
     

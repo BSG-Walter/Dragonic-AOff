@@ -40,6 +40,9 @@ gml_pragma("global", "init_engine_settings();");
 // Índice base de hechizos (120–139)
 #macro SPELL_INDEX_BASE 120
 
+// Nivel mínimo para usar la barca
+#macro NIVEL_MIN_BARCA 25
+
 // Apuntado con mando (stick derecho)
 #macro AIM_DEADZONE 0.1
 #macro AIM_MIN_SPEED 1

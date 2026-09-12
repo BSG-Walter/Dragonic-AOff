@@ -1,4 +1,52 @@
 
+/// @description Color del nombre del ítem en la tienda según si el personaje puede usarlo
+/// @param indiceItem
+function colorUsoItem(argument0) {
+    if (argument0 == -1) {
+        return c_white;
+    }
+    var _datos = configurarItem(argument0);
+    var _razaOk = (_datos.raza == -1 || _datos.raza == obj_pj.nroRaza);
+    if (!_razaOk) {
+        switch (_datos.raza) {
+            case 5:
+                _razaOk = (obj_pj.nroRaza == 0 || obj_pj.nroRaza == 1 || obj_pj.nroRaza == 2);
+                break;
+            case 6:
+                _razaOk = (obj_pj.nroRaza == 3 || obj_pj.nroRaza == 4);
+                break;
+            case 7:
+                _razaOk = (obj_pj.nroRaza == 0 || obj_pj.nroRaza == 1);
+                break;
+            case 8:
+                _razaOk = (obj_pj.nroRaza == 1 || obj_pj.nroRaza == 2);
+                break;
+            case 9:
+                _razaOk = (obj_pj.nroRaza == 0 || obj_pj.nroRaza == 3 || obj_pj.nroRaza == 4);
+                break;
+            case 10:
+                _razaOk = (obj_pj.nroRaza != 2);
+                break;
+        }
+    }
+    if (!_razaOk) {
+        return c_red;
+    }
+    if (_datos.genero != -1 && _datos.genero != obj_pj.genero) {
+        return c_red;
+    }
+    if (obj_pj.clase < 0 || obj_pj.clase > 8 || !_datos.clases[obj_pj.clase]) {
+        return c_red;
+    }
+    if (obj_pj.skills[_datos.nroSkill] < _datos.skillReq) {
+        return c_orange;
+    }
+    if (_datos.tipo == "barca" && obj_pj.nivel < NIVEL_MIN_BARCA) {
+        return c_orange;
+    }
+    return c_white;
+}
+
 /// @description  configurarItem(indiceItem)
 /// @param indiceItem
 function configurarItem(argument0) {

@@ -56,7 +56,7 @@ yaHabloEnojado3 = false;
 navega = false;
 enBarca = false;
 
-if (obj_pj.nivel >= 25) {
+if (obj_pj.nivel >= NIVEL_MIN_BARCA) {
     navega = true;
 }
 
@@ -354,7 +354,7 @@ with (obj_npc_basic) {
 
 // Navegando?
 
-if (obj_pj.nivel >= 25 && !is_special_room()) {
+if (obj_pj.nivel >= NIVEL_MIN_BARCA && !is_special_room()) {
     if (tile_layer_find(TILE_LAYER_GRASS, x, y) == -1 && tile_layer_find(TILE_LAYER_COAST, x, y) == -1 && tile_layer_find(TILE_LAYER_FLOORS, x, y) == -1 && tile_layer_find(10000, x, y) == -1) {
         // Hay agua debajo de la IA
         enBarca = true;

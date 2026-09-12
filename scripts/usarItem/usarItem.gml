@@ -255,17 +255,17 @@ with(obj_inventario){
 	
 	        var idINFO = 0;
     
-	        if (obj_pj.nivel < 25) {
-	            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
-	            idINFO.padre = obj_pj.id;
-	            idINFO.texto = "¡Nivel menor a 25!";
+        if (obj_pj.nivel < NIVEL_MIN_BARCA) {
+            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
+            idINFO.padre = obj_pj.id;
+            idINFO.texto = "¡Nivel menor a " + string(NIVEL_MIN_BARCA) + "!";
 	        } else if (obj_pj.skills[14] < 70) {
 	            idINFO = instance_create_depth(obj_pj.x, obj_pj.y, 0, obj_INFO);
 	            idINFO.padre = obj_pj.id;
 	            idINFO.texto = "¡Navegación menor a 70!";
 	        }
     
-	        if (obj_pj.skills[14] >= 70 && obj_pj.nivel >= 25) {
+	        if (obj_pj.skills[14] >= 70 && obj_pj.nivel >= NIVEL_MIN_BARCA) {
         
 	            movimientoValido = false;
 	            margen = 32;
