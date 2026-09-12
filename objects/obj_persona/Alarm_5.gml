@@ -1,4 +1,4 @@
-﻿/// @description  Movimiento random
+/// @description  Movimiento random
 
 if (!muerto && !inmovilizado) {
 

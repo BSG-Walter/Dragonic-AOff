@@ -129,5 +129,5 @@ repeat(maximoInv) {
 }
 
 tileInvalido = false;
-depth = -16000001
+depth = DEPTH_PANEL
 alarm[8] = SECOND;

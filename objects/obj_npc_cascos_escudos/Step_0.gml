@@ -8,7 +8,7 @@ if (y < obj_pj.y) {
     depth = obj_pj.depth;
 }
 
-depth += 16;
+depth += HALF_TILE;
 
 var device = -1;
 

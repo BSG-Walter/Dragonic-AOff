@@ -52,7 +52,7 @@ function crearCasa(argument0, argument1) {
 
 	var layPiso = layer_get_id("Tiles_Pisos");
 	if (layPiso == -1) {
-		layPiso = layer_create(100000, "Tiles_Pisos");
+		layPiso = layer_create(TILE_LAYER_FLOORS, "Tiles_Pisos");
 	}
 	layer_sprite_create(layPiso, x - 160, y - 144, tl_piso_casa_completo);
 

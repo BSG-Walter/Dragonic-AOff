@@ -4,6 +4,6 @@ valor = 1;
 xInicio = x;
 yInicio = y;
 noSetearAlarm = false;
-depth = 10000;
+depth = DEPTH_GROUND_ITEM;
 alarm[0] = 1;
 

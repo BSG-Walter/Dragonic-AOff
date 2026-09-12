@@ -1,4 +1,4 @@
-﻿/// @description  Remueve inmovilización
+/// @description  Remueve inmovilización
 
 if (inmovilizado) {
 

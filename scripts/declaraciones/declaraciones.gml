@@ -25,6 +25,7 @@ gml_pragma("global", "init_engine_settings();");
 
 // Tile grid
 #macro TILE_SIZE 32
+#macro HALF_TILE 16
 
 // Tile layers
 #macro TILE_LAYER_GRASS 10000000
@@ -42,6 +43,19 @@ gml_pragma("global", "init_engine_settings();");
 
 // Nivel mínimo para usar la barca
 #macro NIVEL_MIN_BARCA 25
+
+// Profundidades de interfaz (menor valor = más al frente)
+#macro DEPTH_BUTTONS -16000002
+#macro DEPTH_PANEL -16000001
+#macro DEPTH_GUI -16000000
+#macro DEPTH_FLOAT_TEXT -15999999
+#macro DEPTH_MAP_BORDER -75000
+#macro DEPTH_PAUSE -50000
+// Profundidades del mundo
+#macro DEPTH_GROUND_ITEM 10000
+#macro DEPTH_WEATHER -294
+#macro DEPTH_ROOF -293
+#macro DEPTH_MENU_OPTION 1
 
 // Apuntado con mando (stick derecho)
 #macro AIM_DEADZONE 0.1

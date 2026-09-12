@@ -601,39 +601,6 @@ if (esLegion) {
     draw_text(x, y + 13, string_hash_to_newline("<Armada Imperial>"));
 }
 
-// Retícula stick derecho
-if ((aimActive || atacaConArco || atacaConHechizo) && !muerto) {
-    var _retX = aimX;
-    var _retY = aimY;
-    if (!aimActive) {
-        _retX = x;
-        _retY = y;
-        switch (direccion) {
-            case 0:
-                _retY += TILE_SIZE * 2;
-                break;
-            case 1:
-                _retY -= TILE_SIZE * 2;
-                break;
-            case 2:
-                _retX -= TILE_SIZE * 2;
-                break;
-            case 3:
-                _retX += TILE_SIZE * 2;
-                break;
-        }
-    }
-	draw_sprite(spr_aim,0,aimX,aimY);
-    draw_set_alpha(0.85);
-    var _tgt = instance_position(_retX, _retY, obj_npc_basic);
-    if (_tgt != noone && _tgt.hostil) {
-        draw_set_color(c_yellow);
-        draw_circle(_tgt.x, _tgt.y - 16, 18, true);
-        draw_circle(_tgt.x, _tgt.y - 16, 20, true);
-    }
-    draw_set_alpha(1);
-}
-
 // Palabras mágicas
 
 if (dicePalabrasMagicas) {

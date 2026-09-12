@@ -85,6 +85,40 @@ if (obj_configuracion.mostrado) {
 
 draw_sprite(spr_seguro, obj_seguro.activo, global.render_x+ render_width, global.render_y + render_height);
 
+// Retícula stick derecho (se dibuja en la GUI para que nada del mundo la tape)
+if ((obj_pj.aimActive || obj_pj.atacaConArco || obj_pj.atacaConHechizo) && !obj_pj.muerto) {
+    var _retX = obj_pj.aimX;
+    var _retY = obj_pj.aimY;
+    if (!obj_pj.aimActive) {
+        _retX = obj_pj.x;
+        _retY = obj_pj.y;
+        switch (obj_pj.direccion) {
+            case 0:
+                _retY += TILE_SIZE * 2;
+                break;
+            case 1:
+                _retY -= TILE_SIZE * 2;
+                break;
+            case 2:
+                _retX -= TILE_SIZE * 2;
+                break;
+            case 3:
+                _retX += TILE_SIZE * 2;
+                break;
+        }
+    }
+    draw_sprite(spr_aim, 0, obj_pj.aimX, obj_pj.aimY);
+    draw_set_alpha(0.85);
+    var _tgt = instance_position(_retX, _retY, obj_npc_basic);
+    if (_tgt != noone && _tgt.hostil) {
+        draw_set_color(c_yellow);
+        draw_circle(_tgt.x, _tgt.y - 16, 18, true);
+        draw_circle(_tgt.x, _tgt.y - 16, 20, true);
+    }
+    draw_set_alpha(1);
+    draw_set_color(c_white);
+}
+
 // Panel items
 
 if (obj_panel_items.mostrado) {

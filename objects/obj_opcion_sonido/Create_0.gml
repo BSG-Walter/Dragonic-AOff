@@ -1,6 +1,6 @@
 /// @description  Estado inicial
 
-depth = 1;
+depth = DEPTH_MENU_OPTION;
 image_speed = 0;
 sonidoActivado = true;
 

@@ -1,4 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-depth = -16000002
+depth = DEPTH_BUTTONS
 touchId = -1;
