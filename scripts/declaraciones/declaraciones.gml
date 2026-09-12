@@ -41,8 +41,10 @@ gml_pragma("global", "init_engine_settings();");
 #macro SPELL_INDEX_BASE 120
 
 // Apuntado con mando (stick derecho)
-#macro AIM_DEADZONE 0.25
-#macro AIM_SENSITIVITY 6
+#macro AIM_DEADZONE 0.1
+#macro AIM_MIN_SPEED 1
+#macro AIM_MAX_SPEED 16
+#macro AIM_PRECISION_LIMIT 0.95
 #macro AIM_RETICLE_MAX_DIST 350
 #macro AIM_RETICLE_CLAMP_MARGIN 8
 

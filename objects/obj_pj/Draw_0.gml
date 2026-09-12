@@ -628,8 +628,8 @@ if ((aimActive || atacaConArco || atacaConHechizo) && !muerto) {
     var _tgt = instance_position(_retX, _retY, obj_npc_basic);
     if (_tgt != noone && _tgt.hostil) {
         draw_set_color(c_yellow);
-        draw_circle(_tgt.x, _tgt.y, 18, true);
-        draw_circle(_tgt.x, _tgt.y, 20, true);
+        draw_circle(_tgt.x, _tgt.y - 16, 18, true);
+        draw_circle(_tgt.x, _tgt.y - 16, 20, true);
     }
     draw_set_alpha(1);
 }

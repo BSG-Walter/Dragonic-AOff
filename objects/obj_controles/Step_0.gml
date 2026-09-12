@@ -14,8 +14,15 @@ if (abs(_aimH) > AIM_DEADZONE || abs(_aimV) > AIM_DEADZONE) {
         obj_pj.aimY = obj_pj.y;
         obj_pj.aimActive = true;
     }
-    obj_pj.aimX += _aimH * AIM_SENSITIVITY;
-    obj_pj.aimY += _aimV * AIM_SENSITIVITY;
+    var _mag = sqrt(_aimH * _aimH + _aimV * _aimV);
+    var _t = clamp((_mag - AIM_DEADZONE) / (1 - AIM_DEADZONE), 0, 1);
+    var _frac = 0.5 * (_t / AIM_PRECISION_LIMIT);
+    if (_t > AIM_PRECISION_LIMIT) {
+        _frac = 0.5 + 0.5 * ((_t - AIM_PRECISION_LIMIT) / (1 - AIM_PRECISION_LIMIT));
+    }
+    var _speed = lerp(AIM_MIN_SPEED, AIM_MAX_SPEED, _frac);
+    obj_pj.aimX += (_aimH / _mag) * _speed;
+    obj_pj.aimY += (_aimV / _mag) * _speed;
     var _minX = global.render_x + AIM_RETICLE_CLAMP_MARGIN;
     var _maxX = global.render_x + get_render_width() - AIM_RETICLE_CLAMP_MARGIN;
     var _minY = global.render_y + AIM_RETICLE_CLAMP_MARGIN;
