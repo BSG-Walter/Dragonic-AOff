@@ -14,7 +14,13 @@ if (instance_exists(obj_pj)) {
     global.render_y = obj_pj.y - (get_render_height() / 2) + _offset_y;
 
 
-	camera_set_view_pos(view_camera[0], global.render_x, global.render_y);
+    camera_set_view_pos(view_camera[0], global.render_x, global.render_y);
+    if (obj_pj.aimActive && obj_opciones.opcionAimCamara) {
+        obj_pj.aimX += global.render_x - obj_pj.aimCamX;
+        obj_pj.aimY += global.render_y - obj_pj.aimCamY;
+    }
+    obj_pj.aimCamX = global.render_x;
+    obj_pj.aimCamY = global.render_y;
 }
 
 global.inventario_x = global.render_x;

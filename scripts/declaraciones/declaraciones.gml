@@ -63,7 +63,7 @@ gml_pragma("global", "init_engine_settings();");
 #macro AIM_MAX_SPEED 16
 #macro AIM_PRECISION_LIMIT 0.95
 #macro AIM_ASSIST_RADIUS 64
-#macro AIM_ASSIST_PULL 8
+#macro AIM_ASSIST_PULL 2
 #macro AIM_RETICLE_MAX_DIST 350
 #macro AIM_RETICLE_CLAMP_MARGIN 8
 

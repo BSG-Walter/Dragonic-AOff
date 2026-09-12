@@ -424,6 +424,12 @@ aimX = x;
 aimY = y;
 aimActive = false;
 aimDir = direccion;
+aimCamX = 0;
+aimCamY = 0;
+if (variable_global_exists("render_x")) {
+    aimCamX = global.render_x;
+    aimCamY = global.render_y;
+}
 
 // Gráfico
 

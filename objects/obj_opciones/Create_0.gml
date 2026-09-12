@@ -8,6 +8,8 @@ opcionNubes = true;
 opcionPeces = true;
 opcionOptimizarCiudades = false;
 opcionInsigniaPionero = true;
+opcionAimAssist = true;
+opcionAimCamara = false; //en false el aim queda en el mundo, en true sigue a la camara
 multiExp = 1
 multiOro = 1
 maxBots = 6
@@ -23,6 +25,8 @@ if (file_exists("opciones.ini")) {
     opcionPeces = read("opcionesFX", "opcionPeces", 1);
     opcionOptimizarCiudades = read("opcionesFX", "opcionOptimizarCiudades", 0);
     opcionInsigniaPionero = read("opcionesFX", "opcionInsigniaPionero", true);
+    //opcionAimAssist = read("opcionesAim", "opcionAimAssist", opcionAimAssist);
+    //opcionAimCamara = read("opcionesAim", "opcionAimCamara", opcionAimCamara);
 	multiExp = read("dificultad", "multiExp", 1)
 	multiOro = read("dificultad", "multiOro", 1)
 	maxBots = read("dificultad", "maxBots", 6)

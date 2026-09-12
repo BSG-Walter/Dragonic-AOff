@@ -23,12 +23,12 @@ if (abs(_aimH) > AIM_DEADZONE || abs(_aimV) > AIM_DEADZONE) {
     var _speed = lerp(AIM_MIN_SPEED, AIM_MAX_SPEED, _frac);
     obj_pj.aimX += (_aimH / _mag) * _speed;
     obj_pj.aimY += (_aimV / _mag) * _speed;
-    if (_t <= AIM_PRECISION_LIMIT) {
+    if (obj_opciones.opcionAimAssist && _t <= AIM_PRECISION_LIMIT) {
         var _lock = noone;
         var _lockD = AIM_ASSIST_RADIUS;
         with (obj_npc_basic) {
             if (hostil) {
-                var _d = point_distance(obj_pj.aimX, obj_pj.aimY, x, y - 16);
+                var _d = point_distance(obj_pj.aimX, obj_pj.aimY, x, y - HALF_TILE);
                 if (_d < _lockD) {
                     _lockD = _d;
                     _lock = id;
@@ -36,13 +36,10 @@ if (abs(_aimH) > AIM_DEADZONE || abs(_aimV) > AIM_DEADZONE) {
             }
         }
         if (_lock != noone) {
-            var _dirL = point_direction(obj_pj.aimX, obj_pj.aimY, _lock.x, _lock.y - 16);
-            var _dot = ((_aimH * lengthdir_x(1, _dirL)) + (_aimV * lengthdir_y(1, _dirL))) / _mag;
-            if (_dot > math_get_epsilon()) {
-                var _pull = min(AIM_ASSIST_PULL * _dot, _lockD);
-                obj_pj.aimX += lengthdir_x(_pull, _dirL);
-                obj_pj.aimY += lengthdir_y(_pull, _dirL);
-            }
+            var _dirL = point_direction(obj_pj.aimX, obj_pj.aimY, _lock.x, _lock.y - HALF_TILE);
+            var _pull = min(AIM_ASSIST_PULL, _lockD);
+            obj_pj.aimX += lengthdir_x(_pull, _dirL);
+            obj_pj.aimY += lengthdir_y(_pull, _dirL);
         }
     }
     var _minX = global.render_x + AIM_RETICLE_CLAMP_MARGIN;
