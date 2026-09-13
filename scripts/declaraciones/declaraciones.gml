@@ -45,6 +45,8 @@ gml_pragma("global", "init_engine_settings();");
 #macro NIVEL_MIN_BARCA 25
 
 // Profundidades de interfaz (menor valor = más al frente)
+#macro DEPTH_MANUAL_BUTTONS -16000004
+#macro DEPTH_MANUAL -16000003
 #macro DEPTH_BUTTONS -16000002
 #macro DEPTH_PANEL -16000001
 #macro DEPTH_GUI -16000000
