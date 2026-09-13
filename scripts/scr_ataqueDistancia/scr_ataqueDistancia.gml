@@ -48,7 +48,9 @@ function ataqueArco(_x, _y){
 	                    idINFO.texto = "¡No podés atacar en una zona segura!";
 	                }
                                                     
-					if (valido && !obj_pj.pk && !idNPC.pk) {
+					if (bloqueadoPorBandoArena(idNPC)) {
+						valido = false;
+					} else if (valido && !obj_pj.pk && !idNPC.pk) {
 						if (obj_pj.esArmada) {
 							valido = false;
 							var idINFO = instance_create_depth(x, y, 0, obj_INFO);
@@ -438,7 +440,9 @@ function lanzarHechizo(_x, _y){
                                                     
 	                            if (valido) {
                                                         
-	                                if (!obj_pj.pk && !idNPC.pk) {
+	                                if (bloqueadoPorBandoArena(idNPC)) {
+	                                    valido = false;
+	                                } else if (!obj_pj.pk && !idNPC.pk) {
 	                                    if (obj_pj.esArmada) {
 	                                        valido = false;
 	                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
@@ -704,7 +708,9 @@ function lanzarHechizo(_x, _y){
                                                             
 	                            if (valido) {
                                                         
-	                                if (!obj_pj.pk && !idNPC.pk) {
+	                                if (bloqueadoPorBandoArena(idNPC)) {
+	                                    valido = false;
+	                                } else if (!obj_pj.pk && !idNPC.pk) {
 	                                    if (obj_pj.esArmada) {
 	                                        valido = false;
 	                                        var idINFO = instance_create_depth(x, y, 0, obj_INFO);
