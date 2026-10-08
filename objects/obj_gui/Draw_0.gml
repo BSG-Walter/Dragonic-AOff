@@ -94,26 +94,26 @@ if ((obj_pj.aimActive || obj_pj.atacaConArco || obj_pj.atacaConHechizo) && !obj_
         _retY = obj_pj.y;
         switch (obj_pj.direccion) {
             case 0:
-                _retY += TILE_SIZE * 2;
+                _retY += AIM_IDLE_DISTANCE;
                 break;
             case 1:
-                _retY -= TILE_SIZE * 2;
+                _retY -= AIM_IDLE_DISTANCE;
                 break;
             case 2:
-                _retX -= TILE_SIZE * 2;
+                _retX -= AIM_IDLE_DISTANCE;
                 break;
             case 3:
-                _retX += TILE_SIZE * 2;
+                _retX += AIM_IDLE_DISTANCE;
                 break;
         }
     }
-    draw_sprite(spr_aim, 0, obj_pj.aimX, obj_pj.aimY);
+    draw_sprite(spr_aim, 0, _retX, _retY);
     draw_set_alpha(0.85);
     var _tgt = instance_position(_retX, _retY, obj_npc_basic);
     if (_tgt != noone && _tgt.hostil) {
         draw_set_color(c_yellow);
-        draw_circle(_tgt.x, _tgt.y - 16, 18, true);
-        draw_circle(_tgt.x, _tgt.y - 16, 20, true);
+        draw_circle(_tgt.x, _tgt.y - HALF_TILE, AIM_TARGET_RING_RADIUS, true);
+        draw_circle(_tgt.x, _tgt.y - HALF_TILE, AIM_TARGET_RING_RADIUS + AIM_TARGET_RING_GAP, true);
     }
     draw_set_alpha(1);
     draw_set_color(c_white);

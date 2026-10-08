@@ -59,15 +59,24 @@ gml_pragma("global", "init_engine_settings();");
 #macro DEPTH_ROOF -293
 #macro DEPTH_MENU_OPTION 1
 
-// Apuntado con mando (stick derecho)
+// Mando y apuntado
+#macro GAMEPAD_PLAYER 0
+#macro GAMEPAD_MOVE_DEADZONE 0.4
+#macro INVENTORY_PAD_ROW_SIZE 10
+#macro SPELL_PAD_ROW_SIZE 5
+#macro SPELL_PANEL_SPLIT 10
 #macro AIM_DEADZONE 0.1
 #macro AIM_MIN_SPEED 1
 #macro AIM_MAX_SPEED 16
 #macro AIM_PRECISION_LIMIT 0.95
 #macro AIM_ASSIST_RADIUS 64
 #macro AIM_ASSIST_PULL 2
+#macro AIM_START_DISTANCE (TILE_SIZE * 3)
+#macro AIM_IDLE_DISTANCE (TILE_SIZE * 2)
 #macro AIM_RETICLE_MAX_DIST 350
 #macro AIM_RETICLE_CLAMP_MARGIN 8
+#macro AIM_TARGET_RING_RADIUS 18
+#macro AIM_TARGET_RING_GAP 2
 
 
 function init_engine_settings() {
